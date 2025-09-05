@@ -740,6 +740,10 @@
                 const memoryStatus = document.getElementById('memoryStatus');
                 memoryStatus.textContent = '🧠 Procesando con memoria completa...';
                 memoryStatus.style.color = '#667eea';
+            } else {
+                const memoryStatus = document.getElementById('memoryStatus');
+                memoryStatus.textContent = '🔄 Procesando...';
+                memoryStatus.style.color = '#667eea';
             }
             
             // Mostrar indicador de carga
@@ -790,8 +794,17 @@
                 let cleanResponse = response.trim();
                 
                 // Remover prefijos que puedan confundir el rol
-                if (cleanResponse.startsWith('Usuario:') || cleanResponse.startsWith('Asistente:')) {
-                    cleanResponse = cleanResponse.replace(/^(Usuario:|Asistente:)\s*/, '');
+                cleanResponse = cleanResponse.replace(/^(Usuario:|Asistente:|Sistema:)\s*/gm, '');
+                
+                // Validar que la respuesta sea del asistente
+                if (cleanResponse.includes('Mi nombre es') || cleanResponse.includes('Tengo') || cleanResponse.includes('Me gusta') || 
+                    cleanResponse.startsWith('Soy') || cleanResponse.startsWith('Tengo') || cleanResponse.startsWith('Me llamo')) {
+                    cleanResponse = 'Entiendo. ' + cleanResponse;
+                }
+                
+                // Asegurar que la respuesta termine con punto si no lo tiene
+                if (!cleanResponse.endsWith('.') && !cleanResponse.endsWith('!') && !cleanResponse.endsWith('?')) {
+                    cleanResponse += '.';
                 }
                 
                 const assistantMessage = addMessageToConversation('assistant', cleanResponse);
@@ -823,9 +836,12 @@
                     if (part?.text) {
                         let text = part.text;
                         
-                        // Limpiar el primer fragmento si tiene prefijos incorrectos
-                        if (isFirstPart) {
-                            text = text.replace(/^(Usuario:|Asistente:)\s*/, '');
+                        // Limpiar prefijos incorrectos
+                        text = text.replace(/^(Usuario:|Asistente:|Sistema:)\s*/gm, '');
+                        
+                        // Si es el primer fragmento y parece ser del usuario, agregar prefijo
+                        if (isFirstPart && (text.includes('Mi nombre es') || text.includes('Tengo') || text.includes('Me gusta'))) {
+                            text = 'Entiendo. ' + text;
                             isFirstPart = false;
                         }
                         
@@ -850,8 +866,22 @@
             let tokenCount = 0;
             const maxTokens = MAX_TOKENS_PER_CONVERSATION - 1000; // Dejar margen para la respuesta
             
-            // Agregar mensaje del sistema inicial
-            const systemPrompt = 'Eres un asistente de IA útil y amigable. Responde en español y mantén el contexto de la conversación. Recuerda todo lo que hemos hablado anteriormente.\n\nIMPORTANTE: Siempre responde como asistente de IA. Nunca te hagas pasar por el usuario. Mantén tu rol de asistente en todas las respuestas.\n\n';
+            // Agregar mensaje del sistema inicial más específico
+            const systemPrompt = `Eres un asistente de IA útil y amigable. Tu nombre es Asistente IA.
+
+INSTRUCCIONES IMPORTANTES:
+- SIEMPRE responde como asistente de IA
+- NUNCA te hagas pasar por el usuario
+- Mantén el contexto de la conversación
+- Responde en español
+- Recuerda todo lo que hemos hablado anteriormente
+
+FORMATO DE CONVERSACIÓN:
+- Usuario: [mensaje del usuario]
+- Asistente: [tu respuesta como asistente]
+
+CONVERSACIÓN ANTERIOR:
+`;
             history += systemPrompt;
             tokenCount += Math.ceil(systemPrompt.length / 4);
             
@@ -865,11 +895,11 @@
                 let messageText = '';
                 
                 if (msg.type === 'user') {
-                    messageText = `Usuario: ${msg.content}\n\n`;
+                    messageText = `Usuario: ${msg.content}\n`;
                 } else if (msg.type === 'assistant') {
-                    messageText = `Asistente: ${msg.content}\n\n`;
+                    messageText = `Asistente: ${msg.content}\n`;
                 } else if (msg.type === 'system') {
-                    messageText = `Sistema: ${msg.content}\n\n`;
+                    messageText = `Sistema: ${msg.content}\n`;
                 }
                 
                 const messageTokens = Math.ceil(messageText.length / 4);
@@ -885,7 +915,7 @@
             
             // Agregar el nuevo mensaje del usuario al final
             if (newMessage) {
-                const userMessage = `Usuario: ${newMessage}\n\nAsistente:`;
+                const userMessage = `Usuario: ${newMessage}\nAsistente:`;
                 history += userMessage;
                 tokenCount += Math.ceil(userMessage.length / 4);
             }
