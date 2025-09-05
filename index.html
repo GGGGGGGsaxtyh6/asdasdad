@@ -403,19 +403,18 @@
 
             <div class="sidebar">
                 <div class="model-selector">
+                    <label for="modelSearch">🔍 Buscar Modelo:</label>
+                    <input type="text" id="modelSearch" placeholder="Escribe para buscar modelos..." 
+                           style="width: 100%; padding: 8px; margin-bottom: 10px; border: 2px solid #e1e5e9; border-radius: 6px;">
+                    
                     <label for="modelSelect">Seleccionar Modelo:</label>
-                    <select id="modelSelect">
-                        <option value="openrouter:meta-llama/llama-3.1-8b-instruct">Meta Llama 3.1 (8B)</option>
-                        <option value="openrouter:anthropic/claude-3.5-sonnet">Claude 3.5 Sonnet</option>
-                        <option value="openrouter:openai/gpt-4o-mini">GPT-4o Mini</option>
-                        <option value="openrouter:google/gemini-2.5-flash">Gemini 2.5 Flash</option>
-                        <option value="openrouter:mistralai/mistral-7b-instruct">Mistral 7B</option>
-                        <option value="openrouter:deepseek/deepseek-chat">DeepSeek Chat</option>
-                        <option value="openrouter:qwen/qwen-2.5-72b-instruct">Qwen 2.5 (72B)</option>
-                        <option value="openrouter:cohere/command-r-plus">Cohere Command R+</option>
-                        <option value="openrouter:meta-llama/llama-3.1-70b-instruct">Llama 3.1 (70B)</option>
-                        <option value="openrouter:anthropic/claude-3-haiku">Claude 3 Haiku</option>
+                    <select id="modelSelect" size="8" style="width: 100%; height: 200px; overflow-y: auto;">
+                        <!-- Los modelos se cargarán dinámicamente -->
                     </select>
+                    
+                    <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                        <span id="modelCount">0</span> modelos disponibles
+                    </div>
                 </div>
 
                 <div class="settings">
@@ -499,6 +498,108 @@
         let currentConversationId = null;
         let isGenerating = false;
         const MAX_TOKENS_PER_CONVERSATION = 32000; // 32k tokens por conversación
+        
+        // Lista completa de modelos de OpenRouter
+        const allModels = [
+            // OpenAI Models
+            { id: 'openrouter:openai/gpt-4o', name: 'GPT-4o', category: 'OpenAI', description: 'Modelo más avanzado de OpenAI' },
+            { id: 'openrouter:openai/gpt-4o-mini', name: 'GPT-4o Mini', category: 'OpenAI', description: 'Versión mini de GPT-4o' },
+            { id: 'openrouter:openai/gpt-4-turbo', name: 'GPT-4 Turbo', category: 'OpenAI', description: 'GPT-4 con mayor velocidad' },
+            { id: 'openrouter:openai/gpt-4', name: 'GPT-4', category: 'OpenAI', description: 'Modelo GPT-4 estándar' },
+            { id: 'openrouter:openai/gpt-3.5-turbo', name: 'GPT-3.5 Turbo', category: 'OpenAI', description: 'Modelo rápido y eficiente' },
+            { id: 'openrouter:openai/o1', name: 'O1', category: 'OpenAI', description: 'Modelo de razonamiento avanzado' },
+            { id: 'openrouter:openai/o1-mini', name: 'O1 Mini', category: 'OpenAI', description: 'Versión mini de O1' },
+            
+            // Anthropic Models
+            { id: 'openrouter:anthropic/claude-3.5-sonnet', name: 'Claude 3.5 Sonnet', category: 'Anthropic', description: 'Modelo más avanzado de Claude' },
+            { id: 'openrouter:anthropic/claude-3.5-haiku', name: 'Claude 3.5 Haiku', category: 'Anthropic', description: 'Claude rápido y eficiente' },
+            { id: 'openrouter:anthropic/claude-3-haiku', name: 'Claude 3 Haiku', category: 'Anthropic', description: 'Modelo Claude compacto' },
+            { id: 'openrouter:anthropic/claude-3-opus', name: 'Claude 3 Opus', category: 'Anthropic', description: 'Modelo Claude más potente' },
+            { id: 'openrouter:anthropic/claude-sonnet-4', name: 'Claude Sonnet 4', category: 'Anthropic', description: 'Última versión de Claude Sonnet' },
+            
+            // Google Models
+            { id: 'openrouter:google/gemini-2.5-flash', name: 'Gemini 2.5 Flash', category: 'Google', description: 'Modelo rápido de Google' },
+            { id: 'openrouter:google/gemini-2.5-pro', name: 'Gemini 2.5 Pro', category: 'Google', description: 'Modelo avanzado de Google' },
+            { id: 'openrouter:google/gemini-pro-1.5', name: 'Gemini Pro 1.5', category: 'Google', description: 'Modelo Pro de Google' },
+            { id: 'openrouter:google/gemini-flash-1.5', name: 'Gemini Flash 1.5', category: 'Google', description: 'Versión Flash de Gemini' },
+            
+            // Meta Llama Models
+            { id: 'openrouter:meta-llama/llama-3.1-8b-instruct', name: 'Llama 3.1 (8B)', category: 'Meta', description: 'Modelo Llama compacto' },
+            { id: 'openrouter:meta-llama/llama-3.1-70b-instruct', name: 'Llama 3.1 (70B)', category: 'Meta', description: 'Modelo Llama grande' },
+            { id: 'openrouter:meta-llama/llama-3.1-405b-instruct', name: 'Llama 3.1 (405B)', category: 'Meta', description: 'Modelo Llama más grande' },
+            { id: 'openrouter:meta-llama/llama-3-8b-instruct', name: 'Llama 3 (8B)', category: 'Meta', description: 'Versión anterior de Llama' },
+            { id: 'openrouter:meta-llama/llama-3-70b-instruct', name: 'Llama 3 (70B)', category: 'Meta', description: 'Llama 3 versión grande' },
+            { id: 'openrouter:meta-llama/llama-4-maverick', name: 'Llama 4 Maverick', category: 'Meta', description: 'Nueva versión Llama 4' },
+            { id: 'openrouter:meta-llama/llama-4-scout', name: 'Llama 4 Scout', category: 'Meta', description: 'Llama 4 versión exploradora' },
+            
+            // Mistral Models
+            { id: 'openrouter:mistralai/mistral-7b-instruct', name: 'Mistral 7B', category: 'Mistral', description: 'Modelo Mistral compacto' },
+            { id: 'openrouter:mistralai/mistral-large', name: 'Mistral Large', category: 'Mistral', description: 'Modelo Mistral grande' },
+            { id: 'openrouter:mistralai/mistral-medium-3', name: 'Mistral Medium 3', category: 'Mistral', description: 'Modelo Mistral mediano' },
+            { id: 'openrouter:mistralai/mistral-small', name: 'Mistral Small', category: 'Mistral', description: 'Modelo Mistral pequeño' },
+            { id: 'openrouter:mistralai/mixtral-8x7b-instruct', name: 'Mixtral 8x7B', category: 'Mistral', description: 'Modelo Mixtral' },
+            { id: 'openrouter:mistralai/mixtral-8x22b-instruct', name: 'Mixtral 8x22B', category: 'Mistral', description: 'Mixtral versión grande' },
+            { id: 'openrouter:mistralai/codestral-2501', name: 'Codestral', category: 'Mistral', description: 'Modelo especializado en código' },
+            
+            // DeepSeek Models
+            { id: 'openrouter:deepseek/deepseek-chat', name: 'DeepSeek Chat', category: 'DeepSeek', description: 'Modelo de chat DeepSeek' },
+            { id: 'openrouter:deepseek/deepseek-chat-v3.1', name: 'DeepSeek Chat v3.1', category: 'DeepSeek', description: 'Versión 3.1 de DeepSeek' },
+            { id: 'openrouter:deepseek/deepseek-r1', name: 'DeepSeek R1', category: 'DeepSeek', description: 'Modelo de razonamiento DeepSeek' },
+            { id: 'openrouter:deepseek/deepseek-r1-0528', name: 'DeepSeek R1 0528', category: 'DeepSeek', description: 'Versión específica de R1' },
+            
+            // Qwen Models
+            { id: 'openrouter:qwen/qwen-2.5-72b-instruct', name: 'Qwen 2.5 (72B)', category: 'Qwen', description: 'Modelo Qwen grande' },
+            { id: 'openrouter:qwen/qwen-2.5-7b-instruct', name: 'Qwen 2.5 (7B)', category: 'Qwen', description: 'Modelo Qwen compacto' },
+            { id: 'openrouter:qwen/qwen-2.5-coder-32b-instruct', name: 'Qwen 2.5 Coder (32B)', category: 'Qwen', description: 'Qwen especializado en código' },
+            { id: 'openrouter:qwen/qwen-max', name: 'Qwen Max', category: 'Qwen', description: 'Modelo Qwen más potente' },
+            { id: 'openrouter:qwen/qwen-plus', name: 'Qwen Plus', category: 'Qwen', description: 'Versión Plus de Qwen' },
+            { id: 'openrouter:qwen/qwen-turbo', name: 'Qwen Turbo', category: 'Qwen', description: 'Versión rápida de Qwen' },
+            { id: 'openrouter:qwen/qwen3-14b', name: 'Qwen3 (14B)', category: 'Qwen', description: 'Nueva versión Qwen3' },
+            { id: 'openrouter:qwen/qwen3-8b', name: 'Qwen3 (8B)', category: 'Qwen', description: 'Qwen3 compacto' },
+            
+            // Cohere Models
+            { id: 'openrouter:cohere/command-r-plus', name: 'Command R+', category: 'Cohere', description: 'Modelo avanzado de Cohere' },
+            { id: 'openrouter:cohere/command-r', name: 'Command R', category: 'Cohere', description: 'Modelo estándar de Cohere' },
+            { id: 'openrouter:cohere/command', name: 'Command', category: 'Cohere', description: 'Modelo básico de Cohere' },
+            { id: 'openrouter:cohere/command-r-plus-08-2024', name: 'Command R+ (08/2024)', category: 'Cohere', description: 'Versión actualizada de Command R+' },
+            
+            // Microsoft Models
+            { id: 'openrouter:microsoft/phi-3-medium-128k-instruct', name: 'Phi-3 Medium', category: 'Microsoft', description: 'Modelo Phi-3 mediano' },
+            { id: 'openrouter:microsoft/phi-3-mini-128k-instruct', name: 'Phi-3 Mini', category: 'Microsoft', description: 'Modelo Phi-3 compacto' },
+            { id: 'openrouter:microsoft/phi-4', name: 'Phi-4', category: 'Microsoft', description: 'Nueva versión Phi-4' },
+            { id: 'openrouter:microsoft/phi-4-multimodal-instruct', name: 'Phi-4 Multimodal', category: 'Microsoft', description: 'Phi-4 con capacidades multimodales' },
+            
+            // X.AI Models
+            { id: 'openrouter:x-ai/grok-2-1212', name: 'Grok-2', category: 'X.AI', description: 'Modelo Grok de X.AI' },
+            { id: 'openrouter:x-ai/grok-3', name: 'Grok-3', category: 'X.AI', description: 'Versión 3 de Grok' },
+            { id: 'openrouter:x-ai/grok-3-mini', name: 'Grok-3 Mini', category: 'X.AI', description: 'Versión mini de Grok-3' },
+            { id: 'openrouter:x-ai/grok-4', name: 'Grok-4', category: 'X.AI', description: 'Última versión de Grok' },
+            
+            // Perplexity Models
+            { id: 'openrouter:perplexity/sonar', name: 'Sonar', category: 'Perplexity', description: 'Modelo Sonar de Perplexity' },
+            { id: 'openrouter:perplexity/sonar-pro', name: 'Sonar Pro', category: 'Perplexity', description: 'Versión Pro de Sonar' },
+            { id: 'openrouter:perplexity/sonar-deep-research', name: 'Sonar Deep Research', category: 'Perplexity', description: 'Sonar para investigación profunda' },
+            
+            // Baidu Models
+            { id: 'openrouter:baidu/ernie-4.5-21b-a3b', name: 'ERNIE 4.5 (21B)', category: 'Baidu', description: 'Modelo ERNIE de Baidu' },
+            { id: 'openrouter:baidu/ernie-4.5-300b-a47b', name: 'ERNIE 4.5 (300B)', category: 'Baidu', description: 'ERNIE versión grande' },
+            
+            // Tencent Models
+            { id: 'openrouter:tencent/hunyuan-a13b-instruct', name: 'Hunyuan (13B)', category: 'Tencent', description: 'Modelo Hunyuan de Tencent' },
+            
+            // Otros modelos populares
+            { id: 'openrouter:openrouter/auto', name: 'Auto (Mejor Modelo)', category: 'Auto', description: 'Selección automática del mejor modelo' },
+            { id: 'openrouter:switchpoint/router', name: 'Router', category: 'Switchpoint', description: 'Modelo Router inteligente' },
+            { id: 'openrouter:rekaai/reka-flash-3', name: 'Reka Flash 3', category: 'Reka', description: 'Modelo rápido de Reka' },
+            { id: 'openrouter:moonshotai/kimi-dev-72b', name: 'Kimi Dev (72B)', category: 'Moonshot', description: 'Modelo de desarrollo Kimi' },
+            { id: 'openrouter:moonshotai/kimi-k2', name: 'Kimi K2', category: 'Moonshot', description: 'Versión K2 de Kimi' },
+            { id: 'openrouter:inflection/inflection-3-pi', name: 'Inflection 3 Pi', category: 'Inflection', description: 'Modelo Pi de Inflection' },
+            { id: 'openrouter:inflection/inflection-3-productivity', name: 'Inflection 3 Productivity', category: 'Inflection', description: 'Inflection para productividad' },
+            { id: 'openrouter:minimax/minimax-01', name: 'Minimax 01', category: 'Minimax', description: 'Modelo Minimax' },
+            { id: 'openrouter:minimax/minimax-m1', name: 'Minimax M1', category: 'Minimax', description: 'Versión M1 de Minimax' }
+        ];
+        
+        let filteredModels = [...allModels];
 
         // Inicializar la aplicación
         document.addEventListener('DOMContentLoaded', function() {
@@ -510,6 +611,10 @@
             document.getElementById('chatInput').addEventListener('keydown', handleKeyPress);
             document.getElementById('temperature').addEventListener('input', updateTemperature);
             document.getElementById('modelSelect').addEventListener('change', updateModelInfo);
+            document.getElementById('modelSearch').addEventListener('input', filterModels);
+            
+            // Cargar modelos
+            loadModels();
             
             // Cargar conversaciones guardadas
             loadConversations();
