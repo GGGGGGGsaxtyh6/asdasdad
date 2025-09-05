@@ -129,19 +129,21 @@ class CallOfWarScraper:
                             if game_data:
                                 return game_data
                             
-                            # Si no encontramos datos específicos, crear datos de ejemplo
-                            return await self._create_sample_game_data(game_id)
+                            # Si no encontramos datos específicos, devolver None
+                            logger.warning("No se encontraron datos estructurados en la página")
+                            return None
                 
                 except Exception as e:
                     logger.warning(f"Error con URL {url}: {e}")
                     continue
             
-            # Si todas las URLs fallan, crear datos de ejemplo
-            return await self._create_sample_game_data(game_id)
+            # Si todas las URLs fallan, devolver None
+            logger.error("No se pudo acceder a la partida")
+            return None
                 
         except Exception as e:
             logger.error(f"Error obteniendo datos del juego: {e}")
-            return await self._create_sample_game_data(game_id)
+            return None
     
     async def _extract_game_data_from_page(self, soup: BeautifulSoup, game_id: str) -> Optional[GameState]:
         """Extrae datos del juego desde la página web"""
