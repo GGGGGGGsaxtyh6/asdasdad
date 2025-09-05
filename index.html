@@ -738,7 +738,7 @@
             // Mostrar confirmación de memoria activa
             if (conversation.messages.length > 1) {
                 const memoryStatus = document.getElementById('memoryStatus');
-                memoryStatus.textContent = '🔄 Procesando con memoria...';
+                memoryStatus.textContent = '🧠 Procesando con memoria completa...';
                 memoryStatus.style.color = '#667eea';
             }
             
@@ -785,8 +785,17 @@
                 
                 // Enviar el historial completo al modelo
                 const response = await puter.ai.chat(conversationHistory, options);
-                const assistantMessage = addMessageToConversation('assistant', response);
-                addMessageToUI('assistant', response, assistantMessage.id);
+                
+                // Limpiar la respuesta para asegurar que sea del asistente
+                let cleanResponse = response.trim();
+                
+                // Remover prefijos que puedan confundir el rol
+                if (cleanResponse.startsWith('Usuario:') || cleanResponse.startsWith('Asistente:')) {
+                    cleanResponse = cleanResponse.replace(/^(Usuario:|Asistente:)\s*/, '');
+                }
+                
+                const assistantMessage = addMessageToConversation('assistant', cleanResponse);
+                addMessageToUI('assistant', cleanResponse, assistantMessage.id);
                 updateStats();
             } catch (error) {
                 throw new Error(`Error al generar respuesta: ${error.message}`);
@@ -808,9 +817,19 @@
                 const response = await puter.ai.chat(conversationHistory, { ...options, stream: true });
                 
                 let fullResponse = '';
+                let isFirstPart = true;
+                
                 for await (const part of response) {
                     if (part?.text) {
-                        fullResponse += part.text;
+                        let text = part.text;
+                        
+                        // Limpiar el primer fragmento si tiene prefijos incorrectos
+                        if (isFirstPart) {
+                            text = text.replace(/^(Usuario:|Asistente:)\s*/, '');
+                            isFirstPart = false;
+                        }
+                        
+                        fullResponse += text;
                         updateMessageInConversation(messageId, fullResponse);
                         updateMessageInUI(messageId, fullResponse);
                     }
@@ -832,23 +851,16 @@
             const maxTokens = MAX_TOKENS_PER_CONVERSATION - 1000; // Dejar margen para la respuesta
             
             // Agregar mensaje del sistema inicial
-            const systemPrompt = 'Eres un asistente de IA útil y amigable. Responde en español y mantén el contexto de la conversación. Recuerda todo lo que hemos hablado anteriormente.\n\n';
+            const systemPrompt = 'Eres un asistente de IA útil y amigable. Responde en español y mantén el contexto de la conversación. Recuerda todo lo que hemos hablado anteriormente.\n\nIMPORTANTE: Siempre responde como asistente de IA. Nunca te hagas pasar por el usuario. Mantén tu rol de asistente en todas las respuestas.\n\n';
             history += systemPrompt;
             tokenCount += Math.ceil(systemPrompt.length / 4);
             
-            // Agregar mensajes de la conversación (empezando por los más recientes para mantener el contexto)
+            // Agregar mensajes de la conversación en orden cronológico
             const messages = conversation.messages.slice(); // Copia del array
             const newMessage = document.getElementById('chatInput').value.trim();
             
-            // Agregar el nuevo mensaje del usuario
-            if (newMessage) {
-                const userMessage = `Usuario: ${newMessage}\n\nAsistente:`;
-                history += userMessage;
-                tokenCount += Math.ceil(userMessage.length / 4);
-            }
-            
-            // Agregar mensajes anteriores en orden inverso (más recientes primero)
-            for (let i = messages.length - 1; i >= 0; i--) {
+            // Agregar mensajes anteriores en orden cronológico
+            for (let i = 0; i < messages.length; i++) {
                 const msg = messages[i];
                 let messageText = '';
                 
@@ -867,8 +879,15 @@
                     break;
                 }
                 
-                history = messageText + history;
+                history += messageText;
                 tokenCount += messageTokens;
+            }
+            
+            // Agregar el nuevo mensaje del usuario al final
+            if (newMessage) {
+                const userMessage = `Usuario: ${newMessage}\n\nAsistente:`;
+                history += userMessage;
+                tokenCount += Math.ceil(userMessage.length / 4);
             }
             
             return history;
