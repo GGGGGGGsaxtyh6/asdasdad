@@ -450,12 +450,15 @@
                 </div>
                 
                 <div class="model-info">
-                    <strong>Memoria de Conversación:</strong><br>
+                    <strong>🧠 Memoria de Conversación:</strong><br>
                     <div style="margin-top: 8px;">
                         <div style="background: #e9ecef; border-radius: 4px; height: 8px; margin-bottom: 4px;">
                             <div id="memoryBar" style="background: #28a745; height: 100%; border-radius: 4px; width: 0%; transition: width 0.3s;"></div>
                         </div>
                         <small id="memoryText">0% usado</small>
+                        <div style="margin-top: 4px; font-size: 10px; color: #666;">
+                            <span id="memoryStatus">✅ Memoria activa</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -732,6 +735,13 @@
                 updateConversationsList();
             }
             
+            // Mostrar confirmación de memoria activa
+            if (conversation.messages.length > 1) {
+                const memoryStatus = document.getElementById('memoryStatus');
+                memoryStatus.textContent = '🔄 Procesando con memoria...';
+                memoryStatus.style.color = '#667eea';
+            }
+            
             // Mostrar indicador de carga
             showLoading(true);
             isGenerating = true;
@@ -769,7 +779,12 @@
 
         async function getResponse(message, options) {
             try {
-                const response = await puter.ai.chat(message, options);
+                // Construir el contexto completo de la conversación
+                const conversation = conversations[currentConversationId];
+                const conversationHistory = buildConversationHistory(conversation);
+                
+                // Enviar el historial completo al modelo
+                const response = await puter.ai.chat(conversationHistory, options);
                 const assistantMessage = addMessageToConversation('assistant', response);
                 addMessageToUI('assistant', response, assistantMessage.id);
                 updateStats();
@@ -780,12 +795,17 @@
 
         async function streamResponse(message, options) {
             try {
-                const response = await puter.ai.chat(message, { ...options, stream: true });
+                // Construir el contexto completo de la conversación
+                const conversation = conversations[currentConversationId];
+                const conversationHistory = buildConversationHistory(conversation);
                 
                 // Crear mensaje vacío para la respuesta
                 const messageId = 'msg_' + Date.now();
                 const assistantMessage = addMessageToConversation('assistant', '', messageId);
                 addMessageToUI('assistant', '', messageId);
+                
+                // Enviar el historial completo al modelo con streaming
+                const response = await puter.ai.chat(conversationHistory, { ...options, stream: true });
                 
                 let fullResponse = '';
                 for await (const part of response) {
@@ -803,6 +823,56 @@
         }
 
         // ===== FUNCIONES AUXILIARES =====
+
+        function buildConversationHistory(conversation) {
+            if (!conversation || !conversation.messages) return '';
+            
+            let history = '';
+            let tokenCount = 0;
+            const maxTokens = MAX_TOKENS_PER_CONVERSATION - 1000; // Dejar margen para la respuesta
+            
+            // Agregar mensaje del sistema inicial
+            const systemPrompt = 'Eres un asistente de IA útil y amigable. Responde en español y mantén el contexto de la conversación. Recuerda todo lo que hemos hablado anteriormente.\n\n';
+            history += systemPrompt;
+            tokenCount += Math.ceil(systemPrompt.length / 4);
+            
+            // Agregar mensajes de la conversación (empezando por los más recientes para mantener el contexto)
+            const messages = conversation.messages.slice(); // Copia del array
+            const newMessage = document.getElementById('chatInput').value.trim();
+            
+            // Agregar el nuevo mensaje del usuario
+            if (newMessage) {
+                const userMessage = `Usuario: ${newMessage}\n\nAsistente:`;
+                history += userMessage;
+                tokenCount += Math.ceil(userMessage.length / 4);
+            }
+            
+            // Agregar mensajes anteriores en orden inverso (más recientes primero)
+            for (let i = messages.length - 1; i >= 0; i--) {
+                const msg = messages[i];
+                let messageText = '';
+                
+                if (msg.type === 'user') {
+                    messageText = `Usuario: ${msg.content}\n\n`;
+                } else if (msg.type === 'assistant') {
+                    messageText = `Asistente: ${msg.content}\n\n`;
+                } else if (msg.type === 'system') {
+                    messageText = `Sistema: ${msg.content}\n\n`;
+                }
+                
+                const messageTokens = Math.ceil(messageText.length / 4);
+                
+                // Si agregar este mensaje excedería el límite, parar aquí
+                if (tokenCount + messageTokens > maxTokens) {
+                    break;
+                }
+                
+                history = messageText + history;
+                tokenCount += messageTokens;
+            }
+            
+            return history;
+        }
 
         function addMessageToConversation(type, content, messageId = null) {
             if (!currentConversationId || !conversations[currentConversationId]) return null;
@@ -873,6 +943,7 @@
             const memoryPercentage = Math.min((tokenCount / MAX_TOKENS_PER_CONVERSATION) * 100, 100);
             const memoryBar = document.getElementById('memoryBar');
             const memoryText = document.getElementById('memoryText');
+            const memoryStatus = document.getElementById('memoryStatus');
             
             memoryBar.style.width = memoryPercentage + '%';
             memoryText.textContent = Math.round(memoryPercentage) + '% usado';
@@ -880,10 +951,21 @@
             // Cambiar color según el nivel de memoria
             if (memoryPercentage < 50) {
                 memoryBar.style.background = '#28a745';
+                memoryStatus.textContent = '✅ Memoria activa';
+                memoryStatus.style.color = '#28a745';
             } else if (memoryPercentage < 80) {
                 memoryBar.style.background = '#ffc107';
+                memoryStatus.textContent = '⚠️ Memoria alta';
+                memoryStatus.style.color = '#ffc107';
             } else {
                 memoryBar.style.background = '#dc3545';
+                memoryStatus.textContent = '🚨 Límite cercano';
+                memoryStatus.style.color = '#dc3545';
+            }
+            
+            // Mostrar estado de la memoria
+            if (messageCount > 0) {
+                memoryStatus.textContent += ` (${messageCount} mensajes recordados)`;
             }
             
             // Actualizar indicador de memoria en la lista
