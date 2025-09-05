@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "call-of-war": {
+      "command": "python3",
+      "args": ["/workspace/mcp_server.py"],
+      "env": {
+        "PYTHONPATH": "/workspace"
+      }
+    }
+  }
+}

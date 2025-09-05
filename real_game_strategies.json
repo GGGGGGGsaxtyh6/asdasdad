@@ -1,0 +1,289 @@
+{
+  "game_id": "10477434",
+  "turn": 1,
+  "phase": "movement",
+  "timestamp": "2025-09-05T22:44:45.108227",
+  "countries": [
+    {
+      "name": "País 1",
+      "id": "country_1",
+      "player": "ranvfy",
+      "is_ai": false,
+      "military_power": 98.248,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 7,
+          "health": 86,
+          "location": "City_1_infantry"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 10,
+          "health": 86,
+          "location": "City_1_armor"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 7,
+          "health": 82,
+          "location": "City_1_air"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 10,
+          "health": 93,
+          "location": "City_1_navy"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 6,
+          "health": 87,
+          "location": "City_1_artillery"
+        },
+        {
+          "name": "Anti-Air Battery",
+          "type": "anti_air",
+          "count": 6,
+          "health": 88,
+          "location": "City_1_anti_air"
+        },
+        {
+          "name": "Anti-Tank Unit",
+          "type": "anti_tank",
+          "count": 8,
+          "health": 87,
+          "location": "City_1_anti_tank"
+        }
+      ],
+      "resources": {
+        "oil": 109,
+        "metal": 155,
+        "rare_materials": 74,
+        "manpower": 214
+      },
+      "cities": [
+        "Capital_País 1",
+        "Industrial_País 1",
+        "Port_País 1",
+        "Military_País 1"
+      ]
+    },
+    {
+      "name": "País 2",
+      "id": "country_2",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 123.61599999999999,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 8,
+          "health": 89,
+          "location": "City_2_infantry"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 12,
+          "health": 80,
+          "location": "City_2_armor"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 12,
+          "health": 100,
+          "location": "City_2_air"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 8,
+          "health": 94,
+          "location": "City_2_navy"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 7,
+          "health": 79,
+          "location": "City_2_artillery"
+        },
+        {
+          "name": "Anti-Air Battery",
+          "type": "anti_air",
+          "count": 9,
+          "health": 85,
+          "location": "City_2_anti_air"
+        },
+        {
+          "name": "Anti-Tank Unit",
+          "type": "anti_tank",
+          "count": 8,
+          "health": 97,
+          "location": "City_2_anti_tank"
+        }
+      ],
+      "resources": {
+        "oil": 148,
+        "metal": 210,
+        "rare_materials": 80,
+        "manpower": 298
+      },
+      "cities": [
+        "Capital_País 2",
+        "Industrial_País 2",
+        "Port_País 2"
+      ]
+    },
+    {
+      "name": "País 3",
+      "id": "country_3",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 155.55,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 9,
+          "health": 96,
+          "location": "City_3_infantry"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 11,
+          "health": 90,
+          "location": "City_3_armor"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 13,
+          "health": 92,
+          "location": "City_3_air"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 12,
+          "health": 91,
+          "location": "City_3_navy"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 13,
+          "health": 90,
+          "location": "City_3_artillery"
+        },
+        {
+          "name": "Anti-Air Battery",
+          "type": "anti_air",
+          "count": 10,
+          "health": 87,
+          "location": "City_3_anti_air"
+        },
+        {
+          "name": "Anti-Tank Unit",
+          "type": "anti_tank",
+          "count": 12,
+          "health": 96,
+          "location": "City_3_anti_tank"
+        }
+      ],
+      "resources": {
+        "oil": 176,
+        "metal": 227,
+        "rare_materials": 86,
+        "manpower": 328
+      },
+      "cities": [
+        "Capital_País 3",
+        "Industrial_País 3",
+        "Port_País 3",
+        "Military_País 3",
+        "Resource_País 3"
+      ]
+    },
+    {
+      "name": "País 4",
+      "id": "country_4",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 175.07300000000004,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 12,
+          "health": 92,
+          "location": "City_4_infantry"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 13,
+          "health": 97,
+          "location": "City_4_armor"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 13,
+          "health": 99,
+          "location": "City_4_air"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 12,
+          "health": 96,
+          "location": "City_4_navy"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 15,
+          "health": 87,
+          "location": "City_4_artillery"
+        },
+        {
+          "name": "Anti-Air Battery",
+          "type": "anti_air",
+          "count": 12,
+          "health": 88,
+          "location": "City_4_anti_air"
+        },
+        {
+          "name": "Anti-Tank Unit",
+          "type": "anti_tank",
+          "count": 13,
+          "health": 89,
+          "location": "City_4_anti_tank"
+        }
+      ],
+      "resources": {
+        "oil": 205,
+        "metal": 293,
+        "rare_materials": 118,
+        "manpower": 379
+      },
+      "cities": [
+        "Capital_País 4",
+        "Industrial_País 4",
+        "Port_País 4",
+        "Military_País 4",
+        "Resource_País 4"
+      ]
+    }
+  ]
+}

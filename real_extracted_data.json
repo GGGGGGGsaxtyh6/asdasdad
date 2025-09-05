@@ -1,0 +1,293 @@
+{
+  "game_id": "10477434",
+  "turn": 1,
+  "phase": "movement",
+  "timestamp": "2025-09-05T22:32:57.310827",
+  "countries": [
+    {
+      "name": "United States",
+      "id": "usa",
+      "player": "ranvfy",
+      "is_ai": false,
+      "military_power": 94.82,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 15,
+          "health": 92.0,
+          "location": "Washington"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 8,
+          "health": 88.0,
+          "location": "New York"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 12,
+          "health": 95.0,
+          "location": "Los Angeles"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 10,
+          "health": 90.0,
+          "location": "San Diego"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 6,
+          "health": 85.0,
+          "location": "Chicago"
+        }
+      ],
+      "resources": {
+        "oil": 200,
+        "metal": 300,
+        "rare_materials": 150,
+        "manpower": 400
+      },
+      "cities": [
+        "Washington",
+        "New York",
+        "Los Angeles",
+        "Chicago",
+        "San Diego"
+      ]
+    },
+    {
+      "name": "Soviet Union",
+      "id": "ussr",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 124.748,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 20,
+          "health": 85.0,
+          "location": "Moscow"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 12,
+          "health": 80.0,
+          "location": "Stalingrad"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 15,
+          "health": 82.0,
+          "location": "Leningrad"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 8,
+          "health": 75.0,
+          "location": "Vladivostok"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 18,
+          "health": 88.0,
+          "location": "Kiev"
+        }
+      ],
+      "resources": {
+        "oil": 350,
+        "metal": 450,
+        "rare_materials": 200,
+        "manpower": 600
+      },
+      "cities": [
+        "Moscow",
+        "Stalingrad",
+        "Leningrad",
+        "Kiev",
+        "Minsk"
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "id": "uk",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 109.622,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 12,
+          "health": 90.0,
+          "location": "London"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 6,
+          "health": 85.0,
+          "location": "Manchester"
+        },
+        {
+          "name": "RAF Squadron",
+          "type": "air",
+          "count": 16,
+          "health": 92.0,
+          "location": "Birmingham"
+        },
+        {
+          "name": "Royal Navy Fleet",
+          "type": "navy",
+          "count": 14,
+          "health": 95.0,
+          "location": "Portsmouth"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 8,
+          "health": 87.0,
+          "location": "Liverpool"
+        }
+      ],
+      "resources": {
+        "oil": 180,
+        "metal": 220,
+        "rare_materials": 120,
+        "manpower": 350
+      },
+      "cities": [
+        "London",
+        "Manchester",
+        "Birmingham",
+        "Liverpool",
+        "Bristol"
+      ]
+    },
+    {
+      "name": "Japan",
+      "id": "japan",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 116.97399999999999,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 10,
+          "health": 85.0,
+          "location": "Tokyo"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 7,
+          "health": 80.0,
+          "location": "Osaka"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 18,
+          "health": 90.0,
+          "location": "Nagoya"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 16,
+          "health": 92.0,
+          "location": "Yokohama"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 9,
+          "health": 83.0,
+          "location": "Kyoto"
+        }
+      ],
+      "resources": {
+        "oil": 120,
+        "metal": 180,
+        "rare_materials": 90,
+        "manpower": 250
+      },
+      "cities": [
+        "Tokyo",
+        "Osaka",
+        "Nagoya",
+        "Kyoto",
+        "Hiroshima"
+      ]
+    },
+    {
+      "name": "France",
+      "id": "france",
+      "player": "AI",
+      "is_ai": true,
+      "military_power": 44.959999999999994,
+      "troops": [
+        {
+          "name": "Infantry Division",
+          "type": "infantry",
+          "count": 8,
+          "health": 80.0,
+          "location": "Paris"
+        },
+        {
+          "name": "Tank Division",
+          "type": "armor",
+          "count": 4,
+          "health": 75.0,
+          "location": "Lyon"
+        },
+        {
+          "name": "Air Squadron",
+          "type": "air",
+          "count": 6,
+          "health": 78.0,
+          "location": "Marseille"
+        },
+        {
+          "name": "Naval Fleet",
+          "type": "navy",
+          "count": 5,
+          "health": 80.0,
+          "location": "Toulon"
+        },
+        {
+          "name": "Artillery Battery",
+          "type": "artillery",
+          "count": 5,
+          "health": 82.0,
+          "location": "Lille"
+        }
+      ],
+      "resources": {
+        "oil": 100,
+        "metal": 150,
+        "rare_materials": 80,
+        "manpower": 200
+      },
+      "cities": [
+        "Paris",
+        "Lyon",
+        "Marseille",
+        "Lille",
+        "Toulon"
+      ]
+    }
+  ]
+}
