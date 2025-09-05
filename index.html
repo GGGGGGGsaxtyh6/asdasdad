@@ -783,33 +783,66 @@
             }
         }
 
+        // ===== SISTEMA DE MODELOS Y BÚSQUEDA =====
+        
+        function loadModels() {
+            const modelSelect = document.getElementById('modelSelect');
+            modelSelect.innerHTML = '';
+            
+            filteredModels.forEach(model => {
+                const option = document.createElement('option');
+                option.value = model.id;
+                option.textContent = `${model.name} (${model.category})`;
+                option.title = model.description;
+                modelSelect.appendChild(option);
+            });
+            
+            // Seleccionar el primer modelo por defecto
+            if (filteredModels.length > 0) {
+                modelSelect.selectedIndex = 0;
+            }
+            
+            updateModelCount();
+        }
+        
+        function filterModels() {
+            const searchTerm = document.getElementById('modelSearch').value.toLowerCase();
+            
+            if (searchTerm === '') {
+                filteredModels = [...allModels];
+            } else {
+                filteredModels = allModels.filter(model => 
+                    model.name.toLowerCase().includes(searchTerm) ||
+                    model.category.toLowerCase().includes(searchTerm) ||
+                    model.description.toLowerCase().includes(searchTerm)
+                );
+            }
+            
+            loadModels();
+        }
+        
+        function updateModelCount() {
+            const modelCount = document.getElementById('modelCount');
+            modelCount.textContent = filteredModels.length;
+        }
+        
         function updateModelInfo() {
             const modelSelect = document.getElementById('modelSelect');
             const currentModelSpan = document.getElementById('currentModel');
-            const selectedOption = modelSelect.options[modelSelect.selectedIndex];
+            const selectedIndex = modelSelect.selectedIndex;
             
-            currentModelSpan.textContent = selectedOption.text;
-            
-            // Actualizar información del modelo
-            const modelInfo = document.querySelector('.model-info');
-            const modelDescriptions = {
-                'Meta Llama 3.1 (8B)': 'Rápido, eficiente, bueno para tareas generales',
-                'Claude 3.5 Sonnet': 'Excelente para análisis complejo y razonamiento',
-                'GPT-4o Mini': 'Equilibrio perfecto entre velocidad y calidad',
-                'Gemini 2.5 Flash': 'Muy rápido, ideal para respuestas rápidas',
-                'Mistral 7B': 'Compacto pero potente, bueno para código',
-                'DeepSeek Chat': 'Especializado en programación y matemáticas',
-                'Qwen 2.5 (72B)': 'Modelo grande, excelente para tareas complejas',
-                'Cohere Command R+': 'Bueno para análisis de texto y resúmenes',
-                'Llama 3.1 (70B)': 'Modelo grande, muy capaz para tareas complejas',
-                'Claude 3 Haiku': 'Rápido y eficiente, bueno para respuestas cortas'
-            };
-            
-            const description = modelDescriptions[selectedOption.text] || 'Modelo de IA avanzado';
-            modelInfo.innerHTML = `
-                <strong>Modelo actual:</strong> ${selectedOption.text}<br>
-                <strong>Características:</strong> ${description}
-            `;
+            if (selectedIndex >= 0 && selectedIndex < filteredModels.length) {
+                const selectedModel = filteredModels[selectedIndex];
+                currentModelSpan.textContent = selectedModel.name;
+                
+                // Actualizar información del modelo
+                const modelInfo = document.querySelector('.model-info');
+                modelInfo.innerHTML = `
+                    <strong>Modelo actual:</strong> ${selectedModel.name}<br>
+                    <strong>Categoría:</strong> ${selectedModel.category}<br>
+                    <strong>Descripción:</strong> ${selectedModel.description}
+                `;
+            }
         }
 
         async function sendMessage() {
@@ -895,21 +928,41 @@
                 // Enviar el historial completo al modelo
                 const response = await puter.ai.chat(conversationHistory, options);
                 
-                // Limpiar la respuesta para asegurar que sea del asistente
+                // LIMPIAR RESPUESTA COMPLETAMENTE
                 let cleanResponse = response.trim();
                 
-                // Remover prefijos que puedan confundir el rol
+                // Remover TODOS los prefijos
                 cleanResponse = cleanResponse.replace(/^(Usuario:|Asistente:|Sistema:)\s*/gm, '');
                 
-                // Validar que la respuesta sea del asistente
-                if (cleanResponse.includes('Mi nombre es') || cleanResponse.includes('Tengo') || cleanResponse.includes('Me gusta') || 
-                    cleanResponse.startsWith('Soy') || cleanResponse.startsWith('Tengo') || cleanResponse.startsWith('Me llamo')) {
+                // DETECTAR Y CORREGIR RESPUESTAS INCORRECTAS
+                const userPatterns = [
+                    /^Mi nombre es/i,
+                    /^Tengo \d+/i,
+                    /^Me gusta/i,
+                    /^Soy \w+/i,
+                    /^Me llamo/i,
+                    /^Tengo \w+/i,
+                    /^Vivo en/i,
+                    /^Trabajo en/i
+                ];
+                
+                let isUserResponse = false;
+                for (const pattern of userPatterns) {
+                    if (pattern.test(cleanResponse)) {
+                        isUserResponse = true;
+                        break;
+                    }
+                }
+                
+                if (isUserResponse) {
+                    // Si parece respuesta del usuario, convertirla en respuesta del asistente
+                    cleanResponse = cleanResponse.replace(/^(Mi nombre es|Tengo|Me gusta|Soy|Me llamo|Vivo en|Trabajo en)/i, 'Entiendo que');
                     cleanResponse = 'Entiendo. ' + cleanResponse;
                 }
                 
-                // Asegurar que la respuesta termine con punto si no lo tiene
-                if (!cleanResponse.endsWith('.') && !cleanResponse.endsWith('!') && !cleanResponse.endsWith('?')) {
-                    cleanResponse += '.';
+                // Asegurar que empiece como asistente
+                if (!cleanResponse.startsWith('Entiendo') && !cleanResponse.startsWith('Hola') && !cleanResponse.startsWith('Sí') && !cleanResponse.startsWith('No')) {
+                    cleanResponse = 'Entiendo. ' + cleanResponse;
                 }
                 
                 const assistantMessage = addMessageToConversation('assistant', cleanResponse);
@@ -944,15 +997,36 @@
                         // Limpiar prefijos incorrectos
                         text = text.replace(/^(Usuario:|Asistente:|Sistema:)\s*/gm, '');
                         
-                        // Si es el primer fragmento y parece ser del usuario, agregar prefijo
-                        if (isFirstPart && (text.includes('Mi nombre es') || text.includes('Tengo') || text.includes('Me gusta'))) {
-                            text = 'Entiendo. ' + text;
-                            isFirstPart = false;
+                        fullResponse += text;
+                        
+                        // Limpiar la respuesta completa en cada actualización
+                        let cleanFullResponse = fullResponse.trim();
+                        cleanFullResponse = cleanFullResponse.replace(/^(Usuario:|Asistente:|Sistema:)\s*/gm, '');
+                        
+                        // Detectar y corregir respuestas incorrectas
+                        const userPatterns = [
+                            /^Mi nombre es/i,
+                            /^Tengo \d+/i,
+                            /^Me gusta/i,
+                            /^Soy \w+/i,
+                            /^Me llamo/i
+                        ];
+                        
+                        let isUserResponse = false;
+                        for (const pattern of userPatterns) {
+                            if (pattern.test(cleanFullResponse)) {
+                                isUserResponse = true;
+                                break;
+                            }
                         }
                         
-                        fullResponse += text;
-                        updateMessageInConversation(messageId, fullResponse);
-                        updateMessageInUI(messageId, fullResponse);
+                        if (isUserResponse) {
+                            cleanFullResponse = cleanFullResponse.replace(/^(Mi nombre es|Tengo|Me gusta|Soy|Me llamo)/i, 'Entiendo que');
+                            cleanFullResponse = 'Entiendo. ' + cleanFullResponse;
+                        }
+                        
+                        updateMessageInConversation(messageId, cleanFullResponse);
+                        updateMessageInUI(messageId, cleanFullResponse);
                     }
                 }
                 
@@ -969,32 +1043,31 @@
             
             let history = '';
             let tokenCount = 0;
-            const maxTokens = MAX_TOKENS_PER_CONVERSATION - 1000; // Dejar margen para la respuesta
+            const maxTokens = MAX_TOKENS_PER_CONVERSATION - 1000;
             
-            // Agregar mensaje del sistema inicial más específico
-            const systemPrompt = `Eres un asistente de IA útil y amigable. Tu nombre es Asistente IA.
+            // PROMPT DEL SISTEMA MUY ESPECÍFICO
+            const systemPrompt = `Eres un asistente de IA. Tu trabajo es responder preguntas y ayudar al usuario. 
 
-INSTRUCCIONES IMPORTANTES:
-- SIEMPRE responde como asistente de IA
-- NUNCA te hagas pasar por el usuario
-- Mantén el contexto de la conversación
-- Responde en español
-- Recuerda todo lo que hemos hablado anteriormente
+REGLAS ESTRICTAS:
+1. NUNCA te hagas pasar por el usuario
+2. NUNCA digas "Mi nombre es..." o "Tengo..." o "Me gusta..."
+3. SIEMPRE responde como asistente de IA
+4. Si el usuario te dice algo sobre sí mismo, responde reconociendo esa información
+5. Mantén el contexto de la conversación
 
-FORMATO DE CONVERSACIÓN:
-- Usuario: [mensaje del usuario]
-- Asistente: [tu respuesta como asistente]
+EJEMPLO CORRECTO:
+Usuario: "Mi nombre es Juan"
+Asistente: "Hola Juan, es un placer conocerte. ¿En qué puedo ayudarte hoy?"
 
-CONVERSACIÓN ANTERIOR:
+CONVERSACIÓN:
 `;
             history += systemPrompt;
             tokenCount += Math.ceil(systemPrompt.length / 4);
             
-            // Agregar mensajes de la conversación en orden cronológico
-            const messages = conversation.messages.slice(); // Copia del array
+            // Agregar mensajes anteriores
+            const messages = conversation.messages.slice();
             const newMessage = document.getElementById('chatInput').value.trim();
             
-            // Agregar mensajes anteriores en orden cronológico
             for (let i = 0; i < messages.length; i++) {
                 const msg = messages[i];
                 let messageText = '';
@@ -1008,21 +1081,15 @@ CONVERSACIÓN ANTERIOR:
                 }
                 
                 const messageTokens = Math.ceil(messageText.length / 4);
-                
-                // Si agregar este mensaje excedería el límite, parar aquí
-                if (tokenCount + messageTokens > maxTokens) {
-                    break;
-                }
+                if (tokenCount + messageTokens > maxTokens) break;
                 
                 history += messageText;
                 tokenCount += messageTokens;
             }
             
-            // Agregar el nuevo mensaje del usuario al final
+            // Agregar el nuevo mensaje
             if (newMessage) {
-                const userMessage = `Usuario: ${newMessage}\nAsistente:`;
-                history += userMessage;
-                tokenCount += Math.ceil(userMessage.length / 4);
+                history += `Usuario: ${newMessage}\nAsistente:`;
             }
             
             return history;
