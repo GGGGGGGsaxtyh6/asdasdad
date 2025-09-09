@@ -1,0 +1,8 @@
+# Sample NTLM Authentication Challenge
+# Format: Usuario::Dominio:Desafío del servidor:HMAC-MD5 (NTProofStr):NTLMv2Response
+
+# Example NTLMv2 hash format:
+# username::domain:server_challenge:ntproofstr:ntlmv2_response
+
+# Sample challenge data (this would be in the actual challenge file):
+admin::WORKGROUP:1122334455667788:aad3b435b51404eeaad3b435b51404ee:1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef
