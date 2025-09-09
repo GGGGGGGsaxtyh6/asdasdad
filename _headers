@@ -1,0 +1,13 @@
+# Headers personalizados para ocultar GitHub Pages
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Server: nginx/1.18.0
+  X-Powered-By: PHP/8.1.0
+  Cache-Control: public, max-age=3600
+  X-GitHub-Request-Id: 
+  X-Served-By: 
+  X-Cache: 
+  X-Timer: 
+  X-Fastly-Request-Id: 
