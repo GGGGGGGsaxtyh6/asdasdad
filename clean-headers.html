@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ocultar GitHub Pages</title>
+    <script>
+        // Script para limpiar referencias a GitHub en el DOM
+        document.addEventListener('DOMContentLoaded', function() {
+            // Eliminar cualquier referencia visible a GitHub
+            const elements = document.querySelectorAll('*');
+            elements.forEach(el => {
+                if (el.textContent && el.textContent.includes('github')) {
+                    el.textContent = el.textContent.replace(/github/gi, '');
+                }
+            });
+            
+            // Limpiar console logs
+            console.clear();
+            
+            // Ocultar información del navegador
+            Object.defineProperty(navigator, 'webdriver', {
+                get: () => undefined,
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- Tu contenido aquí -->
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Ocultar información del servidor
+ServerTokens Prod
+ServerSignature Off
+
+# Eliminar headers específicos
+<IfModule mod_headers.c>
+    Header unset X-GitHub-Request-Id
+    Header unset X-Served-By
+    Header unset X-Cache
+    Header unset X-Timer
+    Header unset X-Fastly-Request-Id
+    Header unset X-GitHub-Request-Id
+    
+    # Agregar headers falsos
+    Header set Server "nginx/1.18.0"
+    Header set X-Powered-By "PHP/8.1.0"
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# Ocultar archivos sensibles
+<Files "CNAME">
+    Order allow,deny
+    Deny from all
+</Files>
+
+<Files ".git">
+    Order allow,deny
+    Deny from all
+</Files>
