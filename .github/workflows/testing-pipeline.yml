@@ -1,0 +1,455 @@
+name: ECI Testing Automation Pipeline
+
+on:
+  push:
+    branches: [ main, develop, feature/* ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    - cron: '0 2 * * *'  # Daily at 2 AM
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to test'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+        - dev
+        - staging
+        - production
+      test_suite:
+        description: 'Test suite to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - api
+        - contract
+        - integration
+        - performance
+
+env:
+  PYTHON_VERSION: '3.11'
+  NODE_VERSION: '18'
+  DOCKER_BUILDKIT: 1
+
+jobs:
+  # Job de preparación del entorno
+  setup:
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.set-env.outputs.environment }}
+      test-suite: ${{ steps.set-env.outputs.test-suite }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set environment variables
+        id: set-env
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "environment=${{ github.event.inputs.environment }}" >> $GITHUB_OUTPUT
+            echo "test-suite=${{ github.event.inputs.test_suite }}" >> $GITHUB_OUTPUT
+          else
+            echo "environment=dev" >> $GITHUB_OUTPUT
+            echo "test-suite=all" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Cache Python dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Cache Node dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Create test environment file
+        run: |
+          cp .env.example .env
+          echo "ENVIRONMENT=${{ steps.set-env.outputs.environment }}" >> .env
+          echo "API_BASE_URL=https://api-${{ steps.set-env.outputs.environment }}.eci.com" >> .env
+
+  # Job de linting y validación de código
+  lint:
+    runs-on: ubuntu-latest
+    needs: setup
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Black formatter check
+        run: black --check --diff .
+
+      - name: Run isort import sorting check
+        run: isort --check-only --diff .
+
+      - name: Run Flake8 linter
+        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Run MyPy type checker
+        run: mypy . --ignore-missing-imports
+
+      - name: Run security check with bandit
+        run: |
+          pip install bandit
+          bandit -r . -f json -o bandit-report.json || true
+
+  # Job de tests unitarios
+  unit-tests:
+    runs-on: ubuntu-latest
+    needs: [setup, lint]
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.12']
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run unit tests
+        run: |
+          pytest api_testing/ -v --cov=api_testing --cov-report=xml --cov-report=html --junitxml=unit-test-results.xml
+
+      - name: Upload unit test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: unit-test-results-${{ matrix.python-version }}
+          path: |
+            unit-test-results.xml
+            htmlcov/
+            coverage.xml
+
+  # Job de tests de API
+  api-tests:
+    runs-on: ubuntu-latest
+    needs: [setup, lint]
+    if: ${{ needs.setup.outputs.test-suite == 'all' || needs.setup.outputs.test-suite == 'api' }}
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: eci_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+      redis:
+        image: redis:7
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 6379:6379
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Wait for services
+        run: |
+          sleep 10
+          python -c "import psycopg2; psycopg2.connect(host='localhost', port=5432, database='eci_test', user='postgres', password='postgres')"
+          python -c "import redis; r = redis.Redis(host='localhost', port=6379); r.ping()"
+
+      - name: Run API tests
+        run: |
+          pytest api_testing/ -v --html=api-test-results.html --self-contained-html --junitxml=api-test-results.xml
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/eci_test
+          REDIS_URL: redis://localhost:6379/0
+
+      - name: Upload API test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: api-test-results
+          path: |
+            api-test-results.html
+            api-test-results.xml
+
+  # Job de tests de contratos
+  contract-tests:
+    runs-on: ubuntu-latest
+    needs: [setup, lint]
+    if: ${{ needs.setup.outputs.test-suite == 'all' || needs.setup.outputs.test-suite == 'contract' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Start Pact Broker (Mock)
+        run: |
+          docker run -d --name pact-broker -p 9292:9292 pactfoundation/pact-broker:latest
+          sleep 10
+
+      - name: Run contract tests
+        run: |
+          pytest contract_testing/ -v --html=contract-test-results.html --self-contained-html --junitxml=contract-test-results.xml
+
+      - name: Upload contract test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: contract-test-results
+          path: |
+            contract-test-results.html
+            contract-test-results.xml
+
+      - name: Cleanup Pact Broker
+        if: always()
+        run: |
+          docker stop pact-broker
+          docker rm pact-broker
+
+  # Job de tests de integración
+  integration-tests:
+    runs-on: ubuntu-latest
+    needs: [setup, lint]
+    if: ${{ needs.setup.outputs.test-suite == 'all' || needs.setup.outputs.test-suite == 'integration' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run integration tests
+        run: |
+          pytest integration/ -v --html=integration-test-results.html --self-contained-html --junitxml=integration-test-results.xml
+
+      - name: Upload integration test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: integration-test-results
+          path: |
+            integration-test-results.html
+            integration-test-results.xml
+
+  # Job de tests de rendimiento
+  performance-tests:
+    runs-on: ubuntu-latest
+    needs: [setup, lint]
+    if: ${{ needs.setup.outputs.test-suite == 'all' || needs.setup.outputs.test-suite == 'performance' }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run performance tests
+        run: |
+          pytest api_testing/ -k "performance" -v --html=performance-test-results.html --self-contained-html --junitxml=performance-test-results.xml
+
+      - name: Upload performance test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: performance-test-results
+          path: |
+            performance-test-results.html
+            performance-test-results.xml
+
+  # Job de generación de reportes
+  generate-reports:
+    runs-on: ubuntu-latest
+    needs: [setup, unit-tests, api-tests, contract-tests, integration-tests, performance-tests]
+    if: always()
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Download all test results
+        uses: actions/download-artifact@v3
+
+      - name: Generate consolidated report
+        run: |
+          python scripts/generate_consolidated_report.py
+
+      - name: Upload consolidated report
+        uses: actions/upload-artifact@v3
+        with:
+          name: consolidated-test-report
+          path: |
+            reports/
+            consolidated-report.html
+
+  # Job de notificaciones
+  notify:
+    runs-on: ubuntu-latest
+    needs: [setup, generate-reports]
+    if: always()
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Send Slack notification
+        if: env.SLACK_WEBHOOK_URL
+        run: |
+          python scripts/send_slack_notification.py
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      - name: Create Jira issues for failures
+        if: failure()
+        run: |
+          python scripts/create_jira_issues.py
+        env:
+          JIRA_URL: ${{ secrets.JIRA_URL }}
+          JIRA_USERNAME: ${{ secrets.JIRA_USERNAME }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+
+      - name: Update Confluence documentation
+        if: success()
+        run: |
+          python scripts/update_confluence_docs.py
+        env:
+          CONFLUENCE_URL: ${{ secrets.CONFLUENCE_URL }}
+          CONFLUENCE_USERNAME: ${{ secrets.CONFLUENCE_USERNAME }}
+          CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
+
+  # Job de despliegue (solo en main)
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [setup, unit-tests, api-tests, contract-tests, integration-tests, performance-tests]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    environment: production
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Registry
+        uses: docker/login@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            eci-testing:${{ github.sha }}
+            eci-testing:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production environment"
+          # Aquí se implementaría la lógica de despliegue real

@@ -1,0 +1,33 @@
+{
+  "name": "eci-testing-automation",
+  "version": "1.0.0",
+  "description": "Framework de automatización de pruebas para ECI - CTO",
+  "main": "index.js",
+  "scripts": {
+    "test": "pytest",
+    "test:api": "pytest api-testing/",
+    "test:contract": "pytest contract-testing/",
+    "test:integration": "pytest integration/",
+    "test:all": "pytest --html=reports/report.html --self-contained-html",
+    "lint": "flake8 . && mypy .",
+    "format": "black . && isort .",
+    "postman": "newman run postman/collections/api-tests.json -e postman/environments/dev.json",
+    "contract:verify": "pact-verifier",
+    "report": "allure serve reports/allure-results",
+    "docker:build": "docker build -t eci-testing .",
+    "docker:run": "docker run --rm eci-testing"
+  },
+  "devDependencies": {
+    "newman": "^5.3.2"
+  },
+  "keywords": [
+    "testing",
+    "automation",
+    "api",
+    "contract-testing",
+    "eci",
+    "cto"
+  ],
+  "author": "ECI - CTO Team",
+  "license": "MIT"
+}

@@ -1,0 +1,54 @@
+# Core Testing Framework
+pytest>=7.4.0
+pytest-html>=4.1.0
+pytest-xdist>=3.3.0
+pytest-cov>=4.1.0
+pytest-mock>=3.12.0
+pytest-asyncio>=0.21.0
+
+# API Testing
+requests==2.31.0
+httpx==0.25.2
+responses==0.24.1
+jsonschema==4.20.0
+pydantic==2.5.0
+
+# Contract Testing
+pact-python==2.3.3
+pactman==2.31.0
+
+# Data Testing
+faker==20.1.0
+factory-boy==3.3.0
+
+# Reporting
+allure-pytest==2.13.2
+pytest-json-report==1.5.0
+
+# Jira Integration
+jira==3.5.2
+atlassian-python-api==3.41.0
+
+# Confluence Integration
+confluence-python-api==0.1.0
+
+# Database Testing
+sqlalchemy==2.0.23
+pytest-postgresql==5.0.0
+
+# Performance Testing
+locust==2.17.0
+pytest-benchmark==4.0.0
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0.1
+click==8.1.7
+rich==13.7.0
+loguru==0.7.2
+
+# Development
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+pre-commit==3.6.0
