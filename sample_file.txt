@@ -1,0 +1,10 @@
+Hello! This is a sample file created for uploading to gofile.io.
+
+This file contains:
+- Sample text content
+- Multiple lines
+- Special characters: áéíóú ñ
+- Numbers: 123456789
+- Date: 2024-01-15
+
+This file was created using an AI assistant and is ready for upload to gofile.io.
