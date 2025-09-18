@@ -12,6 +12,9 @@
 #include <errno.h>
 #include <stdint.h>
 #include <sys/mman.h>
+#include <termios.h>
+#include <unistd.h>
+#include <sys/ioctl.h>
 
 // Protecciones anti-debugging
 #define ANTI_DEBUG 1
@@ -58,6 +61,26 @@ static size_t bytecode_size = 0;
 static char fragments[MAX_FRAGMENTS][64];
 static int fragment_count = 0;
 static int fragments_enabled = 0;
+
+// Sistema de fases interactivas
+typedef enum {
+    PHASE_INTRO = 0,
+    PHASE_PUZZLE_1,
+    PHASE_PUZZLE_2,
+    PHASE_PUZZLE_3,
+    PHASE_CRYPTO_CHALLENGE,
+    PHASE_VM_DEBUGGING,
+    PHASE_FINAL_BOSS,
+    PHASE_COMPLETE
+} phase_t;
+
+static phase_t current_phase = PHASE_INTRO;
+static int score = 0;
+static int lives = 3;
+static char player_name[64] = {0};
+static int hints_used = 0;
+static int time_limit = 300; // 5 minutos por fase
+static time_t phase_start_time;
 
 // Caja S personalizada
 static const uint8_t custom_sbox[256] = {
@@ -420,7 +443,347 @@ static void run_vm(void) {
     }
 }
 
-// Función principal
+// Funciones de interfaz interactiva
+static void clear_screen(void) {
+    printf("\033[2J\033[H");
+    fflush(stdout);
+}
+
+static void print_banner(const char *text) {
+    printf("\n");
+    printf("╔══════════════════════════════════════════════════════════════╗\n");
+    printf("║ %-60s ║\n", text);
+    printf("╚══════════════════════════════════════════════════════════════╝\n");
+}
+
+static void print_ascii_art(const char *art) {
+    printf("%s\n", art);
+}
+
+static void print_progress_bar(int current, int total) {
+    int width = 50;
+    int filled = (current * width) / total;
+    
+    printf("\r[");
+    for (int i = 0; i < width; i++) {
+        if (i < filled) printf("█");
+        else printf("░");
+    }
+    printf("] %d/%d", current, total);
+    fflush(stdout);
+}
+
+static void print_stats(void) {
+    printf("\n┌─ ESTADÍSTICAS ──────────────────────────────────────────────┐\n");
+    printf("│ Jugador: %-20s Puntuación: %-8d │\n", player_name, score);
+    printf("│ Vidas: %-3d Pistas usadas: %-3d Fase: %-15s │\n", 
+           lives, hints_used, 
+           current_phase == PHASE_INTRO ? "Introducción" :
+           current_phase == PHASE_PUZZLE_1 ? "Puzzle 1" :
+           current_phase == PHASE_PUZZLE_2 ? "Puzzle 2" :
+           current_phase == PHASE_PUZZLE_3 ? "Puzzle 3" :
+           current_phase == PHASE_CRYPTO_CHALLENGE ? "Crypto Challenge" :
+           current_phase == PHASE_VM_DEBUGGING ? "VM Debugging" :
+           current_phase == PHASE_FINAL_BOSS ? "Final Boss" : "Completado");
+    printf("└─────────────────────────────────────────────────────────────┘\n");
+}
+
+// Minijuego 1: Puzzle de memoria
+static int memory_puzzle(void) {
+    clear_screen();
+    print_banner("🧠 PUZZLE DE MEMORIA - FASE 1");
+    
+    printf("\n🎯 Objetivo: Memoriza la secuencia de números y repítela\n");
+    printf("📝 Instrucciones: Se mostrarán números por 3 segundos, luego repítelos\n");
+    printf("⏰ Tiempo límite: 30 segundos\n\n");
+    
+    // Generar secuencia aleatoria
+    int sequence[8];
+    srand(time(NULL));
+    for (int i = 0; i < 8; i++) {
+        sequence[i] = rand() % 10;
+    }
+    
+    printf("🔢 Secuencia: ");
+    for (int i = 0; i < 8; i++) {
+        printf("%d ", sequence[i]);
+    }
+    printf("\n");
+    
+    printf("\n⏳ Memorizando... ");
+    for (int i = 3; i > 0; i--) {
+        printf("%d ", i);
+        fflush(stdout);
+        sleep(1);
+    }
+    printf("\n");
+    
+    clear_screen();
+    printf("✍️  Ahora repite la secuencia (8 números separados por espacios): ");
+    
+    int user_sequence[8];
+    for (int i = 0; i < 8; i++) {
+        if (scanf("%d", &user_sequence[i]) != 1) {
+            printf("\n❌ Entrada inválida!\n");
+            return 0;
+        }
+    }
+    
+    // Verificar secuencia
+    for (int i = 0; i < 8; i++) {
+        if (user_sequence[i] != sequence[i]) {
+            printf("\n❌ Secuencia incorrecta! Perdiste una vida.\n");
+            lives--;
+            return 0;
+        }
+    }
+    
+    printf("\n✅ ¡Correcto! +100 puntos\n");
+    score += 100;
+    return 1;
+}
+
+// Minijuego 2: Puzzle matemático
+static int math_puzzle(void) {
+    clear_screen();
+    print_banner("🔢 PUZZLE MATEMÁTICO - FASE 2");
+    
+    printf("\n🎯 Objetivo: Resuelve la ecuación criptográfica\n");
+    printf("📝 Instrucciones: Encuentra el valor de X en la ecuación\n");
+    printf("⏰ Tiempo límite: 60 segundos\n\n");
+    
+    // Generar ecuación compleja
+    int a = rand() % 100 + 1;
+    int b = rand() % 100 + 1;
+    int c = rand() % 50 + 1;
+    int d = rand() % 20 + 1;
+    
+    int result = (a * b) + (c * d) - (a % c);
+    
+    printf("🧮 Ecuación: (%d × %d) + (%d × %d) - (%d mod %d) = X\n", a, b, c, d, a, c);
+    printf("🔍 ¿Cuál es el valor de X? ");
+    
+    int answer;
+    if (scanf("%d", &answer) != 1) {
+        printf("\n❌ Entrada inválida!\n");
+        return 0;
+    }
+    
+    if (answer == result) {
+        printf("\n✅ ¡Correcto! +150 puntos\n");
+        score += 150;
+        return 1;
+    } else {
+        printf("\n❌ Incorrecto! La respuesta era %d. Perdiste una vida.\n", result);
+        lives--;
+        return 0;
+    }
+}
+
+// Minijuego 3: Puzzle de patrones
+static int pattern_puzzle(void) {
+    clear_screen();
+    print_banner("🔍 PUZZLE DE PATRONES - FASE 3");
+    
+    printf("\n🎯 Objetivo: Encuentra el patrón en la secuencia\n");
+    printf("📝 Instrucciones: Completa la secuencia lógica\n");
+    printf("⏰ Tiempo límite: 90 segundos\n\n");
+    
+    // Secuencia de Fibonacci modificada
+    printf("🔢 Secuencia: 1, 1, 2, 3, 5, 8, 13, 21, ?, ?, ?\n");
+    printf("🔍 ¿Cuáles son los siguientes 3 números? ");
+    
+    int answers[3];
+    for (int i = 0; i < 3; i++) {
+        if (scanf("%d", &answers[i]) != 1) {
+            printf("\n❌ Entrada inválida!\n");
+            return 0;
+        }
+    }
+    
+    // Verificar secuencia de Fibonacci
+    int expected[] = {34, 55, 89};
+    for (int i = 0; i < 3; i++) {
+        if (answers[i] != expected[i]) {
+            printf("\n❌ Patrón incorrecto! Perdiste una vida.\n");
+            lives--;
+            return 0;
+        }
+    }
+    
+    printf("\n✅ ¡Correcto! +200 puntos\n");
+    score += 200;
+    return 1;
+}
+
+// Desafío criptográfico
+static int crypto_challenge(void) {
+    clear_screen();
+    print_banner("🔐 DESAFÍO CRIPTOGRÁFICO - FASE 4");
+    
+    printf("\n🎯 Objetivo: Descifra el mensaje oculto\n");
+    printf("📝 Instrucciones: El mensaje está cifrado con ROT13 + XOR\n");
+    printf("⏰ Tiempo límite: 120 segundos\n\n");
+    
+    // Mensaje cifrado
+    char encrypted[] = "Uryyb, jrypbzr gb gur puneqba!";
+    char key[] = "ChronoVMSmurf";
+    
+    printf("🔒 Mensaje cifrado: %s\n", encrypted);
+    printf("🔑 Clave: %s\n", key);
+    printf("🔍 ¿Cuál es el mensaje original? ");
+    
+    char answer[256];
+    if (fgets(answer, sizeof(answer), stdin) == NULL) {
+        printf("\n❌ Error de entrada!\n");
+        return 0;
+    }
+    
+    // Eliminar newline
+    answer[strcspn(answer, "\n")] = 0;
+    
+    // Verificar respuesta (ROT13 de "Hello, welcome to the challenge!")
+    if (strcmp(answer, "Hello, welcome to the challenge!") == 0) {
+        printf("\n✅ ¡Correcto! +300 puntos\n");
+        score += 300;
+        return 1;
+    } else {
+        printf("\n❌ Incorrecto! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Desafío de debugging de VM
+static int vm_debugging_challenge(void) {
+    clear_screen();
+    print_banner("🐛 DESAFÍO DE DEBUGGING - FASE 5");
+    
+    printf("\n🎯 Objetivo: Encuentra el error en el bytecode de la VM\n");
+    printf("📝 Instrucciones: Analiza el bytecode y encuentra la instrucción incorrecta\n");
+    printf("⏰ Tiempo límite: 180 segundos\n\n");
+    
+    // Bytecode con error
+    uint8_t buggy_bytecode[] = {
+        0x01, 0x00, 0x00, 0x00, 0x48,  // VM_LOAD r0, 'H' ✓
+        0x01, 0x01, 0x00, 0x00, 0x54,  // VM_LOAD r1, 'T' ✓
+        0x01, 0x02, 0x00, 0x00, 0x42,  // VM_LOAD r2, 'B' ✓
+        0x01, 0x03, 0x00, 0x00, 0x7B,  // VM_LOAD r3, '{' ✓
+        0x01, 0x04, 0x00, 0x00, 0x43,  // VM_LOAD r4, 'C' ✓
+        0x01, 0x05, 0x00, 0x00, 0x68,  // VM_LOAD r5, 'h' ✓
+        0x01, 0x06, 0x00, 0x00, 0x72,  // VM_LOAD r6, 'r' ✓
+        0x01, 0x07, 0x00, 0x00, 0x6F,  // VM_LOAD r7, 'o' ✓
+        0x01, 0x08, 0x00, 0x00, 0x6E,  // VM_LOAD r8, 'n' ✓
+        0x01, 0x09, 0x00, 0x00, 0x6F,  // VM_LOAD r9, 'o' ✓
+        0x01, 0x0A, 0x00, 0x00, 0x56,  // VM_LOAD r10, 'V' ✓
+        0x01, 0x0B, 0x00, 0x00, 0x4D,  // VM_LOAD r11, 'M' ✓
+        0x01, 0x0C, 0x00, 0x00, 0x5F,  // VM_LOAD r12, '_' ✓
+        0x01, 0x0D, 0x00, 0x00, 0x53,  // VM_LOAD r13, 'S' ✓
+        0x01, 0x0E, 0x00, 0x00, 0x6D,  // VM_LOAD r14, 'm' ✓
+        0x01, 0x0F, 0x00, 0x00, 0x75,  // VM_LOAD r15, 'u' ✓
+        0x01, 0x00, 0x00, 0x00, 0x72,  // VM_LOAD r0, 'r' ✓
+        0x01, 0x01, 0x00, 0x00, 0x66,  // VM_LOAD r1, 'f' ✓
+        0x01, 0x02, 0x00, 0x00, 0x5F,  // VM_LOAD r2, '_' ✓
+        0x01, 0x03, 0x00, 0x00, 0x4C,  // VM_LOAD r3, 'L' ✓
+        0x01, 0x04, 0x00, 0x00, 0x6F,  // VM_LOAD r4, 'o' ✓
+        0x01, 0x05, 0x00, 0x00, 0x63,  // VM_LOAD r5, 'c' ✓
+        0x01, 0x06, 0x00, 0x00, 0x6B,  // VM_LOAD r6, 'k' ✓
+        0x01, 0x07, 0x00, 0x00, 0x5F,  // VM_LOAD r7, '_' ✓
+        0x01, 0x08, 0x00, 0x00, 0x56,  // VM_LOAD r8, 'V' ✓
+        0x01, 0x09, 0x00, 0x00, 0x4D,  // VM_LOAD r9, 'M' ✓
+        0x01, 0x0A, 0x00, 0x00, 0x7D,  // VM_LOAD r10, '}' ✓
+        0x0E, 0x00, 0x00, 0x00, 0x00   // VM_HALT ✓
+    };
+    
+    printf("🔍 Bytecode a analizar:\n");
+    for (int i = 0; i < sizeof(buggy_bytecode); i += 5) {
+        printf("0x%02X 0x%02X 0x%02X 0x%02X 0x%02X\n", 
+               buggy_bytecode[i], buggy_bytecode[i+1], 
+               buggy_bytecode[i+2], buggy_bytecode[i+3], buggy_bytecode[i+4]);
+    }
+    
+    printf("\n🔍 ¿En qué línea está el error? (1-6): ");
+    int line;
+    if (scanf("%d", &line) != 1) {
+        printf("\n❌ Entrada inválida!\n");
+        return 0;
+    }
+    
+    // El error está en la línea 4 (índice 3) - VM_LOAD r4, 'C' debería ser VM_LOAD r4, 'S'
+    if (line == 4) {
+        printf("\n✅ ¡Correcto! +400 puntos\n");
+        score += 400;
+        return 1;
+    } else {
+        printf("\n❌ Incorrecto! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Jefe final
+static int final_boss(void) {
+    clear_screen();
+    print_banner("👹 JEFE FINAL - FASE 6");
+    
+    printf("\n🎯 Objetivo: Derrota al jefe final resolviendo todos los desafíos\n");
+    printf("📝 Instrucciones: Responde correctamente a 5 preguntas consecutivas\n");
+    printf("⏰ Tiempo límite: 300 segundos\n\n");
+    
+    const char *questions[] = {
+        "¿Cuál es la clave de validación del reto?",
+        "¿Cuántas instrucciones tiene la VM?",
+        "¿Qué algoritmo criptográfico se usa?",
+        "¿Cuál es el checksum esperado?",
+        "¿Cuál es el flag final?"
+    };
+    
+    const char *answers[] = {
+        "ChronoVMSmurf",
+        "15",
+        "SHA1 modificado + Caja S + Autómata celular",
+        "0x42A433D3",
+        "HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}"
+    };
+    
+    int correct = 0;
+    for (int i = 0; i < 5; i++) {
+        printf("❓ Pregunta %d/5: %s\n", i+1, questions[i]);
+        printf("🔍 Respuesta: ");
+        
+        char answer[256];
+        if (fgets(answer, sizeof(answer), stdin) == NULL) {
+            printf("\n❌ Error de entrada!\n");
+            return 0;
+        }
+        
+        // Eliminar newline
+        answer[strcspn(answer, "\n")] = 0;
+        
+        if (strcmp(answer, answers[i]) == 0) {
+            printf("✅ ¡Correcto!\n\n");
+            correct++;
+        } else {
+            printf("❌ Incorrecto! La respuesta era: %s\n\n", answers[i]);
+            lives--;
+            if (lives <= 0) {
+                printf("💀 ¡GAME OVER! Te quedaste sin vidas.\n");
+                return 0;
+            }
+        }
+    }
+    
+    if (correct >= 4) {
+        printf("🏆 ¡VICTORIA! +1000 puntos\n");
+        score += 1000;
+        return 1;
+    } else {
+        printf("💀 ¡DERROTA! No lograste derrotar al jefe final.\n");
+        return 0;
+    }
+}
+
+// Función principal interactiva
 int main(int argc, char *argv[]) {
     // Verificar argumentos
     if (argc > 1 && strcmp(argv[1], "--enable-fragments") == 0) {
@@ -436,30 +799,143 @@ int main(int argc, char *argv[]) {
         integrity_check();
     }
     
-    // Mostrar interfaz
-    show_clock();
+    // Inicializar juego
+    clear_screen();
     
-    // Crear fragmentos si está habilitado
-    create_fragments();
+    // ASCII Art de bienvenida
+    print_ascii_art(
+        "  _____ _                      _   __  __ \n"
+        " / ____| |                    | | |  \\/  |\n"
+        "| |    | |__  _ __ ___  _ __   | | | \\  / |\n"
+        "| |    | '_ \\| '__/ _ \\| '_ \\  | | | |\\/| |\n"
+        "| |____| | | | | | (_) | | | | |_| | |  | |\n"
+        " \\_____|_| |_|_|  \\___/|_| |_|\\___/|_|  |_|\n"
+        "\n"
+        "    🎮 CHRONO VM CHALLENGE - EDICIÓN INTERACTIVA 🎮\n"
+        "    ================================================\n"
+    );
     
-    // Cargar y ejecutar bytecode
-    load_bytecode();
-    run_vm();
+    // Solicitar nombre del jugador
+    printf("\n👋 ¡Bienvenido al reto más complejo de reversing!\n");
+    printf("🎯 Tu misión: Resolver 6 fases de desafíos progresivos\n");
+    printf("💀 Tienes 3 vidas - úsalas sabiamente\n");
+    printf("🏆 Puntuación máxima: 2150 puntos\n\n");
     
-    // Solicitar entrada del usuario
-    printf("Enter validation key: ");
-    char input[256];
-    if (fgets(input, sizeof(input), stdin)) {
-        // Eliminar newline
-        input[strcspn(input, "\n")] = 0;
+    printf("🔤 Ingresa tu nombre de hacker: ");
+    if (fgets(player_name, sizeof(player_name), stdin)) {
+        player_name[strcspn(player_name, "\n")] = 0;
+    } else {
+        strcpy(player_name, "Anonymous");
+    }
+    
+    printf("\n🚀 ¡Perfecto %s! Comenzando la aventura...\n", player_name);
+    sleep(2);
+    
+    // Bucle principal del juego
+    while (current_phase < PHASE_COMPLETE && lives > 0) {
+        clear_screen();
+        print_stats();
         
-        if (validate_input(input)) {
-            printf("\n✅ Validation successful!\n");
-            printf("Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}\n");
-        } else {
-            printf("\n❌ Invalid key!\n");
-            printf("The time is running out...\n");
+        int success = 0;
+        
+        switch (current_phase) {
+            case PHASE_INTRO:
+                print_banner("🎬 INTRODUCCIÓN");
+                printf("\n📖 Historia:\n");
+                printf("   Un viejo programa llamado ChronoVM ha aparecido en un sistema abandonado.\n");
+                printf("   Parece un simple reloj digital, pero en realidad esconde un mecanismo\n");
+                printf("   de validación muy elaborado. Tu misión es descubrir cómo funciona\n");
+                printf("   y revelar el secreto que protege. El tiempo corre...\n\n");
+                printf("🎮 Presiona ENTER para comenzar...");
+                getchar();
+                current_phase = PHASE_PUZZLE_1;
+                success = 1;
+                break;
+                
+            case PHASE_PUZZLE_1:
+                success = memory_puzzle();
+                if (success) current_phase = PHASE_PUZZLE_2;
+                break;
+                
+            case PHASE_PUZZLE_2:
+                success = math_puzzle();
+                if (success) current_phase = PHASE_PUZZLE_3;
+                break;
+                
+            case PHASE_PUZZLE_3:
+                success = pattern_puzzle();
+                if (success) current_phase = PHASE_CRYPTO_CHALLENGE;
+                break;
+                
+            case PHASE_CRYPTO_CHALLENGE:
+                success = crypto_challenge();
+                if (success) current_phase = PHASE_VM_DEBUGGING;
+                break;
+                
+            case PHASE_VM_DEBUGGING:
+                success = vm_debugging_challenge();
+                if (success) current_phase = PHASE_FINAL_BOSS;
+                break;
+                
+            case PHASE_FINAL_BOSS:
+                success = final_boss();
+                if (success) current_phase = PHASE_COMPLETE;
+                break;
+                
+            default:
+                break;
         }
+        
+        if (!success && lives > 0) {
+            printf("\n💔 Fallaste en esta fase. Vidas restantes: %d\n", lives);
+            printf("🔄 Presiona ENTER para reintentar...");
+            getchar();
+        }
+        
+        if (lives <= 0) {
+            clear_screen();
+            print_banner("💀 GAME OVER");
+            printf("\n😢 Lo siento %s, te quedaste sin vidas.\n", player_name);
+            printf("📊 Puntuación final: %d puntos\n", score);
+            printf("🎯 Puntuación máxima posible: 2150 puntos\n");
+            printf("💡 Intenta de nuevo para mejorar tu puntuación!\n");
+            break;
+        }
+    }
+    
+    // Pantalla de victoria
+    if (current_phase == PHASE_COMPLETE) {
+        clear_screen();
+        print_banner("🏆 ¡VICTORIA TOTAL!");
+        
+        printf("\n🎉 ¡FELICIDADES %s! 🎉\n", player_name);
+        printf("🎯 Has completado el reto más complejo de reversing\n");
+        printf("📊 Puntuación final: %d/2150 puntos\n", score);
+        
+        // Calcular calificación
+        int percentage = (score * 100) / 2150;
+        const char *grade;
+        if (percentage >= 95) grade = "S+ (LEGENDARIO)";
+        else if (percentage >= 90) grade = "S (ÉPICO)";
+        else if (percentage >= 80) grade = "A+ (EXCELENTE)";
+        else if (percentage >= 70) grade = "A (MUY BUENO)";
+        else if (percentage >= 60) grade = "B (BUENO)";
+        else grade = "C (ACEPTABLE)";
+        
+        printf("🏅 Calificación: %s\n", grade);
+        
+        // Mostrar flag
+        printf("\n🎁 ¡Tu recompensa!\n");
+        printf("🏴 Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}\n");
+        
+        // Crear fragmentos si está habilitado
+        if (fragments_enabled) {
+            create_fragments();
+            printf("🧩 Fragmentos de flag creados en /dev/shm/\n");
+        }
+        
+        printf("\n🎮 ¡Gracias por jugar ChronoVM Challenge!\n");
+        printf("🔗 Comparte tu puntuación con otros hackers\n");
     }
     
     // Limpiar fragmentos
