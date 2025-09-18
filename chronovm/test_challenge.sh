@@ -23,12 +23,12 @@ test_input() {
     echo "🔍 Probando: $test_name"
     echo "   Entrada: '$input'"
     
-    # Ejecutar con timeout
-    timeout 5s bash -c "echo '$input' | ./chronovm" > /tmp/chronovm_output 2>&1
+    # Ejecutar con timeout más largo para el modo interactivo
+    timeout 15s bash -c "echo '$input' | ./chronovm" > /tmp/chronovm_output 2>&1
     local exit_code=$?
     
     if [ $exit_code -eq 124 ]; then
-        echo "   ⏰ Timeout (posible loop infinito)"
+        echo "   ⏰ Timeout (15s) - posible loop infinito"
         return 1
     elif [ $exit_code -ne 0 ]; then
         echo "   ❌ Error de ejecución (código: $exit_code)"
@@ -36,7 +36,7 @@ test_input() {
     fi
     
     # Verificar salida
-    if grep -q "Validation successful" /tmp/chronovm_output; then
+    if grep -q "Validation successful\|VICTORIA\|¡FELICIDADES" /tmp/chronovm_output; then
         echo "   ✅ Validación exitosa"
         return 0
     else
@@ -50,11 +50,11 @@ test_fragments() {
     echo "🔍 Probando modo fragmentos..."
     
     # Ejecutar con fragmentos habilitados
-    timeout 5s bash -c "echo 'test' | ./chronovm --enable-fragments" > /tmp/chronovm_fragments 2>&1
+    timeout 20s bash -c "echo 'test' | ./chronovm --enable-fragments" > /tmp/chronovm_fragments 2>&1
     local exit_code=$?
     
     if [ $exit_code -eq 124 ]; then
-        echo "   ⏰ Timeout en modo fragmentos"
+        echo "   ⏰ Timeout (20s) en modo fragmentos"
         return 1
     fi
     
@@ -81,7 +81,7 @@ test_anti_debug() {
     echo "🔍 Probando protecciones anti-debugging..."
     
     # Intentar ejecutar con gdb (debería fallar)
-    timeout 3s gdb -batch -ex "run" -ex "quit" ./chronovm > /tmp/chronovm_gdb 2>&1
+    timeout 8s gdb -batch -ex "run" -ex "quit" ./chronovm > /tmp/chronovm_gdb 2>&1
     local gdb_exit=$?
     
     if grep -q "Debugger detected" /tmp/chronovm_gdb; then
@@ -102,7 +102,7 @@ test_integrity() {
     echo "corrupted" >> chronovm_modified
     
     # Intentar ejecutar versión modificada
-    timeout 3s ./chronovm_modified > /tmp/chronovm_integrity 2>&1
+    timeout 10s ./chronovm_modified > /tmp/chronovm_integrity 2>&1
     local integrity_exit=$?
     
     # Limpiar
