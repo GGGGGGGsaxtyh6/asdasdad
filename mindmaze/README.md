@@ -1,23 +1,27 @@
-# MindMaze
+# MindMaze Challenge
 
-**Categoría:** Reversing  
-**Dificultad:** Insane  
-**Tiempo estimado:** 6+ horas
+## Description
+A binary that appears innocent: a simple interactive puzzle game. However, something in its validation logic doesn't add up. The only way to beat it is to dismantle its protection layer by layer. Can you solve the mental maze and recover the flag?
 
-## Descripción
-Has encontrado un binario que parece inocente: un simple juego de rompecabezas interactivo. Sin embargo, algo en su lógica de validación no cuadra. La única manera de vencerlo es desarmar su protección capa por capa. ¿Podrás resolver el laberinto mental y recuperar la flag?
+## Files
+- `mindmaze` - Binary ELF compiled for Linux x64 (stripped)
 
-## Archivos
-- `mindmaze` - Binario ELF para Linux x64
+## Category
+Reversing
 
-## Instrucciones
-1. Descarga el binario
-2. Ejecuta: `chmod +x mindmaze && ./mindmaze`
-3. Encuentra la flag correcta
+## Difficulty
+Insane
 
-## Notas
-- El binario está strippeado y ofuscado
-- Requiere técnicas avanzadas de reversing
-- No hay pistas adicionales
+## Estimated Time
+~6 hours
 
-¡Buena suerte!
+## Flag Format
+HTB{...}
+
+## Hints
+- The binary uses multiple layers of obfuscation
+- Each phase requires different reversing techniques
+- The VM bytecode contains important clues
+- Timing is critical for some validations
+
+Good luck!
