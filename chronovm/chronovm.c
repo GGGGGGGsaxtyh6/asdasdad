@@ -137,19 +137,29 @@ static void integrity_check(void) {
     free(buffer);
 }
 
-// SHA1 modificado
+// SHA1 modificado con algoritmo más complejo
 static void sha1_modified(const uint8_t *data, size_t len, uint8_t *hash) {
     uint32_t h[5];
     memcpy(h, sha1_constants, sizeof(h));
     h[4] = 0xC3D2E1F0; // Constante modificada
     
-    // Procesamiento simplificado
-    for (size_t i = 0; i < len; i++) {
-        h[0] = ((h[0] << 1) ^ data[i]) + h[1];
-        h[1] = ((h[1] << 2) ^ data[i]) + h[2];
-        h[2] = ((h[2] << 3) ^ data[i]) + h[3];
-        h[3] = ((h[3] << 4) ^ data[i]) + h[4];
-        h[4] = ((h[4] << 5) ^ data[i]) + h[0];
+    // Procesamiento más complejo con múltiples rondas
+    for (int round = 0; round < 3; round++) {
+        for (size_t i = 0; i < len; i++) {
+            uint32_t temp = data[i] ^ (i & 0xFF);
+            h[0] = ((h[0] << 1) ^ temp) + h[1] + round;
+            h[1] = ((h[1] << 2) ^ temp) + h[2] + (round * 2);
+            h[2] = ((h[2] << 3) ^ temp) + h[3] + (round * 3);
+            h[3] = ((h[3] << 4) ^ temp) + h[4] + (round * 4);
+            h[4] = ((h[4] << 5) ^ temp) + h[0] + (round * 5);
+            
+            // Aplicar rotación adicional
+            h[0] = (h[0] << 3) | (h[0] >> 29);
+            h[1] = (h[1] << 7) | (h[1] >> 25);
+            h[2] = (h[2] << 11) | (h[2] >> 21);
+            h[3] = (h[3] << 13) | (h[3] >> 19);
+            h[4] = (h[4] << 17) | (h[4] >> 15);
+        }
     }
     
     memcpy(hash, h, 20);
@@ -162,7 +172,7 @@ static void apply_sbox(uint8_t *data, size_t len) {
     }
 }
 
-// Autómata celular regla 30
+// Autómata celular regla 30 con variaciones
 static uint32_t cellular_automaton(uint32_t state) {
     uint32_t new_state = 0;
     for (int i = 0; i < 32; i++) {
@@ -170,8 +180,13 @@ static uint32_t cellular_automaton(uint32_t state) {
         uint32_t center = (state >> i) & 1;
         uint32_t right = (state >> ((i - 1 + 32) % 32)) & 1;
         
+        // Aplicar regla 30 con variaciones basadas en posición
         uint32_t rule = (left << 2) | (center << 1) | right;
-        if (rule == 0b100 || rule == 0b011 || rule == 0b010 || rule == 0b001) {
+        uint32_t rule_variant = rule ^ (i & 0x7);
+        
+        if (rule_variant == 0b100 || rule_variant == 0b011 || 
+            rule_variant == 0b010 || rule_variant == 0b001 ||
+            rule_variant == 0b110 || rule_variant == 0b101) {
             new_state |= (1 << i);
         }
     }
@@ -257,13 +272,9 @@ static void vm_execute(uint8_t opcode, uint32_t *operands) {
 
 // Descifrar bytecode
 static void decrypt_bytecode(void) {
-    time_t now = time(NULL);
-    uint8_t key[16];
-    
-    // Derivar clave de la hora actual
-    for (int i = 0; i < 16; i++) {
-        key[i] = ((now >> (i * 2)) & 0xFF) ^ (i * 0x13);
-    }
+    // Clave fija derivada de constantes del sistema
+    uint8_t key[16] = {0x43, 0x68, 0x72, 0x6F, 0x6E, 0x6F, 0x56, 0x4D, 
+                       0x53, 0x6D, 0x75, 0x72, 0x66, 0x4C, 0x6F, 0x63};
     
     // XOR simple con la clave
     for (size_t i = 0; i < bytecode_size; i++) {
@@ -288,9 +299,20 @@ static void load_bytecode(void) {
         0x01, 0x0A, 0x00, 0x00, 0x56,  // VM_LOAD r10, 'V'
         0x01, 0x0B, 0x00, 0x00, 0x4D,  // VM_LOAD r11, 'M'
         0x01, 0x0C, 0x00, 0x00, 0x5F,  // VM_LOAD r12, '_'
-        0x01, 0x0D, 0x00, 0x00, 0x54,  // VM_LOAD r13, 'T'
-        0x01, 0x0E, 0x00, 0x00, 0x69,  // VM_LOAD r14, 'i'
-        0x01, 0x0F, 0x00, 0x00, 0x6D,  // VM_LOAD r15, 'm'
+        0x01, 0x0D, 0x00, 0x00, 0x53,  // VM_LOAD r13, 'S'
+        0x01, 0x0E, 0x00, 0x00, 0x6D,  // VM_LOAD r14, 'm'
+        0x01, 0x0F, 0x00, 0x00, 0x75,  // VM_LOAD r15, 'u'
+        0x01, 0x00, 0x00, 0x00, 0x72,  // VM_LOAD r0, 'r'
+        0x01, 0x01, 0x00, 0x00, 0x66,  // VM_LOAD r1, 'f'
+        0x01, 0x02, 0x00, 0x00, 0x5F,  // VM_LOAD r2, '_'
+        0x01, 0x03, 0x00, 0x00, 0x4C,  // VM_LOAD r3, 'L'
+        0x01, 0x04, 0x00, 0x00, 0x6F,  // VM_LOAD r4, 'o'
+        0x01, 0x05, 0x00, 0x00, 0x63,  // VM_LOAD r5, 'c'
+        0x01, 0x06, 0x00, 0x00, 0x6B,  // VM_LOAD r6, 'k'
+        0x01, 0x07, 0x00, 0x00, 0x5F,  // VM_LOAD r7, '_'
+        0x01, 0x08, 0x00, 0x00, 0x56,  // VM_LOAD r8, 'V'
+        0x01, 0x09, 0x00, 0x00, 0x4D,  // VM_LOAD r9, 'M'
+        0x01, 0x0A, 0x00, 0x00, 0x7D,  // VM_LOAD r10, '}'
         0x0E, 0x00, 0x00, 0x00, 0x00   // VM_HALT
     };
     
@@ -306,8 +328,8 @@ static void create_fragments(void) {
     if (!fragments_enabled) return;
     
     const char *flag_parts[] = {
-        "ChronoVM_",
-        "TimeLock_",
+        "ChronoVM_Smurf_",
+        "Lock_VM_",
         "VirtualMachine"
     };
     
@@ -323,7 +345,7 @@ static void create_fragments(void) {
     }
 }
 
-// Validar entrada del usuario
+// Validar entrada del usuario con algoritmo más complejo
 static int validate_input(const char *input) {
     if (!input) return 0;
     
@@ -331,13 +353,18 @@ static int validate_input(const char *input) {
     uint8_t hash[20];
     sha1_modified((uint8_t*)input, strlen(input), hash);
     
-    // Aplicar caja S
+    // Aplicar caja S múltiples veces
+    apply_sbox(hash, 20);
     apply_sbox(hash, 20);
     
-    // Autómata celular
+    // Autómata celular con más iteraciones
     uint32_t state = *(uint32_t*)hash;
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 150; i++) {
         state = cellular_automaton(state);
+        // Aplicar XOR adicional cada 10 iteraciones
+        if (i % 10 == 0) {
+            state ^= (i * 0x1337);
+        }
     }
     
     // Verificar checksum final
@@ -428,7 +455,7 @@ int main(int argc, char *argv[]) {
         
         if (validate_input(input)) {
             printf("\n✅ Validation successful!\n");
-            printf("Flag: HTB{ChronoVM_TimeLock_VirtualMachine}\n");
+            printf("Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}\n");
         } else {
             printf("\n❌ Invalid key!\n");
             printf("The time is running out...\n");

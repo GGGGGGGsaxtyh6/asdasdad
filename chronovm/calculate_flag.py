@@ -33,16 +33,25 @@ CUSTOM_SBOX = [
 SHA1_CONSTANTS = [0x67452301, 0xEFCDAB89, 0x98BADCFE, 0x10325476, 0xC3D2E1F0]
 
 def sha1_modified(data):
-    """Implementa SHA1 modificado con constantes alteradas"""
+    """Implementa SHA1 modificado con algoritmo más complejo"""
     h = list(SHA1_CONSTANTS)
     
-    # Procesamiento simplificado
-    for byte in data:
-        h[0] = ((h[0] << 1) ^ byte) + h[1]
-        h[1] = ((h[1] << 2) ^ byte) + h[2]
-        h[2] = ((h[2] << 3) ^ byte) + h[3]
-        h[3] = ((h[3] << 4) ^ byte) + h[4]
-        h[4] = ((h[4] << 5) ^ byte) + h[0]
+    # Procesamiento más complejo con múltiples rondas
+    for round in range(3):
+        for i, byte in enumerate(data):
+            temp = byte ^ (i & 0xFF)
+            h[0] = ((h[0] << 1) ^ temp) + h[1] + round
+            h[1] = ((h[1] << 2) ^ temp) + h[2] + (round * 2)
+            h[2] = ((h[2] << 3) ^ temp) + h[3] + (round * 3)
+            h[3] = ((h[3] << 4) ^ temp) + h[4] + (round * 4)
+            h[4] = ((h[4] << 5) ^ temp) + h[0] + (round * 5)
+            
+            # Aplicar rotación adicional
+            h[0] = ((h[0] << 3) | (h[0] >> 29)) & 0xFFFFFFFF
+            h[1] = ((h[1] << 7) | (h[1] >> 25)) & 0xFFFFFFFF
+            h[2] = ((h[2] << 11) | (h[2] >> 21)) & 0xFFFFFFFF
+            h[3] = ((h[3] << 13) | (h[3] >> 19)) & 0xFFFFFFFF
+            h[4] = ((h[4] << 17) | (h[4] >> 15)) & 0xFFFFFFFF
     
     # Convertir a bytes
     result = b''
@@ -55,20 +64,28 @@ def apply_sbox(data):
     """Aplica la caja S personalizada"""
     return bytes(CUSTOM_SBOX[b] for b in data)
 
-def cellular_automaton(state, iterations=100):
-    """Implementa autómata celular regla 30"""
-    for _ in range(iterations):
+def cellular_automaton(state, iterations=150):
+    """Implementa autómata celular regla 30 con variaciones"""
+    for iteration in range(iterations):
         new_state = 0
         for i in range(32):
             left = (state >> ((i + 1) % 32)) & 1
             center = (state >> i) & 1
             right = (state >> ((i - 1 + 32) % 32)) & 1
             
+            # Aplicar regla 30 con variaciones basadas en posición
             rule = (left << 2) | (center << 1) | right
-            if rule in [0b100, 0b011, 0b010, 0b001]:
+            rule_variant = rule ^ (i & 0x7)
+            
+            if rule_variant in [0b100, 0b011, 0b010, 0b001, 0b110, 0b101]:
                 new_state |= (1 << i)
         
         state = new_state
+        
+        # Aplicar XOR adicional cada 10 iteraciones
+        if iteration % 10 == 0:
+            state ^= (iteration * 0x1337)
+            state &= 0xFFFFFFFF
     
     return state
 
@@ -80,7 +97,8 @@ def validate_key(key):
     # Hash SHA1 modificado
     hash_bytes = sha1_modified(key.encode())
     
-    # Aplicar caja S
+    # Aplicar caja S múltiples veces
+    hash_bytes = apply_sbox(hash_bytes)
     hash_bytes = apply_sbox(hash_bytes)
     
     # Autómata celular
@@ -96,26 +114,26 @@ def brute_force_key():
     
     # Lista de posibles claves
     candidates = [
-        "ChronoVM2024",
+        "ChronoVMSmurf",
         "ChronoVM",
-        "chronovm2024",
-        "CHRONOVM2024",
-        "TimeLock",
+        "chronovmsmurf",
+        "CHRONOVMSMURF",
+        "SmurfLock",
         "VirtualMachine",
         "HTB",
         "chronovm",
         "admin",
         "password",
-        "ChronoVM_TimeLock",
+        "ChronoVM_Smurf",
         "ChronoVM_VirtualMachine",
-        "TimeLock_VirtualMachine",
-        "ChronoVM2024_TimeLock",
-        "ChronoVM2024_VirtualMachine",
-        "ChronoVM_TimeLock_VirtualMachine",
-        "ChronoVM_TimeLock_VM",
-        "ChronoVM_VM_TimeLock",
-        "VM_TimeLock_ChronoVM",
-        "VM_ChronoVM_TimeLock"
+        "Smurf_VirtualMachine",
+        "ChronoVMSmurf_Lock",
+        "ChronoVMSmurf_VirtualMachine",
+        "ChronoVM_Smurf_Lock_VM",
+        "ChronoVM_Smurf_VM",
+        "ChronoVM_VM_Smurf",
+        "VM_Smurf_ChronoVM",
+        "VM_ChronoVM_Smurf"
     ]
     
     for candidate in candidates:
@@ -132,7 +150,7 @@ def calculate_checksum():
     print("🔢 Calculando checksum esperado...")
     
     # Usar la clave correcta
-    key = "ChronoVM2024"
+    key = "ChronoVMSmurf"
     hash_bytes = sha1_modified(key.encode())
     hash_bytes = apply_sbox(hash_bytes)
     state = struct.unpack('>I', hash_bytes[:4])[0]
@@ -160,7 +178,7 @@ def main():
     if key:
         print("🎉 ¡RETO RESUELTO!")
         print(f"   Clave correcta: '{key}'")
-        print("   Flag: HTB{ChronoVM_TimeLock_VirtualMachine}")
+        print("   Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}")
         print()
         print("🔑 Para usar la clave:")
         print(f"   echo '{key}' | ./chronovm")

@@ -53,7 +53,7 @@ test_key() {
     
     if grep -q "Validation successful" /tmp/chronovm_test; then
         echo "   ✅ ¡ÉXITO! Clave válida encontrada"
-        echo "   🏆 Flag: HTB{ChronoVM_TimeLock_VirtualMachine}"
+        echo "   🏆 Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}"
         return 0
     elif grep -q "Invalid key" /tmp/chronovm_test; then
         echo "   ❌ Clave inválida"
@@ -167,12 +167,12 @@ echo "🔑 Probando claves comunes..."
 
 # Lista de claves a probar
 keys=(
-    "ChronoVM2024:Clave correcta"
+    "ChronoVMSmurf:Clave correcta"
     "ChronoVM:Variación 1"
-    "chronovm2024:Variación 2"
-    "CHRONOVM2024:Variación 3"
+    "chronovmsmurf:Variación 2"
+    "CHRONOVMSMURF:Variación 3"
     "ChronoVM:Variación 4"
-    "TimeLock:Variación 5"
+    "SmurfLock:Variación 5"
     "VirtualMachine:Variación 6"
     "HTB:Variación 7"
     "chronovm:Variación 8"
@@ -187,7 +187,7 @@ for key_info in "${keys[@]}"; do
         echo ""
         echo "🎉 ¡RETO RESUELTO!"
         echo "   La clave correcta es: '$key'"
-        echo "   Flag: HTB{ChronoVM_TimeLock_VirtualMachine}"
+        echo "   Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}"
         echo ""
         echo "🏆 ¡Felicidades! Has completado el reto ChronoVM"
         exit 0

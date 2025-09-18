@@ -5,7 +5,7 @@
 **Nombre:** chronovm  
 **Categoría:** Reversing  
 **Dificultad:** Insane (~6–8 horas)  
-**Flag:** `HTB{ChronoVM_TimeLock_VirtualMachine}`
+**Flag:** `HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}`
 
 ### 🎯 Descripción para el Jugador
 
@@ -108,12 +108,12 @@ chmod +x test_challenge.sh
 
 ### Clave de Validación
 ```
-ChronoVM2024
+ChronoVMSmurf
 ```
 
 ### Flag Final
 ```
-HTB{ChronoVM_TimeLock_VirtualMachine}
+HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}
 ```
 
 ### Checksum Esperado
