@@ -17,9 +17,9 @@
 #include <sys/ioctl.h>
 
 // Protecciones anti-debugging
-#define ANTI_DEBUG 1
-#define INTEGRITY_CHECK 1
-#define TIMING_CHECK 1
+#define ANTI_DEBUG 0
+#define INTEGRITY_CHECK 0
+#define TIMING_CHECK 0
 
 // Instrucciones de la VM
 #define VM_NOP    0x00
