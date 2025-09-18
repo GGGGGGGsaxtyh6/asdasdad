@@ -17,9 +17,9 @@
 #include <sys/ioctl.h>
 
 // Protecciones anti-debugging
-#define ANTI_DEBUG 0
-#define INTEGRITY_CHECK 0
-#define TIMING_CHECK 0
+#define ANTI_DEBUG 1
+#define INTEGRITY_CHECK 1
+#define TIMING_CHECK 1
 
 // Instrucciones de la VM
 #define VM_NOP    0x00
@@ -152,7 +152,7 @@ static void integrity_check(void) {
     }
     
     // Valor esperado (se calcula en build time)
-    if (checksum != 0x42A433D3) {
+    if (checksum != 0x40008000) {
         printf("Binary integrity check failed!\n");
         exit(1);
     }
@@ -391,7 +391,7 @@ static int validate_input(const char *input) {
     }
     
     // Verificar checksum final
-    return (state == 0x42A433D3);
+    return (state == 0x40008000);
 }
 
 // Mostrar reloj digital

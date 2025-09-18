@@ -106,7 +106,7 @@ def validate_key(key):
     state = cellular_automaton(state)
     
     # Verificar checksum final
-    return state == 0x42A433D3
+    return state == 0x40008000
 
 def brute_force_key():
     """Intenta encontrar la clave correcta por fuerza bruta"""
@@ -157,8 +157,8 @@ def calculate_checksum():
     state = cellular_automaton(state)
     
     print(f"   Checksum calculado: 0x{state:08X}")
-    print(f"   Checksum esperado:  0x42A433D3")
-    print(f"   Coincide: {'✅' if state == 0x42A433D3 else '❌'}")
+    print(f"   Checksum esperado:  0x40008000")
+    print(f"   Coincide: {'✅' if state == 0x40008000 else '❌'}")
     
     return state
 
