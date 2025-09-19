@@ -62,17 +62,39 @@ static char fragments[MAX_FRAGMENTS][64];
 static int fragment_count = 0;
 static int fragments_enabled = 0;
 
-// Sistema de fases interactivas
+// Sistema de fases interactivas con narrativa compleja
 typedef enum {
     PHASE_INTRO = 0,
-    PHASE_PUZZLE_1,
-    PHASE_PUZZLE_2,
-    PHASE_PUZZLE_3,
-    PHASE_CRYPTO_CHALLENGE,
-    PHASE_VM_DEBUGGING,
-    PHASE_FINAL_BOSS,
+    PHASE_INVESTIGATION,
+    PHASE_DECRYPTION,
+    PHASE_VM_ANALYSIS,
+    PHASE_MEMORY_DIVE,
+    PHASE_CRYPTO_BREAK,
+    PHASE_FINAL_REVELATION,
+    PHASE_ESCAPE,
     PHASE_COMPLETE
 } phase_t;
+
+// Sistema de decisiones narrativas
+typedef enum {
+    DECISION_INVESTIGATE = 1,
+    DECISION_ANALYZE = 2,
+    DECISION_DECRYPT = 3,
+    DECISION_DEBUG = 4,
+    DECISION_ESCAPE = 5
+} decision_t;
+
+// Estados del juego
+typedef struct {
+    int trust_level;
+    int suspicion_level;
+    int knowledge_level;
+    int deception_level;
+    char discovered_secrets[10][256];
+    int secret_count;
+    int fake_flags_found;
+    int real_flag_found;
+} game_state_t;
 
 static phase_t current_phase = PHASE_INTRO;
 static int score = 0;
@@ -81,6 +103,28 @@ static char player_name[64] = {0};
 static int hints_used = 0;
 static int time_limit = 300; // 5 minutos por fase
 static time_t phase_start_time;
+static game_state_t game_state = {0};
+static int current_decision = 0;
+static int story_branch = 0;
+static char current_location[64] = "Unknown";
+static char current_mission[256] = "Investigate the anomaly";
+
+// Fake flags para confundir
+static const char* fake_flags[] = {
+    "HTB{Fake_Flag_1_ChronoVM}",
+    "HTB{Decoy_Flag_TimeLock}",
+    "HTB{False_Flag_VM_Challenge}",
+    "HTB{Red_Herring_Smurf}",
+    "HTB{Decoy_ChronoVM_Fake}",
+    "HTB{False_TimeLock_VM}",
+    "HTB{Decoy_Smurf_Challenge}",
+    "HTB{Fake_VM_TimeLock}",
+    "HTB{Red_Herring_ChronoVM}",
+    "HTB{Decoy_Flag_Final}"
+};
+
+// Flags reales ocultas
+static const char* real_flag = "HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}";
 
 // Caja S personalizada
 static const uint8_t custom_sbox[256] = {
@@ -479,16 +523,322 @@ static void print_stats(void) {
     printf("│ Vidas: %-3d Pistas usadas: %-3d Fase: %-15s │\n", 
            lives, hints_used, 
            current_phase == PHASE_INTRO ? "Introducción" :
-           current_phase == PHASE_PUZZLE_1 ? "Puzzle 1" :
-           current_phase == PHASE_PUZZLE_2 ? "Puzzle 2" :
-           current_phase == PHASE_PUZZLE_3 ? "Puzzle 3" :
-           current_phase == PHASE_CRYPTO_CHALLENGE ? "Crypto Challenge" :
-           current_phase == PHASE_VM_DEBUGGING ? "VM Debugging" :
-           current_phase == PHASE_FINAL_BOSS ? "Final Boss" : "Completado");
+           current_phase == PHASE_INVESTIGATION ? "Investigación" :
+           current_phase == PHASE_DECRYPTION ? "Descifrado" :
+           current_phase == PHASE_VM_ANALYSIS ? "Análisis VM" :
+           current_phase == PHASE_MEMORY_DIVE ? "Memoria" :
+           current_phase == PHASE_CRYPTO_BREAK ? "Crypto Break" :
+           current_phase == PHASE_FINAL_REVELATION ? "Revelación" :
+           current_phase == PHASE_ESCAPE ? "Escape" : "Completado");
+    printf("│ Flags falsos: %-3d Flag real: %-3s Conocimiento: %-3d │\n", 
+           game_state.fake_flags_found, 
+           game_state.real_flag_found ? "Sí" : "No",
+           game_state.knowledge_level);
     printf("└─────────────────────────────────────────────────────────────┘\n");
 }
 
-// Minijuego 1: Puzzle de memoria
+// Fase 1: Investigación inicial con fake flags
+static int investigation_phase(void) {
+    clear_screen();
+    print_banner("🔍 FASE 1: INVESTIGACIÓN INICIAL");
+    
+    printf("\n🎯 Objetivo: Analizar el sistema ChronoVM\n");
+    printf("📝 Instrucciones: Encuentra pistas ocultas en el sistema\n");
+    printf("⏰ Tiempo límite: 60 segundos\n\n");
+    
+    printf("🔍 Análisis del sistema:\n");
+    printf("   - Procesos activos: 15\n");
+    printf("   - Memoria utilizada: 2.3GB\n");
+    printf("   - Comunicaciones detectadas: 3\n");
+    printf("   - Flags encontrados: 5\n\n");
+    
+    printf("🚨 ADVERTENCIA: Se han detectado múltiples flags falsos!\n");
+    printf("   Solo uno es real. Los demás son señuelos.\n\n");
+    
+    // Mostrar fake flags
+    printf("🔍 Flags detectados:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("   %d. %s\n", i+1, fake_flags[i]);
+    }
+    
+    printf("\n🔍 ¿Cuál crees que es el flag real? (1-5): ");
+    int choice;
+    if (scanf("%d", &choice) != 1 || choice < 1 || choice > 5) {
+        printf("\n❌ Entrada inválida! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+    
+    // Todos son fake flags en esta fase
+    printf("\n❌ ¡FALSO! Todos los flags en esta fase son señuelos.\n");
+    printf("   El flag real está más profundo en el sistema.\n");
+    printf("   +50 puntos por descubrir la verdad\n");
+    score += 50;
+    game_state.fake_flags_found++;
+    
+    printf("\n✅ Has aprendido a identificar señuelos. Avanzando...\n");
+    return 1;
+}
+
+// Fase 2: Descifrado con múltiples capas
+static int decryption_phase(void) {
+    clear_screen();
+    print_banner("🔐 FASE 2: DESCIFRADO DE COMUNICACIONES");
+    
+    printf("\n🎯 Objetivo: Descifrar las comunicaciones encriptadas\n");
+    printf("📝 Instrucciones: Resuelve el algoritmo criptográfico\n");
+    printf("⏰ Tiempo límite: 120 segundos\n\n");
+    
+    printf("🔍 Comunicación interceptada:\n");
+    printf("   Cifrado: Uryyb, jrypbzr gb gur puneqba!\n");
+    printf("   Clave: ChronoVMSmurf\n");
+    printf("   Algoritmo: ROT13 + XOR\n\n");
+    
+    printf("🔍 ¿Cuál es el mensaje descifrado? ");
+    char answer[256];
+    if (fgets(answer, sizeof(answer), stdin) == NULL) {
+        printf("\n❌ Error de entrada!\n");
+        return 0;
+    }
+    
+    // Eliminar newline
+    answer[strcspn(answer, "\n")] = 0;
+    
+    if (strcmp(answer, "Hello, welcome to the challenge!") == 0) {
+        printf("\n✅ ¡Correcto! +200 puntos\n");
+        score += 200;
+        game_state.knowledge_level++;
+        
+        printf("\n🔍 Descifrando más comunicaciones...\n");
+        printf("   Se han encontrado 3 flags más:\n");
+        for (int i = 5; i < 8; i++) {
+            printf("   - %s\n", fake_flags[i]);
+        }
+        printf("   ⚠️  Todos son señuelos avanzados!\n");
+        
+        return 1;
+    } else {
+        printf("\n❌ Incorrecto! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Fase 3: Análisis de VM con bytecode complejo
+static int vm_analysis_phase(void) {
+    clear_screen();
+    print_banner("🖥️  FASE 3: ANÁLISIS DE MÁQUINA VIRTUAL");
+    
+    printf("\n🎯 Objetivo: Analizar la máquina virtual interna\n");
+    printf("📝 Instrucciones: Encuentra el error en el bytecode\n");
+    printf("⏰ Tiempo límite: 180 segundos\n\n");
+    
+    printf("🔍 Bytecode de la VM:\n");
+    printf("   0x01 0x00 0x00 0x00 0x48  // VM_LOAD r0, 'H'\n");
+    printf("   0x01 0x01 0x00 0x00 0x54  // VM_LOAD r1, 'T'\n");
+    printf("   0x01 0x02 0x00 0x00 0x42  // VM_LOAD r2, 'B'\n");
+    printf("   0x01 0x03 0x00 0x00 0x7B  // VM_LOAD r3, '{'\n");
+    printf("   0x01 0x04 0x00 0x00 0x43  // VM_LOAD r4, 'C'\n");
+    printf("   0x01 0x05 0x00 0x00 0x68  // VM_LOAD r5, 'h'\n");
+    printf("   0x01 0x06 0x00 0x00 0x72  // VM_LOAD r6, 'r'\n");
+    printf("   0x01 0x07 0x00 0x00 0x6F  // VM_LOAD r7, 'o'\n");
+    printf("   0x01 0x08 0x00 0x00 0x6E  // VM_LOAD r8, 'n'\n");
+    printf("   0x01 0x09 0x00 0x00 0x6F  // VM_LOAD r9, 'o'\n");
+    printf("   0x01 0x0A 0x00 0x00 0x56  // VM_LOAD r10, 'V'\n");
+    printf("   0x01 0x0B 0x00 0x00 0x4D  // VM_LOAD r11, 'M'\n");
+    printf("   0x01 0x0C 0x00 0x00 0x5F  // VM_LOAD r12, '_'\n");
+    printf("   0x01 0x0D 0x00 0x00 0x53  // VM_LOAD r13, 'S'\n");
+    printf("   0x01 0x0E 0x00 0x00 0x6D  // VM_LOAD r14, 'm'\n");
+    printf("   0x01 0x0F 0x00 0x00 0x75  // VM_LOAD r15, 'u'\n");
+    printf("   0x01 0x00 0x00 0x00 0x72  // VM_LOAD r0, 'r'\n");
+    printf("   0x01 0x01 0x00 0x00 0x66  // VM_LOAD r1, 'f'\n");
+    printf("   0x01 0x02 0x00 0x00 0x5F  // VM_LOAD r2, '_'\n");
+    printf("   0x01 0x03 0x00 0x00 0x4C  // VM_LOAD r3, 'L'\n");
+    printf("   0x01 0x04 0x00 0x00 0x6F  // VM_LOAD r4, 'o'\n");
+    printf("   0x01 0x05 0x00 0x00 0x63  // VM_LOAD r5, 'c'\n");
+    printf("   0x01 0x06 0x00 0x00 0x6B  // VM_LOAD r6, 'k'\n");
+    printf("   0x01 0x07 0x00 0x00 0x5F  // VM_LOAD r7, '_'\n");
+    printf("   0x01 0x08 0x00 0x00 0x56  // VM_LOAD r8, 'V'\n");
+    printf("   0x01 0x09 0x00 0x00 0x4D  // VM_LOAD r9, 'M'\n");
+    printf("   0x01 0x0A 0x00 0x00 0x7D  // VM_LOAD r10, '}'\n");
+    printf("   0x0E 0x00 0x00 0x00 0x00   // VM_HALT\n\n");
+    
+    printf("🔍 ¿En qué línea está el error? (1-6): ");
+    int line;
+    if (scanf("%d", &line) != 1) {
+        printf("\n❌ Entrada inválida!\n");
+        return 0;
+    }
+    
+    // El error está en la línea 4 (índice 3) - VM_LOAD r4, 'C' debería ser VM_LOAD r4, 'S'
+    if (line == 4) {
+        printf("\n✅ ¡Correcto! +300 puntos\n");
+        score += 300;
+        game_state.knowledge_level++;
+        
+        printf("\n🔍 Análisis completado. Se han encontrado más flags:\n");
+        printf("   - %s\n", fake_flags[8]);
+        printf("   - %s\n", fake_flags[9]);
+        printf("   ⚠️  Estos también son señuelos!\n");
+        
+        return 1;
+    } else {
+        printf("\n❌ Incorrecto! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Fase 4: Inmersión en memoria con fake flags
+static int memory_dive_phase(void) {
+    clear_screen();
+    print_banner("🧠 FASE 4: INMERSIÓN EN MEMORIA");
+    
+    printf("\n🎯 Objetivo: Explorar la memoria del sistema\n");
+    printf("📝 Instrucciones: Encuentra el flag real entre los señuelos\n");
+    printf("⏰ Tiempo límite: 240 segundos\n\n");
+    
+    printf("🔍 Memoria del sistema explorada:\n");
+    printf("   - Secciones encontradas: 15\n");
+    printf("   - Flags detectados: 10\n");
+    printf("   - Patrones sospechosos: 3\n");
+    printf("   - Contramedidas activadas: 2\n\n");
+    
+    printf("🚨 ADVERTENCIA: El sistema detecta intrusiones!\n");
+    printf("   Tienes tiempo limitado antes de ser detectado.\n\n");
+    
+    printf("🔍 Flags encontrados en memoria:\n");
+    for (int i = 0; i < 10; i++) {
+        printf("   %d. %s\n", i+1, fake_flags[i]);
+    }
+    
+    printf("\n🔍 ¿Cuál crees que es el flag real? (1-10): ");
+    int choice;
+    if (scanf("%d", &choice) != 1 || choice < 1 || choice > 10) {
+        printf("\n❌ Entrada inválida! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+    
+    // Todos son fake flags en esta fase también
+    printf("\n❌ ¡FALSO! Todos los flags en memoria son señuelos.\n");
+    printf("   El flag real está encriptado en el bytecode de la VM.\n");
+    printf("   +100 puntos por persistir en la búsqueda\n");
+    score += 100;
+    game_state.fake_flags_found += 10;
+    
+    printf("\n✅ Has aprendido que la verdad está más profundo.\n");
+    return 1;
+}
+
+// Fase 5: Ruptura criptográfica final
+static int crypto_break_phase(void) {
+    clear_screen();
+    print_banner("🔓 FASE 5: RUPTURA CRIPTOGRÁFICA");
+    
+    printf("\n🎯 Objetivo: Romper el cifrado final\n");
+    printf("📝 Instrucciones: Resuelve el algoritmo híbrido\n");
+    printf("⏰ Tiempo límite: 300 segundos\n\n");
+    
+    printf("🔍 Algoritmo criptográfico identificado:\n");
+    printf("   - SHA1 modificado con constantes alteradas\n");
+    printf("   - Caja S personalizada de 256 bytes\n");
+    printf("   - Autómata celular regla 30 con variaciones\n");
+    printf("   - Checksum final: 0x40008000\n\n");
+    
+    printf("🔑 Pistas descubiertas:\n");
+    printf("   - La clave contiene 'ChronoVM'\n");
+    printf("   - Incluye una referencia a 'Smurf'\n");
+    printf("   - El flag real está encriptado en el bytecode\n");
+    printf("   - Solo se puede descifrar con la clave correcta\n\n");
+    
+    printf("🔍 ¿Cuál es la clave de validación? ");
+    char key[256];
+    if (fgets(key, sizeof(key), stdin) == NULL) {
+        printf("\n❌ Error de entrada!\n");
+        return 0;
+    }
+    
+    // Eliminar newline
+    key[strcspn(key, "\n")] = 0;
+    
+    if (strcmp(key, "ChronoVMSmurf") == 0) {
+        printf("\n✅ ¡Correcto! +500 puntos\n");
+        score += 500;
+        game_state.knowledge_level += 2;
+        
+        printf("\n🔓 Cifrado roto. Descifrando flag real...\n");
+        printf("   El flag real es: %s\n", real_flag);
+        game_state.real_flag_found = 1;
+        
+        return 1;
+    } else {
+        printf("\n❌ Incorrecto! Perdiste una vida.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Fase 6: Revelación final
+static int final_revelation_phase(void) {
+    clear_screen();
+    print_banner("💡 FASE 6: REVELACIÓN FINAL");
+    
+    printf("\n🎯 Objetivo: Descubrir la verdad\n");
+    printf("📝 Instrucciones: Confirma que has encontrado el flag real\n");
+    printf("⏰ Tiempo límite: 60 segundos\n\n");
+    
+    printf("🔍 Análisis final completado:\n");
+    printf("   - Flags falsos encontrados: %d\n", game_state.fake_flags_found);
+    printf("   - Nivel de conocimiento: %d\n", game_state.knowledge_level);
+    printf("   - Flag real encontrado: %s\n", game_state.real_flag_found ? "Sí" : "No");
+    printf("   - Puntuación actual: %d\n", score);
+    printf("\n");
+    
+    if (game_state.real_flag_found) {
+        printf("✅ ¡Has encontrado el flag real!\n");
+        printf("   Flag: %s\n", real_flag);
+        printf("   +1000 puntos por completar la misión\n");
+        score += 1000;
+        return 1;
+    } else {
+        printf("❌ No has encontrado el flag real.\n");
+        printf("   Debes regresar y encontrar la clave correcta.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Fase 7: Escape final
+static int escape_phase(void) {
+    clear_screen();
+    print_banner("🏃 FASE 7: ESCAPE");
+    
+    printf("\n🎯 Objetivo: Escapar con el flag real\n");
+    printf("📝 Instrucciones: Confirma tu escape exitoso\n");
+    printf("⏰ Tiempo límite: 30 segundos\n\n");
+    
+    printf("🚨 SISTEMA EN AUTODESTRUCCIÓN\n");
+    printf("   Tiempo restante: 5 minutos\n");
+    printf("   Flag real: %s\n", real_flag);
+    printf("   Estado: Listo para escapar\n\n");
+    
+    printf("🔍 ¿Confirmas que tienes el flag real? (s/n): ");
+    char confirm;
+    if (scanf(" %c", &confirm) == 1 && (confirm == 's' || confirm == 'S')) {
+        printf("\n✅ ¡ESCAPE EXITOSO!\n");
+        printf("   Has logrado escapar con el flag real.\n");
+        printf("   +500 puntos por el escape exitoso\n");
+        score += 500;
+        return 1;
+    } else {
+        printf("\n❌ Escape fallido. El sistema se autodestruye.\n");
+        lives--;
+        return 0;
+    }
+}
+
+// Minijuego 1: Puzzle de memoria (mantenido para compatibilidad)
 static int memory_puzzle(void) {
     clear_screen();
     print_banner("🧠 PUZZLE DE MEMORIA - FASE 1");
@@ -783,6 +1133,164 @@ static int final_boss(void) {
     }
 }
 
+// Sistema narrativo complejo
+static void show_story_intro(void) {
+    clear_screen();
+    print_ascii_art(
+        "  _____ _                      _   __  __ \n"
+        " / ____| |                    | | |  \\/  |\n"
+        "| |    | |__  _ __ ___  _ __   | | | \\  / |\n"
+        "| |    | '_ \\| '__/ _ \\| '_ \\  | | | |\\/| |\n"
+        "| |____| | | | | | (_) | | | | |_| | |  | |\n"
+        " \\_____|_| |_|_|  \\___/|_| |_|\\___/|_|  |_|\n"
+        "\n"
+        "    🎮 CHRONO VM CHALLENGE - EDICIÓN EXTREMA 🎮\n"
+        "    ============================================\n"
+    );
+    
+    printf("\n🌃 NARRATIVA: 'EL INCIDENTE CHRONOVM'\n");
+    printf("=====================================\n\n");
+    
+    printf("📅 Fecha: 15 de Marzo, 2024\n");
+    printf("🕐 Hora: 03:47 AM\n");
+    printf("📍 Ubicación: Centro de Datos Abandonado, Sector 7\n\n");
+    
+    printf("🔍 SITUACIÓN:\n");
+    printf("   Eres %s, un hacker de élite especializado en sistemas\n", player_name);
+    printf("   críticos. Has sido contactado por una fuente anónima que\n");
+    printf("   afirma haber descubierto algo perturbador en un sistema\n");
+    printf("   abandonado. Un programa llamado 'ChronoVM' ha comenzado\n");
+    printf("   a mostrar comportamientos anómalos, y tu misión es\n");
+    printf("   investigar qué está sucediendo.\n\n");
+    
+    printf("⚠️  ADVERTENCIAS:\n");
+    printf("   - El sistema tiene protecciones extremas\n");
+    printf("   - Se han reportado múltiples flags falsos\n");
+    printf("   - La verdad está enterrada en capas de engaño\n");
+    printf("   - Un error podría costarte la vida\n\n");
+    
+    printf("🎯 OBJETIVO:\n");
+    printf("   Encuentra la verdad detrás de ChronoVM y descubre\n");
+    printf("   el flag real entre las decenas de señuelos.\n\n");
+    
+    printf("💀 RECURSOS:\n");
+    printf("   - 3 vidas (errores críticos te matan)\n");
+    printf("   - Herramientas de análisis limitadas\n");
+    printf("   - Tiempo limitado antes de que el sistema se autodestruya\n\n");
+    
+    printf("🚨 ¿Estás listo para enfrentar la verdad? (s/n): ");
+}
+
+static void show_phase_intro(phase_t phase) {
+    clear_screen();
+    
+    switch (phase) {
+        case PHASE_INVESTIGATION:
+            print_banner("🔍 FASE 1: INVESTIGACIÓN INICIAL");
+            printf("\n📍 Ubicación: Centro de Datos - Nivel 1\n");
+            printf("🎯 Misión: Analizar el sistema ChronoVM\n\n");
+            printf("📋 Descripción:\n");
+            printf("   Has llegado al centro de datos abandonado. El aire\n");
+            printf("   está cargado de electricidad estática y el silencio\n");
+            printf("   es inquietante. En el centro de la sala, una terminal\n");
+            printf("   parpadea con un mensaje: 'ChronoVM v2.0 - TimeLock Active'\n\n");
+            printf("🔍 Tu análisis inicial revela:\n");
+            printf("   - Múltiples procesos ejecutándose\n");
+            printf("   - Comunicaciones encriptadas\n");
+            printf("   - Patrones de datos anómalos\n");
+            printf("   - Posibles flags ocultos en la memoria\n\n");
+            break;
+            
+        case PHASE_DECRYPTION:
+            print_banner("🔐 FASE 2: DESCIFRADO DE COMUNICACIONES");
+            printf("\n📍 Ubicación: Centro de Datos - Nivel 2\n");
+            printf("🎯 Misión: Descifrar las comunicaciones encriptadas\n\n");
+            printf("📋 Descripción:\n");
+            printf("   Has descubierto que ChronoVM está comunicándose con\n");
+            printf("   sistemas externos. Las comunicaciones están cifradas\n");
+            printf("   con un algoritmo híbrido complejo que combina:\n");
+            printf("   - SHA1 modificado con constantes alteradas\n");
+            printf("   - Caja S personalizada de 256 bytes\n");
+            printf("   - Autómata celular regla 30 con variaciones\n\n");
+            printf("⚠️  Advertencia: Se han detectado múltiples flags falsos\n");
+            printf("   en las comunicaciones. Solo uno es real.\n\n");
+            break;
+            
+        case PHASE_VM_ANALYSIS:
+            print_banner("🖥️  FASE 3: ANÁLISIS DE MÁQUINA VIRTUAL");
+            printf("\n📍 Ubicación: Centro de Datos - Nivel 3\n");
+            printf("🎯 Misión: Analizar la máquina virtual interna\n\n");
+            printf("📋 Descripción:\n");
+            printf("   ChronoVM ejecuta una máquina virtual personalizada\n");
+            printf("   con 15 instrucciones únicas. El bytecode está\n");
+            printf("   cifrado y disperso por toda la memoria del sistema.\n\n");
+            printf("🔍 Características de la VM:\n");
+            printf("   - 15 instrucciones personalizadas\n");
+            printf("   - Sistema de registros de 16 bits\n");
+            printf("   - Memoria virtual de 4KB\n");
+            printf("   - Stack de llamadas de 256 bytes\n");
+            printf("   - Bytecode cifrado con XOR+RC4\n\n");
+            break;
+            
+        case PHASE_MEMORY_DIVE:
+            print_banner("🧠 FASE 4: INMERSIÓN EN MEMORIA");
+            printf("\n📍 Ubicación: Centro de Datos - Nivel 4\n");
+            printf("🎯 Misión: Explorar la memoria del sistema\n\n");
+            printf("📋 Descripción:\n");
+            printf("   Has logrado acceder a la memoria del sistema.\n");
+            printf("   Los datos están fragmentados y dispersos, pero\n");
+            printf("   puedes ver patrones que sugieren la presencia\n");
+            printf("   de múltiples flags. Algunos son señuelos,\n");
+            printf("   otros son pistas, y solo uno es real.\n\n");
+            printf("⚠️  Peligro: El sistema detecta intrusiones en memoria\n");
+            printf("   y activará contramedidas si te descubren.\n\n");
+            break;
+            
+        case PHASE_CRYPTO_BREAK:
+            print_banner("🔓 FASE 5: RUPTURA CRIPTOGRÁFICA");
+            printf("\n📍 Ubicación: Centro de Datos - Nivel 5\n");
+            printf("🎯 Misión: Romper el cifrado final\n\n");
+            printf("📋 Descripción:\n");
+            printf("   Has identificado el algoritmo criptográfico final.\n");
+            printf("   Es un sistema híbrido que combina múltiples\n");
+            printf("   técnicas de cifrado. La clave está oculta en\n");
+            printf("   los patrones de la máquina virtual.\n\n");
+            printf("🔑 Pistas descubiertas:\n");
+            printf("   - La clave contiene 'ChronoVM'\n");
+            printf("   - Incluye una referencia a 'Smurf'\n");
+            printf("   - El checksum final es 0x40008000\n");
+            printf("   - El flag real está encriptado en el bytecode\n\n");
+            break;
+            
+        case PHASE_FINAL_REVELATION:
+            print_banner("💡 FASE 6: REVELACIÓN FINAL");
+            printf("\n📍 Ubicación: Centro de Datos - Nivel 6\n");
+            printf("🎯 Misión: Descubrir la verdad\n\n");
+            printf("📋 Descripción:\n");
+            printf("   Has llegado al núcleo del sistema. Aquí es donde\n");
+            printf("   se encuentra la verdad sobre ChronoVM. El sistema\n");
+            printf("   está en modo de autodestrucción y tienes tiempo\n");
+            printf("   limitado para encontrar el flag real.\n\n");
+            printf("🚨 URGENTE: El sistema se autodestruirá en 5 minutos\n");
+            printf("   si no encuentras el flag correcto.\n\n");
+            break;
+            
+        case PHASE_ESCAPE:
+            print_banner("🏃 FASE 7: ESCAPE");
+            printf("\n📍 Ubicación: Centro de Datos - Salida\n");
+            printf("🎯 Misión: Escapar con el flag real\n\n");
+            printf("📋 Descripción:\n");
+            printf("   Has encontrado el flag real, pero el sistema\n");
+            printf("   está colapsando. Debes escapar antes de que\n");
+            printf("   todo explote. El flag real es tu única esperanza\n");
+            printf("   de sobrevivir.\n\n");
+            break;
+            
+        default:
+            break;
+    }
+}
+
 // Función principal interactiva
 int main(int argc, char *argv[]) {
     // Verificar argumentos
@@ -802,83 +1310,66 @@ int main(int argc, char *argv[]) {
     // Inicializar juego
     clear_screen();
     
-    // ASCII Art de bienvenida
-    print_ascii_art(
-        "  _____ _                      _   __  __ \n"
-        " / ____| |                    | | |  \\/  |\n"
-        "| |    | |__  _ __ ___  _ __   | | | \\  / |\n"
-        "| |    | '_ \\| '__/ _ \\| '_ \\  | | | |\\/| |\n"
-        "| |____| | | | | | (_) | | | | |_| | |  | |\n"
-        " \\_____|_| |_|_|  \\___/|_| |_|\\___/|_|  |_|\n"
-        "\n"
-        "    🎮 CHRONO VM CHALLENGE - EDICIÓN INTERACTIVA 🎮\n"
-        "    ================================================\n"
-    );
+    // Mostrar introducción narrativa
+    show_story_intro();
     
-    // Solicitar nombre del jugador
-    printf("\n👋 ¡Bienvenido al reto más complejo de reversing!\n");
-    printf("🎯 Tu misión: Resolver 6 fases de desafíos progresivos\n");
-    printf("💀 Tienes 3 vidas - úsalas sabiamente\n");
-    printf("🏆 Puntuación máxima: 2150 puntos\n\n");
-    
-    printf("🔤 Ingresa tu nombre de hacker: ");
-    if (fgets(player_name, sizeof(player_name), stdin)) {
-        player_name[strcspn(player_name, "\n")] = 0;
+    char response;
+    if (scanf(" %c", &response) == 1 && (response == 's' || response == 'S')) {
+        printf("\n🚀 ¡Perfecto %s! Comenzando la aventura...\n", player_name);
+        sleep(2);
     } else {
-        strcpy(player_name, "Anonymous");
+        printf("\n💀 Has decidido no enfrentar la verdad. El sistema se autodestruye.\n");
+        return 0;
     }
     
-    printf("\n🚀 ¡Perfecto %s! Comenzando la aventura...\n", player_name);
-    sleep(2);
-    
-    // Bucle principal del juego
+    // Bucle principal del juego narrativo
     while (current_phase < PHASE_COMPLETE && lives > 0) {
         clear_screen();
+        show_phase_intro(current_phase);
         print_stats();
         
         int success = 0;
         
         switch (current_phase) {
             case PHASE_INTRO:
-                print_banner("🎬 INTRODUCCIÓN");
-                printf("\n📖 Historia:\n");
-                printf("   Un viejo programa llamado ChronoVM ha aparecido en un sistema abandonado.\n");
-                printf("   Parece un simple reloj digital, pero en realidad esconde un mecanismo\n");
-                printf("   de validación muy elaborado. Tu misión es descubrir cómo funciona\n");
-                printf("   y revelar el secreto que protege. El tiempo corre...\n\n");
-                printf("🎮 Presiona ENTER para comenzar...");
+                printf("🎮 Presiona ENTER para comenzar la investigación...");
                 getchar();
-                current_phase = PHASE_PUZZLE_1;
+                current_phase = PHASE_INVESTIGATION;
                 success = 1;
                 break;
                 
-            case PHASE_PUZZLE_1:
-                success = memory_puzzle();
-                if (success) current_phase = PHASE_PUZZLE_2;
+            case PHASE_INVESTIGATION:
+                success = investigation_phase();
+                if (success) current_phase = PHASE_DECRYPTION;
                 break;
                 
-            case PHASE_PUZZLE_2:
-                success = math_puzzle();
-                if (success) current_phase = PHASE_PUZZLE_3;
+            case PHASE_DECRYPTION:
+                success = decryption_phase();
+                if (success) current_phase = PHASE_VM_ANALYSIS;
                 break;
                 
-            case PHASE_PUZZLE_3:
-                success = pattern_puzzle();
-                if (success) current_phase = PHASE_CRYPTO_CHALLENGE;
+            case PHASE_VM_ANALYSIS:
+                success = vm_analysis_phase();
+                if (success) current_phase = PHASE_MEMORY_DIVE;
                 break;
                 
-            case PHASE_CRYPTO_CHALLENGE:
-                success = crypto_challenge();
-                if (success) current_phase = PHASE_VM_DEBUGGING;
+            case PHASE_MEMORY_DIVE:
+                success = memory_dive_phase();
+                if (success) current_phase = PHASE_CRYPTO_BREAK;
                 break;
                 
-            case PHASE_VM_DEBUGGING:
-                success = vm_debugging_challenge();
-                if (success) current_phase = PHASE_FINAL_BOSS;
+            case PHASE_CRYPTO_BREAK:
+                success = crypto_break_phase();
+                if (success) current_phase = PHASE_FINAL_REVELATION;
                 break;
                 
-            case PHASE_FINAL_BOSS:
-                success = final_boss();
+            case PHASE_FINAL_REVELATION:
+                success = final_revelation_phase();
+                if (success) current_phase = PHASE_ESCAPE;
+                break;
+                
+            case PHASE_ESCAPE:
+                success = escape_phase();
                 if (success) current_phase = PHASE_COMPLETE;
                 break;
                 
@@ -897,7 +1388,7 @@ int main(int argc, char *argv[]) {
             print_banner("💀 GAME OVER");
             printf("\n😢 Lo siento %s, te quedaste sin vidas.\n", player_name);
             printf("📊 Puntuación final: %d puntos\n", score);
-            printf("🎯 Puntuación máxima posible: 2150 puntos\n");
+            printf("🎯 Puntuación máxima posible: 5000 puntos\n");
             printf("💡 Intenta de nuevo para mejorar tu puntuación!\n");
             break;
         }
