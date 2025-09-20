@@ -354,6 +354,16 @@ static void vm_execute_instruction(instruction_t *inst) {
     gs.vm_cycles++;
 }
 
+static void generate_dynamic_flag(char *flag, int score, int knowledge, int cycles) {
+    uint8_t enc[] = {0x48^0xAA, 0x54^0xBB, 0x42^0xCC, 0x7B^0xDD, 0x43^0xEE, 0x68^0xFF, 0x72^0x11, 0x6F^0x22, 0x6E^0x33, 0x6F^0x44, 0x56^0x55, 0x4D^0x66, 0x5F^0x77, 0x53^0x88, 0x6D^0x99, 0x75^0xAA, 0x72^0xBB, 0x66^0xCC, 0x5F^0xDD, 0x4C^0xEE, 0x6F^0xFF, 0x63^0x11, 0x6B^0x22, 0x5F^0x33, 0x56^0x44, 0x4D^0x55, 0x5F^0x66, 0x56^0x77, 0x69^0x88, 0x72^0x99, 0x74^0xAA, 0x75^0xBB, 0x61^0xCC, 0x6C^0xDD, 0x4D^0xEE, 0x61^0xFF, 0x63^0x11, 0x68^0x22, 0x69^0x33, 0x6E^0x44, 0x65^0x55, 0x7D^0x66};
+    uint8_t key[] = {0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66};
+    
+    for (int i = 0; i < 42; i++) {
+        flag[i] = enc[i] ^ key[i];
+    }
+    flag[42] = '\0';
+}
+
 static void clear_screen(void) {
     printf("\033[2J\033[H");
 }
@@ -375,33 +385,6 @@ static void print_stats(void) {
     printf("└─────────────────────────────────────────────────────────────┘\n");
 }
 
-static void generate_flag(char *flag, size_t len) {
-    const char *parts[] = {
-        "HTB{",
-        "ChronoVM_",
-        "Smurf_",
-        "Lock_",
-        "VM_",
-        "VirtualMachine",
-        "}"
-    };
-    
-    size_t pos = 0;
-    for (int i = 0; i < 7 && pos < len - 1; i++) {
-        size_t part_len = strlen(parts[i]);
-        if (pos + part_len < len) {
-            memcpy(flag + pos, parts[i], part_len);
-            pos += part_len;
-        }
-    }
-    flag[pos] = '\0';
-}
-
-static int validate_flag(const char *input) {
-    char expected[256];
-    generate_flag(expected, sizeof(expected));
-    return strcmp(input, expected) == 0;
-}
 
 int main(int argc, char *argv[]) {
     init_crypto_system();
@@ -427,20 +410,18 @@ int main(int argc, char *argv[]) {
     gs.phase_start = gs.start_time;
     
     clear_screen();
-    print_banner("CHRONO VM CHALLENGE - IMPOSSIBLE EDITION");
+    print_banner("VIRTUAL MACHINE CHALLENGE - IMPOSSIBLE EDITION");
     
-    printf("\nNARRATIVE: 'THE CHRONOVM INCIDENT'\n");
+    printf("\nNARRATIVE: 'THE IMPOSSIBLE INCIDENT'\n");
     printf("===================================\n\n");
     
-    printf("Date: March 15, 2024\n");
-    printf("Time: 03:47 AM\n");
     printf("Location: Abandoned Data Center, Sector 7\n\n");
     
     printf("SITUATION:\n");
     printf("   You are an elite hacker specialized in critical systems.\n");
     printf("   You have been contacted by an anonymous source claiming to\n");
     printf("   have discovered something disturbing in an abandoned system.\n");
-    printf("   A program called 'ChronoVM' has begun to show anomalous\n");
+    printf("   A mysterious program has begun to show anomalous\n");
     printf("   behavior, and your mission is to investigate what is\n");
     printf("   happening.\n\n");
     
@@ -452,7 +433,7 @@ int main(int argc, char *argv[]) {
     printf("   - Time limit: 6 hours\n\n");
     
     printf("OBJECTIVE:\n");
-    printf("   Find the truth behind ChronoVM and discover\n");
+    printf("   Find the truth behind this system and discover\n");
     printf("   the real flag among dozens of decoys.\n\n");
     
     printf("RESOURCES:\n");
@@ -490,7 +471,7 @@ int main(int argc, char *argv[]) {
                 
             case 1:
                 printf("PHASE 1: INITIAL INVESTIGATION\n");
-                printf("   Analyzing ChronoVM system...\n");
+                printf("   Analyzing target system...\n");
                 printf("   Multiple false flags detected.\n");
                 printf("   Which do you think is the real flag? (1-10): ");
                 
@@ -545,13 +526,21 @@ int main(int argc, char *argv[]) {
                 printf("PHASE 4: CRYPTOGRAPHIC LAYER 2\n");
                 printf("   Decrypting hybrid algorithm...\n");
                 printf("   Algorithm: Modified SHA1 + Custom S-box\n");
-                printf("   Key: ChronoVMSmurf\n");
+                char dkey[16] = {0x43^0x12, 0x68^0x34, 0x72^0x56, 0x6F^0x78, 0x6E^0x9A, 0x6F^0xBC, 0x56^0xDE, 0x4D^0xF0, 0x53^0x21, 0x6D^0x43, 0x75^0x65, 0x72^0x87, 0x66^0xA9, 0};
+                for(int i=0;i<13;i++) dkey[i]^=(0x12+i*0x22)&0xFF;
+                printf("   Key: %s\n", dkey);
                 printf("   What is the validation key? ");
                 
                 char key[256];
                 if (fgets(key, sizeof(key), stdin) != NULL) {
                     key[strcspn(key, "\n")] = 0;
-                    if (strcmp(key, "ChronoVMSmurf") == 0) {
+                    char expected_key[16];
+                    for(int i=0;i<13;i++) expected_key[i] = (0x43^0x12)^((0x12+i*0x22)&0xFF);
+                    expected_key[0] = 'C'; expected_key[1] = 'h'; expected_key[2] = 'r'; expected_key[3] = 'o';
+                    expected_key[4] = 'n'; expected_key[5] = 'o'; expected_key[6] = 'V'; expected_key[7] = 'M';
+                    expected_key[8] = 'S'; expected_key[9] = 'm'; expected_key[10] = 'u'; expected_key[11] = 'r';
+                    expected_key[12] = 'f'; expected_key[13] = '\0';
+                    if (strcmp(key, expected_key) == 0) {
                         printf("CORRECT! +500 points\n");
                         gs.score += 500;
                         gs.knowledge_level += 2;
@@ -593,7 +582,11 @@ int main(int argc, char *argv[]) {
                 char key4[256];
                 if (fgets(key4, sizeof(key4), stdin) != NULL) {
                     key4[strcspn(key4, "\n")] = 0;
-                    if (strcmp(key4, "ChronoVMSmurf") == 0) {
+                    char ek4[16];
+                    uint8_t enc4[] = {0x43^0x77, 0x68^0x88, 0x72^0x99, 0x6F^0xAA, 0x6E^0xBB, 0x6F^0xCC, 0x56^0xDD, 0x4D^0xEE, 0x53^0xFF, 0x6D^0x11, 0x75^0x22, 0x72^0x33, 0x66^0x44, 0};
+                    for(int i=0;i<13;i++) ek4[i] = enc4[i] ^ (0x77+(i*0x11));
+                    ek4[13] = '\0';
+                    if (strcmp(key4, ek4) == 0) {
                         printf("CORRECT! +400 points\n");
                         gs.score += 400;
                         gs.knowledge_level += 2;
@@ -614,7 +607,11 @@ int main(int argc, char *argv[]) {
                 char key5[256];
                 if (fgets(key5, sizeof(key5), stdin) != NULL) {
                     key5[strcspn(key5, "\n")] = 0;
-                    if (strcmp(key5, "ChronoVMSmurf") == 0) {
+                    char ek5[16];
+                    uint8_t enc5[] = {0x43^0x66, 0x68^0x77, 0x72^0x88, 0x6F^0x99, 0x6E^0xAA, 0x6F^0xBB, 0x56^0xCC, 0x4D^0xDD, 0x53^0xEE, 0x6D^0xFF, 0x75^0x11, 0x72^0x22, 0x66^0x33, 0};
+                    for(int i=0;i<13;i++) ek5[i] = enc5[i] ^ (0x66+(i*0x11));
+                    ek5[13] = '\0';
+                    if (strcmp(key5, ek5) == 0) {
                         printf("CORRECT! +600 points\n");
                         gs.score += 600;
                         gs.knowledge_level += 3;
@@ -655,7 +652,9 @@ int main(int argc, char *argv[]) {
                 char result[256];
                 if (fgets(result, sizeof(result), stdin) != NULL) {
                     result[strcspn(result, "\n")] = 0;
-                    if (validate_flag(result)) {
+                    char exp_flag[64];
+                    generate_dynamic_flag(exp_flag, gs.score, gs.knowledge_level, gs.vm_cycles);
+                    if (strcmp(result, exp_flag) == 0) {
                         printf("CORRECT! +800 points\n");
                         gs.score += 800;
                         gs.knowledge_level += 4;
@@ -671,7 +670,9 @@ int main(int argc, char *argv[]) {
             case 10:
                 printf("PHASE 10: FINAL BOSS\n");
                 printf("   You have found the real flag!\n");
-                printf("   Flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}\n");
+                char temp_flag[64];
+                generate_dynamic_flag(temp_flag, gs.score, gs.knowledge_level, gs.vm_cycles);
+                printf("   Flag: %s\n", temp_flag);
                 printf("   Do you confirm you have the real flag? (y/n): ");
                 
                 char confirm;
@@ -716,7 +717,9 @@ int main(int argc, char *argv[]) {
         printf("\nCONGRATULATIONS! You have completed the most difficult challenge.\n");
         printf("Final score: %d points\n", gs.score);
         printf("Maximum score: %d points\n", MAX_SCORE);
-        printf("Real flag: HTB{ChronoVM_Smurf_Lock_VM_VirtualMachine}\n");
+        char flag[64];
+        generate_dynamic_flag(flag, gs.score, gs.knowledge_level, gs.vm_cycles);
+        printf("Real flag: %s\n", flag);
         printf("Total time: %ld seconds\n", time(NULL) - gs.start_time);
         printf("Lives remaining: %d\n", gs.lives);
         printf("False flags found: %d\n", gs.fake_flags_found);

@@ -1,52 +1,27 @@
-# ChronoVM Impossible
+# ChronoVM - Reto IMPOSIBLE
 
-## Description
+## 📋 Descripción del Reto
 
-A mysterious program called ChronoVM has appeared in an abandoned system. It appears to be a simple digital clock, but it actually hides an extremely elaborate validation mechanism. Your mission is to discover how it works and reveal the secret it protects. Time is running out...
+**Nombre:** chronovm_impossible
+**Categoría:** Reversing
+**Dificultad:** IMPOSIBLE
 
-## Technical Features
+### 🎯 Descripción para el Jugador
 
-- Extreme anti-debugging protections
-- Multiple obfuscation techniques
-- Internal virtual machine with custom instructions
-- Hybrid cryptography with multiple layers
-- Interactive challenge with 50 phases
-- Time limit: 6 hours
-- Single life system
+"Un programa llamado 'ChronoVM' ha comenzado a mostrar comportamientos anómalos en un sistema abandonado. Tu misión es investigar qué está sucediendo, encontrar la verdad detrás de ChronoVM y descubrir el flag real entre docenas de señuelos. El tiempo corre..."
 
-## Installation
+## 🚀 Instalación y Uso
 
-```bash
-chmod +x build.sh
-./build.sh
-```
-
-## Usage
-
+### Ejecución
 ```bash
 ./chronovm_impossible
 ```
 
-## Important Notes
+## ⚠️ Notas Importantes
 
-- The binary is compiled as static and stripped
-- Anti-debugging protections are active
-- The bytecode is encrypted and scattered
-- The cryptographic algorithm is hybrid and custom
-- The challenge is interactive and has multiple phases
-- The flag is NOT visible in strings
-- Advanced reversing knowledge required
-
-## Difficulty
-
-**IMPOSSIBLE (10/10)** - Requires extreme knowledge in:
-- ELF binary reversing
-- Anti-debugging bypass
-- Custom virtual machine analysis
-- Custom cryptography
-- Complex algorithm reverse engineering
-- Memory analysis
-- Vulnerability exploitation
-- Side channel analysis
-
-**Estimated time:** 6+ hours of intensive work
+- El binario está compilado como estático y strippeado.
+- Las protecciones anti-debugging están activas.
+- El bytecode está cifrado y disperso.
+- El algoritmo criptográfico es híbrido y personalizado.
+- El reto es interactivo y tiene múltiples fases.
+- Solo tienes una vida.
