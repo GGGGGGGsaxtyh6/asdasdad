@@ -1,0 +1,1 @@
+# Nmap 7.95 scan initiated Sun Sep 21 21:52:33 2025 as: nmap -sV -p80,443 --script=http-enum,http-title,http-methods -oN web_services.txt 5.161.142.77

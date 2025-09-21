@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Sun Sep 21 21:53:11 2025 as: nmap -p30060 --script=game-probes -oN game_server.txt 5.161.142.77
+NSE: failed to initialize the script engine:
+/usr/bin/../share/nmap/nse_main.lua:829: 'game-probes' did not match a category, filename, or directory
+stack traceback:
+	[C]: in function 'error'
+	/usr/bin/../share/nmap/nse_main.lua:829: in local 'get_chosen_scripts'
+	/usr/bin/../share/nmap/nse_main.lua:1364: in main chunk
+	[C]: in ?
+
+QUITTING!
