@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Home - RingZer0 Online CTF</title>
+		<link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+
+		<base href="https://ringzer0ctf.com/">
+		<meta charset="utf-8" />
+              	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="/css/new.css" />
+                <link rel="stylesheet" type="text/css" href="/css/fa.css" />
+ 		<link href="/bower_components/morrisjs/morris.css" rel="stylesheet" />
+		<script type="text/javascript" src="/script/jquery.js"></script>
+	    	<script type="text/javascript" src="/script/global.js"></script>
+
+		<meta itemprop="name" content="Home - RingZer0 CTF" />
+		<meta itemprop="description" content="RingZer0 Team Online CTF. Solve challenges earn points." />
+		<meta property="og:title" content="Home - RingZer0 CTF" />
+		<meta property="og:description" content="RingZer0 Team Online CTF. Solve challenges earn points." />
+		<!-- <meta property="og:image" content="/images/thumbnail.png" /> -->
+		<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIwAAACPCAYAAAAoVDOQAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3gIPFhkqnlMrxQAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAgAElEQVR42u19a5Bc1bXet9Y5834gJI1GAgmjQQj0wAiBBJSA4AcYHIwfZfAP2wmh4nt/3JRvOT+SqsRVxveWK6lUpXLr5ubaIUlVquJbzo9UxeUHtsXTBhlJjkAP0HuQNIA0QhrNu2emu8/e+bEfZ+999hkJEJJm1Kdqanq6+5zu6b16re/71mPTv339ZgkABIb6TQCZWwSYe/V99jmFx8PHULgOgaEu75ynnx++tnk+UX52+F7yc83rkXOl8DXM42Xv2XwG6vpSSvs8QDq/zeHeBiRk/jTk5xMRpBT29e3t4Brq6VJdR7+uhNCvKtUT9PtSz1G/1d9CXyp4TJ8nIEH2uc5zZPBc/Xz3XBlcMzWG4n6YauEIJP1FKPvww/sKRqA/uNDgXCPxjDBqfJH3UWIg3v/gPea+b98Qidg+hcH2PZhlsAsXGI5ZYJIAGNFzzLUlBJhSxyhyQyPKz4Fd0AQw1yG9oKT/lkI9pl9YmQUAazzCPp+twWnDMcair0muYZAEpFD/J+VGZN5TGvMWdgmCRS4uenwBSP33wTfa8WJEgeeh4nOJI9/+C79m7H17xkURD0ehsatFZCT22557Ouk5CskSkN5LO2Yj9C22vsPYntSewzc/9bgxEmnOcbyCIPLvI9KLrxZagqz3IUh9LWhjAEAi9zrakKxh6I9HvZaw14aUSL2FKSykbxAIfUrs20rkeA13MRExkvw++xpU9EC5oepHrDcIvU7M8/leESCwcz31DSb/fQShVErpGKwTQ1TsAliHGnJCELkRKvcbdiFYXUOS1MakFtiGQ+1JlFEJx/wkBAQSAEIKZ4EFpBSQpEOZNB7CjXkCINbvAdajkOdxBKA9myQBQuIYGZCGH+BsISTEKb6hmbPzD5ZKrumeb7xJ+O33zy17rRge4Wio8q+jXq9Wq2OyMonqTA0T4+MQUmJqagotzS2YqkyhtbUNxISWlhYknKC5pQUtLS1oa21Fa1urMg67YGy9hBveXC9jjc81MOOWrEeB9hBOaCJWXkUKHWLU+UxsPQ7AINKhyXoZCSlJh8XA6xADMg9RRAbjkL4twJTo98m5h2Gw/melfiBYjAIOoFlALpUaifdMoqJ3iL5OMRS6z3W9Vln4dJ8nMoFzQ0M4eeoUxsbGUalUUJ2pIssyjJ8WmBljDO5l3PqlOk68mmDxmgzj7yXovb2uzIwZnDDaWlvR3tGO9rZ2LF+xHEt6lqC5pbkIgo0BSahF1x4E0H+74Yf18zy8JB2vI9QXWy+4NLc5BKoB9jChR/9N2hilve1gIhLW06k3KkBgjY6U96Ef7rhdxpiH+pMDvBBfiCgAdT2BMURp3D3bUODjlzJvFHoXznGSfS4XcAiBUKlMolKZxrvvDmBiYhIT4xOYnKxg+9+0oFKpIMsyCCEQO1R4kfbLYZgPM6O5uRmrP59g1ZYOdHd3Y0nvEizp6cE111xjjcdjTgUW5Dxu/YlwkJNvCPnfwget5jlSzM6AgnOlBsVSA+QiMxL+NaQyG/qrnXdI308E+CMwBv8bXWQ3hDiYnA1gxl8jwCraQDz2Y7yKLBpYvV7H+PgEDh06jJGREYwOTWD7f04xOTlpjcD8TpLELqIQ6oNyDcU1IGYVBrIss/c3NTXh4X/Tga6uTixevBh9fX3oWbIEUgr7Op7fMUBX5p7E90wuBRZ2EY1R5QsOjVuU4QkIQBp/kD8OZ8FzQ3GNq2hsvsEI/V4F6K//dKeMxvkCS4l5Alef8UFjwWPEzrdGwjqWcwloDd4PxVmZeowxVang2DvHcPr0Bxg4PIRX/24KAJAkiV1oZva8SGgYrkG495sf93FzjSRJ0HdPG+766iLctOomrLxxJVrbWh2cEQQrfT85PkZ934XPiMyiF7yDtKBYeQehz3X1GuHrL+a5xhyDayPmXezfULS6AAjJMRqJ8+CD0IuEYco1ijigJXIej4YpF9iGYYs9onvu7Dn097+DEydO4Lc/rFjjkFKWhp7wfmNM4WE8T1noAoAj2yZwZNsEvvj9MQyfG0Hfyj709i4BJ6lHx3PNw8Ut6hG2OELYT84upDUx2BBjr0sEBjv4xABgl0IrOi6kuo8NcJfCwTSGi0kwACHJ6jr0oz9tli4w5TLmgQhdDrxMaEhFmuqCVC41sCIz843TsjqHXdWqNQwODuLI4SP4h798txB2Ygt9MQ/zWRljy7IMSZLgyX9/A9avW48VK1bkwFi6EqD0Fr0YHvK/c1VXGZsftgCBzIYO5Zmkc1vkrMsNOwXcogVAKSAJ1iOZ5ycP/fmKZwgMkgxmRc2IGKwBL7t/6/vMgufPU1yLiGFYl7rPSPvmtnq+Pcdck8y5ib0dvbZzX/5ahFq1jhPHB7D7zT34P//qtPUo5neIRT5poyEipGkKIQT2bR1G243DaEqbsOCaBWhuarH/i/qOJPpzoFzHIrJfX+9vKjLE3MM74dr5ArOjPXlskwKxlIIvbSihaI0ptd6Dw3xKoHc4YaNMV3FfiLUHKHgRq7vEsFKZeOZjHjcnVa3W0H+kH3v37sVv/3oSHR0dqNfrmJmZweU4DJaRUqKpqQkzMzP49Y/O4My3X0f9UYG169ago6NTC2mJlx+SJADJ+bcdEglYhQ/inK2onI3VTlRqwJyjwpBViaUEk8omQes4ZIi2wTNESvgjCZZKBxJaDhBa2CMQhBRK6S3L44RyvJdj0o+HYSrURaLANWIkpcZDMbVYhaJ6vY53B97D3/+zfZiYmERTUxPq9Tqq1eol8yqxg5lRrVYhhNBem7Dzf03i0C924Z//bYaNGzeira3dEeaEFdmgsYcwyyoFEq3eGgxisYl+pkr7qHQBpE6e6ucTKRistCDymJc60eg0uXotIcBSQhLUb/0+GQQ27p2IAe3mVWhItOtM1N8mDIGVG+XEnmcMhyhBYlxsEIaIEnuuMUZzffU71WEq8X5UWDTvQd2XUAIpgJMnB/HmG7sxMTGBNE2tsZhv+aU8XAOdmZmxHsYYUJqmGB0dxX//7m7s3fMW6rXM+T9T+7+R/l+Z8s9CfWbumqT6JwFz6oVo83naTL+5PrG3nvlruGvurLdeM9braaKO52HyUORI9eSDXuloKHGQ6wt+eT6JC2C2mHLgwn3QOCrUis6e+QA7t/8Jv/zBOTAz6vW6t4Du35804A1fwwBf4+myLLMazujoKHa8vhNp0oQ779yosI4USDTeMlI82fDjhxtIVv5HS/0sc5JMxBDIHG9CeXkDkU4TCB0KhQ4zZHNIJuWgbIHzxKOEZVMpI/HxiKHSrkG4ixeEoTwlwAWpPzcidoAZB/pLSOcpwElc0HGEEHjrrf34xQ/OIkkUUC6jzJfjcN+LAd/MDCGUkPfKfxlFvfYHtLa0YcOG2zUw1YlIYrVo0mALTYHJLK7IabbUuIcUvpCGkpuApjMFDJnnrjS+cQVEy9l0kpFs6GKnfkdhmdRbJCqWCsQAahF3aHMpaDEcVYRdr1PMCXGp3mNyXgcPHMC2n72PlpaWK8pQYuHJNSAhhAXE2/7bJJb07sby65crVRiZzWRL0qBVUq4WWy/hJiLz3A/pEggJZSSGHQpbhAUHDAt1bW18RpNR55IV/Eh7L2FAsSmgIqtpGJ2Dtc05C+wKblb/4IARFQuXKHgsFAOp4I0iHopyIxsbG8ORw/04vG3cuv4rzWjKxD3zmDGcn//oGK7pfBWP/uMvorOzwzIg882W+vMSpqZFsvIoVuLTIYekAsZWsyGrv0Aaj5NAsg5z2likzXrnCUeC0JqNynwrXCsty0qZEs9T+Avt6rRcwB4ezfXoLhfCmJej0pxevRVYTcbNUhvckgc+9XqVyWn89t8Ne6JcU1MTarUaruTDpBKSJIEQwr7nn/1gP25evRobN260Cq6QGYT+jKBpM6wxKY/AOgypcgej6JKn6KrnKX6jKLtAXh5oaLZiWNKWP5A2IAGwovR5yoFNAVVMnSXP41gDkZFyhJiH8DwRRZKZ7AlUZRqNC8irMzM41n8Mo6OjlgWFicAr/ajX6yAi1Go1CCEwPT2NF59/CUsW92LFDSs0clCfifE4bGvuzKOZzfa7uovxGERKzk/0gpPU1JqU4SgvYyi6MSZpDcisr5ACDIYgne0jNyR5YSAvH7DhgBwtxQW8Hh7RvsiGNFjKZ0FuJOdEQcgqyzWdOnUab799wIYi4/ovBQu6mOHKKLZSSqRpipd/chZ9N+5ET88StLW1qloXSAgSljm5OSDrAYhUqLFGQJZVJUQQMkOCBIKARKMQIxiSE5IkSLErYhvObFEg5UDalmiGQNSyFg7V3dyouMyzaM/DBRGOPVmbiItG6qTaXC8EANWZKo4e7seL/2nUSv5z+XC7CgDgrX37sWnzJvT19dkyBDYgVTMkpdrmeEPAFFQpCi0cozJrZICthARr45Ce8qvYEpMxCpGnHIiconHktDrGRtyCKteI8qp6403C0kcqKsOuMZCT3rTehB29x6XrubGeON6PAwcOWvV0rh+GYmdZBmbGjn8Yx6ZNB3DzTbdoikw6ZOhqOwi90CasEFgyQELrMgou2JIHm0XnPKlI+pqScnBsAbACyMKAZ63jSJu0VJQ+dcFlWNTkGgu04npeikwhlmEHB7lpBjfsceChWP+z6rzqTBUH3j6I3//d+Jw3FJdyuyyPiHDo4GGMjY2j+5prIGSmPjst+auSTLbeQ5BrOJRrKdajmPSBcLiE1DoMQ8pMeSRi9VpShUCSRocREOaSWu8RIKQqujkVcBSKaX6drxeygnoUJWEXRTgLlk3m2lF2JSkV0Suh0D8JqfdTr2cYODFgWUasDmUuhyUhBNI0xb7fDePgZw/jnnvuVixIq7tsPYEJSaTFOO0FSKmywvEokKwwEEHdJ7M8j0RK7WVIy5zy0EW2dNS8lk12SigPk4PXnMKG4JOiYSf3HrGEoavZEHMEUHOu5BAVvYz+uzI5jdf/x/QFax5zwUhCHJNlGQaPTeCN//cm7tx4J5pbWhTmMOGCtD4iCbasmwigBEJmijNJlcEWXiGW9jZa0ZVumIIpqNJrJW29nmJaNgUqFOsiODqMWTQZVLt54NMPQ3DBLfmhqWhsbLEPgQBmv+ZDKg/lYSUdLk+9P2jFOVOYNBeN5XzMSQiBk+8PYnRkHEuXtmsthbUOovURMJhEXtRtMYvStVQuiXR4kRa3CMm6d0k/hxQzgk7rCp23YmSqvEES2JQ3SIBJQkjk9TAWvDL5Cm+guVAE84Q4hpxqOD/LreRpX0F21F6iArUWmcDRo/2o1Wo2BM0XQ4kd+5+fxPtfP4Xrll2vkpJkJDP1pRNGd2GdKILIyyhJamZl2kMynWBkJJRBSAKRSShmStuxWo+m1k6XJzllE6Q7GlIKw4EtVaBApfVVYGs4ZFgTByJcIPsbYyK21WHGkFy9x2bEtZ4zWRnHsf4T0XaP+eRlTGg6d3ocR4/046677kTCqZb4NUYxzWvINMhVwFdIo6FkkNbLCNuZSRqwJkavlfZspSgbyKyNTRi1F6Y3SSWomARSZofaBops7gG0fVPilTe4BuWXNpQYXeitzGtx4mEkdrSZyYkK/vg/R62xuJX/8+1oblY1v8feOYHhc2Po6VmskIgW5oDMyxUphdY29NpQpKrmlJEZRMO6190kHaVmRyYcmdIIRTbUYwrwks1wCwlT3kClkrxb7KRCF3QxDwJBjoMe6SI1d2m5j4vyx6WDXQiE9959H9VqFWmaIssyZFk2b0OSaar75d/vwyNfOI7eJb22fVVo1iisRqKxDTkpAmJAZrZEgqWju+g2WsWE2GbBhcz0F1TTdZlpwAxbwWea8RlAClut5eITFAu+USx5IC0uhYnJPCPNUREO9pycilvKbTyXfi8fnD5zVWAXk2cygH5irIKEmnSIENbLKLKtOwGQaVMiK87lLSKkk4fGgKQOXSZpmevqqttAg2kLwvPaJqGxjjAsyfcQ7PUJFTFIwJJ0aaafN3Kr33MDsLoLipnxHGCzl7g8cWzA6wIoazKbLxgmZ4NSsUYHTwjzuUhh22rJUG/JEJRpIU6ASXliBmyBOWlNxoQ2pewqVmXwD4ggKVOiqVQYx3gqgJAmlIckN0dEXpkm+9QYufcA4FHvHA/lWMitCXWNkmxaIleSXVo/OjKKkeEx+0HOdw+Tpqkt06jN1JBQoiEne15Garxhw4sFwdBF43kS0Uj9QldRCuiSBx3aWN9nFF3oxKMyTt0iSzkOSl184rIftg3ueV0vuzQ4EPDcutxiuqHIxExOyqXurNsujII8M13FzLTfATCfQa9XlywTMJo0w8mUEei6FDX/Bdpw8oKonGRLLeurtIHVcHTtsMJBmQ7zpFtddKJSKuzCBr8Y9VcqYp0SuZX8Pn7wstMFjcU8r+iJisbE+dWjxukWeScWAI+MjGKqMoN6vY6mpibbujGfD/OFGBudAHMCIYFE54oEspxWayaTy/lk22KllEhIGY80ZQtS6HKJPAUgkGk8STYvpah0Zm+zzpSbL21KlAZhiLwaGA6UWCq0uoY5ogD7aHXX7YjMk3AcaDuJZ7QfDJ7F0ReFrR+Z74fpmMyyDGMjYziw/yDWrl1rtZa8DNPU4WrdRCu/GdWRyASSMgiNQaRmQiYdY7PQTpGUYk2Zrd9lt4TTmZ7FIKQJEg+z5Mbi1Pg6Law5PXZqYqSfyXZ7lfw0Q94+C7hGaR5PvNb9obPnMDU1Zcsa50PCcbbDLds488EQOtu71ecq2VJbxZCEEuEog5QGhWRIZJP2FJrhsNtxIHIAbAC0NCwoA1GiM+KZpeLCISOKbmdIlWgGT0/xw0QMgySR/BE7vb/sGIiryxiPkgQTp3IMo1iUur6o5x+kKW28Gqg1AJwePIPOjm4k1KSMAU4Hga5bYckKi+ivqjEngglNmekuUrlpI8iZdh0w2LAkmel5U5Sry5TpIivjjTgfWebS5QK2sFV0KUyaq1hJl5dCsPZa0cy3xT8JwoJvCjSd9vYOpGlqSwDmWyogVlRl/s/R4XHIDEg4BUmz0JlOHgokkJodGYyhzEWlD7WCq1MHJDNf8peZvm1KJLQRSaHqbJBpFsY6C55piiKRqtbMMNHIkYIoxzu44JW49FwKShUo8FrMiS47TAJvpjxeZ3s3mpubUalU5n04Ml8G0/T23lsVzExXYZR47WsVk9FiniRASMVKhfYmUsLW87IJTxbHaFbleCBV2glllJSBNQVnW3mn+qWEZMWSrA7jeYpc1fXKH4LQZB4DWHN/V5RjP5dkgTEXkpyhqmxw0sJrF2PJWsKxP8mrIhyZ8WlEhEpFGwylIJJgmSCTdZWFlpk2EiehCIIwlFk6zAiZ7YQE8oo60iFIeSBydJ1MN+TrGmFpstgZEkpN10DizCBhD4CGqQCfTfneJnGZVaDa+mkFx1gkFWi9Acc9i3rQ3tlsG+3NN3C+UmvT5CaEQHt7O5qSViSUItNlCrDFTYrVGJYEmYceNrXAmvVAq7tEmcokaSFOeRkT4uqaPmcaK2sGawqzDOYxjWy+HO/jFzULVvsETvSFAqAb0mJniJC0lJryTLYR6QAQkzOqXXmgWrWK0fFRjI6MAVL18JjyhvlsMMZopJToXdmBlqYWMDXlBmHLJ7M8rMAowMpYhKbgEiZzLXQWGqqCj1MdnpxxaUQem5IOYJZE1j8lxEiVX+AIMDXSvspMszumg8vALPJxIAFl5oCBuaUT5vxEG+mxdwbw8ksv4b333sd7e6cLeZar4Vi4YDFam9ttRaN0CqhUeYryAEKS02biehndwOYYmkTdinBCZ64FZWaYuF7fzLme8kCQdTv4KGVO8vFhuscuCUAszIgtSbZJjd0wosMQWeU3V21DbEQIRMFAIRZC4JWXf4+/+f7/tpS6qanJpv7ns9G4OkxnZydaWtrBSEEsIUWmQamaFmYENxiJnzJtLAxBdW1IbA1AYZkmnXg0xpSBdcmmAdJC7YSRpxVI6TeQijmljNSyEiL2jMWO9zDGwbk664Ysv2GffaBMHKXfHOAVaP1lZHgIJ46f8D7IyzV+7FKCXQN4kyRBtVrF4kW96GjvQMrNqteaCaSLt23ppQNKpS4hMYMRiaRWfMnqOELPe5HWWPS0KbcuRiJPNdiZELByi8OSQjBbrIMxFI8p9AxFyhwyouI5+YQkt7TzzAdDeHPH27aU4VJNwbxSRLtarYa1n74ZT/2Tp7Bk8VLVsah7kpReIi2mUVhG2N4iODM3TFKS7OAgZRBkAbIqiVJhx8j/ao2s3kOZ3d/CGFUaGkde5pCHGLdkkoMcUo5/OMgrRTyLVxBefAxEGBsbx8DbYzan4n4LrwajkVKiMjmFba++jpnpKh559BFNi7M8LwRdfmBxhr8lTy7CaYEu51cWA5GeQsU6v6Tark0jPzTNNrua5CPxUjvPLGosoefxPUfOoFjNnXPKG1zg7I5KDRXfPL+krvnW3rftt83MUZnvCq9rLO3t7Xh/4DT+43/4W6y5bRVW3LAC69atsxMzmRJdyK1aQFia6Qoyn7bp7CZn2KnqLACYzG9dAmFHOZvuynx9jJ4DpwOSmRNnXq5ebHZm6rL5nQ/RAzkYhtWQQnOfN8+XQkYUNxbT1D94ahA7duy0ANeEpavlMEzQjALZ9+ZBvP76dk9tN4bgYsQw30eRRK+b8nGNyf3C2ldx5ygHbc8cW8SwzMGb0xKp4S0zhtnO8VMPrHceqeC1X79tAaBhRfOdTof1yq5A+fZb+wOD8L+UCLo7XMKCyPPDddWW5F0HhfKU/Ly0uIh+2SVQRoX9ToFiRptm8SxFBZmIMDI8iunp6asGr8SOsJpwZGRE10LrRnqn99zrWZd5HZGQ0oaefCcD58srE62/mDUWOSbVIU5pM3rHNslWh+Fii0iOOYrWGps/Fzwvco7X1O8C5EJZBa5qY3HLG0woHh0ZDWqh3bBBBS8D1zi098i3ACCvzBZBkX9sVz43NFkBpFBBF2mKp6CTkb1eJQ6Sk8Vzwn/S9Wbm9XqXLMWnt9zoCVlXm/GEg4aGhs5Fww4Cr+/jFx+LuMYAFDs5XIOIpYm813JBZwhYw8UNyzLLNs3yN8Higlcqvp76h5csWYLbP/1pu7GDqYW5mkBv+Pf42EROIBCGdApG9nN8rQDPy/jrwgWsgsiXPd9kJBitEQO54WhUNmPgA2OigtUXq/diA4fMm+lo78Rdd21CmqbeIOT5MHHqo4am7u5ur2/LL6znONPxmBMX1tcb0A2UOggQBR7KndUQ7FXkzq+H00ft9V5TWCTlA2PzPAQNax4FDLzSXXdtwg1rrgURoV6vezunXU2exrQEb9q02Ru4zV4PPMV3/43hHdeovGlgrlH5jIgDaKFkk5Ja3lhyEBRSbd/tlc2VYQSWH5s4pc9dtnQZVq262c7nv1rxi/Gsn//c54ugNPgcY1CiuN84FzZupcKYfipgnjB0pWErbPF2saU1Ni0KgNcVmTOifEsdBMYSyy91dXXjUzd8CoDafPNqKmlwx7ESEVavXo0Nt9+RU2UYyivzqQoBZbZKrelUNfRa03JzDbN5u9S0mZxSchNNhB5fn+9xbVkSx0NHkOeJ0WeKGImh5oA/ft6b7h1NYKrHli9fAQBoaWm5qlgSMyNJEqRpitbWVjzxxBNYuXJlAVvGvtDhlkM+zUYB2HriH4UbkZAvBDr2YAcKmUal0N2FaixKZOhoYjHobgzjbmxAEYOxpKe3UFk3n7PWxrOYMlRAdUDecccd9ssn9Kxckytyp2TAEdpkRMwjne22IpwV82CFu9wbSetl8nPzOTFsLbRAq4pjVIuUm4uxkiLb+VF8oFB4rnkPfX196Fu7DNPT09Zw3Ir6+Wgs7o9hR8q7wKfNYQ5oFgzi02wqsKrQy8DZyzNkSa6VwCtk8qZgxrsFwtEccDbxDLsEPLd2noo7c86dG+/Cl7/8ZW8AIjPPy2FC7vh7V6hcsWIFFi9enIcr4gIADUGpa1CemBesEyI6WpEhF6OKSjCXgVziWYrDgxHzzvm+sVBpfom97shicuyJrz+Bjfes9bzMfFV+TfLRZYWLFi3C4cOHfW/kqOVlqqxrECETLSjAXpsPR7PZIc3m0LPEEoohw6FglFkx++zvOutPhIht41fcp/rWW9fgu9/9Syy49hq7d+J81WPMl8BNPK5evRr3339/RAmO5PZKUjBhmKLolDH2dRdvq2d/0JQeWRf3LAgEOa+uxXtxFLcsDvJLHiO6AGBMYKRJEx577DH0rV6BWq1mvUtLS8tVkRa49dZbvS+KG5o4UoKC8+IXKgx5io3SDRPCIXZliniOgkcoYTUhnUN0F/vIeLJYtrsAnIG21nb8xV/8CyxZttCmCeaj+muKv42BbNiwAQ8++OBs5hXZd4oiCV+O7PsdMypfDY4JsM5IF472PqO06zGeUAxfuFDSECkDRWSbvjDN8MUvfhF/9ud/hq6uLpuMnA84xuwk19raauWCWq2G3t5efOc738GqVatmN5eSxS9Ai0J+qQg3CvtTRVqnzfXSWAY5dnJZQjHmWcrcYHwIEQdu0C8wv3bBQjz1T59CW2s7jh8/gePHjuN3v3l+ThpIWFVnSlFbW1tRrVbBzHj66afxta99bdbQa0Z+FDaod+4zLa7meVKvhdl81Bfz9Hw7402sksx2dp5J/aTFDDKKYYli4QORXuviNYo5DYpkUMtZFEC4/vrl+Na3voXRkTE89+vn5qTBhCHUZUVTU1NI0xS33347Hn/8cSxduvT8qrAV88gp/M5vG7FOVc2xLhp3JmPaOXhSP0/YYnAQ6wGJQQWfCHZkKxsoFGafZ6v/LcsRFV1ifCxrvCOSsLT3OiztvQ6739wzb9IAZmEXLlyIxx9/HA8//DBWr1594QboqLPF3E+++bnZwc1055PjgaA36SIkthPBei9rfPnvNJzKHS/BRKTddXPwQEkAAA9ESURBVHb6XKTrVEgfXAjlDvWZ1tZW2zrr7jo/13CNec9ZluEzn/kMvve976Gvrw/t7e0f8hruBvVCz/GVdsS/aW+ezajcck44xgIpAuFO2r34cm9SCpjiDWlheSaixoQCXXdfD9HUAxcERYBw7YKFWLRokTdLZS6Jc+bHbEXMzHj00Uexfv36D2UsPl9y93RASeUdR4rdHCHQrmfil2eSn1NiLjAYFBiRXwYYK/xGCW9n7x+JMTBEx9OzMw/FP2fp0qVYvnw5sixDmqZzxruE+SJjOMyM22677WNd1w52Og/N9hlRsWi8ABcoVJQpLwKfDXQa+bicEXE0c43oECIulg5GWlFQUhzU29uLlStX2hGlc5lW12o1dHd349prr/34mCgcyhQ1iHjNNlNxmwAvZxgqva4cXMjzRBOKwe4nhfrfsolTXNgKMCwd9KeNh/suqRyLyeKaPNNcBr1r16792GGVgnaesIuAqQgZio1rJcnLwC44LJPkWCbaMwx/e5wYyI2Jfv6eAm7IgQ94KZan8j/QjRs3oru7227h624cOhcwjJud3rx5M06ePHmRvFZQKI4ibiy0Mhf2JS9ms92yT3bdUFk7q5sDYgr3e5yFEaGo3no1w97kiBjIjcv/mzdvxqpVq+Z0asD0Ua9btw733XffxcFI0cQj+UXeMQBcGK/rZ8ThjXApbK5VBpy4nN2ExcklHZHnPSeUphE3iJUrV6Kvrw9CCNTr9TmFZdwiqQULFsyaAvhowmA4di6me6Eg1PqNa4iUc5rbKF9kN2XgSslUSoXLNp3gaN6pNGNNfN79Be677z40NzdDSjknJlS5nQCmGOzJJ5/EjTfeeHFfp0QaCecJxirqyhwGvGntYZmkR4UpKrjF2E08J4WS+uD4OSFWmu3YsGEDFi9ePKcEu5Bab9myBddff/0nkH6g8sQjxbLZmLU91tNpZmVEodBDfg+Sy27iOSkuZLvjjMitt7gwMS5NU/vtnGv0ul6vY/369diyZcsnAtjLKHLRIPySh3xt4iUSJlAVKbJXNRffMNTLXJeObZ1F2ykUmLt9wuc/br/9dqxZs2bO9C65m5l3dXXhySefxA033PAJJjnjebtcQikmgeHtXuPDDkOzOWZNbh9RzpJi2WcUioc52POIogU5JSzqQ7Cejo4OrFu3Dq2trVe8wbj7bQsh8Nhjj+G2226LVtRdNJ2HwlRNWN/L0W4QDrahDql66gHSIHNdKNtDyUAhDywDYUNU2I0QnvNhjcUcy5cvt1MevO3vrkCRznQ8dHd349vf/jY2btx4KUzVlkFAT/qerWZGFT1Ir0TCTIE3dpBG95z2GBHNyqJiExqKGe3cGGJFWB/1MG0YV7oe487re+CBB3D33XdflHTAhXgZtXNb3hJrDMLM8lXbD6NoVE57rJk+lWOY6MwWKkjObkIwnlcqqYGh4rTMmOz/YY+enh60tLRc0d7FVXXb29vxjW9845IYSxiaKKLaugAY0T06ixOvUj0HvkCxZptTxwHd8mlZvCOyWMPrqsYf7WhtbbULcqUfQggsWrToEwO6F6DOWC+jd/dTNXZBzQyCcs68TJN0AVXJdMULmZpJTv0FCvkIFAq+qVDK8PGOkydPzhnRTgiB7u5ur5vxUnoZAX+4oWXACqTYkOMOWlT7EPhG5WzhF9S8eFQYszaxxcoyo1w/EI4+7rFr1645sYe1+V+r1SpuvfXWy/MewJFRHsIf5REMe7YRRdcDk5RGh4lsUl7QYriQKohNYoxtrhWWcl4MY6lWq9ixY8cVj19cDDM8PIzTp09fZsOdrY2Wo+keNzqwqiehaIllfJZaEqfFkR7e0AP52e6Pdxw/fhw7d+6cE5OqjMHMzMxcNgMPN6zPowZFyxvKxVeUjUT1SzDhLEpZ8tDFNLESy4sJIPfs2YNTp07NmVySKfSq1WqX7z1Emt5QqM+O20JOcjxBjWepmiOvQLhMKfQH7pG/58BF8ARSSvT39+OnP/0ppqam5kxNb61WQ5IklzUkuXmmfFpVWJVQTDx6OwEXZryUVs2FwpxbmQUgkvUMp3xfjOPUqVP4yU9+ghdeeAFSSjQ3N1/xZZpm34RKpYIdO3ZcAQC8qMXMVjPj4tGUggmLKFFqwzkvXmiKjIagjyn7h8c777yDo0ePYuvWrfjxj39suwXNdKorHcMAqgb5jTfeuPzh0dJss3Gr9Npj1c56ehNRcp4npeqtLm5mzsHAIDrPfLpZNjj/GMZy9OhRbN++HS+//DK2bduGsbExjI6Ool6vI0kSMLM3F+5KFu3Mt3v37t3YuXMnNm/efJlDk6HZIt9TSdNn6Bl6ykhELublHoai+wR45XrRpjMu3dXko9Ln/v5+HDp0CNu3b8eLL76IEydOYGxsDBMTE94c27Ah7HKCyQ+jxRw5cgS/+MUvsGLFCixbtuyyvh9C3gJrW2t1ElJt6JUVmvVTirQghIC3bLTHbKWcF0qfd+/ejeuvvx5DQ0P41a9+hVdffRUHDhzA6Ogozpw5Y40kHFfmzrOdC1qMqx/97Gc/w5o1a/DNb37z8gPgcC6PJGfnSNUe6zb8p+EOJSitvS2ffOnP5r0wYxkZGcH+/fvxwgsvYGBgAIcOHcLAwAAGBwftxuYALE65EIxwpXsYIkJbWxuOHTuGZ599FqtXr8amTZsuu5cxWMXfvk/a/JKrENOZyjEZL5csyv5ucVR8gsPswlyWZThy5AiOHj2KXbt2Yfv27ejv78fAwABmZma8Qml3Lq8xCBcLzEWDAYD29nZUKhU0NTXhS1/6Ej772c/ijjvuwLp16zA0NBSMWr00RybqkBBqe2Jk+rf6W0JAyMw+RmenTsjysoTIpp6lu2aUg9xqtYqXX34Zf/zjH3HkyBGcPHkSBw8exAcffAApJZIkQZZl6OrqwtTUFOr1um22dw1lLhuMed+mAX9mZgYtLS244YYbsHr1aqxfvx7d3d34yle+gltuueWSSgVCBsahf5vb7mM0NDUgy1pD4o1qs28p7C7iu+++i4MHD2LPnj3YunUrXnrppcKiNzU12XFdLS0tqFarBYV0rnsYF2+ZTk3TtWnAelNTE9asWYM77rgDmzZtwi233IK1a9di6dKln7jxSCm1QQhImVnvYryN62Xo3NS7smy8e8ww3NDk36f+qUqlgsOHD2Pfvn3YtWsXdu3ahR07dtgPxu1oLMMm7oSDuehJygymTNALH+vs7MSdd96JzZs3Y/369di0aRNWrlxp638ulZeR0vU46jEann5fllNmju4FUKlMoaOjE0yM6ekZMDFGRkZw/PhxvPnmm/jDH/6A3/zmNxgdHY3G8bm8+J8ErpntS7FgwQJ89atfxZYtW7BhwwZcd911WLBgAaamprBw4cKLbjRuSIoZEA1Pn5Q867SFIuU+e+YsehYvweRkBfv27sPg4CD27NmD559/3pO+jbhWq9XmLO64lAbjbr/semGz4fsDDzyAe+65x25a8YUvfAFpmn6kQURlocnzLh4AzlR98Mj0KVnGeGJjUmemZjBZqWDgxAB2796D57c+j5deeglDQ0OWBtu4qIW1uQxUL6XBuPjGZYemK8L83dvbi0ceeQT33nsvli5dinvvvRddXV1oa2u7qF5Ghh4HAjQ6MyjPt2ejFBJTU1OYnprBa69tw+9f+T1eefkVHD3a75VIurHa9BAbxjMXtZMrISQZPCeEQGdnJyYmJrzHH3zwQaxbtw4PPfQQ7r//frS3t4OIPvLE9BwAB94FAkLUQWMzH8i80TrxanizeoZavY733n0fP/+/P8crL7+C/fsP4NTJQSRJ4n0LjLG4G0kYg5mrYtvlMBgTyg0rlFLa1If5fM15LmD+1Kc+hbvvvhuPP/44urq68PDDD3/kTL4JTSFLEiIDjc2ckWEPrVQ5KTz33HP41S9/jd/9bismxiqYnJxEc3OzHUIcW/TY/bFvzdW0Nd+FGIw7rcL9Isa8TewzNc1yra2tuPHGG/HEE0/g61//OtasWWON7EJzex7Ndr2NrIPGq2eli1sOHDiIZ//rs9i+fQeOH30XMzMzmJmZQZIkhV3by/6pC3GzDQ8TNxr38wpzZ7N9du5ObkIItLW1oaenBw899BCefvppVCoVfO5zn/vQNFsgA6SEQIZ6VgMmqkNysjosz40Nyn/9/X8pOzo6ZHNzs0ySRDKzBGB/m9tNTU3278bPxfkhIklEF+U65nZTU5Nsbm6Wy5Ytk08++aTcunWr3LZtm7zQIxN1WcuqsppNy+n6pByfHpaYrA7LP725TW75R5tle3u7BCCTJPF+A5Bpmtq/iUimadpY6ItsMB/nfHd9zNoRkUySRHZ2dsrW1lZ50003yaeeeko+99xz8ty5c+c1GCGErGc1WctmZLU+JUcnh2TS0dX6zA9/+FfY+8YBVKtVT8Z2Aa1xewajNELKlXWE5MNNuwghkGUZhoeHcfToUbz66qsYGBgAEaGrqwudnZ2zhkupdiDF9PQ0kuHRoWcO7z/mga0GDZ7bRhMDyQb4CiFw5swZHDx4EDt37rSVAt3d3eju7i4xHGU2k5OTSDq72p4ZOTfmbcA533ZuvVoPQ7uNlzHOwBSdnT59GocOHcLevXuxb98+nDhxAtdccw16enp8gqJvj4+PI1m4+Npnzp0d8WjufNxXsXHAiyImbTM1NYXBwUHs378fR44cwcDAAE6ePIl6vY6enh47nh+QGB45h6Snd9Ezw0OjHi1rHPObxpv0g0vDhRA4d+4c+vv78dZbb2Hfvn145513UKvVsHz5cqRJirGxMSSLexY9MzI8Zj1MmqZzov20cXx8g3H1HlOrk2UZzp49i6NHj+K1117De++9h6GhIWRZhnqtDrr51pvk8f4BW69ipP3GcXUKiC7Dcm3iwQcfxPrb1oNWre6Tx98ZmFOV943jkz+am5vtDr7GG/X29qJBhxpH9KhWqxbwmq2Guru7kcpG9GkcJSGqXq/b4i27IVjjo2kcsYOZ0draakOS2TKZ0RBwG0fkyLIMlUrFtsYYuSW9mIN+Gsf8C0tGo7FZgMbH0jg+VKhqfASNo2EwjeMTO9LGR9A4yo5ozXbjY2kcjZDUOBoG0zgaBtM4GgbTOOa9wcQKhxtH45iVVjc6AhpH7IjN82mEpMbx4T2MezS8TeMoswUiQpokidcp0GiUbxyzhai0r6/vIw+faRzz38O43ZPLli3D/wfevxhH24k1IwAAAABJRU5ErkJggg==" />
+			</head>
+	<body>
+<a href="?lite=1" class="btn-grey-top"><i class="glyphicon glyphicon-object-align-right"></i> Switch to lite version </a>
+<a href="?dark=1" class="btn-grey"><i class="glyphicon glyphicon-object-align-right"></i> Switch to dark theme </a>
+    <nav class="navbar navbar-fixed-top navbar-inverse" style="border-bottom: 1px solid #d4d4d4; background-color: black; min-height: 64px;">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="/home"><img src="images/logo.png" style="margin-top: -8px;" height="52" /></a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" style="margin-top: 6px; font-size: 0.35cm;">
+          <ul class="nav navbar-nav">
+            <li><a href="https://shop.ringzer0ctf.com/">THE SHOP</a></li>
+            <li class="active"><a href="/home">Scoreboard</a></li>
+            <li><a href="/challenges">Challenges</a></li>
+			            <li><a href="/register">Register</a></li>
+        	
+	<li class="dropdown"><a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">Tools<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#"></a>
+			<li><a href="/tool"><i class="glyphicon glyphicon-briefcase"></i> Online tools</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/home/project"><i class="glyphicon glyphicon-heart-empty"></i> User projects</a></li>
+			<li role="separator" class="divider"></li>
+                        <li><a href="/home/api"><i class="glyphicon glyphicon-list-alt"></i> API docs</a></li>
+                        </ul>
+	</li>
+            		 <li class="dropdown"><a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#">The platform<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                        <a aria-expanded="true" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#"></a>
+                        <li><a href="/home/about">About Us</a></li>
+                        <li><a href="/spawn2pwn">Spawn2Pwn</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/contribute">Contribute</a></li>
+                        </ul>
+	 	</li>
+	</ul>
+<div id="navbar" class="navbar-form navbar-right">
+	<a href="/login" class="btn btn-success" style="margin-left: 20px;">Login &raquo;</a>        </div><!--/.navbar-collapse -->
+
+        </div><!--/.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav><!-- /.navbar -->
+    <div class="top-padding">
+    </div>
+    <a name="top"></a>
+    <div class="container">
+      <div class="jumbotron" style="margin-bottom: 75px">
+	<iframe src="https://ringzer0ctf.com/stat.html" style="width:0;height:0;border:0; border:none;"></iframe>
+	<h3>RingZer0 Team Online CTF</h3>
+        <p>
+RingZer0 Team's online CTF offers you tons of challenges designed to test and improve your hacking skills through hacking challenges. Register and get a flag for every challenge.
+	</p>
+	<hr />
+	<center>
+	<a href="https://shop.ringzer0ctf.com"><img src="/images/shop-img.png" style="box-shadow: 0 0 10px black;" width="650"></a>
+	</center>
+	<hr />
+		<style type="text/css">
+			.nsec:visited {
+				color: #1c75bc;
+			}
+
+			.nsec-logo {
+				background-image: url("/nsec.svg");
+				background-repeat: no-repeat;
+				display: inline-block;
+				width: 145px;
+				height: 60px;
+				margin-right: 20px;
+				-webkit-transform: scale(0.7) translateY(0px);
+				transform: scale(0.7) translateY(0px);
+				vertical-align: middle;
+			}
+		</style>
+		<a class="nsec-logo"></a> The RingZer0 Team Online CTF is now proudly hosted by <a style="color: #1c75bc;" class="nsec" href="https://nsec.io/">NorthSec</a>.
+	<hr />
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Chat / Questions / Help</h3>
+	 <p>You'll find all what you need in the Discord Server.</p>
+          <p><a class="btn btn-sm btn-success" href="https://discord.gg/2d9suyd">Join the Discord now!</a></p>
+        </div>
+        <div class="col-md-4">
+          <h3>Challenges</h3>
+	  <p>Currently more than 300 challenges are available over 15 categories. Have fun resolving them.</p>
+          <p><a class="btn btn-sm btn-success" href="/challenges" role="button">View challenges &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h3>Register</h3>
+	  <p>Your first time here? First step register an account, that way you will be able to login and start solving challenges.<p>
+          <p><a class="btn btn-sm btn-success" href="/register" role="button">Register &raquo;</a></p>
+        </div>
+      </div>
+<hr />
+<h3>Want to become certified RCEH?</h3>
+<p>Super simple: get at least 70% of the total points (which is <span class="points">1288</span> points at the moment). With this certification, you will be able to buy a RCEH token that will be available on the shop. The <b>RingZer0 Certified Elite Hacker (RCEH)</b> certification is a highly technical certification. Anyone holding the RCEH title is a highly skilled hacker.</p>
+<p> Once you get your RCEH title you can proudly use the certified logo <img src="images/unicorn.png"> and show to the rest of the world that you successfully managed to solve several hacking challenges on the RingZer0 CTF.</p>
+<hr />
+<table>
+<tr>
+<td>
+<h4>Scoreboard - 52850 players</h4>
+</td>
+<td width="25">
+</td>
+<td>
+
+		 			<ul class="pagination">
+						<li class="previous disabled"><a href="#">&laquo;</a></li>
+<li class="active"><a href="/home/rank/1">1</a></li>
+<li><a href="/home/rank/2">2</a></li>
+<li class="next"><a href="/home/rank/2">&raquo;</a></li>
+
+					</ul></td>
+</tr>
+</table>
+<div class="table-responsive">
+	<div class="panel panel-default">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Position</th>
+                  <th>Username</th>
+                  <th>Points</th>
+                  <th>Gold</th>
+		  <th width="18%">Last Validation</th>
+		  <th width="17%">Special Mention <span class="glyphicon glyphicon-fire" style="color: #CC5500; margin-right: 10px; font-size: 12px;" aria-hidden="true"></span></th>
+                </tr>
+              </thead>
+              <tbody>
+						<tr>
+				<td>
+					<span class="glyphicon glyphicon-star star_default star_1" aria-hidden="true"></span>				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/14785/sagefault">sagefault<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1745</span>				</td>
+				<td>
+					<span class="gold">168</span>
+				</td>
+				<td>
+					2025-06-04 18:44:02				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">5</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					<span class="glyphicon glyphicon-star star_default star_2" aria-hidden="true"></span>				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/73.png" class="score_flag" /></div><a href="/profile/15640/jusb3">jusb3<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1718</span>				</td>
+				<td>
+					<span class="gold">5</span>
+				</td>
+				<td>
+					2023-11-23 05:54:04				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">3</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					<span class="glyphicon glyphicon-star star_default star_3" aria-hidden="true"></span>				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/2574/dysleixa">dysleixa<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1572</span>				</td>
+				<td>
+					<span class="gold">79</span>
+				</td>
+				<td>
+					2024-09-02 14:34:33				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">17</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					4				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/5258/Corb3nik">Corb3nik<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1437</span>				</td>
+				<td>
+					<span class="gold">2</span>
+				</td>
+				<td>
+					2022-03-12 18:34:33				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">2</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					5				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/10059/Sideni">Sideni<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1380</span>				</td>
+				<td>
+					<span class="gold">1</span>
+				</td>
+				<td>
+					2022-07-17 21:39:25				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">5</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					6				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/146.png" class="score_flag" /></div><a href="/profile/5409/Superior">Superior<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1291</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-07-01 04:27:19				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					7				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/231.png" class="score_flag" /></div><a href="/profile/948/Towel">Towel<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1272</span>				</td>
+				<td>
+					<span class="gold">677</span>
+				</td>
+				<td>
+					2022-11-30 08:23:05				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">70</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					8				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/99.png" class="score_flag" /></div><a href="/profile/49696/sysfail">sysfail<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1244</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2024-09-18 20:04:05				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					9				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/1334/Freddrickk">Freddrickk<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1242</span>				</td>
+				<td>
+					<span class="gold">17</span>
+				</td>
+				<td>
+					2020-10-30 00:02:53				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">4</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					10				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/2054/mbergeron">mbergeron<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1218</span>				</td>
+				<td>
+					<span class="gold">196</span>
+				</td>
+				<td>
+					2022-02-14 12:04:48				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">6</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					11				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/55.png" class="score_flag" /></div><a href="/profile/2586/stamparm">stamparm<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1194</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2018-09-25 11:21:27				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">7</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					12				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/84/acormier">acormier<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1184</span>				</td>
+				<td>
+					<span class="gold">87</span>
+				</td>
+				<td>
+					2024-08-01 12:59:13				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">7</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					13				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/182.png" class="score_flag" /></div><a href="/profile/1512/cyberguru">cyberguru<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1176</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2022-03-20 15:48:01				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">6</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					14				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/223.png" class="score_flag" /></div><a href="/profile/35599/bluedevil">bluedevil</a>				</td>
+				<td>
+					<span class="points">1152</span>				</td>
+				<td>
+					<span class="gold">56</span>
+				</td>
+				<td>
+					2025-08-18 09:13:35				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					15				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/98.png" class="score_flag" /></div><a href="/profile/40063/fsharp">fsharp</a>				</td>
+				<td>
+					<span class="points">1143</span>				</td>
+				<td>
+					<span class="gold">4</span>
+				</td>
+				<td>
+					2025-02-27 08:51:05				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">1</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					16				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/8603/nic-lovin">nic-lovin<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1131</span>				</td>
+				<td>
+					<span class="gold">2</span>
+				</td>
+				<td>
+					2025-07-13 22:22:30				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">2</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					17				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/99.png" class="score_flag" /></div><a href="/profile/3919/an0n">an0n<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1124</span>				</td>
+				<td>
+					<span class="gold">6</span>
+				</td>
+				<td>
+					2017-08-20 17:04:56				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">20</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					18				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/173.png" class="score_flag" /></div><a href="/profile/862/yehuju">yehuju<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1119</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-08-07 00:13:43				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					19				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/181.png" class="score_flag" /></div><a href="/profile/18203/dinus">dinus<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1109</span>				</td>
+				<td>
+					<span class="gold">2</span>
+				</td>
+				<td>
+					2025-08-12 12:25:11				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">7</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					20				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/11566/allfro">allfro<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1085</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-04-08 01:55:43				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					21				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/15071/fob">fob<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1068</span>				</td>
+				<td>
+					<span class="gold">10</span>
+				</td>
+				<td>
+					2023-08-03 20:02:34				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">5</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					22				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/21514/theindian">theindian<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1064</span>				</td>
+				<td>
+					<span class="gold">917</span>
+				</td>
+				<td>
+					2022-10-27 16:58:17				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">91</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					23				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/22070/alxbl">alxbl<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1052</span>				</td>
+				<td>
+					<span class="gold">74</span>
+				</td>
+				<td>
+					2021-01-05 21:30:35				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">13</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					24				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/103.png" class="score_flag" /></div><a href="/profile/36961/V5November">V5November<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1045</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-06-11 01:27:19				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					25				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/560/HoLyVieR">HoLyVieR<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1041</span>				</td>
+				<td>
+					<span class="gold">97</span>
+				</td>
+				<td>
+					2022-05-20 18:32:13				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">11</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					26				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/223.png" class="score_flag" /></div><a href="/profile/24802/errorinside">errorinside</a>				</td>
+				<td>
+					<span class="points">1037</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-06-12 15:16:58				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					27				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/3229/GuilT">GuilT<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1036</span>				</td>
+				<td>
+					<span class="gold">112</span>
+				</td>
+				<td>
+					2023-11-27 23:13:52				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">8</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					28				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/81.png" class="score_flag" /></div><a href="/profile/5440/fLink">fLink<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1019</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2019-11-13 14:37:57				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">1</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					29				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/18533/gdenhez">gdenhez</a>				</td>
+				<td>
+					<span class="points">1008</span>				</td>
+				<td>
+					<span class="gold">701</span>
+				</td>
+				<td>
+					2025-09-14 19:54:12				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">23</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					30				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/84.png" class="score_flag" /></div><a href="/profile/5732/killer2">killer2<img src="images/unicorn.png" class="unicorn"></a>				</td>
+				<td>
+					<span class="points">1005</span>				</td>
+				<td>
+					<span class="gold">311</span>
+				</td>
+				<td>
+					2018-10-29 12:29:39				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">9</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					31				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/107.png" class="score_flag" /></div><a href="/profile/12152/nopernik">nopernik</a>				</td>
+				<td>
+					<span class="points">972</span>				</td>
+				<td>
+					<span class="gold">66</span>
+				</td>
+				<td>
+					2023-06-18 18:17:36				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">9</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					32				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/45.png" class="score_flag" /></div><a href="/profile/12551/ytbjplh">ytbjplh</a>				</td>
+				<td>
+					<span class="points">870</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-07-09 10:29:36				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					33				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/74.png" class="score_flag" /></div><a href="/profile/646/garigouster">garigouster</a>				</td>
+				<td>
+					<span class="points">867</span>				</td>
+				<td>
+					<span class="gold">780</span>
+				</td>
+				<td>
+					2017-06-05 09:19:11				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">74</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					34				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/5073/fffroze">fffroze</a>				</td>
+				<td>
+					<span class="points">788</span>				</td>
+				<td>
+					<span class="gold">8</span>
+				</td>
+				<td>
+					2023-05-27 02:31:41				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">3</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					35				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/16399/snowscan">snowscan</a>				</td>
+				<td>
+					<span class="points">779</span>				</td>
+				<td>
+					<span class="gold">17</span>
+				</td>
+				<td>
+					2022-10-23 15:17:01				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">2</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					36				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/74.png" class="score_flag" /></div><a href="/profile/50034/egyde">egyde</a>				</td>
+				<td>
+					<span class="points">772</span>				</td>
+				<td>
+					<span class="gold">13</span>
+				</td>
+				<td>
+					2025-06-20 06:15:53				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">2</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					37				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/228.png" class="score_flag" /></div><a href="/profile/1508/lolwut">lolwut</a>				</td>
+				<td>
+					<span class="points">770</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2018-01-18 12:58:24				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					38				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/230.png" class="score_flag" /></div><a href="/profile/10075/destiny">destiny</a>				</td>
+				<td>
+					<span class="points">758</span>				</td>
+				<td>
+					<span class="gold">4</span>
+				</td>
+				<td>
+					2020-08-23 17:18:52				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">1</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					39				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/18572/MusicLegend98">MusicLegend98</a>				</td>
+				<td>
+					<span class="points">751</span>				</td>
+				<td>
+					<span class="gold">1</span>
+				</td>
+				<td>
+					2025-05-07 11:46:44				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">3</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					40				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/2319/becojo">becojo</a>				</td>
+				<td>
+					<span class="points">750</span>				</td>
+				<td>
+					<span class="gold">7</span>
+				</td>
+				<td>
+					2021-11-11 19:06:39				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">3</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					41				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/10938/marcan2020">marcan2020</a>				</td>
+				<td>
+					<span class="points">740</span>				</td>
+				<td>
+					<span class="gold">18</span>
+				</td>
+				<td>
+					2025-04-04 16:57:29				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">1</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					42				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/12361/marcS0H">marcS0H</a>				</td>
+				<td>
+					<span class="points">737</span>				</td>
+				<td>
+					<span class="gold">1</span>
+				</td>
+				<td>
+					2021-05-20 17:18:53				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">1</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					43				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/231.png" class="score_flag" /></div><a href="/profile/32399/minektur">minektur</a>				</td>
+				<td>
+					<span class="points">705</span>				</td>
+				<td>
+					<span class="gold">175</span>
+				</td>
+				<td>
+					2023-04-07 18:13:43				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">14</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					44				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/2034/davidlebr1">davidlebr1</a>				</td>
+				<td>
+					<span class="points">703</span>				</td>
+				<td>
+					<span class="gold">98</span>
+				</td>
+				<td>
+					2022-04-03 20:26:13				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">11</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					45				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/10457/marlo">marlo</a>				</td>
+				<td>
+					<span class="points">698</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2024-02-28 13:43:25				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					46				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/22953/madness">madness</a>				</td>
+				<td>
+					<span class="points">697</span>				</td>
+				<td>
+					<span class="gold">567</span>
+				</td>
+				<td>
+					2022-03-18 14:58:55				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">49</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					47				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/211.png" class="score_flag" /></div><a href="/profile/33318/watchdog">watchdog</a>				</td>
+				<td>
+					<span class="points">693</span>				</td>
+				<td>
+					<span class="gold">58</span>
+				</td>
+				<td>
+					2021-09-09 16:43:09				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">1</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					48				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/5188/lixtelnis">lixtelnis</a>				</td>
+				<td>
+					<span class="points">692</span>				</td>
+				<td>
+					<span class="gold">3</span>
+				</td>
+				<td>
+					2024-03-06 02:00:12				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">2</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					49				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/45024/Linkster78">Linkster78</a>				</td>
+				<td>
+					<span class="points">673</span>				</td>
+				<td>
+					<span class="gold">15</span>
+				</td>
+				<td>
+					2025-01-26 01:18:02				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+						<tr>
+				<td>
+					50				</td>
+				<td>
+					<div class="flag_wrapper"><img src="/images/fs/39.png" class="score_flag" /></div><a href="/profile/23978/rootkitg">rootkitg</a>				</td>
+				<td>
+					<span class="points">661</span>				</td>
+				<td>
+					<span class="gold">0</span>
+				</td>
+				<td>
+					2025-08-02 02:57:30				</td>
+				<td>
+					<span style="color: #CC5500; font-weight: bold;" aria-hidden="true">0</span>
+				</td>
+			</tr>
+					</tbody>
+		</table>
+		</div>
+	</div>
+<hr />
+<h4>Search by username</h4>
+<input type="text" id="search-field" placeholder="Username" class="form-control" />
+<div id="search-result">
+</div>
+<hr />
+<h4>Latest challenges validations</h4>
+<div class="table-responsive">
+       <div class="panel panel-default">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Last validation</th>
+                  <th>Challenge</th>
+                  <th>User who solved it</th>
+                </tr>
+              </thead>
+              <tbody>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 23:37:24				</td>
+				<td>
+					<a href="/challenges/34">Why not?</a>
+				</td>
+				<td>
+					<a href="/profile/42079/gablaterreur">gablaterreur</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 23:28:58				</td>
+				<td>
+					<a href="/challenges/31">Then obfuscation is more secure</a>
+				</td>
+				<td>
+					<a href="/profile/42079/gablaterreur">gablaterreur</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 23:06:18				</td>
+				<td>
+					<a href="/challenges/30">Hashing is more secure</a>
+				</td>
+				<td>
+					<a href="/profile/42079/gablaterreur">gablaterreur</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 23:04:51				</td>
+				<td>
+					<a href="/challenges/27">Client side validation is bad!</a>
+				</td>
+				<td>
+					<a href="/profile/42079/gablaterreur">gablaterreur</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 14:57:33				</td>
+				<td>
+					<a href="/challenges/67">Most Secure Crypto Algo</a>
+				</td>
+				<td>
+					<a href="/profile/52720/push0ret">push0ret</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 14:37:16				</td>
+				<td>
+					<a href="/challenges/58">Valid key required</a>
+				</td>
+				<td>
+					<a href="/profile/52720/push0ret">push0ret</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 11:16:28				</td>
+				<td>
+					<a href="/challenges/122">Brainsick</a>
+				</td>
+				<td>
+					<a href="/profile/53042/fellcrack">fellcrack</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 11:02:26				</td>
+				<td>
+					<a href="/challenges/18">Look inside the house</a>
+				</td>
+				<td>
+					<a href="/profile/53042/fellcrack">fellcrack</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 09:25:18				</td>
+				<td>
+					<a href="/challenges/152">SysAdmin Part 3</a>
+				</td>
+				<td>
+					<a href="/profile/53077/pipkalin32">pipkalin32</a>
+				</td>
+			</tr>
+						<tr>
+				<td style="text-align: left">
+					2025-09-20 07:19:49				</td>
+				<td>
+					<a href="/challenges/148">SysAdmin Part 2</a>
+				</td>
+				<td>
+					<a href="/profile/53077/pipkalin32">pipkalin32</a>
+				</td>
+			</tr>
+			
+                </tbody>
+                </table>
+		</div>
+        </div>
+<hr />
+<h4>The latest write-up with special mention</h4>
+<div class="table-responsive">
+        <div class="panel panel-default">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Author</th>
+                  <th>Challenge</th>
+                  <th>Write-Up</th>
+                </tr>
+              </thead>
+              <tbody>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/52720/push0ret">push0ret</a>                                </td>
+                                <td>
+                                        <a href="/challenges/15">I saw a little elf</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/15/?doc=14650">push0ret-little_elf.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/18533/gdenhez">gdenhez</a>                                </td>
+                                <td>
+                                        <a href="/challenges/340">This malware excels Part 1</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/340/?doc=14622">writeup_340.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/21552/transcept">transcept</a>                                </td>
+                                <td>
+                                        <a href="/challenges/240">PHP feature or 0day?</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/240/?doc=14621">240-php-feature-or-0day.md</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/18533/gdenhez">gdenhez</a>                                </td>
+                                <td>
+                                        <a href="/challenges/272">Just Another MBR Ransomware</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/272/?doc=14600">writeup_272.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/40173/Burton">Burton</a>                                </td>
+                                <td>
+                                        <a href="/challenges/242">Internet As A Service</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/242/?doc=14591">242_Internet_As_A_Service.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/40173/Burton">Burton</a>                                </td>
+                                <td>
+                                        <a href="/challenges/189">0 Day Store</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/189/?doc=14572">189_0_Day_Store.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/18533/gdenhez">gdenhez</a>                                </td>
+                                <td>
+                                        <a href="/challenges/97">PyJail 1</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/97/?doc=14552">writeup_97.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/18533/gdenhez">gdenhez</a>                                </td>
+                                <td>
+                                        <a href="/challenges/226">PHP Jail 4</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/226/?doc=14547">writeup_226.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/18533/gdenhez">gdenhez</a>                                </td>
+                                <td>
+                                        <a href="/challenges/259">C Jail 6</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/259/?doc=14530">writeup_259.pdf</a>                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/profile/45483/fyrefox">fyrefox</a>                                </td>
+                                <td>
+                                        <a href="/challenges/394">Linguistic Memory System</a>                                </td>
+                                <td>
+					<a href="/challenges/wu/394/?doc=14520">writeup_linguistic_memory_system.pdf</a>                                </td>
+                        </tr>
+                                        </tbody>
+                </table>
+	</div>
+</div>
+<hr />
+<h4>The latest challenges added </h4>
+<div class="table-responsive">
+        <div class="panel panel-default">
+            <table class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>Challenge</th>
+                  <th>Points</th>
+                  <th>Category</th>
+                </tr>
+              </thead>
+              <tbody>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/challenges/419">Disabling the camera operator (4/4)</a>                                </td>
+                                <td>
+                                        <span class="points">4</span>
+                                </td>
+                                <td>
+                                        NorthSec 2025                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/challenges/418">Disabling the camera operator (3/4)</a>                                </td>
+                                <td>
+                                        <span class="points">4</span>
+                                </td>
+                                <td>
+                                        NorthSec 2025                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/challenges/417">Disabling the camera operator (2/4)</a>                                </td>
+                                <td>
+                                        <span class="points">3</span>
+                                </td>
+                                <td>
+                                        NorthSec 2025                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/challenges/416">Disabling the camera operator (1/4)</a>                                </td>
+                                <td>
+                                        <span class="points">1</span>
+                                </td>
+                                <td>
+                                        NorthSec 2025                                </td>
+                        </tr>
+                                                <tr>
+                                <td style="text-align: left">
+                                        <a href="/challenges/415">Motor Sensors - Agent 3 (2/2)</a>                                </td>
+                                <td>
+                                        <span class="points">4</span>
+                                </td>
+                                <td>
+                                        NorthSec 2025                                </td>
+                        </tr>
+                                        </tbody>
+                </table>
+		</div>
+        </div>
+	<hr />
+	<br />
+		<table>
+			<tr>
+				<td>
+				</td>
+				<td width="20">
+				</td>
+				<td>
+					Charles F. Hamilton started RingZer0 website in 2014 by hosting everything in his own garage (Picture <a href="/images/rz2016.jpg" style="color: #65be00">here</a>). You can find the list of users that contributed over the years <a href="/home/donation" style="color: #65be00">here</a>.
+					<br /><br />
+				</td>
+			</tr>
+		</table>
+
+	<hr />
+	<div class="center">
+	</div>
+<script>
+	$("#search-field").keyup(function() {
+		$.get("ajax.php?a=search&s=" + $("#search-field").val(), function(data) {
+			$("#search-result").html(data);
+		});
+	});
+</script>
+</div>
+</div> <!-- end container -->
+	<script src="/script/bootstrap.js"></script>
+        <a class="btn-top" id="btn-top" href="#"><i class="glyphicon glyphicon-arrow-up"></i> top</a>
+	<div class="footer">
+	<div class="center">
+		Follow us <img src="/images/twitter.png" /><a href="https://twitter.com/RingZer0_CTF" style="color: #55acee; font-weight: bold">@RingZer0_CTF</a><br />
+		Contact us <script>document.write(String.fromCharCode(99, 111, 110, 116, 97, 99, 116, 64, 114, 105, 110, 103, 122, 101, 114, 48, 99, 116, 102, 46, 99, 111, 109));</script> &copy; RingZer0 Team 2014 - 2025	
+	</div>
+	</div>
+	<script>
+	$(document).ready(function() {
+		$("#btn-top").click(function(e) {
+			e.preventDefault();
+			$("html, body").animate({scrollTop: 0}, "slow");
+		})
+	});
+	</script>
+	
+	
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-HDP708BBC0"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-HDP708BBC0');
+	</script>
+
+
+	<!--
+	Always believe in yourself <3
+	4a4668222a53531a593a022f7332354a2c36771c070b3343045b2658570e3c5f6077393266762206283f62183d49397c3f703d60667b0a2f6a72745b092466116a413d75372752710c2a2621331b304252407740644a4655366a08735e323c7f3c6f
+	-->
+	</body>
+</html>
+
