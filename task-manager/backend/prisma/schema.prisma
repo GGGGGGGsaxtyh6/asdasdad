@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -29,8 +29,8 @@ model Task {
   id          Int      @id @default(autoincrement())
   title       String
   description String?
-  status      TaskStatus @default(PENDING)
-  priority    Priority  @default(MEDIUM)
+  status      String   @default("PENDING")
+  priority    String   @default("MEDIUM")
   dueDate     DateTime?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
@@ -66,18 +66,4 @@ model TaskCategory {
 
   @@id([taskId, categoryId])
   @@map("task_categories")
-}
-
-enum TaskStatus {
-  PENDING
-  IN_PROGRESS
-  COMPLETED
-  CANCELLED
-}
-
-enum Priority {
-  LOW
-  MEDIUM
-  HIGH
-  URGENT
 }

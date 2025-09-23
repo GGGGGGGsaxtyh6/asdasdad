@@ -7,9 +7,26 @@ import { prisma } from '../index';
 const router = express.Router();
 
 // Register
-router.post('/register', validate(registerSchema), async (req, res) => {
+router.post('/register', async (req, res) => {
   try {
+    console.log('Registration request body:', req.body);
+    
+    // Manual validation
     const { name, email, password } = req.body;
+    
+    if (!name || !email || !password) {
+      return res.status(400).json({
+        success: false,
+        error: 'Name, email, and password are required',
+      });
+    }
+
+    if (password.length < 6) {
+      return res.status(400).json({
+        success: false,
+        error: 'Password must be at least 6 characters',
+      });
+    }
 
     // Check if user already exists
     const existingUser = await prisma.user.findUnique({
