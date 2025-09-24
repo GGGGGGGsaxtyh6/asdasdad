@@ -1,0 +1,102 @@
+{
+  "conditionalAccessPolicies": [
+    {
+      "name": "CAE + Token Protection - Apps Soportadas",
+      "description": "Aplica CAE y Token Protection solo a aplicaciones que los soportan",
+      "conditions": {
+        "clientApps": [
+          "Mobile apps and desktop clients",
+          "Browser"
+        ],
+        "deviceFilters": {
+          "rule": "device.deviceOwnership -eq \"Company\""
+        },
+        "applications": {
+          "includeApplications": [
+            "Microsoft Office 365",
+            "Microsoft Teams",
+            "Microsoft Outlook"
+          ],
+          "excludeApplications": [
+            "Legacy Authentication Protocols"
+          ]
+        },
+        "users": {
+          "includeUsers": ["All"],
+          "excludeUsers": ["BYOD Users Group"]
+        }
+      },
+      "accessControls": {
+        "grant": {
+          "controls": [
+            "Require device to be marked as compliant",
+            "Require app protection policy",
+            "Require approved client app"
+          ]
+        },
+        "session": {
+          "signInFrequency": "0",
+          "persistentBrowser": "Never",
+          "applicationEnforcedRestrictions": "Enabled"
+        }
+      }
+    },
+    {
+      "name": "BYOD - MAM Only",
+      "description": "Política específica para dispositivos BYOD con MAM",
+      "conditions": {
+        "clientApps": ["Mobile apps and desktop clients"],
+        "deviceFilters": {
+          "rule": "device.deviceOwnership -eq \"Personal\""
+        },
+        "applications": {
+          "includeApplications": ["Microsoft Office 365"]
+        },
+        "users": {
+          "includeUsers": ["BYOD Users Group"]
+        }
+      },
+      "accessControls": {
+        "grant": {
+          "controls": [
+            "Require app protection policy",
+            "Require approved client app"
+          ]
+        },
+        "session": {
+          "signInFrequency": "8",
+          "applicationEnforcedRestrictions": "Enabled"
+        }
+      }
+    },
+    {
+      "name": "Privileged Roles - Enhanced Security",
+      "description": "Política para roles privilegiados con máxima seguridad",
+      "conditions": {
+        "clientApps": ["All"],
+        "deviceFilters": {
+          "rule": "device.deviceOwnership -eq \"Company\""
+        },
+        "applications": {
+          "includeApplications": ["All"]
+        },
+        "users": {
+          "includeUsers": ["Privileged Roles Group"]
+        }
+      },
+      "accessControls": {
+        "grant": {
+          "controls": [
+            "Require device to be marked as compliant",
+            "Require app protection policy",
+            "Require MFA"
+          ]
+        },
+        "session": {
+          "signInFrequency": "1",
+          "applicationEnforcedRestrictions": "Enabled"
+        }
+      }
+    }
+  ]
+}

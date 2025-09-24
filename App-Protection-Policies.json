@@ -1,0 +1,61 @@
+{
+  "appProtectionPolicies": [
+    {
+      "name": "BYOD - Outlook Mobile Protection",
+      "description": "Política MAM para Outlook móvil en dispositivos BYOD",
+      "targetedApps": [
+        "Microsoft Outlook",
+        "Microsoft Teams",
+        "Microsoft Word",
+        "Microsoft Excel",
+        "Microsoft PowerPoint"
+      ],
+      "dataProtection": {
+        "encryptOrgData": "Required",
+        "encryptOrgDataOnPersonalDevices": "Required",
+        "preventBackup": "Required",
+        "preventScreenCapture": "Required",
+        "restrictCutCopyPaste": "Required",
+        "restrictDataSharing": "Required",
+        "restrictDataTransfer": "Required"
+      },
+      "accessRequirements": {
+        "requirePin": "Required",
+        "requireBiometric": "Required",
+        "requireCorporateCredentials": "Required",
+        "requireDeviceCompliance": "NotRequired"
+      },
+      "conditionalLaunch": {
+        "maxPinAttempts": 5,
+        "offlineGracePeriod": 720,
+        "offlineGracePeriodAction": "Wipe",
+        "minAppVersion": "16.0.0",
+        "minOsVersion": "14.0",
+        "jailbrokenDevice": "Block",
+        "rootedDevice": "Block"
+      }
+    },
+    {
+      "name": "BYOD - Teams Protection",
+      "description": "Política MAM específica para Teams en BYOD",
+      "targetedApps": ["Microsoft Teams"],
+      "dataProtection": {
+        "encryptOrgData": "Required",
+        "preventBackup": "Required",
+        "preventScreenCapture": "Required",
+        "restrictCutCopyPaste": "Required"
+      },
+      "accessRequirements": {
+        "requirePin": "Required",
+        "requireBiometric": "Required"
+      },
+      "conditionalLaunch": {
+        "maxPinAttempts": 3,
+        "offlineGracePeriod": 240,
+        "offlineGracePeriodAction": "Wipe",
+        "jailbrokenDevice": "Block",
+        "rootedDevice": "Block"
+      }
+    }
+  ]
+}
