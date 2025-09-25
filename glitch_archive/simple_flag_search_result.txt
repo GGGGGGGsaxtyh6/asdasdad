@@ -1,0 +1,46 @@
+=== SIMPLE FLAG SEARCH ===
+
+=== lsb_extracted.bin ===
+Size: 9595 bytes
+
+=== rgb_extracted.bin ===
+Size: 25587 bytes
+
+=== block_8_extracted.bin ===
+Size: 9595 bytes
+
+=== block_16_extracted.bin ===
+Size: 4797 bytes
+
+=== block_32_extracted.bin ===
+Size: 2398 bytes
+
+=== block_64_extracted.bin ===
+Size: 1199 bytes
+
+=== step2.bin ===
+Size: 38882 bytes
+
+=== step4.bin ===
+Size: 19441 bytes
+
+=== step8.bin ===
+Size: 9721 bytes
+
+=== step16.bin ===
+Size: 4861 bytes
+
+=== extracted_step_2.bin ===
+Size: 38882 bytes
+
+=== extracted_step_4.bin ===
+Size: 19441 bytes
+
+=== extracted_step_8.bin ===
+Size: 9721 bytes
+
+=== extracted_step_16.bin ===
+Size: 4861 bytes
+
+=== extracted_step_32.bin ===
+Size: 2431 bytes

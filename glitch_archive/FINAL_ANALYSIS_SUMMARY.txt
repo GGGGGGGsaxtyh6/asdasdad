@@ -1,0 +1,107 @@
+=== GLITCH ARCHIVE CHALLENGE - FINAL ANALYSIS SUMMARY ===
+
+Challenge: Glitch Archive (Forensics - Medium - 500 points)
+Author: aria
+Description: Video steganography using ISG (Infinite Storage Glitch) techniques
+
+FILE ANALYZED: secret.mp4 (77,763 bytes)
+
+=== ANALYSIS METHODS ATTEMPTED ===
+
+✅ 1. BASIC FILE ANALYSIS
+   - File type: MP4 video (H.264/AVC codec, x264 encoder)
+   - Duration: ~1 second (as expected)
+   - Contains video data that appears as noise patterns
+
+✅ 2. STEP-BASED EXTRACTION
+   - Extracted every 2nd, 4th, 8th, 16th, 32nd byte
+   - Created multiple binary files (step2.bin, step4.bin, etc.)
+   - No valid file signatures found in extracted data
+
+✅ 3. PIXEL-BASED ANALYSIS (ISG METHODS)
+   - RGB component extraction (25,587 bytes extracted)
+   - LSB (Least Significant Bit) extraction (9,595 bytes)
+   - Block-based extraction (8, 16, 32, 64 byte blocks)
+   - No file signatures or flags found
+
+✅ 4. FILE SIGNATURE SEARCH
+   - Searched for ZIP (PK), PNG, JPEG, PDF signatures
+   - Checked both original file and all extracted data
+   - No embedded files detected
+
+✅ 5. BASE64 ANALYSIS
+   - Searched for base64 patterns and padding
+   - Attempted decoding of potential base64 strings
+   - No valid encoded data found
+
+✅ 6. ISG DECODER
+   - Implemented specific ISG decoding patterns
+   - Tried different starting positions and step sizes
+   - Pattern recognition analysis for repeated blocks
+   - No hidden data patterns detected
+
+✅ 7. HEXADECIMAL ANALYSIS
+   - Searched for hex-encoded flags
+   - ASCII value pattern matching
+   - XOR decryption attempts (keys: 0x01, 0x42, 0xFF, 0xAA, 0x55)
+   - ROT13/Caesar cipher analysis
+   - No encrypted flags found
+
+✅ 8. STRINGS ANALYSIS
+   - Extracted 838 readable strings from video
+   - Searched for keywords: flag, password, secret, key, etc.
+   - Only found standard video metadata (x264 encoder info)
+   - No flag patterns or suspicious strings detected
+
+✅ 9. ENCODING ANALYSIS
+   - Tested UTF-8, Latin-1, ASCII, UTF-16, UTF-32 encodings
+   - No hidden text or flags found in alternative encodings
+
+✅ 10. COMPREHENSIVE SEARCH
+   - Searched all extracted files for flag patterns
+   - Multiple flag format attempts: FGTE{}, fgte{}, Flag{}, flag{}
+   - Binary and text pattern matching
+   - No flags discovered
+
+=== FILES GENERATED DURING ANALYSIS ===
+- step2.bin, step4.bin, step8.bin, step16.bin
+- extracted_step_*.bin files
+- lsb_extracted.bin (LSB steganography attempt)
+- rgb_extracted.bin (RGB component extraction)
+- block_*_extracted.bin (block-based extractions)
+- Multiple analysis result files (.txt)
+
+=== POTENTIAL ISSUES / NEXT STEPS ===
+
+1. ADVANCED ISG TECHNIQUES
+   - The challenge might use more sophisticated ISG encoding
+   - Could require specific frame ordering or timing analysis
+   - Might need actual video frame extraction (not just binary analysis)
+
+2. ALTERNATIVE STEGANOGRAPHY METHODS
+   - Video might use temporal steganography (across frames)
+   - Could use audio channel if present (not detected in analysis)
+   - Might require specific video player or codec to decode
+
+3. METADATA ANALYSIS
+   - Could investigate MP4 container metadata more thoroughly
+   - Check for custom MP4 atoms or hidden streams
+
+4. BRUTE FORCE APPROACHES
+   - Try additional XOR keys or encryption methods
+   - More sophisticated pattern recognition algorithms
+   - Alternative extraction step sizes
+
+=== CONCLUSION ===
+
+Despite extensive forensic analysis using multiple steganography and data recovery techniques, no hidden flag was successfully extracted from the secret.mp4 file. The file appears to contain legitimate video data encoded with x264, but the ISG (Infinite Storage Glitch) method used to hide the data remains undetected by standard forensic approaches.
+
+The challenge likely requires:
+1. More advanced ISG-specific tools or techniques
+2. Knowledge of the exact encoding method used
+3. Potentially custom decoding algorithms specific to this implementation
+
+STATUS: CHALLENGE NOT SOLVED
+METHODS TRIED: 10+ different forensic approaches
+TIME SPENT: Extensive automated analysis
+RECOMMENDATION: Research specific ISG tools or alternative steganography methods

@@ -1,0 +1,25 @@
+=== Pixel-based Analysis for ISG (Infinite Storage Glitch) ===
+Video file size: 77763 bytes
+
+=== Method 1: Direct pixel value extraction ===
+Frame data size (after header): 76763 bytes
+Extracted 25587 bytes using RGB method
+
+=== Method 2: Block-based extraction ===
+
+--- Block size: 8 ---
+Extracted 9595 bytes using block method
+
+--- Block size: 16 ---
+Extracted 4797 bytes using block method
+
+--- Block size: 32 ---
+Extracted 2398 bytes using block method
+
+--- Block size: 64 ---
+Extracted 1199 bytes using block method
+
+=== Method 3: Bit-level extraction ===
+Extracted 9595 bytes using LSB method
+
+=== Pixel analysis complete ===

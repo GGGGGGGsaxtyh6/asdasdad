@@ -1,0 +1,28 @@
+=== ISG (Infinite Storage Glitch) Decoder ===
+Video file size: 77763 bytes
+
+=== Starting from position 0 ===
+Data size from position 0: 77763 bytes
+
+=== Starting from position 100 ===
+Data size from position 100: 77663 bytes
+
+=== Starting from position 500 ===
+Data size from position 500: 77263 bytes
+
+=== Starting from position 1000 ===
+Data size from position 1000: 76763 bytes
+
+=== Starting from position 2000 ===
+Data size from position 2000: 75763 bytes
+
+=== Starting from position 5000 ===
+Data size from position 5000: 72763 bytes
+
+=== Method 2: ISG Pattern Recognition ===
+Looking for patterns of size 16...
+Looking for patterns of size 32...
+Looking for patterns of size 64...
+Looking for patterns of size 128...
+
+=== ISG Decoding Complete ===

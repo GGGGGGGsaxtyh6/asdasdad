@@ -1,0 +1,38 @@
+=== HEX FLAG SEARCH ===
+Video file size: 77763 bytes
+
+=== Method 1: Direct hex pattern search ===
+
+=== Method 2: ASCII value search ===
+
+=== Method 3: Search in extracted files ===
+
+--- Checking step2.bin (38882 bytes) ---
+
+--- Checking step4.bin (19441 bytes) ---
+
+--- Checking step8.bin (9721 bytes) ---
+
+--- Checking step16.bin (4861 bytes) ---
+
+--- Checking lsb_extracted.bin (9595 bytes) ---
+
+--- Checking rgb_extracted.bin (25587 bytes) ---
+
+--- Checking block_8_extracted.bin (9595 bytes) ---
+
+--- Checking block_16_extracted.bin (4797 bytes) ---
+
+--- Checking block_32_extracted.bin (2398 bytes) ---
+
+=== Method 4: ROT13/Caesar cipher search ===
+
+=== Method 5: XOR search ===
+Trying XOR key 0x01...
+Trying XOR key 0x42...
+Trying XOR key 0xFF...
+Trying XOR key 0xAA...
+Trying XOR key 0x55...
+Trying XOR key 0x00...
+
+=== HEX FLAG SEARCH COMPLETE ===

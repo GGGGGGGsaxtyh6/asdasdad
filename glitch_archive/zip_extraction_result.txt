@@ -1,0 +1,4 @@
+=== ZIP Extraction from step2.bin ===
+Step2.bin size: 38882 bytes
+
+No ZIP signature found in step2.bin

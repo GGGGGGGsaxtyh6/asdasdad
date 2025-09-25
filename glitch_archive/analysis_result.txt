@@ -1,0 +1,12 @@
+=== Glitch Archive Analysis ===
+File: secret.mp4
+Size: 77763 bytes
+
+No file signatures found, trying extraction methods...
+Extracted every 2th byte: step2.bin (38882 bytes)
+  ZIP signature found in step2.bin
+Extracted every 4th byte: step4.bin (19441 bytes)
+Extracted every 8th byte: step8.bin (9721 bytes)
+Extracted every 16th byte: step16.bin (4861 bytes)
+
+Analysis complete!

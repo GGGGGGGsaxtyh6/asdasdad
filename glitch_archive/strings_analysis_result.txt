@@ -1,0 +1,268 @@
+=== STRINGS ANALYSIS ===
+Video file size: 77763 bytes
+
+Found 838 strings of 4+ characters
+
+=== INTERESTING STRINGS ===
+KEYWORD 'key': x264 - core 164 r3191 4613ac3 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+
+=== ALL STRINGS (first 200) ===
+  1:  ftypisom
+  2: isomiso2avc1mp41
+  3: free
+  4: ,xmdat
+  5: x264 - core 164 r3191 4613ac3 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+  6: +Yv*
+  7: '2Mr
+  8: .#]DiK
+  9: ih,v
+ 10: +nO~
+ 11: Z!e7
+ 12: `^[{
+ 13: qo1f
+ 14: 8cCy3I%
+ 15: \o).
+ 16: )BroO
+ 17: rMu%
+ 18: }M0-
+ 19: IWIF
+ 20: /NB4 
+ 21: IJ(I& 
+ 22: Cfv9
+ 23: l.s9'
+ 24: Y9"C
+ 25: 6$H)
+ 26: h7 b
+ 27: I$:/
+ 28: _Che
+ 29:  dxC
+ 30: /xlPS
+ 31: 0(!q
+ 32: V Nj
+ 33: nNKPm_7
+ 34: K#za
+ 35: CI!g
+ 36: =>C?
+ 37: _f|-
+ 38: z!pd
+ 39: 0L)Y
+ 40: l/nE#c
+ 41: (Ny?E
+ 42: I{AT.t
+ 43: 19t8
+ 44: 1Zm*@J$
+ 45: C&`\
+ 46: Z>W$
+ 47: -cgjT
+ 48: /<(I
+ 49: 0{Lc
+ 50: Os!T`o
+ 51: Lx% 
+ 52: g6+^
+ 53: jrmn
+ 54: Xu>Ib
+ 55: fg^o*
+ 56: I|<?
+ 57: 4?WMJbge
+ 58: Psa?
+ 59: pO(b
+ 60: \[V#8
+ 61: Qe)Yujr
+ 62: _w6v
+ 63: ZZT%72
+ 64: ?t1'sH
+ 65: ^D&<xe
+ 66: F:t$
+ 67: d|-U
+ 68: X'g&
+ 69: MZV,
+ 70: 3;xF
+ 71: MaBRV
+ 72: L0jCy
+ 73: CHOJ2i
+ 74: Ysx'
+ 75: #d0B
+ 76: bOef
+ 77: <}Yq
+ 78: fd8]
+ 79: |mNL
+ 80: ET2Ie
+ 81: TLyb(
+ 82: sE+8
+ 83: ;Uvt
+ 84: ph09
+ 85: xH|d
+ 86: sD6we 
+ 87: erq6
+ 88: 'bn|
+ 89: } {B_
+ 90: iH$w
+ 91: Dn{M
+ 92: AdAt
+ 93:  wXz
+ 94: 5j2]
+ 95: DB|\;
+ 96: Ds2Y
+ 97: &G+A$
+ 98: P]"T
+ 99: nH:r)
+100: CC=!<
+101: M<G)
+102: 8 xI$i0/
+103: _S,~
+104: <mqD
+105: v{'L
+106: R2>+
+107: Acv>v
+108: ,/)0
+109: ^`aH
+110: U*Z!
+111: 7a@5
+112: z8gE
+113: #amh
+114: xF1!
+115: pL;r
+116: Q$+3
+117: zh+h
+118: s,sK
+119: uqYI
+120: \K[S
+121: xiJ"
+122:  yo]
+123:  $tH>
+124: 17 ]H
+125: :|fux]mk
+126: Q<D6
+127: uDKP
+128: z72K
+129: Lv0O
+130: ~E(p
+131: 6R[t
+132:  FF(
+133: s[g.S
+134: d@SN
+135: eHYp
+136: =rsL7
+137: K7{7
+138: `a%C4
+139: h|5!x
+140: g/s]
+141: aI$j\
+142:  ei<
+143: x^f8
+144: 1iA8
+145: -P7M
+146: B)Oo
+147: =Tega
+148: wZBK7.
+149: S dg
+150: TWl-
+151: SzmF
+152: PoJAC
+153: d}*v
+154: %y)=
+155: G)j5,
+156: qyop
+157: k27~
+158: BC|/
+159: XO`*
+160: r{au
+161: _yC%
+162: KEZ}GC.Ho
+163: 8rb*<
+164: *97v{
+165: Av,f
+166: }h0l1
+167: y!IC
+168: ;C`/
+169: ]s{C)
+170: );\W
+171: r\Fo
+172: q)P;
+173: o)d'
+174: op:8
+175: H}/HY
+176: MrW}
+177: /IRF#
+178: k>U6
+179: X_~8
+180: B0}v
+181: o8l+
+182: 0.y@
+183: gfn7
+184: wl),
+185: XwVg
+186: S$u}F
+187: fpHU
+188: y}]j
+189: ,h2[S
+190: r93.
+191: Y|ST
+192: [H8H
+193: 4'tr
+194: Ep+5
+195: ?czJb]BU
+196: ^N*1n
+197: ]Yn`?
+198: EckY
+199: Cd@]
+200: ;]cX
+
+... and 638 more strings
+
+=== STRINGS IN DIFFERENT FILE REGIONS ===
+
+--- Header (0-1000) ---
+   ftypisom
+  isomiso2avc1mp41
+  free
+  ,xmdat
+  x264 - core 164 r3191 4613ac3 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=4 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=24 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+  +Yv*
+  '2Mr
+  .#]DiK
+
+--- First Quarter (19440-20440) ---
+  E|HC
+  }t!|
+  DCNx
+  m~CN
+  q_FS
+  X&WQ
+  HK@7d
+  (154
+  4qPm_H1
+  u{f\
+
+--- Middle (38881-39881) ---
+  qU[b`
+  (hAbR
+  Jx6EV
+  KMR\
+
+--- Third Quarter (58322-59322) ---
+  <${]
+  YU- 
+  Eok,
+  Rv[m
+  y;|k;Ipy
+  yyH~j
+  _0C?
+  u2gV"
+  ;@[{
+
+--- Footer (76763-77763) ---
+  #moov
+  lmvhd
+  Ntrak
+  \tkhd
+  $edts
+  elst
+  mdia
+   mdhd
+  -hdlr
+  vide
+
+=== TRYING DIFFERENT ENCODINGS ===
+
+=== STRINGS ANALYSIS COMPLETE ===

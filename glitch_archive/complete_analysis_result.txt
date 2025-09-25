@@ -1,0 +1,32 @@
+=== Complete Analysis of All Step Files ===
+
+=== Analyzing step2.bin ===
+File size: 38882 bytes
+
+=== Analyzing step4.bin ===
+File size: 19441 bytes
+  BASE64 signature found at position 15184
+
+=== Analyzing step8.bin ===
+File size: 9721 bytes
+
+=== Analyzing step16.bin ===
+File size: 4861 bytes
+
+=== Analyzing extracted_step_2.bin ===
+File size: 38882 bytes
+
+=== Analyzing extracted_step_4.bin ===
+File size: 19441 bytes
+  BASE64 signature found at position 15184
+
+=== Analyzing extracted_step_8.bin ===
+File size: 9721 bytes
+
+=== Analyzing extracted_step_16.bin ===
+File size: 4861 bytes
+
+=== Analyzing extracted_step_32.bin ===
+File size: 2431 bytes
+
+=== Analysis Complete ===
