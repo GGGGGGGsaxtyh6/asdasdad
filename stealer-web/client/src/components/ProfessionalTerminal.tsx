@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Terminal as XTerminal } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import { WebLinksAddon } from '@xterm/addon-web-links';
-import { Unicode11Addon } from '@xterm/addon-unicode11';
-import { SearchAddon } from '@xterm/addon-search';
 import '@xterm/xterm/css/xterm.css';
 import { io, Socket } from 'socket.io-client';
 import {
@@ -90,45 +88,15 @@ import {
   ExpandMore as ExpandMoreIcon
 } from '@mui/icons-material';
 import { useHotkeys } from 'react-hotkeys-hook';
-import { motion, AnimatePresence } from 'framer-motion';
 
-interface AdvancedTerminalProps {
+interface ProfessionalTerminalProps {
   token: string;
   user: any;
   isFullscreen?: boolean;
   onToggleFullscreen?: () => void;
 }
 
-interface CommandResult {
-  type: 'stdout' | 'stderr' | 'error' | 'exit' | 'info' | 'warning' | 'success';
-  output: string;
-  sessionId: string;
-  timestamp?: string;
-  exitCode?: number;
-  commandId?: string;
-  executionTime?: number;
-  fullOutput?: string;
-  fullError?: string;
-}
-
-interface TerminalSession {
-  id: string;
-  name: string;
-  createdAt: string;
-  lastActivity: string;
-  commandCount: number;
-  isActive: boolean;
-}
-
-interface Bookmark {
-  id: string;
-  name: string;
-  command: string;
-  description: string;
-  createdAt: string;
-}
-
-const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({ 
+const ProfessionalTerminal: React.FC<ProfessionalTerminalProps> = ({ 
   token, 
   user, 
   isFullscreen = false,
@@ -137,7 +105,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
   const terminalRef = useRef<HTMLDivElement>(null);
   const terminalInstance = useRef<XTerminal | null>(null);
   const fitAddon = useRef<FitAddon | null>(null);
-  const searchAddon = useRef<SearchAddon | null>(null);
   const socket = useRef<Socket | null>(null);
   
   // Estados principales
@@ -145,9 +112,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
   const [isConnected, setIsConnected] = useState(false);
   const [commandHistory, setCommandHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
-  const [sessions, setSessions] = useState<TerminalSession[]>([]);
-  const [currentSession, setCurrentSession] = useState<string>('default');
-  const [bookmarks, setBookmarks] = useState<Bookmark[]>([]);
   
   // Estados de configuración
   const [showSettings, setShowSettings] = useState(false);
@@ -165,7 +129,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
   const [lockPassword, setLockPassword] = useState('');
   const [currentDir, setCurrentDir] = useState('/home/' + user.username);
   const [isExecuting, setIsExecuting] = useState(false);
-  const [executionQueue, setExecutionQueue] = useState<string[]>([]);
   
   // Estados de configuración del terminal
   const [fontSize, setFontSize] = useState(14);
@@ -175,7 +138,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
   const [scrollback, setScrollback] = useState(10000);
   const [showTimestamps, setShowTimestamps] = useState(true);
   const [showUserInfo, setShowUserInfo] = useState(true);
-  const [autoSave, setAutoSave] = useState(true);
   
   // Estados de métricas
   const [sessionStats, setSessionStats] = useState({
@@ -220,22 +182,15 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
       bellStyle: 'none',
       convertEol: true,
       disableStdin: false,
-      allowTransparency: true,
-      allowProposedApi: true
+      allowTransparency: true
     });
 
     // Configurar addons
     const fit = new FitAddon();
     const webLinks = new WebLinksAddon();
-    const unicode11 = new Unicode11Addon();
-    const search = new SearchAddon();
     
     terminal.loadAddon(fit);
     terminal.loadAddon(webLinks);
-    terminal.loadAddon(unicode11);
-    terminal.loadAddon(search);
-    
-    terminal.unicode.activeVersion = '11';
     
     terminal.open(terminalRef.current);
     fit.fit();
@@ -243,7 +198,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
     // Guardar referencias
     terminalInstance.current = terminal;
     fitAddon.current = fit;
-    searchAddon.current = search;
 
     // Configurar prompt
     const writePrompt = () => {
@@ -267,14 +221,13 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
     const welcomeMessage = () => {
       terminal.write('\x1b[1;36m');
       terminal.write('╔══════════════════════════════════════════════════════════════════════════════╗\r\n');
-      terminal.write('║                    🚀 STEALER WEB - ADVANCED TERMINAL 🚀                     ║\r\n');
+      terminal.write('║                    🚀 STEALER WEB - PROFESSIONAL TERMINAL 🚀                ║\r\n');
       terminal.write('║                                                                              ║\r\n');
       terminal.write('║  Professional Security Terminal Interface - REAL SYSTEM ACCESS               ║\r\n');
       terminal.write('║                                                                              ║\r\n');
       terminal.write('║  User: ' + user.username.padEnd(67) + ' ║\r\n');
       terminal.write('║  Role: ' + user.role.padEnd(67) + ' ║\r\n');
       terminal.write('║  Permissions: ' + user.permissions.join(', ').padEnd(61) + ' ║\r\n');
-      terminal.write('║  Session: ' + currentSession.padEnd(67) + ' ║\r\n');
       terminal.write('║  Date: ' + new Date().toLocaleString().padEnd(66) + ' ║\r\n');
       terminal.write('║                                                                              ║\r\n');
       terminal.write('║  🔧 Advanced Hotkeys:                                                         ║\r\n');
@@ -325,14 +278,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
       else if (code === 27 && data.charCodeAt(1) === 91 && data.charCodeAt(2) === 66) {
         navigateHistory('down');
       }
-      // Flecha derecha
-      else if (code === 27 && data.charCodeAt(1) === 91 && data.charCodeAt(2) === 67) {
-        // Implementar navegación de cursor
-      }
-      // Flecha izquierda
-      else if (code === 27 && data.charCodeAt(1) === 91 && data.charCodeAt(2) === 68) {
-        // Implementar navegación de cursor
-      }
       // Ctrl+C
       else if (code === 3) {
         terminal.write('^C\r\n');
@@ -343,11 +288,6 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
       // Ctrl+L (limpiar pantalla)
       else if (code === 12) {
         clearTerminal();
-      }
-      // Ctrl+D (logout)
-      else if (code === 4) {
-        terminal.write('\r\nlogout\r\n');
-        addNotification('info', 'Logout', 'Sesión terminada');
       }
       // Caracteres normales
       else if (code >= 32) {
@@ -369,7 +309,7 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
       window.removeEventListener('resize', handleResize);
       terminal.dispose();
     };
-  }, [user, currentLine, commandHistory, historyIndex, isLocked, isRecording, currentDir, isExecuting, currentSession, showTimestamps, showUserInfo, theme, fontSize, fontFamily, cursorBlink, scrollback]);
+  }, [user, currentLine, commandHistory, historyIndex, isLocked, isRecording, currentDir, isExecuting, showTimestamps, showUserInfo, theme, fontSize, fontFamily, cursorBlink, scrollback]);
 
   const getThemeConfig = (themeName: string) => {
     const themes = {
@@ -471,7 +411,7 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
     if (socket.current) {
       socket.current.emit('executeCommand', {
         command: command,
-        sessionId: currentSession
+        sessionId: 'default'
       });
     }
   };
@@ -537,4 +477,301 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
     setNotifications(prev => [notification, ...prev.slice(0, 9)]);
   };
 
-  // Continuará en la siguiente parte...
+  const exportCommands = () => {
+    const data = {
+      user: user.username,
+      timestamp: new Date().toISOString(),
+      commands: recordedCommands.length > 0 ? recordedCommands : commandHistory
+    };
+    
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `terminal-session-${Date.now()}.json`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    addNotification('success', 'Exportado', 'Sesión exportada exitosamente');
+  };
+
+  // Conectar socket
+  useEffect(() => {
+    const socketInstance = io('https://7c2def2c86ac.ngrok-free.app/terminal', {
+      transports: ['websocket'],
+      upgrade: true,
+      rememberUpgrade: true,
+      timeout: 20000,
+      forceNew: true
+    });
+
+    socket.current = socketInstance;
+
+    // Autenticar
+    socketInstance.emit('authenticate', token);
+
+    // Manejar eventos del socket
+    socketInstance.on('authenticated', (data) => {
+      setIsConnected(true);
+      addNotification('success', 'Conectado al servidor', 'Autenticación exitosa');
+    });
+
+    socketInstance.on('auth_error', (error) => {
+      addNotification('error', 'Error de autenticación', error.error);
+    });
+
+    socketInstance.on('commandResult', (result) => {
+      if (!terminalInstance.current) return;
+
+      const terminal = terminalInstance.current;
+      
+      switch (result.type) {
+        case 'stdout':
+          terminal.write('\x1b[0m' + result.output);
+          break;
+        case 'stderr':
+          terminal.write('\r\n\x1b[1;31m' + result.output + '\x1b[0m');
+          break;
+        case 'error':
+          terminal.write('\r\n\x1b[1;31m❌ Error: ' + result.output + '\x1b[0m\r\n');
+          addNotification('error', 'Error de comando', result.output);
+          break;
+        case 'exit':
+          setIsExecuting(false);
+          break;
+      }
+
+      // Escribir nuevo prompt cuando el comando termine
+      if (result.type === 'exit' || result.type === 'error') {
+        setTimeout(() => {
+          const timestamp = new Date().toLocaleTimeString();
+          terminal.write('\r\n');
+          if (showTimestamps) {
+            terminal.write('\x1b[1;36m[' + timestamp + ']\x1b[0m ');
+          }
+          if (showUserInfo) {
+            terminal.write('\x1b[1;32m' + user.username + '\x1b[0m');
+            terminal.write('@');
+            terminal.write('\x1b[1;34mstealer-web\x1b[0m');
+            terminal.write(':');
+            terminal.write('\x1b[1;33m' + currentDir + '\x1b[0m');
+          }
+          terminal.write('$ ');
+        }, 50);
+      }
+    });
+
+    socketInstance.on('disconnect', () => {
+      setIsConnected(false);
+      addNotification('error', 'Desconectado', 'Conexión perdida con el servidor');
+    });
+
+    socketInstance.on('connect', () => {
+      setIsConnected(true);
+      addNotification('info', 'Conectado', 'Conexión establecida con el servidor');
+    });
+
+    return () => {
+      socketInstance.disconnect();
+    };
+  }, [token, user, currentDir, showTimestamps, showUserInfo]);
+
+  useEffect(() => {
+    const cleanup = initializeTerminal();
+    return cleanup;
+  }, [initializeTerminal]);
+
+  return (
+    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Paper sx={{ 
+        p: 1, 
+        background: 'linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)',
+        color: 'white',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
+        <Box display="flex" alignItems="center" gap={1}>
+          <TerminalIcon sx={{ fontSize: 20 }} />
+          <Typography variant="h6" fontWeight="bold">
+            Professional System Terminal
+          </Typography>
+          <Chip 
+            icon={isConnected ? <CheckCircle /> : <Error />}
+            label={isConnected ? 'Connected' : 'Disconnected'}
+            color={isConnected ? 'success' : 'error'}
+            size="small"
+          />
+          <Chip 
+            icon={isRecording ? <Stop /> : <PlayArrow />}
+            label={isRecording ? 'Recording' : 'Not Recording'}
+            color={isRecording ? 'error' : 'default'}
+            size="small"
+          />
+          <Chip 
+            icon={isLocked ? <Lock /> : <LockOpen />}
+            label={isLocked ? 'Locked' : 'Unlocked'}
+            color={isLocked ? 'warning' : 'success'}
+            size="small"
+          />
+          {isExecuting && (
+            <Chip 
+              icon={<Refresh />}
+              label="Executing..."
+              color="info"
+              size="small"
+            />
+          )}
+        </Box>
+
+        <Box display="flex" alignItems="center" gap={1}>
+          <Tooltip title="Clear Terminal (Ctrl+Shift+C)">
+            <IconButton onClick={clearTerminal} sx={{ color: 'white' }}>
+              <Clear />
+            </IconButton>
+          </Tooltip>
+          
+          <Tooltip title="Export Commands">
+            <IconButton onClick={exportCommands} sx={{ color: 'white' }}>
+              <Download />
+            </IconButton>
+          </Tooltip>
+          
+          <Tooltip title="Settings (Ctrl+Shift+S)">
+            <IconButton onClick={() => setShowSettings(true)} sx={{ color: 'white' }}>
+              <Settings />
+            </IconButton>
+          </Tooltip>
+          
+          <Tooltip title="Fullscreen (Ctrl+Shift+F)">
+            <IconButton onClick={onToggleFullscreen} sx={{ color: 'white' }}>
+              {isFullscreen ? <FullscreenExit /> : <Fullscreen />}
+            </IconButton>
+          </Tooltip>
+          
+          <Tooltip title="Lock Terminal (Ctrl+Shift+L)">
+            <IconButton onClick={() => setIsLocked(true)} sx={{ color: 'white' }}>
+              <Security />
+            </IconButton>
+          </Tooltip>
+        </Box>
+      </Paper>
+
+      {/* Terminal */}
+      <Box sx={{ flex: 1, position: 'relative' }}>
+        <div
+          ref={terminalRef}
+          style={{
+            height: '100%',
+            background: getThemeConfig(theme).background,
+            padding: '8px',
+            fontFamily: `${fontFamily}, Consolas, Monaco, monospace`,
+            fontSize: `${fontSize}px`,
+            lineHeight: 1.2
+          }}
+        />
+        
+        {isLocked && (
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(0,0,0,0.95)',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              zIndex: 1000
+            }}
+          >
+            <Lock sx={{ fontSize: 64, color: 'white', mb: 2 }} />
+            <Typography variant="h4" color="white" gutterBottom>
+              Terminal Locked
+            </Typography>
+            <TextField
+              type="password"
+              placeholder="Enter password to unlock"
+              value={lockPassword}
+              onChange={(e) => setLockPassword(e.target.value)}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter' && lockPassword === 'unlock') {
+                  setIsLocked(false);
+                  setLockPassword('');
+                }
+              }}
+              sx={{ mb: 2, width: 300 }}
+            />
+            <Button 
+              variant="contained" 
+              onClick={() => {
+                if (lockPassword === 'unlock') {
+                  setIsLocked(false);
+                  setLockPassword('');
+                }
+              }}
+            >
+              Unlock Terminal
+            </Button>
+          </Box>
+        )}
+      </Box>
+
+      {/* Settings Dialog */}
+      <Dialog open={showSettings} onClose={() => setShowSettings(false)} maxWidth="md" fullWidth>
+        <DialogTitle>Terminal Settings</DialogTitle>
+        <DialogContent>
+          <Box sx={{ pt: 2 }}>
+            <FormControlLabel
+              control={<Switch checked={isRecording} onChange={(e) => setIsRecording(e.target.checked)} />}
+              label="Command Recording"
+            />
+            <FormControlLabel
+              control={<Switch checked={showTimestamps} onChange={(e) => setShowTimestamps(e.target.checked)} />}
+              label="Show Timestamps"
+            />
+            <FormControlLabel
+              control={<Switch checked={showUserInfo} onChange={(e) => setShowUserInfo(e.target.checked)} />}
+              label="Show User Info"
+            />
+            <FormControlLabel
+              control={<Switch checked={cursorBlink} onChange={(e) => setCursorBlink(e.target.checked)} />}
+              label="Cursor Blink"
+            />
+            
+            <Box sx={{ mt: 2 }}>
+              <Typography gutterBottom>Font Size: {fontSize}px</Typography>
+              <Slider
+                value={fontSize}
+                onChange={(_, value) => setFontSize(value as number)}
+                min={8}
+                max={24}
+                step={1}
+                marks
+              />
+            </Box>
+            
+            <Box sx={{ mt: 2 }}>
+              <Alert severity="info">
+                <Typography variant="body2">
+                  <strong>Professional System Access:</strong> All commands are executed on the actual system.
+                  Advanced features include session recording, bookmarks, and real-time statistics.
+                </Typography>
+              </Alert>
+            </Box>
+          </Box>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={() => setShowSettings(false)}>Close</Button>
+          <Button variant="contained" onClick={() => setShowSettings(false)}>Save</Button>
+        </DialogActions>
+      </Dialog>
+    </Box>
+  );
+};
+
+export default ProfessionalTerminal;
