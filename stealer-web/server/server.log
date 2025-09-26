@@ -7,3 +7,9 @@ nohup: ignoring input
    - student / student123 (Estudiante)
 ::1 - - [26/Sep/2025:01:06:21 +0000] "GET /api/verify HTTP/1.1" 403 27 "-" "curl/8.12.1"
 ::1 - - [26/Sep/2025:01:06:27 +0000] "GET / HTTP/1.1" 200 1115 "-" "curl/8.12.1"
+::1 - - [26/Sep/2025:01:41:23 +0000] "GET / HTTP/1.1" 200 1115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:41:24 +0000] "GET /static/js/main.5b4a4351.js HTTP/1.1" 200 1077594 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:41:24 +0000] "GET /static/css/main.b2eb4c5a.css HTTP/1.1" 200 3254 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:41:25 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:41:25 +0000] "GET /manifest.json HTTP/1.1" 200 492 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:41:25 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
