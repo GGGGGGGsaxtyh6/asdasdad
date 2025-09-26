@@ -37,7 +37,6 @@ const TerminalComponent: React.FC<TerminalProps> = ({ token, user, onDisconnect 
         background: '#0d1117',
         foreground: '#c9d1d9',
         cursor: '#58a6ff',
-        selection: '#264f78',
         black: '#484f58',
         red: '#f85149',
         green: '#3fb950',
@@ -61,9 +60,6 @@ const TerminalComponent: React.FC<TerminalProps> = ({ token, user, onDisconnect 
       cursorBlink: true,
       cursorStyle: 'block',
       scrollback: 1000,
-      bellStyle: 'none',
-      allowTransparency: true,
-      allowProposedApi: true,
     });
 
     // Configurar addons
