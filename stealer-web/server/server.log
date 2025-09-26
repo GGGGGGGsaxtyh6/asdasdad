@@ -6,14 +6,25 @@ Error no capturado: Error: listen EADDRINUSE: address already in use :::4000
     at Server.listen (node:net:2101:7)
     at Object.<anonymous> (/workspace/stealer-web/server/server.js:305:8)
 ::1 - - [26/Sep/2025:01:42:51 +0000] "GET /api/verify HTTP/1.1" 403 27 "-" "curl/8.12.1"
-:internal/modules/cjs/loader:1895:10)
-    at Module.load (node:internal/modules/cjs/loader:1465:32)
-    at Function._load (node:internal/modules/cjs/loader:1282:12)
-    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
-    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24) {
-  code: 'EADDRINUSE',
-  errno: -98,
-  syscall: 'listen',
-  address: '::',
-  port: 4000
-}
+::1 - - [26/Sep/2025:01:43:23 +0000] "GET / HTTP/1.1" 200 1115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:23 +0000] "GET /static/js/main.36a781e7.js HTTP/1.1" 200 1077636 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:24 +0000] "GET /static/css/main.b2eb4c5a.css HTTP/1.1" 200 3254 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:25 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:25 +0000] "GET /manifest.json HTTP/1.1" 200 492 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:25 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:32 +0000] "POST /api/login HTTP/1.1" 401 35 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:34 +0000] "POST /api/login HTTP/1.1" 200 245 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+Nueva conexión: VHhjLIrvEWA3FKtxAAAB
+Usuario autenticado: admin
+::1 - - [26/Sep/2025:01:43:49 +0000] "GET / HTTP/1.1" 200 1115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:49 +0000] "GET /static/css/main.b2eb4c5a.css HTTP/1.1" 200 3254 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:50 +0000] "GET /static/js/main.36a781e7.js HTTP/1.1" 200 1077636 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:51 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:51 +0000] "GET /manifest.json HTTP/1.1" 200 492 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:51 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:55 +0000] "POST /api/login HTTP/1.1" 401 35 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:43:59 +0000] "POST /api/login HTTP/1.1" 200 245 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+Nueva conexión: e_cDBqyaXMqUs-XcAAAD
+Usuario autenticado: admin
+Cliente desconectado: e_cDBqyaXMqUs-XcAAAD
+Cliente desconectado: VHhjLIrvEWA3FKtxAAAB
