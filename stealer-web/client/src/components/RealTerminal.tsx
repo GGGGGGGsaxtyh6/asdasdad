@@ -89,7 +89,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
   useHotkeys('ctrl+shift+c', () => {
     if (terminalInstance.current) {
       terminalInstance.current.clear();
-      writePrompt();
+      // writePrompt();
     }
   });
 
@@ -182,7 +182,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
     };
 
     welcomeMessage();
-    writePrompt();
+    // writePrompt();
 
     // Manejar entrada de datos
     terminal.onData((data) => {
@@ -221,7 +221,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
           setCurrentLine('');
         } else {
           terminal.write('\r\n');
-          writePrompt();
+          // writePrompt();
         }
       }
       // Backspace
@@ -239,7 +239,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
           
           // Limpiar línea actual
           terminal.write('\r\x1b[K');
-          writePrompt();
+          // writePrompt();
           
           const historyCommand = commandHistory[newIndex];
           terminal.write(historyCommand);
@@ -254,11 +254,11 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
             setHistoryIndex(-1);
             setCurrentLine('');
             terminal.write('\r\x1b[K');
-            writePrompt();
+            // writePrompt();
           } else {
             setHistoryIndex(newIndex);
             terminal.write('\r\x1b[K');
-            writePrompt();
+            // writePrompt();
             const historyCommand = commandHistory[newIndex];
             terminal.write(historyCommand);
             setCurrentLine(historyCommand);
@@ -268,7 +268,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
       // Ctrl+C
       else if (code === 3) {
         terminal.write('^C\r\n');
-        writePrompt();
+        // writePrompt();
         setCurrentLine('');
         setIsExecuting(false);
       }
@@ -276,7 +276,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
       else if (code === 12) {
         terminal.clear();
         welcomeMessage();
-        writePrompt();
+        // writePrompt();
         setCurrentLine('');
       }
       // Caracteres normales

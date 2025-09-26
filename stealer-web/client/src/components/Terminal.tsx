@@ -96,7 +96,7 @@ const TerminalComponent: React.FC<TerminalProps> = ({ token, user, onDisconnect 
     terminal.write('╚══════════════════════════════════════════════════════════════╝\r\n');
     terminal.write('\x1b[0m');
 
-    writePrompt();
+    // writePrompt();
 
     // Manejar entrada de datos
     terminal.onData((data) => {
@@ -119,7 +119,7 @@ const TerminalComponent: React.FC<TerminalProps> = ({ token, user, onDisconnect 
           setCurrentLine('');
         } else {
           terminal.write('\r\n');
-          writePrompt();
+          // writePrompt();
         }
       }
       // Backspace
@@ -166,7 +166,7 @@ const TerminalComponent: React.FC<TerminalProps> = ({ token, user, onDisconnect 
       // Ctrl+C
       else if (code === 3) {
         terminal.write('^C\r\n');
-        writePrompt();
+        // writePrompt();
         setCurrentLine('');
       }
       // Caracteres normales

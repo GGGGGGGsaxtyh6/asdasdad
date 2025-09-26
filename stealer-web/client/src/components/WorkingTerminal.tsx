@@ -176,7 +176,7 @@ const WorkingTerminal: React.FC<WorkingTerminalProps> = ({
     };
 
     welcomeMessage();
-    writePrompt();
+    // writePrompt();
 
     // Manejar entrada de datos
     terminal.onData((data) => {
@@ -212,7 +212,7 @@ const WorkingTerminal: React.FC<WorkingTerminalProps> = ({
           setCurrentLine('');
         } else {
           terminal.write('\r\n');
-          writePrompt();
+          // // writePrompt();
         }
       }
       // Backspace
@@ -230,7 +230,7 @@ const WorkingTerminal: React.FC<WorkingTerminalProps> = ({
           
           // Limpiar línea actual
           terminal.write('\r\x1b[K');
-          writePrompt();
+          // // writePrompt();
           
           const historyCommand = commandHistory[newIndex];
           terminal.write(historyCommand);
@@ -245,11 +245,11 @@ const WorkingTerminal: React.FC<WorkingTerminalProps> = ({
             setHistoryIndex(-1);
             setCurrentLine('');
             terminal.write('\r\x1b[K');
-            writePrompt();
+            // // writePrompt();
           } else {
             setHistoryIndex(newIndex);
             terminal.write('\r\x1b[K');
-            writePrompt();
+            // // writePrompt();
             const historyCommand = commandHistory[newIndex];
             terminal.write(historyCommand);
             setCurrentLine(historyCommand);
@@ -259,14 +259,14 @@ const WorkingTerminal: React.FC<WorkingTerminalProps> = ({
       // Ctrl+C
       else if (code === 3) {
         terminal.write('^C\r\n');
-        writePrompt();
+        // // writePrompt();
         setCurrentLine('');
       }
       // Ctrl+L (limpiar pantalla)
       else if (code === 12) {
         terminal.clear();
         welcomeMessage();
-        writePrompt();
+        // // writePrompt();
         setCurrentLine('');
       }
       // Caracteres normales

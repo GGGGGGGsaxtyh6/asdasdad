@@ -533,7 +533,8 @@ const RealDashboard: React.FC<RealDashboardProps> = ({ user, token }) => {
               {files.files.map((file, index) => (
                 <ListItem 
                   key={index}
-                  button
+                  component="button"
+                  sx={{ cursor: 'pointer' }}
                   onClick={() => {
                     if (file.startsWith('d')) {
                       const parts = file.split(/\s+/);
