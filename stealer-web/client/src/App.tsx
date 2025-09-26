@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Login from './components/Login';
-import FullDashboard from './components/FullDashboard';
+import RealDashboard from './components/RealDashboard';
 
 // Tema personalizado
 const theme = createTheme({
@@ -147,10 +147,9 @@ function App() {
       <CssBaseline />
       <div style={{ height: '100vh', overflow: 'hidden' }}>
         {isAuthenticated && token && user ? (
-          <FullDashboard
+          <RealDashboard
             token={token}
             user={user}
-            onDisconnect={handleDisconnect}
           />
         ) : (
           <Login onLogin={handleLogin} />
