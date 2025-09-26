@@ -23,3 +23,5 @@ Usuario autenticado: student
 ::1 - - [26/Sep/2025:01:50:00 +0000] "POST /api/login HTTP/1.1" 200 245 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 Nueva conexión: cJ05KciqdRO0_jCmAAAD
 Usuario autenticado: admin
+::1 - - [26/Sep/2025:01:50:44 +0000] "POST /api/login HTTP/1.1" 200 245 "-" "curl/8.12.1"
+Cliente desconectado: cJ05KciqdRO0_jCmAAAD
