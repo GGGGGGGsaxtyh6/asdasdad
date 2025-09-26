@@ -308,7 +308,7 @@ const RealTerminal: React.FC<RealTerminalProps> = ({
 
   // Conectar socket
   useEffect(() => {
-    const socketInstance = io('https://7c2def2c86ac.ngrok-free.app', {
+    const socketInstance = io('https://d1ecf16241f3.ngrok-free.app', {
       transports: ['websocket'],
       upgrade: true,
       rememberUpgrade: true,

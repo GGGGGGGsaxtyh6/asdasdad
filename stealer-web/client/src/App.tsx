@@ -98,7 +98,7 @@ function App() {
 
     if (savedToken && savedUser) {
       // Verificar si el token sigue siendo válido
-      fetch('https://7c2def2c86ac.ngrok-free.app/api/verify', {
+      fetch('https://d1ecf16241f3.ngrok-free.app/api/verify', {
         headers: {
           'Authorization': `Bearer ${savedToken}`,
         },
