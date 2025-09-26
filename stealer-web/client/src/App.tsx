@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Login from './components/Login';
-import TerminalComponent from './components/Terminal';
+import SimpleDashboard from './components/SimpleDashboard';
 
 // Tema personalizado
 const theme = createTheme({
@@ -147,7 +147,7 @@ function App() {
       <CssBaseline />
       <div style={{ height: '100vh', overflow: 'hidden' }}>
         {isAuthenticated && token && user ? (
-          <TerminalComponent
+          <SimpleDashboard
             token={token}
             user={user}
             onDisconnect={handleDisconnect}

@@ -289,7 +289,15 @@ io.on('connection', (socket) => {
 });
 
 // Servir aplicación React
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
+
+// Catch-all handler para rutas de React Router
+app.use((req, res) => {
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'API endpoint not found' });
+  }
   res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
