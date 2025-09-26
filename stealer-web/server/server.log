@@ -14,3 +14,12 @@ Error no capturado: Error: listen EADDRINUSE: address already in use :::4000
 ::1 - - [26/Sep/2025:01:49:30 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
 Nueva conexión: 0-vnYx4zLJs-VxTqAAAB
 Usuario autenticado: student
+::1 - - [26/Sep/2025:01:49:51 +0000] "GET / HTTP/1.1" 200 1115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:49:52 +0000] "GET /static/js/main.2491ec81.js HTTP/1.1" 200 1061595 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:49:52 +0000] "GET /static/css/main.b2eb4c5a.css HTTP/1.1" 200 3254 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:49:53 +0000] "GET /api/verify HTTP/1.1" 200 85 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:49:53 +0000] "GET /manifest.json HTTP/1.1" 200 492 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:49:53 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+::1 - - [26/Sep/2025:01:50:00 +0000] "POST /api/login HTTP/1.1" 200 245 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+Nueva conexión: cJ05KciqdRO0_jCmAAAD
+Usuario autenticado: admin
