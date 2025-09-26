@@ -50,7 +50,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
     setError('');
 
     try {
-      const response = await fetch('http://localhost:4000/api/login', {
+      const response = await fetch('https://7c2def2c86ac.ngrok-free.app/api/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

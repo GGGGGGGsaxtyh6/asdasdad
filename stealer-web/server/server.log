@@ -1,15 +1,19 @@
 nohup: ignoring input
-[dotenv@17.2.2] injecting env (4) from .env -- tip: 📡 auto-backup env with Radar: https://dotenvx.com/radar
-🚀 Servidor ejecutándose en puerto 4000
-📱 Interfaz web disponible en: http://localhost:4000
-🔐 Usuarios de prueba:
-   - admin / admin123 (Administrador)
-   - student / student123 (Estudiante)
-::1 - - [26/Sep/2025:01:06:21 +0000] "GET /api/verify HTTP/1.1" 403 27 "-" "curl/8.12.1"
-::1 - - [26/Sep/2025:01:06:27 +0000] "GET / HTTP/1.1" 200 1115 "-" "curl/8.12.1"
-::1 - - [26/Sep/2025:01:41:23 +0000] "GET / HTTP/1.1" 200 1115 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
-::1 - - [26/Sep/2025:01:41:24 +0000] "GET /static/js/main.5b4a4351.js HTTP/1.1" 200 1077594 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
-::1 - - [26/Sep/2025:01:41:24 +0000] "GET /static/css/main.b2eb4c5a.css HTTP/1.1" 200 3254 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
-::1 - - [26/Sep/2025:01:41:25 +0000] "GET /favicon.ico HTTP/1.1" 200 3870 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
-::1 - - [26/Sep/2025:01:41:25 +0000] "GET /manifest.json HTTP/1.1" 200 492 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
-::1 - - [26/Sep/2025:01:41:25 +0000] "GET /logo192.png HTTP/1.1" 200 5347 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+[dotenv@17.2.2] injecting env (4) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Error no capturado: Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1939:16)
+    at listenInCluster (node:net:1996:12)
+    at Server.listen (node:net:2101:7)
+    at Object.<anonymous> (/workspace/stealer-web/server/server.js:305:8)
+::1 - - [26/Sep/2025:01:42:51 +0000] "GET /api/verify HTTP/1.1" 403 27 "-" "curl/8.12.1"
+:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 4000
+}

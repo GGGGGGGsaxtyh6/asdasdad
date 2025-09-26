@@ -464,7 +464,7 @@ const AdvancedTerminal: React.FC<AdvancedTerminalProps> = ({
 
   // Conectar socket con funcionalidades avanzadas
   useEffect(() => {
-    const socketInstance = io('http://localhost:4000', {
+    const socketInstance = io('https://7c2def2c86ac.ngrok-free.app', {
       transports: ['websocket'],
       upgrade: true,
       rememberUpgrade: true,
