@@ -131,7 +131,7 @@ const RealDashboard: React.FC<RealDashboardProps> = ({ user, token }) => {
 
   // Conectar socket
   useEffect(() => {
-    const socketInstance = io('https://d1ecf16241f3.ngrok-free.app', {
+    const socketInstance = io('https://67f234055e41.ngrok-free.app', {
       transports: ['websocket'],
       upgrade: true,
       rememberUpgrade: true,
