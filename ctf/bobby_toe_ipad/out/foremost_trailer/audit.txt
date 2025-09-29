@@ -1,0 +1,21 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Mon Sep 29 12:06:50 2025
+Invocation: foremost -i trailer.bin -o foremost_trailer 
+Output directory: /workspace/ctf/bobby_toe_ipad/out/foremost_trailer
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: trailer.bin
+Start: Mon Sep 29 12:06:50 2025
+Length: 5 KB (5885 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+Finish: Mon Sep 29 12:06:50 2025
+
+0 FILES EXTRACTED
+	
+------------------------------------------------------------------
+
+Foremost finished at Mon Sep 29 12:06:50 2025
