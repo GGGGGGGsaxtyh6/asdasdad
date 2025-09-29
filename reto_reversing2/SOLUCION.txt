@@ -1,0 +1,101 @@
+╔═══════════════════════════════════════════════════════════════╗
+║  SOLUCIÓN: Reverse Engineering Challenge 2                   ║
+╚═══════════════════════════════════════════════════════════════╝
+
+RETO:
+------
+Drake mejoró su algoritmo y ahora genera la clave secreta usando un
+algoritmo más complejo que involucra un alfabeto custom.
+
+CADENA SECRETA (HEX):
+---------------------
+0x1b 0x0f 0x1d 0x09 0x1c 0x08 0x66 0x49 0x06 0x01 0x01 0x02 0x0c
+0x08 0x74 0x28 0x12 0x53 0x01 0x18 0x10 0x4e 0x27 0x37 0x4c
+
+Longitud: 25 bytes
+
+ANÁLISIS DEL BINARIO:
+---------------------
+1. Archivo: re2 (ELF 64-bit PowerPC, statically linked)
+2. Uso: ./re2 <hbh_username>
+3. Alfabeto encontrado en 0x000a1d80:
+   "NvoWd.#`/]?iE$@xkf9O42^MSuV=rl>J<|wab-UIF&7CL5_D*qsnhB80)zA6K:gH~3mc}j[pR;Z,ytT+!eGQX1{(PY"
+
+DESCUBRIMIENTO CLAVE:
+---------------------
+Encontré una tabla de índices en 0x000a1cd0 - 0x000a1d50:
+0x34, 0x24, 0x34, 0x56, 0x39, 0x12, 0x26, 0x39, 0x55, 0x0b,
+0x43, 0x45, 0x22, 0x1c, 0x17, 0x44
+
+ALGORITMO DESCUBIERTO:
+----------------------
+El programa usa una tabla de índices que apuntan a posiciones en el
+alfabeto custom para generar la clave:
+
+Índice -> Carácter del Alfabeto
+  0x34 (52) -> 'h'
+  0x24 (36) -> 'b'
+  0x34 (52) -> 'h'
+  0x56 (86) -> '{'
+  0x39 (57) -> 'z'
+  0x12 (18) -> '9'
+  0x26 (38) -> 'U'
+  0x39 (57) -> 'z'
+  0x55 (85) -> '1'
+  0x0b (11) -> 'i'
+  0x43 (67) -> 'c'
+  0x45 (69) -> 'j'
+  0x22 (34) -> 'w'
+  0x1c (28) -> 'r'
+  0x17 (23) -> 'M'
+  0x44 (68) -> '}'
+
+CLAVE GENERADA: hbh{z9Uz1icjwrM}
+
+DECODIFICACIÓN:
+---------------
+Aplicando XOR con la clave generada:
+
+[00] 0x1b XOR 0x68 ('h') = 0x73 ('s')
+[01] 0x0f XOR 0x62 ('b') = 0x6d ('m')
+[02] 0x1d XOR 0x68 ('h') = 0x75 ('u')
+[03] 0x09 XOR 0x7b ('{') = 0x72 ('r')
+[04] 0x1c XOR 0x7a ('z') = 0x66 ('f')
+[05] 0x08 XOR 0x39 ('9') = 0x31 ('1')
+[06] 0x66 XOR 0x55 ('U') = 0x33 ('3')
+[07] 0x49 XOR 0x7a ('z') = 0x33 ('3')
+[08] 0x06 XOR 0x31 ('1') = 0x37 ('7')
+[09] 0x01 XOR 0x69 ('i') = 0x68 ('h')
+[10] 0x01 XOR 0x63 ('c') = 0x62 ('b')
+[11] 0x02 XOR 0x6a ('j') = 0x68 ('h')
+[12] 0x0c XOR 0x77 ('w') = 0x7b ('{')
+[13] 0x08 XOR 0x72 ('r') = 0x7a ('z')
+[14] 0x74 XOR 0x4d ('M') = 0x39 ('9')
+[15] 0x28 XOR 0x7d ('}') = 0x55 ('U')
+[16] 0x12 XOR 0x68 ('h') = 0x7a ('z')
+[17] 0x53 XOR 0x62 ('b') = 0x31 ('1')
+[18] 0x01 XOR 0x68 ('h') = 0x69 ('i')
+[19] 0x18 XOR 0x7b ('{') = 0x63 ('c')
+[20] 0x10 XOR 0x7a ('z') = 0x6a ('j')
+[21] 0x4e XOR 0x39 ('9') = 0x77 ('w')
+[22] 0x27 XOR 0x55 ('U') = 0x72 ('r')
+[23] 0x37 XOR 0x7a ('z') = 0x4d ('M')
+[24] 0x4c XOR 0x31 ('1') = 0x7d ('}')
+
+RESULTADO DECODIFICADO:
+-----------------------
+smurf1337hbh{z9Uz1icjwrM}
+
+RESPUESTA FINAL:
+----------------
+SECRET_KEY (FLAG): hbh{z9Uz1icjwrM}
+USERNAME: smurf1337
+
+CONCLUSIÓN:
+-----------
+El programa genera la clave usando una tabla de índices hardcodeada
+que apunta a posiciones específicas en el alfabeto custom. Esta clave
+se usa para decodificar mediante XOR cíclico la cadena ofuscada, que
+resulta ser el username concatenado con la flag.
+
+La flag es: hbh{z9Uz1icjwrM}
