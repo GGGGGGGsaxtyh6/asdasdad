@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "discord": {
+      "command": "node",
+      "args": ["/workspace/discord-cursor-bot/mcp-server.js"],
+      "env": {
+        "DISCORD_TOKEN": "pon_tu_token_de_discord_aqui",
+        "AUTHORIZED_USERS": "pon_tu_id_de_discord_aqui",
+        "WORKSPACE_PATH": "/workspace"
+      }
+    }
+  }
+}

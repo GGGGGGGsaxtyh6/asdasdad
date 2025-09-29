@@ -1,142 +1,190 @@
-# 🤖 Discord Bot para Cursor IDE
+# 🤖 Discord Bot con Cursor AI (MCP)
 
-Bot de Discord que permite interactuar con tu sesión de Cursor IDE desde Discord. Puedes ejecutar comandos, leer archivos, listar directorios y más.
+Este bot permite que **YO (el asistente de IA de Cursor)** responda mensajes de Discord directamente, usando esta sesión de Cursor.
 
-## 🚀 Características
+## 🎯 ¿Cómo funciona?
 
-- ✅ Ejecutar comandos de terminal en el workspace
-- 📄 Leer archivos del proyecto
-- 📁 Listar directorios
-- 🔍 Buscar archivos por patrón
-- ✏️ Crear y editar archivos
-- 🔒 Sistema de autorización por ID de usuario
-- 📊 Manejo automático de mensajes largos
+1. **Servidor MCP** escucha mensajes de Discord
+2. Cuando llegas un mensaje, Cursor es notificado
+3. **YO** (el asistente) proceso el mensaje y respondo
+4. La respuesta se envía a Discord
+
+**Es EXACTAMENTE igual que hablar conmigo aquí, pero desde Discord.**
 
 ## 📋 Requisitos
 
-- Node.js 16.9.0 o superior
-- Una aplicación de Discord Bot con token
+- ✅ Node.js instalado
+- ✅ Token de Discord Bot
+- ✅ Cursor IDE (esta sesión)
+- ❌ **NO necesitas API de Anthropic** (uso la sesión actual)
 
 ## 🛠️ Instalación
 
-1. **Clonar o crear el proyecto:**
-   ```bash
-   cd /workspace/discord-cursor-bot
-   ```
-
-2. **Instalar dependencias:**
-   ```bash
-   npm install
-   ```
-
-3. **Configurar el bot:**
-   - Copia `.env.example` a `.env`:
-     ```bash
-     cp .env.example .env
-     ```
-   - Edita `.env` y configura:
-     - `DISCORD_TOKEN`: Token de tu bot de Discord
-     - `AUTHORIZED_USERS`: IDs de usuarios autorizados (separados por comas)
-     - `COMMAND_PREFIX`: Prefijo de comandos (por defecto: `!cursor`)
-
-## 🔑 Crear Bot en Discord
-
-1. Ve al [Portal de Desarrolladores de Discord](https://discord.com/developers/applications)
-2. Haz clic en "New Application" y dale un nombre
-3. Ve a la sección "Bot" en el menú lateral
-4. Haz clic en "Add Bot"
-5. Copia el token (lo necesitarás para el archivo `.env`)
-6. Activa los siguientes "Privileged Gateway Intents":
-   - ✅ MESSAGE CONTENT INTENT
-   - ✅ SERVER MEMBERS INTENT (opcional)
-   - ✅ PRESENCE INTENT (opcional)
-
-## 📲 Invitar el Bot a tu Servidor
-
-1. En el Portal de Desarrolladores, ve a "OAuth2" > "URL Generator"
-2. Selecciona los siguientes scopes:
-   - ✅ `bot`
-3. Selecciona los permisos del bot:
-   - ✅ Read Messages/View Channels
-   - ✅ Send Messages
-   - ✅ Embed Links
-   - ✅ Attach Files
-4. Copia la URL generada y ábrela en tu navegador
-5. Selecciona tu servidor y autoriza el bot
-
-## 🎮 Obtener tu ID de Usuario de Discord
-
-1. En Discord, ve a Configuración > Avanzado
-2. Activa el "Modo Desarrollador"
-3. Haz clic derecho en tu usuario y selecciona "Copiar ID"
-4. Pega este ID en el archivo `.env` en la variable `AUTHORIZED_USERS`
-
-## ▶️ Ejecutar el Bot
+### 1. Instalar dependencias
 
 ```bash
-npm start
+cd /workspace/discord-cursor-bot
+npm install
 ```
 
-O en modo desarrollo:
+### 2. Crear Bot en Discord
+
+1. Ve a https://discord.com/developers/applications
+2. Click en "New Application"
+3. Ve a "Bot" > "Add Bot"
+4. Copia el **Token**
+5. Activa "MESSAGE CONTENT INTENT"
+
+### 3. Configurar el bot
+
 ```bash
-npm run dev
+cp .env.example .env
+nano .env
 ```
 
-## 📖 Comandos Disponibles
-
-| Comando | Descripción | Ejemplo |
-|---------|-------------|---------|
-| `!cursor help` | Muestra la ayuda | `!cursor help` |
-| `!cursor exec <comando>` | Ejecuta un comando de terminal | `!cursor exec ls -la` |
-| `!cursor read <archivo>` | Lee un archivo | `!cursor read package.json` |
-| `!cursor ls [dir]` | Lista archivos en directorio | `!cursor ls` o `!cursor ls src` |
-| `!cursor write <archivo>` | Crea/edita archivo | Ver ejemplo abajo |
-| `!cursor find <patrón>` | Busca archivos | `!cursor find "*.js"` |
-| `!cursor pwd` | Muestra directorio actual | `!cursor pwd` |
-
-### Ejemplo de `write`:
+Configura:
+```env
+DISCORD_TOKEN=tu_token_aqui
+AUTHORIZED_USERS=tu_id_de_discord
+WORKSPACE_PATH=/workspace
 ```
-!cursor write test.txt
-Este es el contenido
-del archivo
-en múltiples líneas
+
+Para obtener tu ID de Discord:
+- Activa "Modo Desarrollador" en Discord
+- Click derecho en tu usuario > Copiar ID
+
+### 4. Configurar MCP en Cursor
+
+Edita (o crea) el archivo de configuración de Cursor:
+
+**En Linux/Mac:**
+```bash
+nano ~/.cursor/config/mcp.json
 ```
+
+**En Windows:**
+```
+%APPDATA%\Cursor\config\mcp.json
+```
+
+Añade:
+```json
+{
+  "mcpServers": {
+    "discord": {
+      "command": "node",
+      "args": ["/workspace/discord-cursor-bot/mcp-server.js"],
+      "env": {
+        "DISCORD_TOKEN": "tu_token_aqui",
+        "AUTHORIZED_USERS": "tu_id_aqui"
+      }
+    }
+  }
+}
+```
+
+### 5. Reiniciar Cursor
+
+Cierra y abre Cursor para que cargue la configuración MCP.
+
+### 6. Invitar bot a tu servidor
+
+1. En Discord Developers > OAuth2 > URL Generator
+2. Selecciona: `bot`
+3. Permisos: "Send Messages", "Read Messages"
+4. Copia la URL y ábrela en tu navegador
+
+## 🚀 Uso
+
+1. **El servidor MCP inicia automáticamente** cuando abres Cursor
+2. En Discord, **menciona al bot**: `@TuBot hola`
+3. **YO** (el asistente de Cursor) recibiré tu mensaje
+4. Te responderé en Discord
+
+## 💬 Ejemplo de conversación
+
+**Tú en Discord:**
+```
+@MiBot ejecuta ls -la en el workspace
+```
+
+**Yo (desde Cursor):**
+```
+¡Claro! Voy a listar los archivos del workspace:
+
+[ejecuto el comando y muestro resultados]
+```
+
+## 🔧 Verificar que funciona
+
+En Cursor, puedes verificar que el servidor MCP está activo:
+
+1. Abre el chat de Cursor (Cmd/Ctrl + L)
+2. Escribe: "¿Tienes acceso a Discord?"
+3. Si respondo que sí y veo mensajes pendientes, está funcionando
+
+## 🐛 Solución de problemas
+
+### El bot no responde en Discord
+- Verifica que Cursor esté abierto
+- Revisa la configuración en `mcp.json`
+- Asegúrate de mencionar al bot en Discord
+
+### "No puedo acceder a Discord"
+- Verifica que `mcp.json` esté correctamente configurado
+- Reinicia Cursor
+- Revisa que el token de Discord sea válido
+
+### Error de permisos
+- Verifica que tu ID esté en `AUTHORIZED_USERS`
+- Asegúrate de que el bot tenga permisos en el canal
+
+## 📝 Comandos útiles
+
+En Discord, puedes hablarme como lo haces aquí:
+
+- `@Bot ejecuta [comando]` - Ejecutar comandos
+- `@Bot lee el archivo [ruta]` - Leer archivos
+- `@Bot crea un archivo [nombre]` - Crear archivos
+- `@Bot lista el directorio` - Ver archivos
+- O simplemente conversar naturalmente
 
 ## 🔒 Seguridad
 
-⚠️ **IMPORTANTE**: Este bot puede ejecutar comandos en tu sistema. 
+⚠️ **IMPORTANTE:**
+- Solo usuarios autorizados (en `AUTHORIZED_USERS`) pueden usar el bot
+- El bot tiene acceso completo al workspace
+- No uses en servidores públicos
+- Mantén tu token seguro
 
-- Configura siempre los IDs de usuarios autorizados en `.env`
-- No compartas tu token de Discord
-- Revisa los comandos antes de ejecutarlos
-- Considera usar un entorno aislado (contenedor, VM)
-- No expongas este bot en servidores públicos
+## 📚 Arquitectura
 
-## 🐛 Solución de Problemas
+```
+Discord App (tú)
+    ↓
+Discord API
+    ↓
+Servidor MCP (mcp-server.js)
+    ↓
+Cursor AI (yo, el asistente)
+    ↓
+Ejecutar comandos/leer archivos
+    ↓
+Respuesta a Discord
+```
 
-### El bot no responde
-- Verifica que el token sea correcto
-- Asegúrate de que "MESSAGE CONTENT INTENT" esté activado
-- Revisa que tu ID esté en `AUTHORIZED_USERS`
+## ✨ Ventajas
 
-### Error de permisos
-- Verifica que el bot tenga permisos para leer/enviar mensajes en el canal
-- Revisa los permisos en Discord
-
-### Comandos no se ejecutan
-- Verifica que estés usando el prefijo correcto (por defecto `!cursor`)
-- Asegúrate de que el bot esté online
-
-## 📝 Licencia
-
-MIT
+- ✅ Usas la sesión actual de Cursor (no pagas API externa)
+- ✅ YO respondo (no un bot tonto)
+- ✅ Puedo ejecutar comandos, leer/escribir archivos
+- ✅ Conversaciones naturales como aquí
+- ✅ Contexto del workspace completo
 
 ## 🤝 Contribuciones
 
-Las contribuciones son bienvenidas. Por favor, abre un issue o pull request.
+Este es un proyecto experimental. Si encuentras problemas o mejoras, ¡son bienvenidas!
 
 ---
 
-**Workspace actual:** `/workspace`
-
-**Prefijo por defecto:** `!cursor`
+**Hecho con ❤️ usando Cursor AI y MCP**

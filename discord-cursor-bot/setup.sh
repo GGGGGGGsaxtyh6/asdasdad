@@ -1,50 +1,96 @@
 #!/bin/bash
 
-echo "🤖 Configuración del Bot de Discord para Cursor"
-echo "==============================================="
+echo "=================================================="
+echo "🤖 SETUP - Discord Bot con Cursor AI (MCP)"
+echo "=================================================="
 echo ""
 
-# Verificar si existe .env
-if [ ! -f .env ]; then
-    echo "❌ No se encontró el archivo .env"
-    echo "📝 Creando .env desde .env.example..."
+# Verificar que estamos en el directorio correcto
+if [ ! -f "mcp-server.js" ]; then
+    echo "❌ Error: Ejecuta este script desde /workspace/discord-cursor-bot"
+    exit 1
+fi
+
+# Paso 1: Crear .env si no existe
+if [ ! -f ".env" ]; then
+    echo "📝 Creando archivo .env..."
     cp .env.example .env
     echo "✅ Archivo .env creado"
+else
+    echo "✅ Archivo .env ya existe"
 fi
 
 echo ""
-echo "📋 Pasos para configurar el bot:"
+echo "=================================================="
+echo "📋 PASOS PARA CONFIGURAR:"
+echo "=================================================="
 echo ""
-echo "1️⃣  Crea un bot en Discord:"
+echo "1️⃣  CREAR BOT EN DISCORD"
 echo "   🔗 https://discord.com/developers/applications"
+echo "   - New Application"
+echo "   - Bot > Add Bot"
+echo "   - Copia el TOKEN"
+echo "   - Activa MESSAGE CONTENT INTENT"
 echo ""
-echo "2️⃣  Copia el TOKEN del bot"
-echo ""
-echo "3️⃣  Obtén tu ID de Discord:"
-echo "   - Activa el Modo Desarrollador en Discord"
+echo "2️⃣  OBTENER TU ID DE DISCORD"
+echo "   - Activa Modo Desarrollador en Discord"
 echo "   - Click derecho en tu usuario > Copiar ID"
 echo ""
-echo "4️⃣  Edita el archivo .env y configura:"
-echo "   - DISCORD_TOKEN=tu_token_aqui"
-echo "   - AUTHORIZED_USERS=tu_id_aqui"
+echo "3️⃣  CONFIGURAR .env"
+echo "   - DISCORD_TOKEN=tu_token"
+echo "   - AUTHORIZED_USERS=tu_id"
 echo ""
-echo "5️⃣  Invita el bot a tu servidor:"
-echo "   - En el Portal de Discord > OAuth2 > URL Generator"
-echo "   - Marca: bot + permisos necesarios"
+echo "4️⃣  CONFIGURAR MCP EN CURSOR"
+echo "   Ubicación del archivo:"
+echo "   - Linux/Mac: ~/.cursor/config/mcp.json"
+echo "   - Windows: %APPDATA%\Cursor\config\mcp.json"
 echo ""
-echo "6️⃣  Ejecuta: npm start"
+echo "   Contenido (copia desde mcp-config-example.json):"
+echo "   {" 
+echo '     "mcpServers": {'
+echo '       "discord": {'
+echo '         "command": "node",'
+echo '         "args": ["/workspace/discord-cursor-bot/mcp-server.js"],'
+echo '         "env": {'
+echo '           "DISCORD_TOKEN": "tu_token",'
+echo '           "AUTHORIZED_USERS": "tu_id"'
+echo '         }'
+echo '       }'
+echo '     }'
+echo "   }"
 echo ""
-echo "==============================================="
+echo "5️⃣  REINICIAR CURSOR"
+echo "   - Cierra completamente Cursor"
+echo "   - Ábrelo de nuevo"
 echo ""
-echo "¿Deseas editar el archivo .env ahora? (s/n)"
-read -r respuesta
+echo "6️⃣  INVITAR BOT A TU SERVIDOR"
+echo "   - Discord Dev Portal > OAuth2 > URL Generator"
+echo "   - Selecciona: bot"
+echo "   - Permisos: Send Messages, Read Messages"
+echo "   - Usa la URL generada"
+echo ""
+echo "=================================================="
+echo ""
+
+# Preguntar si quiere editar .env ahora
+read -p "¿Deseas editar .env ahora? (s/n): " respuesta
 
 if [ "$respuesta" = "s" ] || [ "$respuesta" = "S" ]; then
     ${EDITOR:-nano} .env
     echo ""
-    echo "✅ Configuración guardada"
+    echo "✅ .env configurado"
 fi
 
 echo ""
-echo "🚀 Para iniciar el bot, ejecuta: npm start"
+echo "=================================================="
+echo "🎯 PRÓXIMOS PASOS:"
+echo "=================================================="
 echo ""
+echo "1. Configura el archivo .env con tus credenciales"
+echo "2. Crea el archivo mcp.json en Cursor"
+echo "3. Reinicia Cursor"
+echo "4. ¡Menciona al bot en Discord!"
+echo ""
+echo "Para verificar: En Cursor, pregúntame '¿Tienes acceso a Discord?'"
+echo ""
+echo "=================================================="

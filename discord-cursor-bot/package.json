@@ -1,18 +1,17 @@
 {
-  "name": "discord-cursor-bot",
+  "name": "discord-cursor-bot-mcp",
   "version": "2.0.0",
-  "description": "Bot de Discord con Claude AI para interactuar con Cursor IDE",
-  "main": "bot.js",
+  "description": "Bot de Discord que conecta con Cursor AI usando MCP (Model Context Protocol)",
+  "main": "mcp-server.js",
   "scripts": {
-    "start": "node bot.js",
-    "dev": "node bot.js"
+    "start": "node mcp-server.js",
+    "setup": "./setup.sh"
   },
-  "keywords": ["discord", "bot", "cursor", "ide", "claude", "ai"],
+  "keywords": ["discord", "bot", "cursor", "mcp", "ai"],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1",
-    "@anthropic-ai/sdk": "^0.20.0"
+    "dotenv": "^16.3.1"
   }
 }
