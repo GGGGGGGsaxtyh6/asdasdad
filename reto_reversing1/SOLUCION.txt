@@ -1,0 +1,77 @@
+╔═══════════════════════════════════════════════════════════════╗
+║  SOLUCIÓN: Reverse Engineering Challenge 1                   ║
+╚═══════════════════════════════════════════════════════════════╝
+
+RETO:
+------
+Drake creó un método de ofuscación de strings que toma un nombre,
+lo ofusca y retorna el resultado. La clave secreta está oculta
+en el programa.
+
+CADENA SECRETA (HEX):
+---------------------
+0x1b 0x0f 0x1d 0x09 0x21 0x00 0x7a 0x51 0x65 0x1d 0x08 0x03 0x14 
+0x6a 0x70 0x34 0x0a 0x30 0x1d 0x11 0x2c 0x5e 0x64 0x23 0x2f
+
+ANÁLISIS:
+---------
+1. Archivo: re1 (ELF 64-bit PowerPC, estaticamente linked)
+2. Herramienta usada: strings + análisis manual
+3. Se encontró en el binario la string: "hbh{G1IbRujko-A}"
+
+ALGORITMO:
+----------
+El programa usa XOR cíclico con una clave secreta.
+Operación: plaintext[i] XOR key[i % len(key)] = ciphertext[i]
+
+CLAVE SECRETA ENCONTRADA:
+-------------------------
+hbh{G1IbRujko-A}
+
+DECODIFICACIÓN:
+---------------
+Aplicando XOR con la clave encontrada:
+
+Byte  Cifrado   Clave    Resultado
+----  --------  -------  ---------
+ 0    0x1b  XOR 0x68(h) = 0x73 (s)
+ 1    0x0f  XOR 0x62(b) = 0x6d (m)
+ 2    0x1d  XOR 0x68(h) = 0x75 (u)
+ 3    0x09  XOR 0x7b({) = 0x72 (r)
+ 4    0x21  XOR 0x47(G) = 0x66 (f)
+ 5    0x00  XOR 0x31(1) = 0x31 (1)
+ 6    0x7a  XOR 0x49(I) = 0x33 (3)
+ 7    0x51  XOR 0x62(b) = 0x33 (3)
+ 8    0x65  XOR 0x52(R) = 0x37 (7)
+ 9    0x1d  XOR 0x75(u) = 0x68 (h)
+10    0x08  XOR 0x6a(j) = 0x62 (b)
+11    0x03  XOR 0x6b(k) = 0x68 (h)
+12    0x14  XOR 0x6f(o) = 0x7b ({)
+13    0x6a  XOR 0x2d(-) = 0x47 (G)
+14    0x70  XOR 0x41(A) = 0x31 (1)
+15    0x34  XOR 0x7d(}) = 0x49 (I)
+16    0x0a  XOR 0x68(h) = 0x62 (b)
+17    0x30  XOR 0x62(b) = 0x52 (R)
+18    0x1d  XOR 0x68(h) = 0x75 (u)
+19    0x11  XOR 0x7b({) = 0x6a (j)
+20    0x2c  XOR 0x47(G) = 0x6b (k)
+21    0x5e  XOR 0x31(1) = 0x6f (o)
+22    0x64  XOR 0x49(I) = 0x2d (-)
+23    0x23  XOR 0x62(b) = 0x41 (A)
+24    0x2f  XOR 0x52(R) = 0x7d (})
+
+RESULTADO DECODIFICADO:
+-----------------------
+smurf1337hbh{G1IbRujko-A}
+
+RESPUESTA FINAL:
+----------------
+SECRET_KEY: hbh{G1IbRujko-A}
+STRING ORIGINAL: smurf1337hbh{G1IbRujko-A}
+
+CONCLUSIÓN:
+-----------
+El programa toma el string "smurf1337" como entrada, lo concatena
+con la clave secreta "hbh{G1IbRujko-A}", y luego lo ofusca usando
+XOR cíclico con la misma clave. La clave estaba "oculta" como una
+string legible en el binario.
