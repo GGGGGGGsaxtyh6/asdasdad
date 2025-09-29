@@ -1,17 +1,18 @@
 {
   "name": "discord-cursor-bot",
-  "version": "1.0.0",
-  "description": "Bot de Discord para interactuar con sesión de Cursor IDE",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Bot de Discord con Claude AI para interactuar con Cursor IDE",
+  "main": "bot.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "node index.js"
+    "start": "node bot.js",
+    "dev": "node bot.js"
   },
-  "keywords": ["discord", "bot", "cursor", "ide"],
+  "keywords": ["discord", "bot", "cursor", "ide", "claude", "ai"],
   "author": "",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^14.14.1",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "@anthropic-ai/sdk": "^0.20.0"
   }
 }
