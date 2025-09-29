@@ -1,0 +1,95 @@
+ANÁLISIS WEBSEC LEVEL09 - Remote Code Execution
+==================================================
+
+FLUJO DE LA APLICACIÓN:
+-----------------------
+
+1. ALMACENAR CONTENIDO:
+   - GET parámetros: submit=1&c=<contenido>
+   - Genera un hash aleatorio: sha1(time())
+   - Guarda el contenido en /tmp/<hash> después de filtrar caracteres peligrosos
+   - Establece una cookie session_id con el hash (válida 2 segundos)
+
+2. EJECUTAR CONTENIDO:
+   - GET parámetro: cache_file=<ruta>
+   - Si el archivo existe, lo lee y ejecuta con eval()
+   - Usa stripcslashes() antes de eval()
+
+FILTROS APLICADOS:
+------------------
+str_replace elimina estos caracteres del input:
+'<?', '?>', '"', "'", '$', '&', '|', '{', '}', ';', '#', ':', '#', ']', '[', ',', '%', '(', ')'
+
+VULNERABILIDADES IDENTIFICADAS:
+-------------------------------
+
+1. **RACE CONDITION** en la cookie:
+   - La cookie dura solo 2 segundos
+   - El archivo se guarda en /tmp/<hash_de_tiempo>
+   - Si enviamos la solicitud en el mismo segundo, podemos predecir el hash
+
+2. **eval() CON stripcslashes()**:
+   - eval() ejecuta código PHP
+   - stripcslashes() elimina backslashes de escape
+   - Esto puede permitir bypass de filtros!
+
+3. **PATH TRAVERSAL** en cache_file:
+   - No valida la ruta del cache_file
+   - Podemos leer cualquier archivo del sistema
+
+ESTRATEGIA DE EXPLOTACIÓN:
+--------------------------
+
+OPCIÓN 1: Predecir el hash y ejecutar nuestro archivo
+   - Almacenar payload
+   - Calcular sha1(time()) en el mismo segundo
+   - Ejecutar con cache_file=/tmp/<hash_predicho>
+
+OPCIÓN 2: Usar stripcslashes para bypass
+   - stripcslashes() convierte \\n a \n, \\t a \t, etc.
+   - Podemos construir código PHP usando secuencias de escape
+
+OPCIÓN 3: Leer directamente flag.txt
+   - Usar cache_file=flag.txt si eval puede ejecutar el contenido
+
+ANÁLISIS DETALLADO DE stripcslashes:
+------------------------------------
+
+stripcslashes() elimina backslashes de estas secuencias:
+- \\n → \n (newline)
+- \\t → \t (tab)
+- \\r → \r (return)
+- \\0 → \0 (null)
+- \\' → ' (comilla simple)
+- \\" → " (comilla doble)
+- \\\\ → \ (backslash)
+
+Si podemos almacenar código con backslashes dobles, stripcslashes los convertirá
+y luego eval() ejecutará el código resultante.
+
+PERO HAY UN PROBLEMA:
+---------------------
+Los caracteres necesarios para PHP están bloqueados: $ ( ) ; { } ' " [ ]
+
+¿CÓMO EJECUTAR PHP SIN ESTOS CARACTERES?
+-----------------------------------------
+
+IDEA: Usar funciones que no necesiten paréntesis o usar sintaxis alternativa.
+
+O MEJOR: Si el contenido de flag.txt no es código PHP, eval() lo ejecutará
+y devolverá el resultado.
+
+PRUEBA SIMPLE:
+--------------
+1. Intentar leer flag.txt directamente con cache_file=flag.txt
+2. Si no funciona, usar path absoluto o relativo
+
+OTRA IDEA:
+----------
+Como los filtros eliminan caracteres pero NO bloquean otros como:
+- Newlines
+- Espacios
+- Letras y números
+- Algunos símbolos: !, @, ^, *, =, +, -, /, \, etc.
+
+Podemos intentar construir código PHP usando técnicas avanzadas.
