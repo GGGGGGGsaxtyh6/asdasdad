@@ -1,0 +1,96 @@
+ANÁLISIS WEBSEC LEVEL18 - PHP Object Deserialization
+=========================================================
+
+TÍTULO: "json_decode is for the weak"
+HINT: "can you give it back please?"
+
+FLUJO DEL CÓDIGO:
+-----------------
+
+1. Si existe $_POST['obj'], lo guarda en la cookie
+2. Si no existe cookie 'obj', crea un objeto stdClass con input=1234 y lo serializa
+3. Cuando existe la cookie:
+   - Deserializa el objeto de la cookie
+   - Le añade la propiedad flag con el valor de $flag
+   - Compara: hash_equals($unserialized_obj->input, $unserialized_obj->flag)
+   - Si son iguales → muestra la flag
+   - Si no → muestra mensaje de error
+
+VULNERABILIDAD:
+---------------
+
+PHP Object Deserialization (Insecure Deserialization)
+
+El código hace unserialize() de datos controlados por el usuario (la cookie).
+Esto puede ser peligroso, pero aquí NO necesitamos ejecutar código, solo:
+
+NECESITAMOS: $unserialized_obj->input === $flag
+
+PERO: No sabemos el valor de $flag
+
+SOLUCIÓN: **¡PHP OBJECT REFERENCE!**
+
+En PHP, podemos crear referencias entre propiedades usando serialización.
+Si hacemos que la propiedad 'input' sea una REFERENCIA a la propiedad 'flag',
+cuando el código haga: $unserialized_obj->flag = $flag;
+¡También cambiará el valor de input!
+
+FORMATO DE SERIALIZACIÓN PHP:
+------------------------------
+
+stdClass normal:
+O:8:"stdClass":1:{s:5:"input";i:1234;}
+
+Con referencias (usando R:):
+O:8:"stdClass":2:{s:5:"input";s:4:"test";s:4:"flag";R:2;}
+
+Esto hace que 'flag' sea una REFERENCIA a 'input'.
+
+PERO MEJOR AÚN: Usar referencias al revés
+O:8:"stdClass":2:{s:4:"flag";N;s:5:"input";R:2;}
+
+Esto hace que 'input' sea una REFERENCIA a 'flag'.
+Cuando el código haga: $unserialized_obj->flag = $flag_real;
+input también se actualizará!
+
+ESTRATEGIA:
+-----------
+
+1. Crear un objeto serializado donde 'input' sea una referencia a 'flag'
+2. Enviarlo como cookie
+3. El código hace: $unserialized_obj->flag = $flag;
+4. Como 'input' es referencia a 'flag', input también se actualiza
+5. hash_equals($input, $flag) será TRUE
+6. ¡Flag revelada!
+
+PAYLOAD:
+--------
+
+Necesito crear: O:8:"stdClass":2:{s:5:"input";N;s:4:"flag";r:2;}
+
+Donde:
+- O:8:"stdClass" = objeto de clase stdClass
+- 2 = número de propiedades
+- s:5:"input" = string "input" (5 caracteres)
+- N = NULL (valor inicial)
+- s:4:"flag" = string "flag" (4 caracteres)  
+- r:2 = referencia a la propiedad #2 (input)
+
+¡ESPERA! El orden importa. Déjame repensar...
+
+Cuando deserializa: O:8:"stdClass":2:{s:5:"input";N;s:4:"flag";R:2;}
+- Propiedad 1: input = NULL
+- Propiedad 2: flag = referencia a propiedad 1 (input)
+
+Luego el código hace: $obj->flag = $flag_real
+Esto cambia flag, y como flag apunta a input... ¡NO! 
+
+Necesito al revés:
+O:8:"stdClass":2:{s:4:"flag";N;s:5:"input";R:2;}
+- Propiedad 1: flag = NULL  
+- Propiedad 2: input = referencia a propiedad 1 (flag)
+
+Luego: $obj->flag = $flag_real
+Esto cambia flag al valor real, e input (que apunta a flag) también se actualiza!
+
+¡PERFECTO!
