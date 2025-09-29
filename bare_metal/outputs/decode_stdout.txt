@@ -1,0 +1,5 @@
+LEN_BITS 352
+LSB_ASCII
+Î¦.úf6æ\*BÞìú,vvú¬úÌnÌLîÌLÌÄ$¤¾
+MSB_ASCII
+set_flag:HTB{817_84n91n9_15_3v32ywh323!@#$%}

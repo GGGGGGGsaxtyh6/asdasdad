@@ -1,0 +1,6 @@
+--- /workspace/bare_metal/downloads/expected.sha256	2025-09-29 17:25:45.272265734 +0000
++++ /workspace/bare_metal/downloads/Bare_Metal.zip.sha256.only	2025-09-29 17:25:54.216286084 +0000
+@@ -1 +1 @@
+-5d4185e0231b3c8e459a15e90ffbe9e36851284938536f9125cbf68430808e9c
+\ No newline at end of file
++5d4185e0231b3c8e459a15e90ffbe9e36851284938536f9125cbf68430808e9c  /workspace/bare_metal/downloads/Bare Metal.zip
