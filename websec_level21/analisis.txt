@@ -1,0 +1,183 @@
+ANÁLISIS WEBSEC LEVEL21 - Admin Authentication Bypass
+========================================================
+
+TÍTULO: "It's always easier when you're admin"
+HINT: No puedes registrarte usando las letras [admin]
+
+FLUJO DE LA APLICACIÓN:
+-----------------------
+
+1. REGISTRO (register):
+   - Username debe ser alfanumérico (ctype_alnum)
+   - Username debe tener mínimo 6 caracteres
+   - Username NO puede contener las letras: a, d, m, i, n
+   - Se guarda en SQLite: INSERT INTO users (username, password, ip)
+   - Password se hashea con md5()
+
+2. LOGIN:
+   - SELECT * FROM users WHERE username=:username AND password=:password
+   - Si coincide, crea cookies con create_cookies()
+
+3. COOKIES (create_cookies):
+   - Formato: 'user/pass:' + username + '/' + password
+   - Se encripta con AES-128-CBC (mcrypt)
+   - Cookie = IV (hex) + ciphertext (hex)
+
+4. AUTENTICACIÓN (auth):
+   - Desencripta la cookie
+   - Verifica formato: 'user/pass:username/password'
+   - Llama a verify_credentials()
+   - Retorna el username si es válido
+
+5. FLAG:
+   - Se muestra si: auth() === "admin"
+   - Necesitamos que auth() devuelva "admin"
+
+VULNERABILIDAD IDENTIFICADA:
+----------------------------
+
+En verify_credentials():
+```php
+$result = $pdo->query("SELECT * FROM users WHERE username='$username' AND password='$password';");
+```
+
+¡SQL INJECTION! Los valores NO están escapados.
+
+Pero hay un problema: para llegar aquí, necesitamos:
+1. Crear una cookie válida
+2. Que pase la desencriptación
+3. Que el formato sea correcto: 'user/pass:username/password'
+
+ESTRATEGIA:
+-----------
+
+El filtro solo bloquea las letras [admin] individualmente.
+Pero podemos usar SQL INJECTION en el campo username o password
+para hacer que la query devuelva el usuario "admin".
+
+Si podemos inyectar en password, podemos hacer:
+username = algo (nuestro usuario)
+password = ' OR username='admin'-- 
+
+La query quedaría:
+SELECT * FROM users WHERE username='algo' AND password='' OR username='admin'--';
+
+Esto retornaría el usuario admin!
+
+PERO: Necesitamos primero registrar un usuario que pase el filtro.
+
+REGISTRO:
+---------
+- No puede tener: a, d, m, i, n
+- Mínimo 6 caracteres
+- Solo alfanumérico
+
+Ejemplos válidos:
+- "testuser" - NO (tiene 'e', 't', 'u', 's', 'e', 'r')
+  Espera, el filtro es: preg_match('/(a|d|m|i|n)/', ...)
+  
+  Esto bloquea SI contiene alguna de estas letras: a, d, m, i, n
+  
+  Letras permitidas: b,c,e,f,g,h,j,k,l,o,p,q,r,s,t,u,v,w,x,y,z,0-9
+  
+  Username válido: "bcefgh" o "bcefgho" o "testuser" - NO 'testuser' tiene 'e','t','u','s','e','r'
+  
+  ¡Espera! Mirando mejor:
+  preg_match('/(a|d|m|i|n)/', strtolower($username))
+  
+  Esto busca SI hay alguna 'a' O 'd' O 'm' O 'i' O 'n'
+  
+  Username sin esas letras: usando b,c,e,f,g,h,j,k,l,o,p,q,r,s,t,u,v,w,x,y,z
+  
+  Ejemplo: "bcefgh" ✓
+  Ejemplo: "tester" - 'e','t','e','s','t','e','r' - ¿tiene a,d,m,i,n? NO ✓
+  Ejemplo: "qwerty" - ¿tiene a,d,m,i,n? NO ✓
+
+Entonces puedo registrar: "qwerty" con password lo que sea.
+
+EXPLOIT:
+--------
+
+1. Registrar: username="qwerty", password="test123"
+2. Esto crea cookie con: 'user/pass:qwerty/hash_md5'
+3. Modificar la cookie para inyectar SQL:
+   - Cookie: 'user/pass:qwerty/' + payload
+   - payload = "' OR username='admin'-- "
+4. El auth() desencripta y llama verify_credentials con esos valores
+5. La query inyectada devuelve el usuario admin
+6. auth() retorna "admin"
+7. ¡Flag revelada!
+
+PROBLEMA: No podemos modificar fácilmente la cookie encriptada...
+
+ALTERNATIVA:
+------------
+
+Mirar más de cerca verify_credentials():
+- Se llama desde auth() con username y password extraídos
+- Hace query SIN escapar
+- Si encontramos forma de inyectar en password al crear la cookie...
+
+¡IDEA! El password en la cookie es el hash MD5 de la DB.
+Cuando hacemos login, la cookie tiene: 'user/pass:username/md5_hash'
+
+Si podemos hacer que el md5_hash contenga una inyección SQL...
+O mejor: ¿hay algún usuario admin ya en la DB?
+
+Revisando el código de create_cookies():
+```php
+$plain = 'user/pass:' . $username . '/' . $password;
+```
+
+El $password aquí es el hash MD5 de la DB, no el password en texto.
+
+NUEVA ESTRATEGIA - SQL Injection en query sin prepared statements:
+-------------------------------------------------------------------
+
+En verify_credentials():
+```php
+$result = $pdo->query("SELECT * FROM users WHERE username='$username' AND password='$password';");
+```
+
+Si puedo controlar estos valores, puedo inyectar.
+Los valores vienen de auth() que desencripta la cookie.
+
+¿Puedo crear una cookie con payload SQL?
+
+Necesito: 'user/pass:PAYLOAD'
+
+Donde PAYLOAD hace que la query devuelva username='admin'
+
+Payload: qwerty/' OR 1=1 UNION SELECT 'admin', 'x', 'x' --  /nada
+
+Hmm, esto es complejo porque el formato debe ser username/password.
+
+MEJOR IDEA - Padding Oracle o CBC Bit Flipping:
+------------------------------------------------
+
+La cookie usa AES-128-CBC. Si puedo hacer bit flipping, puedo cambiar
+el username de 'qwerty' a 'admin'.
+
+Pero necesitaría conocer el plaintext exacto y hacer XOR...
+
+SOLUCIÓN MÁS SIMPLE:
+--------------------
+
+Revisando de nuevo... cuando hacemos login EXITOSO, create_cookies() usa:
+```php
+create_cookies($row['username'], $row['password'], $aes_key);
+```
+
+El $row['password'] es el MD5 de la DB.
+
+¿Y si registro un usuario cuyo MD5 del password contenga comillas o SQL injection?
+
+No, el MD5 es hexadecimal, no contendrá comillas.
+
+SOLUCIÓN REAL - Exploit del padding:
+-------------------------------------
+
+La desencriptación hace rtrim() para quitar \0.
+Si manipulo el IV o ciphertext, puedo alterar el plaintext decriptado.
+
+O MEJOR: ¿Hay algún bypass en el filtro de registro?
