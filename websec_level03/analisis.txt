@@ -1,0 +1,52 @@
+ANÁLISIS DEL RETO WEBSEC LEVEL03
+===================================
+
+CÓDIGO PHP CLAVE:
+-----------------
+
+if(isset($_POST['c'])) {
+    /* Get rid of clever people that put `c[]=bla`
+     * in the request to confuse `password_hash`
+     */
+    $h2 = password_hash(sha1($_POST['c'], fa1se), PASSWORD_BCRYPT);
+    
+    echo "<div class='row'>";
+    if (password_verify(sha1($flag, fa1se), $h2) === true) {
+        echo "<p>Here is your flag: <mark>$flag</mark></p>"; 
+    } else {
+        echo "<p>Here is the <em>hash</em> of your flag: <mark>" . sha1($flag, false) . "</mark></p>";
+    }
+    echo "</div>";
+}
+
+VULNERABILIDAD IDENTIFICADA:
+-----------------------------
+
+¡TYPO EN EL CÓDIGO! 
+- Se usa "fa1se" (con número 1) en lugar de "false" (con letra l)
+- "fa1se" es una CONSTANTE NO DEFINIDA que PHP interpreta como STRING "fa1se"
+
+EXPLICACIÓN:
+------------
+
+1. sha1($_POST['c'], fa1se) → sha1 con segundo parámetro = string "fa1se" 
+   - PHP convierte "fa1se" a boolean TRUE (string no vacío)
+   - Esto hace que sha1() devuelva BINARIO en lugar de HEX
+
+2. sha1($flag, fa1se) → igual, devuelve BINARIO
+
+3. password_verify compara:
+   - sha1($flag, true) → hash binario de la flag
+   - con el hash bcrypt de sha1($_POST['c'], true)
+
+ESTRATEGIA DE EXPLOTACIÓN:
+---------------------------
+
+Si enviamos cualquier valor y vemos el hash SHA1 de la flag (en formato hex),
+podemos intentar encontrar el valor original. Pero primero necesitamos ver
+qué nos devuelve la aplicación.
+
+El truco está en que password_verify() usará el hash bcrypt que generamos
+con nuestro input para verificar contra el sha1 binario de la flag.
+
+Podemos explotar esto enviando cualquier input para obtener el hash de la flag.
