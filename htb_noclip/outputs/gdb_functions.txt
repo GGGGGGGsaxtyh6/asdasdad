@@ -1,0 +1,222 @@
+All defined functions:
+
+Non-debugging symbols:
+0x0000000000001000  _init
+0x0000000000001030  SDL_DestroyWindow@plt
+0x0000000000001040  SDL_CreateRenderer@plt
+0x0000000000001050  SDL_CreateWindow@plt
+0x0000000000001060  SDL_Quit@plt
+0x0000000000001070  SDL_RenderPresent@plt
+0x0000000000001080  SDL_SetRelativeMouseMode@plt
+0x0000000000001090  SDL_DestroyRenderer@plt
+0x00000000000010a0  dprintf@plt
+0x00000000000010b0  SDL_PollEvent@plt
+0x00000000000010c0  sincos@plt
+0x00000000000010d0  SDL_DestroyTexture@plt
+0x00000000000010e0  SDL_UpdateTexture@plt
+0x00000000000010f0  sqrt@plt
+0x0000000000001100  SDL_GetPerformanceFrequency@plt
+0x0000000000001110  SDL_Init@plt
+0x0000000000001120  SDL_FreeSurface@plt
+0x0000000000001130  SDL_RenderClear@plt
+0x0000000000001140  fclose@plt
+0x0000000000001150  SDL_GetTicks@plt
+0x0000000000001160  SDL_RenderCopy@plt
+0x0000000000001170  fopen@plt
+0x0000000000001180  free@plt
+0x0000000000001190  malloc@plt
+0x00000000000011a0  SDL_GetPerformanceCounter@plt
+0x00000000000011b0  SDL_CreateTextureFromSurface@plt
+0x00000000000011c0  SDL_CreateRGBSurface@plt
+0x00000000000011d0  SDL_SetRenderDrawColor@plt
+0x00000000000011e0  fread@plt
+0x00000000000011f0  __cxa_finalize@plt
+0x0000000000001200  main
+0x0000000000001450  _start
+0x0000000000001480  deregister_tm_clones
+0x00000000000014b0  register_tm_clones
+0x00000000000014f0  __do_global_dtors_aux
+0x0000000000001530  frame_dummy
+0x0000000000001540  load_assets_texture
+0x00000000000015d0  load_assets
+0x00000000000017e0  rect_contain
+0x0000000000001810  mouse_contain_rect
+0x0000000000001850  mouse_action_contain_rect
+0x00000000000018a0  mouse_drag_contain_rect
+0x00000000000018f0  event
+0x0000000000001b30  player_init
+0x0000000000001b80  input
+0x0000000000002060  raycast
+0x0000000000002c80  window_close
+0x0000000000002cb0  window_init
+0x0000000000002e30  __libc_csu_init
+0x0000000000002e90  __libc_csu_fini
+0x0000000000002e94  _fini
+Dump of assembler code for function load_assets:
+   0x00000000000015d0 <+0>:	push   %r14
+   0x00000000000015d2 <+2>:	lea    0x1a2b(%rip),%rsi        # 0x3004
+   0x00000000000015d9 <+9>:	mov    %rdi,%r14
+   0x00000000000015dc <+12>:	push   %r13
+   0x00000000000015de <+14>:	push   %r12
+   0x00000000000015e0 <+16>:	xor    %r12d,%r12d
+   0x00000000000015e3 <+19>:	push   %rbp
+   0x00000000000015e4 <+20>:	push   %rbx
+   0x00000000000015e5 <+21>:	sub    $0x10,%rsp
+   0x00000000000015e9 <+25>:	call   0x1170 <fopen@plt>
+   0x00000000000015ee <+30>:	lea    0xc(%rsp),%rbx
+   0x00000000000015f3 <+35>:	mov    %rax,%r13
+   0x00000000000015f6 <+38>:	test   %rax,%rax
+   0x00000000000015f9 <+41>:	je     0x17b8 <load_assets+488>
+   0x00000000000015ff <+47>:	nop
+   0x0000000000001600 <+48>:	mov    %r13,%rcx
+   0x0000000000001603 <+51>:	mov    $0x1,%edx
+   0x0000000000001608 <+56>:	mov    $0x4,%esi
+   0x000000000000160d <+61>:	mov    %rbx,%rdi
+   0x0000000000001610 <+64>:	call   0x11e0 <fread@plt>
+   0x0000000000001615 <+69>:	test   %rax,%rax
+   0x0000000000001618 <+72>:	je     0x17a0 <load_assets+464>
+   0x000000000000161e <+78>:	test   %r12d,%r12d
+   0x0000000000001621 <+81>:	jne    0x17a0 <load_assets+464>
+   0x0000000000001627 <+87>:	mov    0xc(%rsp),%eax
+   0x000000000000162b <+91>:	cmp    $0x3,%eax
+   0x000000000000162e <+94>:	je     0x1758 <load_assets+392>
+   0x0000000000001634 <+100>:	ja     0x16c0 <load_assets+240>
+   0x000000000000163a <+106>:	cmp    $0x1,%eax
+   0x000000000000163d <+109>:	je     0x1778 <load_assets+424>
+   0x0000000000001643 <+115>:	cmp    $0x2,%eax
+   0x0000000000001646 <+118>:	jne    0x1600 <load_assets+48>
+   0x0000000000001648 <+120>:	mov    %r13,%rcx
+   0x000000000000164b <+123>:	mov    $0x1,%edx
+   0x0000000000001650 <+128>:	mov    $0x4,%esi
+   0x0000000000001655 <+133>:	lea    0x3ae4(%rip),%rdi        # 0x5140 <game>
+   0x000000000000165c <+140>:	call   0x11e0 <fread@plt>
+   0x0000000000001661 <+145>:	mov    %r13,%rcx
+   0x0000000000001664 <+148>:	mov    $0x1,%edx
+   0x0000000000001669 <+153>:	mov    $0x4,%esi
+   0x000000000000166e <+158>:	lea    0x3acf(%rip),%rdi        # 0x5144 <game+4>
+   0x0000000000001675 <+165>:	call   0x11e0 <fread@plt>
+   0x000000000000167a <+170>:	mov    0x3ac0(%rip),%eax        # 0x5140 <game>
+   0x0000000000001680 <+176>:	imul   0x3abd(%rip),%eax        # 0x5144 <game+4>
+   0x0000000000001687 <+183>:	lea    (%rax,%rax,2),%ebp
+   0x000000000000168a <+186>:	mov    %rbp,%rdi
+   0x000000000000168d <+189>:	call   0x1190 <malloc@plt>
+   0x0000000000001692 <+194>:	mov    %rax,0x3aaf(%rip)        # 0x5148 <game+8>
+   0x0000000000001699 <+201>:	mov    %rax,%rdi
+   0x000000000000169c <+204>:	test   %rax,%rax
+   0x000000000000169f <+207>:	je     0x1747 <load_assets+375>
+   0x00000000000016a5 <+213>:	mov    %r13,%rcx
+   0x00000000000016a8 <+216>:	mov    $0x1,%edx
+   0x00000000000016ad <+221>:	mov    %rbp,%rsi
+   0x00000000000016b0 <+224>:	call   0x11e0 <fread@plt>
+   0x00000000000016b5 <+229>:	jmp    0x1600 <load_assets+48>
+   0x00000000000016ba <+234>:	nopw   0x0(%rax,%rax,1)
+   0x00000000000016c0 <+240>:	cmp    $0x4,%eax
+   0x00000000000016c3 <+243>:	jne    0x1600 <load_assets+48>
+   0x00000000000016c9 <+249>:	mov    %r13,%rcx
+   0x00000000000016cc <+252>:	mov    $0x1,%edx
+   0x00000000000016d1 <+257>:	mov    $0x4,%esi
+   0x00000000000016d6 <+262>:	lea    0x3b3b(%rip),%rdi        # 0x5218 <game+216>
+   0x00000000000016dd <+269>:	call   0x11e0 <fread@plt>
+   0x00000000000016e2 <+274>:	mov    0x3b30(%rip),%eax        # 0x5218 <game+216>
+   0x00000000000016e8 <+280>:	lea    (%rax,%rax,4),%rdi
+   0x00000000000016ec <+284>:	mov    %rax,%r14
+   0x00000000000016ef <+287>:	shl    $0x4,%rdi
+   0x00000000000016f3 <+291>:	call   0x1190 <malloc@plt>
+   0x00000000000016f8 <+296>:	mov    %rax,0x3b11(%rip)        # 0x5210 <game+208>
+   0x00000000000016ff <+303>:	mov    %rax,%rdi
+   0x0000000000001702 <+306>:	test   %rax,%rax
+   0x0000000000001705 <+309>:	je     0x1747 <load_assets+375>
+   0x0000000000001707 <+311>:	xor    %ebp,%ebp
+   0x0000000000001709 <+313>:	test   %r14d,%r14d
+   0x000000000000170c <+316>:	jne    0x172e <load_assets+350>
+   0x000000000000170e <+318>:	jmp    0x1600 <load_assets+48>
+   0x0000000000001713 <+323>:	nopl   0x0(%rax,%rax,1)
+   0x0000000000001718 <+328>:	add    $0x1,%ebp
+   0x000000000000171b <+331>:	cmp    %ebp,0x3af7(%rip)        # 0x5218 <game+216>
+   0x0000000000001721 <+337>:	jbe    0x1600 <load_assets+48>
+   0x0000000000001727 <+343>:	mov    0x3ae2(%rip),%rdi        # 0x5210 <game+208>
+   0x000000000000172e <+350>:	mov    %ebp,%eax
+   0x0000000000001730 <+352>:	mov    %r13,%rsi
+   0x0000000000001733 <+355>:	lea    (%rax,%rax,4),%rax
+   0x0000000000001737 <+359>:	shl    $0x4,%rax
+   0x000000000000173b <+363>:	add    %rax,%rdi
+   0x000000000000173e <+366>:	call   0x1540 <load_assets_texture>
+   0x0000000000001743 <+371>:	test   %eax,%eax
+   0x0000000000001745 <+373>:	je     0x1718 <load_assets+328>
+   0x0000000000001747 <+375>:	mov    $0x1,%r12d
+   0x000000000000174d <+381>:	jmp    0x1600 <load_assets+48>
+   0x0000000000001752 <+386>:	nopw   0x0(%rax,%rax,1)
+   0x0000000000001758 <+392>:	mov    %r13,%rsi
+   0x000000000000175b <+395>:	lea    0x3a4e(%rip),%rdi        # 0x51b0 <game+112>
+   0x0000000000001762 <+402>:	xor    %r12d,%r12d
+   0x0000000000001765 <+405>:	call   0x1540 <load_assets_texture>
+   0x000000000000176a <+410>:	test   %eax,%eax
+   0x000000000000176c <+412>:	setne  %r12b
+   0x0000000000001770 <+416>:	jmp    0x1600 <load_assets+48>
+   0x0000000000001775 <+421>:	nopl   (%rax)
+   0x0000000000001778 <+424>:	mov    %r13,%rcx
+   0x000000000000177b <+427>:	mov    $0x1,%edx
+   0x0000000000001780 <+432>:	mov    $0x10,%esi
+   0x0000000000001785 <+437>:	lea    0x39c4(%rip),%rdi        # 0x5150 <game+16>
+   0x000000000000178c <+444>:	call   0x11e0 <fread@plt>
+   0x0000000000001791 <+449>:	jmp    0x1600 <load_assets+48>
+   0x0000000000001796 <+454>:	cs nopw 0x0(%rax,%rax,1)
+   0x00000000000017a0 <+464>:	mov    %r13,%rdi
+   0x00000000000017a3 <+467>:	call   0x1140 <fclose@plt>
+   0x00000000000017a8 <+472>:	add    $0x10,%rsp
+   0x00000000000017ac <+476>:	mov    %r12d,%eax
+   0x00000000000017af <+479>:	pop    %rbx
+   0x00000000000017b0 <+480>:	pop    %rbp
+   0x00000000000017b1 <+481>:	pop    %r12
+   0x00000000000017b3 <+483>:	pop    %r13
+   0x00000000000017b5 <+485>:	pop    %r14
+   0x00000000000017b7 <+487>:	ret
+   0x00000000000017b8 <+488>:	mov    %r14,%rdx
+   0x00000000000017bb <+491>:	mov    $0x2,%edi
+   0x00000000000017c0 <+496>:	xor    %eax,%eax
+   0x00000000000017c2 <+498>:	mov    $0x1,%r12d
+   0x00000000000017c8 <+504>:	lea    0x1838(%rip),%rsi        # 0x3007
+   0x00000000000017cf <+511>:	call   0x10a0 <dprintf@plt>
+   0x00000000000017d4 <+516>:	jmp    0x17a8 <load_assets+472>
+End of assembler dump.
+Dump of assembler code for function load_assets_texture:
+   0x0000000000001540 <+0>:	push   %r12
+   0x0000000000001542 <+2>:	mov    %rsi,%rcx
+   0x0000000000001545 <+5>:	mov    %rsi,%r12
+   0x0000000000001548 <+8>:	mov    $0x1,%edx
+   0x000000000000154d <+13>:	push   %rbp
+   0x000000000000154e <+14>:	mov    $0x40,%esi
+   0x0000000000001553 <+19>:	push   %rbx
+   0x0000000000001554 <+20>:	mov    %rdi,%rbx
+   0x0000000000001557 <+23>:	call   0x11e0 <fread@plt>
+   0x000000000000155c <+28>:	lea    0x40(%rbx),%rdi
+   0x0000000000001560 <+32>:	mov    %r12,%rcx
+   0x0000000000001563 <+35>:	mov    $0x1,%edx
+   0x0000000000001568 <+40>:	mov    $0x4,%esi
+   0x000000000000156d <+45>:	call   0x11e0 <fread@plt>
+   0x0000000000001572 <+50>:	lea    0x44(%rbx),%rdi
+   0x0000000000001576 <+54>:	mov    %r12,%rcx
+   0x0000000000001579 <+57>:	mov    $0x1,%edx
+   0x000000000000157e <+62>:	mov    $0x4,%esi
+   0x0000000000001583 <+67>:	call   0x11e0 <fread@plt>
+   0x0000000000001588 <+72>:	mov    0x40(%rbx),%ebp
+   0x000000000000158b <+75>:	imul   0x44(%rbx),%ebp
+   0x000000000000158f <+79>:	shl    $0x2,%ebp
+   0x0000000000001592 <+82>:	mov    %rbp,%rdi
+   0x0000000000001595 <+85>:	call   0x1190 <malloc@plt>
+   0x000000000000159a <+90>:	mov    %rax,0x48(%rbx)
+   0x000000000000159e <+94>:	test   %rax,%rax
+   0x00000000000015a1 <+97>:	je     0x15bd <load_assets_texture+125>
+   0x00000000000015a3 <+99>:	mov    %rax,%rdi
+   0x00000000000015a6 <+102>:	mov    %r12,%rcx
+   0x00000000000015a9 <+105>:	mov    $0x1,%edx
+   0x00000000000015ae <+110>:	mov    %rbp,%rsi
+   0x00000000000015b1 <+113>:	call   0x11e0 <fread@plt>
+   0x00000000000015b6 <+118>:	xor    %eax,%eax
+   0x00000000000015b8 <+120>:	pop    %rbx
+   0x00000000000015b9 <+121>:	pop    %rbp
+   0x00000000000015ba <+122>:	pop    %r12
+   0x00000000000015bc <+124>:	ret
+   0x00000000000015bd <+125>:	mov    $0x1,%eax
+   0x00000000000015c2 <+130>:	jmp    0x15b8 <load_assets_texture+120>
+End of assembler dump.
