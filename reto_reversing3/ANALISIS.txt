@@ -1,0 +1,82 @@
+╔═══════════════════════════════════════════════════════════════╗
+║  ANÁLISIS: Reverse Engineering Challenge 3                   ║
+╚═══════════════════════════════════════════════════════════════╝
+
+RETO:
+------
+Drake aprendió y ahora mantiene la clave secreta FUERA del binario,
+en un archivo externo llamado "secret_key.txt" que se lee en runtime.
+
+CADENA SECRETA (HEX):
+---------------------
+0x1b 0x1f 0x05 0x10 0x05 0x1c 0x05 0x1c 0x53 0x3b 0x57 0x2c 0x02 0x15
+0x58 0x48 0x5f 0x4f 0x1f 0x03 0x00 0x03 0x1f 0x4f 0x5d
+
+Longitud: 25 bytes
+
+ANÁLISIS DEL BINARIO:
+---------------------
+1. Archivo: re3 (ELF 64-bit PowerPC, statically linked)
+2. Uso: ./re3 <hbh_username>
+3. Lee la clave desde: secret_key.txt (en el directorio actual)
+4. El programa genera un "hint" que depende del contenido del archivo
+
+COMPORTAMIENTO DEL PROGRAMA:
+-----------------------------
+- Al ejecutar con un username, el programa:
+  1. Lee secret_key.txt
+  2. Procesa la clave con algún algoritmo
+  3. Imprime un "hint" en formato hexadecimal
+  4. Imprime el username en hexadecimal
+
+HINT PROPORCIONADO (del servidor real):
+---------------------------------------
+0x07 0x6f 0x1e 0x0d 0x2a 0x0e 0x17 0x12 0x6c 0x2b 0x54 0x07 
+0x47 0x2c 0x58 0x00 0x4e 0x7e
+
+ANÁLISIS DEL HINT:
+------------------
+El hint NO es simplemente un XOR entre secret_key y username.
+Después de múltiples pruebas, descubrí que:
+
+1. El hint parece estar en formato de 16-bit words
+2. El primer byte siempre coincide con: key[0] XOR username[0]
+3. Los bytes restantes siguen un patrón más complejo
+
+INTENTOS REALIZADOS:
+--------------------
+✓ Analizar el binario con strings
+✓ Ejecutar el programa localmente con QEMU
+✓ Probar diferentes claves en secret_key.txt
+✓ Analizar el patrón de generación de hints
+✓ Intentar reversibilidad del algoritmo de hint
+✓ Probar claves comunes de CTF
+✗ No fue posible deducir la clave exacta del servidor
+
+LIMITACIÓN:
+-----------
+Sin acceso al servicio hbh.sh/re3 o al archivo secret_key.txt del
+servidor, no es posible obtener la clave real para decodificar.
+
+El programa menciona: "Use hbh.sh/re3 to get responses using the real key"
+Esto sugiere que hay un servicio web donde se puede consultar.
+
+PARA RESOLVER COMPLETAMENTE:
+-----------------------------
+Se necesitaría:
+1. Acceso al servicio web hbh.sh/re3, O
+2. El contenido exacto del archivo secret_key.txt del servidor, O
+3. Ingeniería inversa más profunda del algoritmo de generación de hints
+
+ALGORITMO DESCUBIERTO:
+----------------------
+- El programa usa XOR cíclico para decodificar
+- La clave se lee desde secret_key.txt
+- El hint se genera procesando la clave de alguna forma específica
+- El formato del hint no es directamente reversible sin más análisis
+
+CONCLUSIÓN:
+-----------
+Este reto requiere acceso al servicio online del challenge o análisis
+más profundo del binario PowerPC para entender completamente el
+algoritmo de procesamiento de la clave.
