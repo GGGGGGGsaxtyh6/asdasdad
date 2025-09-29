@@ -1,0 +1,20 @@
+File: /workspace/ctf/bobby_toe_ipad/downloads/bobbytoesipad.png (71841 bytes)
+  chunk IHDR at offset 0x0000c, length 13
+    1000 x 1000 image, 32-bit RGB+alpha, non-interlaced
+  chunk sBIT at offset 0x00025, length 4
+    red = 8 = 0x08, green = 8 = 0x08, blue = 8 = 0x08, alpha = 8 = 0x08
+  chunk pHYs at offset 0x00035, length 9: 55364x55364 pixels/meter (1406 dpi)
+  chunk tEXt at offset 0x0004a, length 25, keyword: Software
+  chunk IDAT at offset 0x0006f, length 8192
+    zlib: deflated, 32K window, default compression
+  chunk IDAT at offset 0x0207b, length 8192
+  chunk IDAT at offset 0x04087, length 8192
+  chunk IDAT at offset 0x06093, length 8192
+  chunk IDAT at offset 0x0809f, length 8192
+  chunk IDAT at offset 0x0a0ab, length 8192
+  chunk IDAT at offset 0x0c0b7, length 8192
+  chunk IDAT at offset 0x0e0c3, length 8192
+  chunk IDAT at offset 0x100cf, length 189
+  chunk IEND at offset 0x10198, length 0
+  additional data after IEND chunk
+ERRORS DETECTED in /workspace/ctf/bobby_toe_ipad/downloads/bobbytoesipad.png

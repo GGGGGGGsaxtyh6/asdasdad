@@ -1,0 +1,23 @@
+Foremost version 1.5.7 by Jesse Kornblum, Kris Kendall, and Nick Mikus
+Audit File
+
+Foremost started at Mon Sep 29 03:00:38 2025
+Invocation: foremost -i ../downloads/bobbytoesipad.png -o foremost_png 
+Output directory: /workspace/ctf/bobby_toe_ipad/out/foremost_png
+Configuration file: /etc/foremost.conf
+------------------------------------------------------------------
+File: ../downloads/bobbytoesipad.png
+Start: Mon Sep 29 03:00:38 2025
+Length: 70 KB (71841 bytes)
+ 
+Num	 Name (bs=512)	       Size	 File Offset	 Comment 
+
+0:	00000000.png 	      64 KB 	          0 	  (1000 x 1000)
+Finish: Mon Sep 29 03:00:38 2025
+
+1 FILES EXTRACTED
+	
+png:= 1
+------------------------------------------------------------------
+
+Foremost finished at Mon Sep 29 03:00:38 2025
