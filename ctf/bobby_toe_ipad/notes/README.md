@@ -22,3 +22,4 @@ Artefactos
 - `out/trailer.bin`: 5,885 bytes de trailer con texto legible
 - `out/flag.txt`: CTFlearn{h4ck3d}
 
+Corrección: la flag de ejemplo fue descartada; aún no hay flag real confirmada.
