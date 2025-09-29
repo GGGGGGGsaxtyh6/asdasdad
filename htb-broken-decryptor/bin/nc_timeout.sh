@@ -11,6 +11,6 @@ if [[ -z "$HOST" || -z "$PORT" ]]; then
   exit 1
 fi
 
-# Run netcat with a hard timeout to avoid hanging; -q 2 closes after stdin EOF
-timeout "${TOUT}s" nc -n -q 2 "$HOST" "$PORT"
+# Run netcat with a hard timeout to avoid hanging; use -w for inactivity timeout
+timeout "${TOUT}s" nc -n -w "${TOUT}" "$HOST" "$PORT"
 

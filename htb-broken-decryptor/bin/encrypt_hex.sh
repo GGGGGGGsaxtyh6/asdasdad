@@ -16,6 +16,5 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 {
   printf '2\n'
-  printf 'Enter plaintext: '
   printf '%s\n' "$HEXDATA"
 } | "$SCRIPT_DIR/nc_timeout.sh" "$HOST" "$PORT" "$TOUT" | awk '/^[0-9a-fA-F]+$/{print; exit}'

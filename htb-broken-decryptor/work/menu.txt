@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/htb-broken-decryptor/work/interact.py", line 53, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/workspace/htb-broken-decryptor/work/interact.py", line 27, in main
+    with socket.create_connection((HOST, PORT), timeout=TIMEOUT) as s:
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/socket.py", line 864, in create_connection
+    raise exceptions[0]
+  File "/usr/lib/python3.13/socket.py", line 849, in create_connection
+    sock.connect(sa)
+    ~~~~~~~~~~~~^^^^
+ConnectionRefusedError: [Errno 111] Connection refused
