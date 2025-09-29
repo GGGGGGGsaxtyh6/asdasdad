@@ -1,0 +1,55 @@
+# Nmap 7.95 scan initiated Mon Sep 29 17:11:57 2025 as: nmap -Pn -sV -sC -p 36179 --reason -oN /workspace/htb/brokendecryptor/scans/nmap_36179.txt 94.237.57.115
+Nmap scan report for 94-237-57-115.uk-lon1.upcloud.host (94.237.57.115)
+Host is up, received user-set (0.15s latency).
+
+PORT      STATE SERVICE REASON  VERSION
+36179/tcp open  unknown syn-ack
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, Kerberos, NULL, RPCCheck, SSLSessionReq, TLSSessionReq, TerminalServerCookie: 
+|     1) Get flag
+|     Encrypt Message
+|     Decrypt Message
+|     Your option:
+|   GenericLines, GetRequest, HTTPOptions, Help, RTSPRequest: 
+|     1) Get flag
+|     Encrypt Message
+|     Decrypt Message
+|     Your option: Invalid option!
+|     flag
+|     Encrypt Message
+|     Decrypt Message
+|_    Your option:
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port36179-TCP:V=7.95%I=7%D=9/29%Time=68DABDE4%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,3F,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x
+SF:20Message\nYour\x20option:\x20")%r(GenericLines,8E,"1\)\x20Get\x20flag\
+SF:n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Message\nYour\x20option:\
+SF:x20Invalid\x20option!\n1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3
+SF:\)\x20Decrypt\x20Message\nYour\x20option:\x20")%r(GetRequest,8E,"1\)\x2
+SF:0Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Message\nYou
+SF:r\x20option:\x20Invalid\x20option!\n1\)\x20Get\x20flag\n2\)\x20Encrypt\
+SF:x20Message\n3\)\x20Decrypt\x20Message\nYour\x20option:\x20")%r(HTTPOpti
+SF:ons,8E,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x
+SF:20Message\nYour\x20option:\x20Invalid\x20option!\n1\)\x20Get\x20flag\n2
+SF:\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Message\nYour\x20option:\x2
+SF:0")%r(RTSPRequest,8E,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3\
+SF:)\x20Decrypt\x20Message\nYour\x20option:\x20Invalid\x20option!\n1\)\x20
+SF:Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Message\nYour
+SF:\x20option:\x20")%r(RPCCheck,3F,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20
+SF:Message\n3\)\x20Decrypt\x20Message\nYour\x20option:\x20")%r(DNSVersionB
+SF:indReqTCP,3F,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Dec
+SF:rypt\x20Message\nYour\x20option:\x20")%r(DNSStatusRequestTCP,3F,"1\)\x2
+SF:0Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Message\nYou
+SF:r\x20option:\x20")%r(Help,8E,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Mes
+SF:sage\n3\)\x20Decrypt\x20Message\nYour\x20option:\x20Invalid\x20option!\
+SF:n1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Messa
+SF:ge\nYour\x20option:\x20")%r(SSLSessionReq,3F,"1\)\x20Get\x20flag\n2\)\x
+SF:20Encrypt\x20Message\n3\)\x20Decrypt\x20Message\nYour\x20option:\x20")%
+SF:r(TerminalServerCookie,3F,"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Messag
+SF:e\n3\)\x20Decrypt\x20Message\nYour\x20option:\x20")%r(TLSSessionReq,3F,
+SF:"1\)\x20Get\x20flag\n2\)\x20Encrypt\x20Message\n3\)\x20Decrypt\x20Messa
+SF:ge\nYour\x20option:\x20")%r(Kerberos,3F,"1\)\x20Get\x20flag\n2\)\x20Enc
+SF:rypt\x20Message\n3\)\x20Decrypt\x20Message\nYour\x20option:\x20");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Sep 29 17:14:41 2025 -- 1 IP address (1 host up) scanned in 163.75 seconds
