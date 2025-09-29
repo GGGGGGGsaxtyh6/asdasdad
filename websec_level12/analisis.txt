@@ -1,0 +1,70 @@
+ANÁLISIS WEBSEC LEVEL12 - PHP Object Instantiation
+======================================================
+
+VULNERABILIDAD:
+--------------
+Podemos instanciar cualquier clase PHP con dos parámetros arbitrarios.
+Código aproximado: new $class($param1, $param2);
+
+CLASES BLOQUEADAS:
+------------------
+- SplFileObject
+- GlobIterator  
+- FilesystemIterator
+- DirectoryIterator
+
+OBJETIVO:
+---------
+Leer el archivo flag.txt o similar usando una clase PHP que NO esté bloqueada.
+
+CLASES PHP POTENCIALMENTE ÚTILES:
+---------------------------------
+
+1. SimpleXMLElement($data, $options)
+   - Parsea XML
+   - Con LIBXML_NOENT puede hacer XXE (XML External Entity)
+   - Podría leer archivos locales
+
+2. ZipArchive
+   - Maneja archivos ZIP
+   - Pero sus métodos útiles no están en el constructor
+
+3. PDO($dsn, $username, $password)
+   - Conexión a base de datos
+   - Podría usar sqlite:// para leer archivos?
+
+4. SoapClient($wsdl, $options)
+   - Cliente SOAP
+   - Puede hacer requests HTTP/HTTPS
+   - Podría usar wrappers de PHP
+
+5. SessionHandler
+   - Maneja sesiones
+   - Podría tener side effects
+
+ESTRATEGIA MÁS PROMETEDORA: SimpleXMLElement con XXE
+-----------------------------------------------------
+
+SimpleXMLElement($data, $options) donde:
+- $data = XML malicioso con external entity
+- $options = LIBXML_NOENT (constante 2) para procesar entities
+
+Payload XXE:
+```xml
+<?xml version="1.0"?>
+<!DOCTYPE root [
+<!ENTITY xxe SYSTEM "file:///flag.txt">
+]>
+<root>&xxe;</root>
+```
+
+ALTERNATIVA: XXE con php:// wrapper
+------------------------------------
+Podría usar php://filter para leer archivos:
+<!ENTITY xxe SYSTEM "php://filter/convert.base64-encode/resource=flag.txt">
+
+PLAN DE ATAQUE:
+---------------
+1. Probar SimpleXMLElement con XXE payload
+2. Si no funciona, probar otras clases
+3. Buscar archivos comunes: flag.txt, flag.php, ../flag.txt, etc.
