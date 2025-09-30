@@ -1,0 +1,139 @@
+ANÁLISIS DE WEBSEC LEVEL 13 - SQLi
+========================================
+
+1. ESTRUCTURA DE LA BASE DE DATOS:
+- Tabla: users
+- Columnas: user_id, user_name, user_privileges, user_password
+- user_id=0 => 'admin', privileges=0 (all), password=$flag
+- user_id 1-24 => usuarios normales, privileges=1 (no)
+
+2. FLUJO DEL CÓDIGO:
+   a) $_GET['ids'] debe ser un string
+   b) Máximo 70 caracteres de longitud
+   c) Se hace explode() por comas
+   d) Cada elemento se convierte a (int)
+   e) Si el valor es < 1, se elimina con unset()
+   f) Se hace implode() de nuevo
+   g) Se construye query: WHERE (user_id in ($selector))
+
+3. VULNERABILIDAD:
+   El problema está en el uso de unset() en un array. Cuando usas unset() en PHP,
+   NO se reindexan los elementos del array. Esto significa que si tenemos:
+   
+   Array: [0 => '1', 1 => '0', 2 => '2']
+   Después de convertir a int: [0 => 1, 1 => 0, 2 => 2]
+   Después de unset($tmp[1]) porque 0 < 1: [0 => 1, 2 => 2]
+   
+   Ahora, cuando hacemos implode(',', $array) con un array que tiene índices no continuos,
+   implode() SOLO usa los valores, pero el array_unique() mantiene las claves originales.
+   
+   Si podemos inyectar algo que no sea filtrado correctamente, podemos inyectar SQL.
+
+4. ESTRATEGIA DE EXPLOTACIÓN:
+   El punto clave es que después del filtrado, el $selector se inserta directamente
+   en la query SIN escapar. Si logramos que después del procesamiento quede algo
+   que no sea solo números y comas, podemos inyectar SQL.
+   
+   El truco está en que implode() y array_unique() no limpian los valores
+   completamente. Si enviamos valores que al convertirse a (int) sean >= 1,
+   pasarán el filtro.
+   
+   PERO ESPERA: El casting a (int) convierte cualquier string a número.
+   "1) OR user_id=0--" => (int) = 1
+   
+   Así que después del (int), todos los valores maliciosos se limpian...
+   
+   NUEVO ENFOQUE: Analizar el comportamiento de explode/implode/array_unique
+   con valores especiales.
+
+5. VECTOR DE ATAQUE:
+   Necesitamos que después del implode(), el resultado contenga inyección SQL.
+   Como cada elemento pasa por (int), no podemos inyectar directamente.
+   
+   PERO: ¿Qué pasa si enviamos caracteres que hagan que el array tenga comportamiento
+   inesperado?
+   
+   Pensemos en esto: el límite es 70 caracteres. Después del procesamiento, 
+   necesitamos que el selector final tenga algo como: 1) OR user_id=0--
+   
+   IDEA: Si enviamos muchos valores que se conviertan a 0 y sean eliminados,
+   pero de alguna forma el implode() no funcione correctamente...
+   
+   MEJOR IDEA: PHP tiene un comportamiento especial con array_unique(). 
+   ¿Qué pasa si usamos el hecho de que unset() no reindexa?
+
+6. EXPLOTACIÓN REAL:
+   Mirando más de cerca: después de unset(), el array puede tener keys no secuenciales.
+   implode() ignora las keys y solo une los valores.
+   
+   Pero wait... todos los valores son (int), así que siempre serán números.
+   
+   ¡AJÁ! El truco está en el hecho de que podemos usar NOTACIÓN CIENTÍFICA o HEXADECIMAL.
+   En PHP, (int)"1e1" = 10, pero si de alguna forma el string original sobrevive...
+   
+   NO, eso no funciona porque el casting a int destruye todo.
+   
+   ENFOQUE FINAL: Revisar si hay alguna forma de que el selector final no sea solo
+   números. Como todo pasa por (int), todos los valores serán numéricos...
+   
+   ESPERA: ¿Y si el array está vacío? ¿O tiene un solo elemento?
+   Si ids=0,0,0,0 => todos se convierten a 0 => todos se eliminan => array vacío
+   => implode('', []) = ''
+   => query: WHERE (user_id in ())  => SQL error o comportamiento inesperado
+
+7. PRUEBA PRÁCTICA:
+   Vamos a probar diferentes payloads:
+   - ids=1,2,3 => normal
+   - ids=0 => se elimina => vacío
+   - ids=1) OR 1=1-- => se convierte a (int)1 => "1"
+   
+   Necesito pensar fuera de la caja... ¿qué más puede estar mal?
+
+8. REVISIÓN: El problema puede estar en que implode() con array_unique() puede 
+   tener comportamiento inesperado si hay elementos duplicados o keys especiales.
+   
+   ¿Y si enviamos algo como: 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+   Después de array_unique() solo quedará [1]
+   Selector = "1"
+   
+   Eso no ayuda...
+   
+9. NUEVA PERSPECTIVA: Array manipulation
+   En PHP, cuando haces unset() en elementos de un array y luego implode(),
+   puede haber comportamiento inesperado si los índices no son secuenciales.
+   
+   Ejemplo: si ids = "0,1" entonces:
+   explode => ['0', '1']
+   Después de (int) y filtro => [1 => 1] (el índice 0 se eliminó)
+   implode(',', [1 => 1]) => "1"
+   
+   Pero eso sigue siendo solo "1"...
+
+10. SOLUCIÓN REAL:
+    Revisando vulnerabilidades conocidas de SQLite y este tipo de filtros...
+    El truco probablemente esté en el uso de UNION o subqueries.
+    
+    Dado que el límite es 70 caracteres y todo pasa por (int), la única forma
+    es si hay un bug en la lógica de filtrado.
+    
+    ¡MOMENTO! Voy a probar el comportamiento real con valores negativos vs positivos.
+    El filtro solo elimina si < 1, entonces 0, -1, -2 se eliminan, pero 1+ se mantienen.
+    
+    ¿Qué pasa si enviamos: "1) OR (user_id)=(0"
+    (int)"1) OR (user_id)=(0" = 1
+    Entonces queda [1]
+    
+    NO FUNCIONA porque el casting destruye todo.
+
+11. BREAKTHROUGH:
+    El array_unique() preserva las KEYS! Y después del unset(), las keys no son secuenciales.
+    
+    ¿Hay alguna forma de que implode() de un resultado inesperado con keys no secuenciales?
+    
+    NO, implode() solo une los VALORES, ignora las keys.
+
+12. ÚLTIMA IDEA:
+    ¿Qué pasa si el valor inicial tiene caracteres NULL o especiales que sobrevivan
+    el procesamiento? ¿O si hay un bug en la función explode con ciertos inputs?
+
+Necesito probar en vivo para ver el comportamiento real.
