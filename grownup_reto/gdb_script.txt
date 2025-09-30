@@ -1,0 +1,8 @@
+break *0x400938
+run
+y
+test
+continue
+x/s $rax
+x/40xb 0x601080
+quit
