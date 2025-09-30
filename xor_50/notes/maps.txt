@@ -1,0 +1,22 @@
+565237400000-565237401000 rwxp 00000000 fe:00 525773                     /workspace/xor_50/image/challenge/challenge
+565237601000-565237602000 r--p 00001000 fe:00 525773                     /workspace/xor_50/image/challenge/challenge
+565237602000-565237603000 rw-p 00002000 fe:00 525773                     /workspace/xor_50/image/challenge/challenge
+56524d82f000-56524d850000 rw-p 00000000 00:00 0                          [heap]
+7fac57235000-7fac57238000 rw-p 00000000 00:00 0 
+7fac57238000-7fac57260000 r--p 00000000 fe:00 412203                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7fac57260000-7fac573f6000 r-xp 00028000 fe:00 412203                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7fac573f6000-7fac57445000 r--p 001be000 fe:00 412203                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7fac57445000-7fac57449000 r--p 0020c000 fe:00 412203                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7fac57449000-7fac5744b000 rw-p 00210000 fe:00 412203                     /usr/lib/x86_64-linux-gnu/libc.so.6
+7fac5744b000-7fac57458000 rw-p 00000000 00:00 0 
+7fac5745e000-7fac57460000 rw-p 00000000 00:00 0 
+7fac57460000-7fac57461000 r--p 00000000 fe:00 412217                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fac57461000-7fac5748f000 r-xp 00001000 fe:00 412217                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fac5748f000-7fac5749a000 r--p 0002f000 fe:00 412217                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fac5749a000-7fac5749c000 r--p 0003a000 fe:00 412217                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fac5749c000-7fac5749d000 rw-p 0003c000 fe:00 412217                     /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7fac5749d000-7fac5749e000 rw-p 00000000 00:00 0 
+7ffc7dd04000-7ffc7dd25000 rw-p 00000000 00:00 0                          [stack]
+7ffc7dd88000-7ffc7dd8c000 r--p 00000000 00:00 0                          [vvar]
+7ffc7dd8c000-7ffc7dd8e000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 --xp 00000000 00:00 0                  [vsyscall]

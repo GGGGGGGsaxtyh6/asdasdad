@@ -1,0 +1,2 @@
+Author: uafio
+Challenge: xor (50)
