@@ -1,0 +1,28 @@
+# Nmap 7.95 scan initiated Tue Sep 30 04:03:51 2025 as: nmap -Pn -sV -p30001 -oN /workspace/reto_pwnable_xyz/sub_50/logs/nmap_30001.txt svc.pwnable.xyz
+Nmap scan report for svc.pwnable.xyz (134.209.56.140)
+Host is up (0.026s latency).
+Other addresses for svc.pwnable.xyz (not scanned): 167.71.125.23
+
+PORT      STATE SERVICE         VERSION
+30001/tcp open  pago-services1?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30001-TCP:V=7.95%I=7%D=9/30%Time=68DB56AE%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,C,"1337\x20input:\x20")%r(GenericLines,C,"1337\x20input:\x20")%r(Ge
+SF:tRequest,C,"1337\x20input:\x20")%r(HTTPOptions,C,"1337\x20input:\x20")%
+SF:r(RTSPRequest,C,"1337\x20input:\x20")%r(RPCCheck,C,"1337\x20input:\x20"
+SF:)%r(DNSVersionBindReqTCP,C,"1337\x20input:\x20")%r(DNSStatusRequestTCP,
+SF:C,"1337\x20input:\x20")%r(Help,C,"1337\x20input:\x20")%r(SSLSessionReq,
+SF:C,"1337\x20input:\x20")%r(TerminalServerCookie,C,"1337\x20input:\x20")%
+SF:r(TLSSessionReq,C,"1337\x20input:\x20")%r(Kerberos,C,"1337\x20input:\x2
+SF:0")%r(SMBProgNeg,C,"1337\x20input:\x20")%r(X11Probe,C,"1337\x20input:\x
+SF:20")%r(FourOhFourRequest,C,"1337\x20input:\x20")%r(LPDString,C,"1337\x2
+SF:0input:\x20")%r(LDAPSearchReq,C,"1337\x20input:\x20")%r(LDAPBindReq,C,"
+SF:1337\x20input:\x20")%r(SIPOptions,C,"1337\x20input:\x20")%r(LANDesk-RC,
+SF:C,"1337\x20input:\x20")%r(TerminalServer,C,"1337\x20input:\x20")%r(NCP,
+SF:C,"1337\x20input:\x20")%r(NotesRPC,C,"1337\x20input:\x20")%r(JavaRMI,C,
+SF:"1337\x20input:\x20")%r(WMSRequest,C,"1337\x20input:\x20")%r(oracle-tns
+SF:,C,"1337\x20input:\x20")%r(ms-sql-s,C,"1337\x20input:\x20")%r(afp,C,"13
+SF:37\x20input:\x20")%r(giop,C,"1337\x20input:\x20");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Sep 30 04:04:04 2025 -- 1 IP address (1 host up) scanned in 12.75 seconds
