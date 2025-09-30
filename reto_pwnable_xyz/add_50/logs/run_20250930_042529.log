@@ -1,2 +1,0 @@
-[+] /workspace/reto_pwnable_xyz/add_50/scripts/with_timeout.sh 10s nmap -Pn -sV -p30002 svc.pwnable.xyz
-Starting Nmap 7.95 ( https://nmap.org ) at 2025-09-30 04:25 UTC
