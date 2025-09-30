@@ -1,0 +1,12 @@
+set pagination off
+start
+break *main+182
+commands
+silent
+printf "Antes de MOV write\n"
+x/i $rip
+printf "rax=%lx, rdx=%lx\n", $rax, $rdx
+printf "Dirección destino: %lx\n", $rbp + $rax*8 - 0x98
+continue
+end
+continue

@@ -1,0 +1,7 @@
+start
+break *main+128
+continue
+print "Después de scanf"
+print $eax
+continue
+quit

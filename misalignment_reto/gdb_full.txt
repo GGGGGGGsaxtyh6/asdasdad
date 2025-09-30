@@ -1,0 +1,23 @@
+set pagination off
+set confirm off
+start
+break *main+128
+commands
+silent
+printf "Después de scanf, eax=%d\n", $eax
+continue
+end
+break *main+238
+commands
+silent
+printf "Antes de escribir\n"
+x/i $rip
+continue
+end
+break *main+252
+commands
+silent
+printf "Después de printf\n"
+continue
+end
+continue
