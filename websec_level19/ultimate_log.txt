@@ -1,0 +1,1108 @@
+╔════════════════════════════════════════════════════════════╗
+║    ULTIMATE COMBINED ATTACK - All strategies               ║
+╚════════════════════════════════════════════════════════════╝
+
+[1] Token: 7zREsiCfmd... @ 06:44:57
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[2] Token: ooDeMIEEwh... @ 06:44:59
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[3] Token: ykqQCaA6yv... @ 06:45:00
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[4] Token: rV5jhm4C9g... @ 06:45:01
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[5] Token: nvLqXXbAkC... @ 06:45:02
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[6] Token: 4BoINve4Z4... @ 06:45:03
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[7] Token: tL39H0MTRX... @ 06:45:03
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[8] Token: s7fzONnIO1... @ 06:45:04
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[9] Token: mS407vES7S... @ 06:45:05
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[10] Token: kYb3jP6GEk... @ 06:45:06
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[11] Token: 8lbDYzzRDe... @ 06:45:07
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[12] Token: FhWJVGX3Y9... @ 06:45:08
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[13] Token: 1AAdLI85qN... @ 06:45:09
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[14] Token: Lix73uZE1y... @ 06:45:10
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[15] Token: icIaLxh1iZ... @ 06:45:11
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[16] Token: r2x0Jb1v4F... @ 06:45:12
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[17] Token: 5e0VF2rRzR... @ 06:45:13
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[18] Token: oOzAwwg6a2... @ 06:45:14
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[19] Token: 9IPfDSQss5... @ 06:45:15
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[20] Token: p01r3MJ8rF... @ 06:45:17
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[21] Token: Dxp1R12ZN4... @ 06:45:18
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[22] Token: kO56D0uZg5... @ 06:45:19
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[23] Token: rZNw2AyQWd... @ 06:45:20
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[24] Token: 3El9CxCy2x... @ 06:45:21
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[25] Token: ICuijwVcKB... @ 06:45:22
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[26] Token: HsORMLc1gF... @ 06:45:23
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[27] Token: BjJlxhIQlR... @ 06:45:24
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[28] Token: l464m3hH6j... @ 06:45:25
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[29] Token: AvWfu7jBBB... @ 06:45:26
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[30] Token: xKSek4l6ZW... @ 06:45:27
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[31] Token: GFulTihFrF... @ 06:45:28
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[32] Token: ct89BvLIzH... @ 06:45:29
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[33] Token: ct89BvLIzH... @ 06:45:30
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[34] Token: 5o3rdyN7bp... @ 06:45:31
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[35] Token: 0zU2E23f8L... @ 06:45:32
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[36] Token: 4TEaTReqSr... @ 06:45:33
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[37] Token: TeJcHPoKYK... @ 06:45:34
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[38] Token: 6kvwTcqe3x... @ 06:45:35
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[39] Token: mIcndApDAN... @ 06:45:37
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[40] Token: lXCX9jup8g... @ 06:45:38
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[41] Token: PK2NzXhWAD... @ 06:45:39
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[42] Token: YWoAGiplM4... @ 06:45:40
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[43] Token: XCZPSPgyWA... @ 06:45:41
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[44] Token: MRnl0hiy2o... @ 06:45:42
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[45] Token: 4CeP4jBBZA... @ 06:45:43
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[46] Token: j46FQoFq9c... @ 06:45:44
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[47] Token: MRGeGDbPEU... @ 06:45:46
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[48] Token: 8OfwzJhtBz... @ 06:45:47
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[49] Token: 8OfwzJhtBz... @ 06:45:48
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[50] Token: 11ovmql9tc... @ 06:45:49
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[51] Token: 11ovmql9tc... @ 06:45:50
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[52] Token: dJbqDbl0TC... @ 06:45:51
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[53] Token: zh8GIAelMc... @ 06:45:52
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[54] Token: s0yEW4Op6S... @ 06:45:54
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[55] Token: Dr5GPL7jgf... @ 06:45:54
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[56] Token: z9ted8c0es... @ 06:45:55
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[57] Token: C20BE14xU6... @ 06:45:57
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[58] Token: LhBBaCU5mx... @ 06:45:58
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[59] Token: u8JCPXaslF... @ 06:45:59
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[60] Token: OizsU9c4xP... @ 06:46:00
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[61] Token: rUQScfGt3h... @ 06:46:01
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[62] Token: F5jSWbvqKT... @ 06:46:02
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[63] Token: 2LtVC8T4XJ... @ 06:46:03
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[64] Token: 6CcHyVuUDK... @ 06:46:04
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[65] Token: MA0WEu3QmZ... @ 06:46:05
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[66] Token: DCsexD2yV4... @ 06:46:06
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[67] Token: C1rgcTdqte... @ 06:46:07
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[68] Token: LI5vz4KpmC... @ 06:46:08
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+
+[69] Token: Hvhrar6pF4... @ 06:46:09
+  Progress: 5000/66948
+  Progress: 10000/66948
+  Progress: 15000/66948
+  Progress: 20000/66948
+  Progress: 25000/66948
+  Progress: 30000/66948
+  Progress: 35000/66948
+  Progress: 40000/66948
+  Progress: 45000/66948
+  Progress: 50000/66948
+  Progress: 55000/66948
+  Progress: 60000/66948
+  Progress: 65000/66948
+  Tested 66948 seeds total
+

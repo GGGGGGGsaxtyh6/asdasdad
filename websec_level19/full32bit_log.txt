@@ -1,0 +1,13 @@
+╔════════════════════════════════════════════════════════════╗
+║    FULL 32-BIT SPACE ATTACK - Complete exhaustive search  ║
+╚════════════════════════════════════════════════════════════╝
+
+WARNING: This will take a VERY long time!
+Total 32-bit space: 4,294,967,296 possible seeds
+
+Target token: MPCBpHHyR3g0l471ayDTNd2coRdPpgm1
+Session ID: 0oo1mb4d498fpktleohlhjai9s7fjeg8
+
+Starting exhaustive search...
+
+[0.4657%] Tested: 10000000 | Rate: 384615 seeds/sec | ETA: 2 hours

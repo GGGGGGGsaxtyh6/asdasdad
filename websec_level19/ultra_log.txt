@@ -1,0 +1,12 @@
+╔════════════════════════════════════════════════════════════╗
+║    ULTRA MASSIVE PARALLEL ATTACK                           ║
+╚════════════════════════════════════════════════════════════╝
+
+Launched instance 1 (PID: 24022)
+Launched instance 2 (PID: 24065)
+Launched instance 3 (PID: 24095)
+Launched instance 4 (PID: 24140)
+Launched instance 5 (PID: 24193)
+
+All instances launched. Monitoring FLAG.txt...
+
