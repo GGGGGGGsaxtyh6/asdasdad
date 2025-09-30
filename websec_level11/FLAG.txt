@@ -1,0 +1,23 @@
+LEVEL 11 - FLAG ENCONTRADA
+============================
+
+FLAG: WEBSEC{Who_needs_AS_anyway_when_you_have_sqlite}
+
+TÉCNICA UTILIZADA:
+- SQL Injection en el parámetro 'table'
+- Bypass de blacklist que bloquea "as", "union", "join"
+- Uso de ALIAS SIN palabra clave AS (característica de SQLite)
+
+PAYLOAD:
+table=(SELECT 2 id,enemy username FROM costume LIMIT 1) t
+
+EXPLICACIÓN:
+1. La query original: SELECT id,username FROM $table WHERE id = $id
+2. Inyectamos una subquery como nombre de tabla
+3. En SQLite se puede hacer alias sin "AS": "enemy username" significa "enemy AS username"
+4. Forzamos id=2 en la subquery para que coincida con user_id=2
+5. LIMIT 1 trae solo el primer registro (el del héroe id=1)
+6. La columna enemy (que contiene la flag) se renombra a username
+
+Query final ejecutada:
+SELECT id,username FROM (SELECT 2 id,enemy username FROM costume LIMIT 1) t WHERE id = 2
