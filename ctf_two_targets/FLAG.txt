@@ -1,0 +1,1 @@
+FLAG{now_try_the_2nd_solution}
