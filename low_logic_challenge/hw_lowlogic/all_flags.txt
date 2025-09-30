@@ -1,0 +1,111 @@
+====================================================================================================
+TODAS LAS POSIBLES FUNCIONES LÓGICAS
+====================================================================================================
+sum == 0                                           HTB{02a100004000000201080000020000000000008200000000}
+sum == 0 (LSB)                                     HTB{408500000200004080100000400000000000004100000000}
+sum == 1                                           HTB{110a898401a0b00d4201008c1008c0008c05c10089138082}
+sum == 1 (LSB)                                     HTB{8850912180050db0428000310810030031a0830091c80141}
+sum == 2                                           HTB{e40036529a544ec09c92aa3080e70fb460d20a3006c44c1c}
+sum == 2 (LSB)                                     HTB{27006c4a592a72033949550c01e7f02d064b500c60233238}
+sum == 3                                           HTB{084440290409013020644001451030410320244960203341}
+sum == 3 (LSB)                                     HTB{102202942090800c04260280a2080c82c00424920604cc82}
+sum == 4                                           HTB{0010000020020000000015422800000a1008100410080020}
+sum == 4 (LSB)                                     HTB{00080000044000000000a842140000500810082008100004}
+sum < 1                                            HTB{02a100004000000201080000020000000000008200000000}
+sum < 1 (LSB)                                      HTB{408500000200004080100000400000000000004100000000}
+sum < 2                                            HTB{13ab898441a0b00f4309008c1208c0008c05c18289138082}
+sum < 2 (LSB)                                      HTB{c8d5912182050df0c29000314810030031a0834191c80141}
+sum < 3                                            HTB{f7abbfd6dbf4fecfdf9baabc92efcfb4ecd7cbb28fd7cc9e}
+sum < 3 (LSB)                                      HTB{efd5fd6bdb2f7ff3fbd9553d49f7f32d37ebd34df1eb3379}
+sum < 4                                            HTB{ffefffffdffdffffffffeabdd7fffff5eff7effbeff7ffdf}
+sum < 4 (LSB)                                      HTB{fff7fffffbbfffffffff57bdebffffaff7eff7dff7effffb}
+sum <= 1                                           HTB{13ab898441a0b00f4309008c1208c0008c05c18289138082}
+sum <= 1 (LSB)                                     HTB{c8d5912182050df0c29000314810030031a0834191c80141}
+sum <= 2                                           HTB{f7abbfd6dbf4fecfdf9baabc92efcfb4ecd7cbb28fd7cc9e}
+sum <= 2 (LSB)                                     HTB{efd5fd6bdb2f7ff3fbd9553d49f7f32d37ebd34df1eb3379}
+sum <= 3                                           HTB{ffefffffdffdffffffffeabdd7fffff5eff7effbeff7ffdf}
+sum <= 3 (LSB)                                     HTB{fff7fffffbbfffffffff57bdebffffaff7eff7dff7effffb}
+sum > 0                                            HTB{fd5effffbffffffdfef7fffffdffffffffffff7dffffffff}
+sum > 0 (LSB)                                      HTB{bf7afffffdffffbf7fefffffbfffffffffffffbeffffffff}
+sum > 1                                            HTB{ec54767bbe5f4ff0bcf6ff73edf73fff73fa3e7d76ec7f7d}
+sum > 1 (LSB)                                      HTB{372a6ede7dfaf20f3d6fffceb7effcffce5f7cbe6e37febe}
+sum > 2                                            HTB{08544029240b0130206455436d10304b1328344d70283361}
+sum > 2 (LSB)                                      HTB{102a029424d0800c0426aac2b6080cd2c8142cb20e14cc86}
+sum > 3                                            HTB{0010000020020000000015422800000a1008100410080020}
+sum > 3 (LSB)                                      HTB{00080000044000000000a842140000500810082008100004}
+sum >= 1                                           HTB{fd5effffbffffffdfef7fffffdffffffffffff7dffffffff}
+sum >= 1 (LSB)                                     HTB{bf7afffffdffffbf7fefffffbfffffffffffffbeffffffff}
+sum >= 2                                           HTB{ec54767bbe5f4ff0bcf6ff73edf73fff73fa3e7d76ec7f7d}
+sum >= 2 (LSB)                                     HTB{372a6ede7dfaf20f3d6fffceb7effcffce5f7cbe6e37febe}
+sum >= 3                                           HTB{08544029240b0130206455436d10304b1328344d70283361}
+sum >= 3 (LSB)                                     HTB{102a029424d0800c0426aac2b6080cd2c8142cb20e14cc86}
+sum >= 4                                           HTB{0010000020020000000015422800000a1008100410080020}
+sum >= 4 (LSB)                                     HTB{00080000044000000000a842140000500810082008100004}
+sum % 2 (odd parity)                               HTB{194ec9ad05a9b13d6265408d5518f0418f25e549e933b3c3}
+sum % 2 (odd parity) (LSB)                         HTB{987293b5a0958dbc46a602b1aa180f82f1a4a79297cccdc3}
+1 - (sum % 2) (even parity)                        HTB{e6b13652fa564ec29d9abf72aae70fbe70da1ab616cc4c3c}
+1 - (sum % 2) (even parity) (LSB)                  HTB{678d6c4a5f6a7243b959fd4e55e7f07d0e5b586d6833323c}
+in0 XOR in1 XOR in2 XOR in3                        HTB{194ec9ad05a9b13d6265408d5518f0418f25e549e933b3c3}
+in0 XOR in1 XOR in2 XOR in3 (LSB)                  HTB{987293b5a0958dbc46a602b1aa180f82f1a4a79297cccdc3}
+NOT(in0 XOR in1 XOR in2 XOR in3)                   HTB{e6b13652fa564ec29d9abf72aae70fbe70da1ab616cc4c3c}
+NOT(in0 XOR in1 XOR in2 XOR in3) (LSB)             HTB{678d6c4a5f6a7243b959fd4e55e7f07d0e5b586d6833323c}
+in0 AND in1 AND in2 AND in3                        HTB{0010000020020000000015422800000a1008100410080020}
+in0 AND in1 AND in2 AND in3 (LSB)                  HTB{00080000044000000000a842140000500810082008100004}
+NOT(in0 AND in1 AND in2 AND in3)                   HTB{ffefffffdffdffffffffeabdd7fffff5eff7effbeff7ffdf}
+NOT(in0 AND in1 AND in2 AND in3) (LSB)             HTB{fff7fffffbbfffffffff57bdebffffaff7eff7dff7effffb}
+in0 OR in1 OR in2 OR in3                           HTB{fd5effffbffffffdfef7fffffdffffffffffff7dffffffff}
+in0 OR in1 OR in2 OR in3 (LSB)                     HTB{bf7afffffdffffbf7fefffffbfffffffffffffbeffffffff}
+NOT(in0 OR in1 OR in2 OR in3)                      HTB{02a100004000000201080000020000000000008200000000}
+NOT(in0 OR in1 OR in2 OR in3) (LSB)                HTB{408500000200004080100000400000000000004100000000}
+in0                                                HTB{cc16164a2ff3403508847dc7ed311f6f1979366cf03cbbfe}
+in0 (LSB)                                          HTB{33686852f4cf02ac1021bee3b78cf8f6989e6c360f3cdd7f}
+in1                                                HTB{6850626fa45a59e8e476dd722dee258f56dadc7576ae767d}
+in1 (LSB)                                          HTB{160a46f6255a9a17276ebb4eb477a4f16a5b3bae6e756ebe}
+in2                                                HTB{315ce931340f0730bef4575b6813f8da332c3b1d12494121}
+in2 (LSB)                                          HTB{8c3a978c2cf0e00c7d2feada16c81f5bcc34dcb848928284}
+in3                                                HTB{8c5454b9ba0fafd03063b763fdd4327bf3aa344d7de83f61}
+in3 (LSB)                                          HTB{312a2a9d5df0f50b0cc6edc6bf2b4cdecf552cb2be17fc86}
+NOT in0                                            HTB{33e9e9b5d00cbfcaf77b823812cee090e686c9930fc34401}
+NOT in0 (LSB)                                      HTB{cc9797ad0b30fd53efde411c48730709676193c9f0c32280}
+NOT in1                                            HTB{97af9d905ba5a6171b89228dd211da70a925238a89518982}
+NOT in1 (LSB)                                      HTB{e9f5b909daa565e8d89144b14b885b0e95a4c451918a9141}
+NOT in2                                            HTB{cea316cecbf0f8cf410ba8a497ec0725ccd3c4e2edb6bede}
+NOT in2 (LSB)                                      HTB{73c56873d30f1ff382d01525e937e0a433cb2347b76d7d7b}
+NOT in3                                            HTB{73abab4645f0502fcf9c489c022bcd840c55cbb28217c09e}
+NOT in3 (LSB)                                      HTB{ced5d562a20f0af4f339123940d4b32130aad34d41e80379}
+in0 AND in1                                        HTB{4810024a2452402000045d422d20050f10581464702c327c}
+in0 AND in1 (LSB)                                  HTB{12084052244a02040020ba42b404a0f0081a28260e344c3e}
+in0 OR in1                                         HTB{ec56766faffb59fdecf6fdf7edff3fef5ffbfe7df6beffff}
+in0 OR in1 (LSB)                                   HTB{376a6ef6f5df9abf376fbfefb7fffcf7fadf7fbe6f7dffff}
+in0 XOR in1                                        HTB{a44674258ba919ddecf2a0b5c0df3ae04fa3ea198692cd83}
+in0 XOR in1 (LSB)                                  HTB{25622ea4d19598bb374f05ad03fb5c07f2c557986149b3c1}
+in2 AND in3                                        HTB{00544031300f0710306017436810305a3328300d10480121}
+in2 AND in3 (LSB)                                  HTB{002a028c0cf0e0080c06e8c216080c5acc140cb008128084}
+in2 OR in3                                         HTB{bd5cfdb9be0faff0bef7f77bfdd7fafbf3ae3f5d7fe97f61}
+in2 OR in3 (LSB)                                   HTB{bd3abf9d7df0f50f7defefdebfeb5fdfcf75fcbafe97fe86}
+in2 XOR in3                                        HTB{bd08bd888e00a8e08e97e03895c7caa1c0860f506fa17e40}
+in2 XOR in3 (LSB)                                  HTB{bd10bd117100150771e9071ca9e353850361f00af6857e02}
+(in0 AND in1) OR (in2 AND in3)                     HTB{4854427b345f473030645f436d30355f3378346d706c337d}
+(in0 AND in1) OR (in2 AND in3) (LSB)               HTB{122a42de2cfae20c0c26fac2b60cacfacc1e2cb60e36ccbe}
+(in0 OR in1) AND (in2 OR in3)                      HTB{ac547429ae0b09f0acf6f573edd73aeb53aa3e5d76a87f61}
+(in0 OR in1) AND (in2 OR in3) (LSB)                HTB{352a2e9475d0900f356fafceb7eb5cd7ca557cba6e15fe86}
+(in0 XOR in1) AND (in2 XOR in3)                    HTB{a40034008a0008c08c92a03080c70aa040820a1006804c00}
+(in0 XOR in1) AND (in2 XOR in3) (LSB)              HTB{25002c00510010033149050c01e350050241500860013200}
+(in0 XOR in1) OR (in2 XOR in3)                     HTB{bd4efdad8fa9b9fdeef7e0bdd5dffae1cfa7ef59efb3ffc3}
+(in0 XOR in1) OR (in2 XOR in3) (LSB)               HTB{bd72bfb5f1959dbf77ef07bdabfb5f87f3e5f79af7cdffc3}
+(in0 XOR in1) XOR (in2 XOR in3)                    HTB{194ec9ad05a9b13d6265408d5518f0418f25e549e933b3c3}
+(in0 XOR in1) XOR (in2 XOR in3) (LSB)              HTB{987293b5a0958dbc46a602b1aa180f82f1a4a79297cccdc3}
+sum != 0                                           HTB{fd5effffbffffffdfef7fffffdffffffffffff7dffffffff}
+sum != 0 (LSB)                                     HTB{bf7afffffdffffbf7fefffffbfffffffffffffbeffffffff}
+sum != 1                                           HTB{eef5767bfe5f4ff2bdfeff73eff73fff73fa3eff76ec7f7d}
+sum != 1 (LSB)                                     HTB{77af6ede7ffaf24fbd7fffcef7effcffce5f7cff6e37febe}
+sum != 2                                           HTB{1bffc9ad65abb13f636d55cf7f18f04b9f2df5cff93bb3e3}
+sum != 2 (LSB)                                     HTB{d8ff93b5a6d58dfcc6b6aaf3fe180fd2f9b4aff39fdccdc7}
+sum != 3                                           HTB{f7bbbfd6fbf6fecfdf9bbffebaefcfbefcdfdbb69fdfccbe}
+sum != 3 (LSB)                                     HTB{efddfd6bdf6f7ff3fbd9fd7f5df7f37d3ffbdb6df9fb337d}
+sum != 4                                           HTB{ffefffffdffdffffffffeabdd7fffff5eff7effbeff7ffdf}
+sum != 4 (LSB)                                     HTB{fff7fffffbbfffffffff57bdebffffaff7eff7dff7effffb}
+
+====================================================================================================
+BÚSQUEDA COMPLETA FINALIZADA
+====================================================================================================
