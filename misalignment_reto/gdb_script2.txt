@@ -1,5 +1,0 @@
-break *0x00000a5f
-run
-info registers
-x/32xb $rbp-0xa0
-quit
