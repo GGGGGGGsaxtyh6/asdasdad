@@ -1,0 +1,2 @@
+[+] /workspace/reto_pwnable_xyz/add_50/scripts/with_timeout.sh 35s /workspace/reto_pwnable_xyz/add_50/bin/solver.py 167.71.125.23 30002
+Input: Result: 4196386Input: FLAG{easy_00b_write}

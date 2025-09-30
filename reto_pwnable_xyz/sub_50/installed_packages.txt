@@ -1,6 +1,0 @@
-ffuf
-nikto
-nmap
-netcat-openbsd
-jq
-file

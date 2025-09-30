@@ -1,7 +1,0 @@
-[+] bash -lc cd /workspace/reto_pwnable_xyz/sub_50/artifacts/image/challenge && chmod +x challenge && for p in '50 0' '0 50' '1337 0' '0 1337' '1400 63'; do echo "--- Testing:  ---"; printf '%s\n' "" | /workspace/reto_pwnable_xyz/sub_50/scripts/with_timeout.sh 5s ./challenge || true; done | cat
---- Testing:  ---
-1337 input: --- Testing:  ---
-1337 input: --- Testing:  ---
-1337 input: --- Testing:  ---
-1337 input: --- Testing:  ---
-1337 input: 

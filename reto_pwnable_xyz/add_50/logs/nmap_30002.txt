@@ -1,0 +1,25 @@
+# Nmap 7.95 scan initiated Tue Sep 30 04:25:44 2025 as: nmap -Pn -sV -p30002 -oN /workspace/reto_pwnable_xyz/add_50/logs/nmap_30002.txt svc.pwnable.xyz
+Nmap scan report for svc.pwnable.xyz (167.71.125.23)
+Host is up (0.030s latency).
+Other addresses for svc.pwnable.xyz (not scanned): 134.209.56.140
+
+PORT      STATE SERVICE         VERSION
+30002/tcp open  pago-services2?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30002-TCP:V=7.95%I=7%D=9/30%Time=68DB5BCF%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,7,"Input:\x20")%r(GenericLines,7,"Input:\x20")%r(GetRequest,7,"Inpu
+SF:t:\x20")%r(HTTPOptions,7,"Input:\x20")%r(RTSPRequest,7,"Input:\x20")%r(
+SF:RPCCheck,7,"Input:\x20")%r(DNSVersionBindReqTCP,7,"Input:\x20")%r(DNSSt
+SF:atusRequestTCP,7,"Input:\x20")%r(Help,7,"Input:\x20")%r(SSLSessionReq,7
+SF:,"Input:\x20")%r(TerminalServerCookie,7,"Input:\x20")%r(TLSSessionReq,7
+SF:,"Input:\x20")%r(Kerberos,7,"Input:\x20")%r(SMBProgNeg,7,"Input:\x20")%
+SF:r(X11Probe,7,"Input:\x20")%r(FourOhFourRequest,7,"Input:\x20")%r(LPDStr
+SF:ing,7,"Input:\x20")%r(LDAPSearchReq,7,"Input:\x20")%r(LDAPBindReq,7,"In
+SF:put:\x20")%r(SIPOptions,7,"Input:\x20")%r(LANDesk-RC,7,"Input:\x20")%r(
+SF:TerminalServer,7,"Input:\x20")%r(NCP,7,"Input:\x20")%r(NotesRPC,7,"Inpu
+SF:t:\x20")%r(JavaRMI,7,"Input:\x20")%r(WMSRequest,7,"Input:\x20")%r(oracl
+SF:e-tns,7,"Input:\x20")%r(ms-sql-s,7,"Input:\x20")%r(afp,7,"Input:\x20")%
+SF:r(giop,7,"Input:\x20");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Sep 30 04:25:57 2025 -- 1 IP address (1 host up) scanned in 12.83 seconds

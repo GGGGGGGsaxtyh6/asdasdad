@@ -1,2 +1,0 @@
-[+] bash -lc printf 'HELLO\n' | /workspace/reto_pwnable_xyz/sub_50/scripts/nc_timeout.sh svc.pwnable.xyz 30001 5s
-nc: getaddrinfo for host "svc.pwnable.xyz" port 30001: Name or service not known

@@ -1,0 +1,2 @@
+[+] /workspace/reto_pwnable_xyz/add_50/scripts/with_timeout.sh 35s /workspace/reto_pwnable_xyz/add_50/bin/solver.py svc.pwnable.xyz 30002
+Input: Result: 4196386Input: FLAG{easy_00b_write}
