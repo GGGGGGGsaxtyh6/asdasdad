@@ -10,5 +10,5 @@ fi
 
 seconds=$1; host=$2; port=$3
 
-exec timeout "$seconds" bash -c "exec nc -v -n $host $port" | cat
+exec timeout "$seconds" bash -c "exec nc -v $host $port" | cat
 

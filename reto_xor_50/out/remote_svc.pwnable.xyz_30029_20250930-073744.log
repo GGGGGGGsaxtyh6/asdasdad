@@ -1,0 +1,2 @@
+[iter 26] trying svc.pwnable.xyz:30029
+nc: getaddrinfo for host "svc.pwnable.xyz" port 30029: Name or service not known

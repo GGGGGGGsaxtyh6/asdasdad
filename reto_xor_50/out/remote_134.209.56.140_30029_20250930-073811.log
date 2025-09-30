@@ -1,0 +1,2 @@
+[iter 31] trying 134.209.56.140:30029
+nc: connect to 134.209.56.140 port 30029 (tcp) failed: Connection refused
