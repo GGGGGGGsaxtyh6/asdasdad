@@ -1,0 +1,18 @@
+CONNECTION DETAILS
+==================
+
+RPC URL: http://94.237.57.211:55233/rpc
+Private Key: 0x24558ad5bb725e98b30b53f07f99bfa50e461b9c9bed9b2bd1d4c0a0e1088046
+Address: 0x9cc969e27cAa0c20b29D76da90abF3a4287a6FF3
+Target Address (Creature): 0xB15bb82Ef521368A0506B9C345a8F2ff771130fB
+Setup Address: 0xEA2b9987B149e121fA8AA4a120cb1d4953026De5
+
+EXPLOITATION PLAN
+==================
+1. Check current state of Creature contract (lifePoints, aggro)
+2. Deploy Attacker contract with Creature address
+3. Call Creature.attack() directly from our EOA to set aggro
+4. Call Attacker.attackCreature(1000) from our EOA to deal damage
+5. Call Creature.loot() to drain balance
+6. Verify Setup.isSolved() returns true
+7. Get flag from /flag endpoint
