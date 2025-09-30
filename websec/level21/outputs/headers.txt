@@ -1,0 +1,12 @@
+HTTP/2 200 
+server: nginx
+date: Tue, 30 Sep 2025 01:19:04 GMT
+content-type: text/html; charset=UTF-8
+vary: Accept-Encoding
+x-powered-by: PHP/5.6.26-1
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+referrer-policy: strict-origin
+content-security-policy: default-src 'self'
+

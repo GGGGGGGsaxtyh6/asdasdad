@@ -1,0 +1,14 @@
+HTTP/2 200 
+server: nginx
+date: Tue, 30 Sep 2025 01:31:12 GMT
+content-type: text/html; charset=UTF-8
+vary: Accept-Encoding
+x-powered-by: PHP/5.6.26-1
+set-cookie: session=ddbdb1315294fd32ec4c39badd3a6fbfa3ddad57371955edfe818b6dd962fbdf83bfc053476a271efb1cc408d15f0e1efdd12a706981379959e5290175bcf90320be4007dd8ee706ebf789684c67fb6a; expires=Fri, 10-Oct-2025 11:31:12 GMT; Max-Age=900000
+set-cookie: session=e2bfe6222ae514086e81c7e1726fc54219acd7e8863564ecdc0687daace4ba9b6138ba9e36e14cbbfd6560b4bcb595b7040494118192cedad6cfe1c4313c2e515fe1d1ed17925dcc0f9dd8b175a6ff20; expires=Fri, 10-Oct-2025 11:31:12 GMT; Max-Age=900000
+x-xss-protection: 1; mode=block
+x-content-type-options: nosniff
+x-frame-options: sameorigin
+referrer-policy: strict-origin
+content-security-policy: default-src 'self'
+
