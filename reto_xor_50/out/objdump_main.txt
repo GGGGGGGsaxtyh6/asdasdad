@@ -1,0 +1,56 @@
+0000000000000a34 <main>:
+ a34:	push   rbp
+ a35:	mov    rbp,rsp
+ a38:	sub    rsp,0x30
+ a3c:	mov    rax,QWORD PTR fs:0x28
+ a45:	mov    QWORD PTR [rbp-0x8],rax
+ a49:	xor    eax,eax
+ a4b:	lea    rdi,[rip+0x15b]        # bad <_IO_stdin_used+0xd>
+ a52:	call   7f0 <puts@plt>
+ a57:	call   9c9 <setup>
+ a5c:	mov    QWORD PTR [rbp-0x10],0x0
+ a64:	lea    rdi,[rip+0x151]        # bbc <_IO_stdin_used+0x1c>
+ a6b:	mov    eax,0x0
+ a70:	call   800 <printf@plt>
+ a75:	lea    rcx,[rbp-0x10]
+ a79:	lea    rdx,[rbp-0x18]
+ a7d:	lea    rax,[rbp-0x20]
+ a81:	mov    rsi,rax
+ a84:	lea    rdi,[rip+0x13b]        # bc6 <_IO_stdin_used+0x26>
+ a8b:	mov    eax,0x0
+ a90:	call   828 <__isoc99_scanf@plt>
+ a95:	mov    DWORD PTR [rbp-0x24],eax
+ a98:	mov    rax,QWORD PTR [rbp-0x20]
+ a9c:	test   rax,rax
+ a9f:	je     ac3 <main+0x8f>
+ aa1:	mov    rax,QWORD PTR [rbp-0x18]
+ aa5:	test   rax,rax
+ aa8:	je     ac3 <main+0x8f>
+ aaa:	mov    rax,QWORD PTR [rbp-0x10]
+ aae:	test   rax,rax
+ ab1:	je     ac3 <main+0x8f>
+ ab3:	mov    rax,QWORD PTR [rbp-0x10]
+ ab7:	cmp    rax,0x9
+ abb:	jg     ac3 <main+0x8f>
+ abd:	cmp    DWORD PTR [rbp-0x24],0x3
+ ac1:	je     acd <main+0x99>
+ ac3:	mov    edi,0x1
+ ac8:	call   830 <exit@plt>
+ acd:	mov    rax,QWORD PTR [rbp-0x10]
+ ad1:	mov    rcx,QWORD PTR [rbp-0x20]
+ ad5:	mov    rdx,QWORD PTR [rbp-0x18]
+ ad9:	xor    rcx,rdx
+ adc:	lea    rdx,[rax*8+0x0]
+ ae4:	lea    rax,[rip+0x201715]        # 202200 <result>
+ aeb:	mov    QWORD PTR [rdx+rax*1],rcx
+ aef:	mov    rax,QWORD PTR [rbp-0x10]
+ af3:	lea    rdx,[rax*8+0x0]
+ afb:	lea    rax,[rip+0x2016fe]        # 202200 <result>
+ b02:	mov    rax,QWORD PTR [rdx+rax*1]
+ b06:	mov    rsi,rax
+ b09:	lea    rdi,[rip+0xc2]        # bd2 <_IO_stdin_used+0x32>
+ b10:	mov    eax,0x0
+ b15:	call   800 <printf@plt>
+ b1a:	jmp    a5c <main+0x28>
+ b1f:	nop
+

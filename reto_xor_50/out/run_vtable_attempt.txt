@@ -1,0 +1,3 @@
+The Poopolator
+> 💩   Fatal error: glibc detected an invalid stdio handle
+timeout: the monitored command dumped core

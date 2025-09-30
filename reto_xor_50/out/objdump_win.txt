@@ -1,0 +1,9 @@
+0000000000000a21 <win>:
+ a21:	push   rbp
+ a22:	mov    rbp,rsp
+ a25:	lea    rdi,[rip+0x178]        # ba4 <_IO_stdin_used+0x4>
+ a2c:	call   7f8 <system@plt>
+ a31:	nop
+ a32:	pop    rbp
+ a33:	ret
+

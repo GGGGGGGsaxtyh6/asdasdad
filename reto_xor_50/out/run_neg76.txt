@@ -1,0 +1,2 @@
+The Poopolator
+> 💩   timeout: the monitored command dumped core

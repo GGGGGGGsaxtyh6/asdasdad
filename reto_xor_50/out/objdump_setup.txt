@@ -1,0 +1,22 @@
+00000000000009c9 <setup>:
+ 9c9:	push   rbp
+ 9ca:	mov    rbp,rsp
+ 9cd:	mov    ecx,0x0
+ 9d2:	mov    edx,0x2
+ 9d7:	mov    esi,0x0
+ 9dc:	lea    rdi,[rip+0x20163d]        # 202020 <_IO_2_1_stdout_@GLIBC_2.2.5>
+ 9e3:	call   818 <setvbuf@plt>
+ 9e8:	mov    ecx,0x0
+ 9ed:	mov    edx,0x2
+ 9f2:	mov    esi,0x0
+ 9f7:	lea    rdi,[rip+0x201702]        # 202100 <_IO_2_1_stdin_@GLIBC_2.2.5>
+ 9fe:	call   818 <setvbuf@plt>
+ a03:	lea    rsi,[rip+0xffffffffffffffb1]        # 9bb <handler>
+ a0a:	mov    edi,0xe
+ a0f:	call   810 <signal@plt>
+ a14:	mov    edi,0x3c
+ a19:	call   808 <alarm@plt>
+ a1e:	nop
+ a1f:	pop    rbp
+ a20:	ret
+

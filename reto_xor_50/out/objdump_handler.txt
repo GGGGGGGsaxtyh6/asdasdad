@@ -1,0 +1,6 @@
+00000000000009bb <handler>:
+ 9bb:	push   rbp
+ 9bc:	mov    rbp,rsp
+ 9bf:	mov    edi,0x1
+ 9c4:	call   830 <exit@plt>
+
