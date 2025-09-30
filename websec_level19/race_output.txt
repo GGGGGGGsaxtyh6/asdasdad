@@ -1,0 +1,101 @@
+╔════════════════════════════════════════════════════════════╗
+║     WebSec Level 19 - Race Condition CAPTCHA Attack       ║
+╚════════════════════════════════════════════════════════════╝
+
+[*] Strategy: Generate predictions for current time, then request page
+
+[Attempt 1]
+  [+] Session: 0mjalpdam5ki813gb4pcomt3de8nc519
+  [+] Token: 5Q2BLky0t1keidYg5Y3fOyyifbknH0mz
+  [-] No matching token in predictions
+
+[Attempt 2]
+  [+] Session: oj8gjpi2a1fbnvnu9910tr6jn4ecjmlk
+  [+] Token: Bycz5bO56CGRdyR1Skz4X07REJjs5q0v
+  [-] No matching token in predictions
+
+[Attempt 3]
+  [+] Session: 5351u41al83pkq5ad1pud52mcbmmdp2e
+  [+] Token: CWYBMtWSlk8OGeX3K1ZHe69HjxYM4hgv
+  [-] No matching token in predictions
+
+[Attempt 4]
+  [+] Session: i2vs41eqv8di2q75eeacogud4p48qeve
+  [+] Token: HMCcIYlQVvGE0dQ5qKTao1mD0iIJgmCL
+  [-] No matching token in predictions
+
+[Attempt 5]
+  [+] Session: rb9okgkuuuk91gpol287ce8th07jmeu2
+  [+] Token: IlIPB9pgF1t7J9c8U4nixWwTW8FMjbjR
+  [-] No matching token in predictions
+
+[Attempt 6]
+  [+] Session: l3f7b2ck7846e0qgc55svhvrpbupjb2c
+  [+] Token: u3fHDaIDJyYCjV9hFXTEnDMzD3Kci2BC
+  [-] No matching token in predictions
+
+[Attempt 7]
+  [+] Session: 9sc7ifm8pie24lf9mqimp7ei4nc8p71m
+  [+] Token: vLOv6aLKXDqvrbjdQHJ9dEZQdc3mG6s2
+  [-] No matching token in predictions
+
+[Attempt 8]
+  [+] Session: 411gfgijcjg0pjueumpp9dv04msitun3
+  [+] Token: pd5VDuIDePXTiodqXdf572ycTCGVvpKI
+  [-] No matching token in predictions
+
+[Attempt 9]
+  [+] Session: 5lqvqc3pfnhc34t15ql83h7n4se122g7
+  [+] Token: NzI2yJu5FqbmaQ3KInvWHt3CR07k8GjJ
+  [-] No matching token in predictions
+
+[Attempt 10]
+  [+] Session: baeek2lbbh8terolloo3f44r62rloq9h
+  [+] Token: OsIg5ZqEAqnqCJKjAaPZl5Roy4IxeyKQ
+  [-] No matching token in predictions
+
+[Attempt 11]
+  [+] Session: laiucp9hki0uj8aeuatl637ncuth483g
+  [+] Token: 1X5wJz5q8SqbVUQo5QMlbjBNPu3dskSi
+  [-] No matching token in predictions
+
+[Attempt 12]
+  [+] Session: j905v8al6bbdea2fg3rdu880lurfjf8u
+  [+] Token: Q5DRZNbkzRcyk7OaR1BIilgQJ4CaCmxi
+  [-] No matching token in predictions
+
+[Attempt 13]
+  [+] Session: 5jvqkjia9il5jjf9ume4b8op691jk1v7
+  [+] Token: c0W3AeMow9eVsDHIVeCBZtvwblCNqnst
+  [-] No matching token in predictions
+
+[Attempt 14]
+  [+] Session: 1tk3hfvdu5rfsc5tsklpf4upasmofsf6
+  [+] Token: wjdd3XUQaQLJP4PFEBEd2SQqetfKjWQF
+  [-] No matching token in predictions
+
+[Attempt 15]
+  [+] Session: 7uj2f3slkpk5htgkmvui2jgehursnrak
+  [+] Token: RZNUV3Uga31NMM6QUKslbTfGaYVaSSix
+  [-] No matching token in predictions
+
+[Attempt 16]
+  [+] Session: r1l3hr2s5jebrvo61gokuum3qn9dbnba
+  [+] Token: c2DnCHZhC17GqeYHQUUJV259uBC05CH5
+  [-] No matching token in predictions
+
+[Attempt 17]
+  [+] Session: 44gl0958t99c846lmnfmua49al90lp72
+  [+] Token: pldXiktJ8vArKxWrr27FzHHcvTAuTLH0
+  [-] No matching token in predictions
+
+[Attempt 18]
+  [+] Session: a0qs2l7rtr549r4cgp8rfi29i5utpdiq
+  [+] Token: glnMRipS4IQqgftsTCVGMGfmbFSPXyk2
+  [-] No matching token in predictions
+
+[Attempt 19]
+  [+] Session: mansuae5e7djnafjgmik5b789gj8t0k5
+  [+] Token: GZ2XK9iqOn3mz0oJZeUXVQWpUb5t9XrF
+  [-] No matching token in predictions
+

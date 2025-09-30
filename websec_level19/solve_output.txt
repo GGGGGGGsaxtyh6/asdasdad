@@ -1,0 +1,15 @@
+╔════════════════════════════════════════════════════════════╗
+║       WebSec Level 19 - CAPTCHA Breaker (PRNG Attack)     ║
+╚════════════════════════════════════════════════════════════╝
+
+[1] Getting fresh session...
+[+] Session ID: huecrb92nhhj1h46i143enm2aum86lfv
+[+] Real CSRF Token: WXjCtv9qbejdwMcidF9LVhHbmuxsoDS9
+[+] Server time: 1759213555 (2025-09-30 06:25:55)
+[+] Estimated latency: 0.816 seconds
+
+[2] Bruteforcing seed to match CSRF token...
+.....................
+
+[-] Could not find matching seed after 21000 attempts
+[-] Token we're looking for: WXjCtv9qbejdwMcidF9LVhHbmuxsoDS9

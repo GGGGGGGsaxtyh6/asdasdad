@@ -1,0 +1,14 @@
+╔════════════════════════════════════════════════════════════╗
+║    WebSec Level 19 - CAPTCHA Breaker (Integer Seeds)      ║
+╚════════════════════════════════════════════════════════════╝
+
+[1] Getting fresh session...
+[+] Session ID: ks385guvckkh5rspv93lrc3quuss8ec2
+[+] CSRF Token: F3C4bTQkFRNvogUJzTae1VD2Cx66lqcQ
+[+] Request time: 1759213828 (2025-09-30 06:30:28)
+
+[2] Bruteforcing seed (integer values only)...
+[*] Insight: srand(float) converts to int, so we only need to test integer timestamps
+
+[-] Could not find matching seed
+[-] Token we're looking for: F3C4bTQkFRNvogUJzTae1VD2Cx66lqcQ

@@ -1,0 +1,100 @@
+╔════════════════════════════════════════════════════════════╗
+║    WebSec Level 19 - Rapid Fire Prediction Attack         ║
+╚════════════════════════════════════════════════════════════╝
+
+[Attempt 1]
+  [+] Token: Gw2D5B3K7m1tXDmgb8d8hfCYLxM0QX1k
+  [-] No matching token
+
+[Attempt 2]
+  [+] Token: 50gssHe4WdmFSLMadakQ8xmZPj2OvRRq
+  [-] No matching token
+
+[Attempt 3]
+  [+] Token: FyMw7gCoFSmKCNtbOY6rj3GFpp688wVA
+  [-] No matching token
+
+[Attempt 4]
+  [+] Token: IFnQ7BaeWkkRc1pzUi4LbW8NnWlXgN9O
+  [-] No matching token
+
+[Attempt 5]
+  [+] Token: IFnQ7BaeWkkRc1pzUi4LbW8NnWlXgN9O
+  [-] No matching token
+
+[Attempt 6]
+  [+] Token: 8uRQXgvwC8yPnpqribRcVbf1Dwlakb9h
+  [-] No matching token
+
+[Attempt 7]
+  [+] Token: yvHX73LbjMaKcmDl1euj3iwYddP8kV0H
+  [-] No matching token
+
+[Attempt 8]
+  [+] Token: gBkBDdWu7J3LXTCkGEX0owLQ4QTsLuIQ
+  [-] No matching token
+
+[Attempt 9]
+  [+] Token: A8NaMDoFiobtJchIOZ0bsg1k1xXayJXY
+  [-] No matching token
+
+[Attempt 10]
+  [+] Token: UIHRXDmBS460QdWcUnxx2mp4JQprkuk3
+  [-] No matching token
+
+[Attempt 11]
+  [+] Token: od0o4dKSlojhTbRT5mb3CHPlhq2P2DAg
+  [-] No matching token
+
+[Attempt 12]
+  [+] Token: xZvpJVbc4dOqUuyrLvyd7mJKAQmVVMti
+  [-] No matching token
+
+[Attempt 13]
+  [+] Token: Jd8cy6ZJ3Tt5FKSawYK3V2aaPV8aBjWa
+  [-] No matching token
+
+[Attempt 14]
+  [+] Token: PZ2txavqHVsj5qhxJFnBDZdpYyz2wfoc
+  [-] No matching token
+
+[Attempt 15]
+  [+] Token: kVAXxWaeKP24kW3b7qQX77saEmDEHatQ
+  [-] No matching token
+
+[Attempt 16]
+  [+] Token: N3vwC4GnKhVVkdtiplNfsEQouOfluXg9
+  [-] No matching token
+
+[Attempt 17]
+  [+] Token: R64SmJZ3Yllax6JH0A49Ueir4nJiZGHG
+  [-] No matching token
+
+[Attempt 18]
+  [+] Token: 4gLxpV9RD7oxQQAwACmXSLt3H0QqJFFC
+  [-] No matching token
+
+[Attempt 19]
+  [+] Token: O8fep0HlgpFOOZH3nu5U1xGO5omblNgZ
+  [-] No matching token
+
+[Attempt 20]
+  [+] Token: yUJEwozEH9NkmpOKcCpAlrORCkPj3wOo
+  [-] No matching token
+
+[Attempt 21]
+  [+] Token: ZzBhXymrfuqBv6YMS5q4dsZcCBr2Alip
+  [-] No matching token
+
+[Attempt 22]
+  [+] Token: x6B1F6R74oMKtYwGZ7AfI8tJcbGxMc40
+  [-] No matching token
+
+[Attempt 23]
+  [+] Token: cz15k3hqa6Ju7c57YgDbqNIEzWiBuXEw
+  [-] No matching token
+
+[Attempt 24]
+  [+] Token: Z8Lbx33wuVnYcJzMoauHkPRlgRjT50HR
+  [-] No matching token
+

@@ -1,0 +1,15 @@
+╔════════════════════════════════════════════════════════════╗
+║      WebSec Level 19 - Full Bruteforce Attack             ║
+╚════════════════════════════════════════════════════════════╝
+
+[1] Getting session...
+[+] Session: fksnrtlissk71ltsq8enhffuchkfqamg
+[+] Token: donUkpKunm3nF7kPkMkaKD2ua7scdyxe
+[+] Request time: 1759213719.705462
+[+] Request time (int): 1759213719 (2025-09-30 06:28:39)
+
+[2] Bruteforcing seed...
+...................................................................................................................................
+
+[-] Failed after 524000 attempts
+[-] Token we're looking for: donUkpKunm3nF7kPkMkaKD2ua7scdyxe
