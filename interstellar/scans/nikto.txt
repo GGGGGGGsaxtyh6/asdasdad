@@ -1,0 +1,9 @@
+- Nikto v2.1.5/2.1.5
++ Target Host: 94-237-55-43.uk-lon1.upcloud.host
++ Target Port: 36908
++ GET /: Cookie PHPSESSID created without the httponly flag
++ GET /: Retrieved x-powered-by header: PHP/7.0.33
++ GET /: The anti-clickjacking X-Frame-Options header is not present.
++ -630: GET /images: IIS may reveal its internal or real IP in the Location header via a request to the /images directory. The value is "http://192.168.41.48/images/".
++ GET /icons/README: Server leaks inodes via ETags, header found with file /icons/README, fields: 0x13f4 0x438c034968a80 
++ -3233: GET /icons/README: /icons/README: Apache default file found.

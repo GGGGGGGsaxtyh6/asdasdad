@@ -1,0 +1,16 @@
+# Nmap 7.95 scan initiated Tue Sep 30 15:01:35 2025 as: nmap -Pn -n -sC -sV -p 36908 -oN /workspace/interstellar/scans/nmap_94.237.55.43_36908.txt 94.237.55.43
+Nmap scan report for 94.237.55.43
+Host is up (0.15s latency).
+
+PORT      STATE SERVICE VERSION
+36908/tcp open  http    Apache httpd 2.4.25 ((Debian))
+|_http-server-header: Apache/2.4.25 (Debian)
+| http-cookie-flags: 
+|   /: 
+|     PHPSESSID: 
+|_      httponly flag not set
+| http-title: Login
+|_Requested resource was login.php
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Sep 30 15:01:51 2025 -- 1 IP address (1 host up) scanned in 15.46 seconds
