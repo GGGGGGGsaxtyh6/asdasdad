@@ -1,0 +1,71 @@
+ANÁLISIS PROFUNDO DEL FLUJO DE auth()
+======================================
+
+auth($session, $key) {
+    // 1. Extraer IV y ciphertext
+    $iv = hex2bin(substr($session, 0, 32));
+    $ciphertext = hex2bin(substr($session, 32));
+    
+    // 2. Desencriptar
+    $session = rtrim(mcrypt_decrypt(...), "\0");
+    
+    // 3. VALIDACIÓN 1: Debe tener ":" y empezar con "user/pass:"
+    if (strpos($session, ":") > 0 && substr($session, 0, strlen('user/pass')) === 'user/pass') {
+        
+        // 4. Tomar lo que está después del primer ":"
+        $session = explode(":", $session)[1];
+        
+        // 5. VALIDACIÓN 2: Debe tener "/"
+        if (strpos($session, "/") > 0) {
+            
+            // 6. Dividir por "/"
+            list($username, $password) = explode("/", $session);
+            
+            // 7. VERIFICAR CREDENCIALES (SQL INJECTION AQUÍ!)
+            if (verify_credentials($username, $password)) {
+                return $username;  // ← Retorna el username si es válido
+            }
+            return "Wrong login or password.!";
+        }
+    }
+    return "The session is corrupted!";
+}
+
+PUNTOS CLAVE:
+-------------
+
+1. Si la sesión no empieza con "user/pass:", retorna "corrupted"
+2. Si no hay ":", retorna "corrupted"  
+3. Si no hay "/" después del ":", retorna "corrupted"
+4. Solo si pasa TODO esto, llama a verify_credentials()
+
+PROBLEM CON BIT FLIPPING:
+--------------------------
+
+No importa cómo alinee los bloques, siempre hay algo crítico en un bloque
+que se corrompe al modificar el siguiente bloque.
+
+NUEVA IDEA - ¿Y si acepto que el bloque se corrompa pero SIGUE CASUALMENTE 
+teniendo los caracteres necesarios?
+
+Por ejemplo, si el bloque 0 corrupto CASUALMENTE tiene:
+- Un ":" en alguna posición
+- Empieza con bytes que cuando se interpretan casualmente coinciden
+
+Esto es prácticamente imposible sin probar millones de variaciones...
+
+ALTERNATIVA - ¿Hay alguna forma de NO necesitar modificar bloques críticos?
+
+WAIT - ¡NUEVA IDEA!
+
+¿Qué pasa si el plaintext ORIGINAL ya tiene algo que puedo explotar?
+
+Por ejemplo, si registro un usuario cuyo nombre cuando se serializa tiene 
+caracteres especiales o un formato que al hacer bit flipping mínimo,
+pueda crear un payload válido?
+
+O MEJOR: ¿Qué pasa si puedo AGREGAR bloques en lugar de modificarlos?
+
+En CBC, no puedo agregar bloques, pero puedo... ¿truncar?
+
+¿Qué pasa si envío solo parte de la cookie?

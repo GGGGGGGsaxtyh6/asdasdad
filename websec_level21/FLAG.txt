@@ -1,0 +1,10 @@
+PENDIENTE - No resuelto aún
+
+Problema: CBC bit flipping siempre corrompe bloques críticos.
+La técnica correcta aún no ha sido identificada.
+
+Posibles soluciones que requieren más investigación:
+- Padding Oracle Attack completo
+- Alguna característica específica de SQLite o PHP que no conozco
+- Técnica avanzada de CBC manipulation
+- Bug específico en el código que no he identificado
