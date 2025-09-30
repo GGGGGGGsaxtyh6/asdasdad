@@ -1,0 +1,28 @@
+# FFUF Report
+
+  Command line : `ffuf -w /workspace/interstellar/wordlist.txt -u http://94.237.55.43:36908/FUZZ -of md -o /workspace/interstellar/scans/ffuf_dirs.txt -mc all -sf`
+  Time: 2025-09-30T16:32:53Z
+
+  | FUZZ | URL | Redirectlocation | Position | Status Code | Content Length | Content Words | Content Lines | Content Type | Duration | ResultFile | ScraperData | Ffufhash
+  | :- | :-- | :--------------- | :---- | :------- | :---------- | :------------- | :------------ | :--------- | :----------- | :------------ | :-------- |
+  | images | http://94.237.55.43:36908/images | http://94.237.55.43:36908/images/ | 18 | 301 | 322 | 20 | 10 | text/html; charset=iso-8859-1 | 147.655381ms |  |  | 0c36d12
+  | composer.json | http://94.237.55.43:36908/composer.json |  | 11 | 200 | 59 | 19 | 6 | application/json | 147.881127ms |  |  | 0c36db
+  | templates_c | http://94.237.55.43:36908/templates_c | http://94.237.55.43:36908/templates_c/ | 9 | 301 | 327 | 20 | 10 | text/html; charset=iso-8859-1 | 149.452775ms |  |  | 0c36d9
+  | phpinfo.php | http://94.237.55.43:36908/phpinfo.php |  | 5 | 404 | 290 | 24 | 10 | text/html; charset=iso-8859-1 | 151.402122ms |  |  | 0c36d5
+  | admin | http://94.237.55.43:36908/admin |  | 1 | 404 | 284 | 24 | 10 | text/html; charset=iso-8859-1 | 152.313526ms |  |  | 0c36d1
+  | composer.lock | http://94.237.55.43:36908/composer.lock |  | 12 | 200 | 2799 | 1086 | 83 |  | 151.547094ms |  |  | 0c36dc
+  | logout.php | http://94.237.55.43:36908/logout.php | / | 17 | 302 | 0 | 1 | 1 | text/html; charset=UTF-8 | 158.278859ms |  |  | 0c36d11
+  | index.php | http://94.237.55.43:36908/index.php | login.php | 13 | 302 | 0 | 1 | 1 | text/html; charset=UTF-8 | 171.250428ms |  |  | 0c36dd
+  | .htaccess | http://94.237.55.43:36908/.htaccess |  | 3 | 403 | 299 | 22 | 12 | text/html; charset=iso-8859-1 | 713.040212ms |  |  | 0c36d3
+  | configs | http://94.237.55.43:36908/configs |  | 7 | 404 | 286 | 24 | 10 | text/html; charset=iso-8859-1 | 1.714188036s |  |  | 0c36d7
+  | communicate.php | http://94.237.55.43:36908/communicate.php |  | 16 | 200 | 3310 | 970 | 114 | text/html; charset=UTF-8 | 1.719621018s |  |  | 0c36d10
+  | js | http://94.237.55.43:36908/js | http://94.237.55.43:36908/js/ | 19 | 301 | 318 | 20 | 10 | text/html; charset=iso-8859-1 | 2.717587985s |  |  | 0c36d13
+  | vendor | http://94.237.55.43:36908/vendor | http://94.237.55.43:36908/vendor/ | 10 | 301 | 322 | 20 | 10 | text/html; charset=iso-8859-1 | 2.717350492s |  |  | 0c36da
+  | robots.txt | http://94.237.55.43:36908/robots.txt |  | 4 | 404 | 289 | 24 | 10 | text/html; charset=iso-8859-1 | 2.717424493s |  |  | 0c36d4
+  | register.php | http://94.237.55.43:36908/register.php |  | 15 | 200 | 3165 | 929 | 91 | text/html; charset=UTF-8 | 2.726642989s |  |  | 0c36df
+  | config | http://94.237.55.43:36908/config |  | 6 | 404 | 285 | 24 | 10 | text/html; charset=iso-8859-1 | 3.718906752s |  |  | 0c36d6
+  | .git | http://94.237.55.43:36908/.git |  | 2 | 404 | 283 | 24 | 10 | text/html; charset=iso-8859-1 | 3.721585049s |  |  | 0c36d2
+  | cache | http://94.237.55.43:36908/cache |  | 8 | 404 | 284 | 24 | 10 | text/html; charset=iso-8859-1 | 3.722493321s |  |  | 0c36d8
+  | utils | http://94.237.55.43:36908/utils | http://94.237.55.43:36908/utils/ | 20 | 301 | 321 | 20 | 10 | text/html; charset=iso-8859-1 | 3.726500192s |  |  | 0c36d14
+  | login.php | http://94.237.55.43:36908/login.php |  | 14 | 200 | 3403 | 991 | 101 | text/html; charset=UTF-8 | 3.727236375s |  |  | 0c36de
+  
