@@ -1,0 +1,9 @@
+LEVEL 08 - FLAG ENCONTRADA:
+============================
+
+WEBSEC{BypassingImageChecksToRCE}
+
+TÉCNICA:
+- File upload con validación de GIF
+- RCE mediante include_once() del archivo subido
+- Payload: GIF89a + código PHP
