@@ -1,4 +1,0 @@
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0100   266  100   266    0     0    863      0 --:--:-- --:--:-- --:--:--   860
-{"PrivateKey": "0xbf800ea6af7210d1edf2b480ab2f4ed5997cb853f12f14f016f680b85be0cdf4", "Address": "0xADa0dBFe52039F3e7A6D7586c35cEbeb0e179b3f", "TargetAddress": "0xEd4c451e37cD8b6E6c4F9D53039cD5a3958fD31c", "setupAddress": "0xd73DcAC7758125Bd7979A92ff47F09c0e25d783E"}
