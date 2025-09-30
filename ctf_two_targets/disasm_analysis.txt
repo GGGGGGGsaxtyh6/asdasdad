@@ -1,0 +1,29 @@
+ANÁLISIS DEL DESENSAMBLADO:
+
+En main():
+- Stack frame: 0x50 bytes
+- Canary en -0x8(%rbp)
+- Buffer en -0x40(%rbp) con tamaño 0x38 (56 bytes) según memset
+
+Opciones:
+1. Change name: scanf("%32s", rbp-0x40)      -> escribe en offset 0
+2. Change nationality: scanf("%24s", rbp-0x20) -> escribe en offset 0x20  
+3. Change age: scanf("%ld", rbp-0x10)        -> escribe en offset 0x30
+4. Get shell: llama auth(rbp-0x40)
+
+Layout del stack en main:
+rbp-0x50 a rbp-0x40 (16 bytes): ?
+rbp-0x40 a rbp-0x20 (32 bytes): name
+rbp-0x20 a rbp-0x08 (24 bytes): nationality
+rbp-0x10 a rbp-0x08 (8 bytes): edad (long)
+rbp-0x08 (8 bytes): canary
+rbp (8 bytes): saved rbp
+
+Función auth():
+- Recibe un puntero (el buffer completo desde rbp-0x40)
+- Hace un XOR de cada byte con bytes de la función main
+- Compara el resultado con algo en 0x401d28
+- Si coincide, retorna 1 y se llama a win()
+
+La clave está en encontrar qué valores poner en name, nationality y age
+para que el XOR resulte en la comparación correcta.
