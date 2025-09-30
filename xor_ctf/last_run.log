@@ -1,0 +1,18 @@
+Intentando conectar...
+The Poopolator
+> 💩   
+
+============================================================
+Nueva estrategia: House of Force style
+============================================================
+
+Sobrescribiendo múltiples campos de stdin con win...
+  stdin+184 (offset -9)
+  stdin+192 (offset -8)
+  stdin+200 (offset -7)
+  stdin+208 (offset -6)
+Traceback (most recent call last):
+  File "/workspace/xor_ctf/house_of_force.py", line 54, in <module>
+    s.sendall(payload.encode())
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe
