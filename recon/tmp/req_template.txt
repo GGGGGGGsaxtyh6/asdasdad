@@ -1,0 +1,5 @@
+GET /api/notes/all HTTP/1.1
+Host: 127.0.0.1:41412
+Connection: close
+Authorization: Bearer TOKEN_PLACEHOLDER
+
