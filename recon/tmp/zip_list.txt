@@ -1,0 +1,19 @@
+
+7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
+ 64-bit locale=en_US.UTF-8 Threads:4 OPEN_MAX:1048576, ASM
+
+Scanning the drive for archives:
+1 file, 4220994 bytes (4123 KiB)
+
+Listing archive: Celestial Scribe (1).zip
+
+--
+Path = Celestial Scribe (1).zip
+Type = zip
+Physical Size = 4220994
+
+   Date      Time    Attr         Size   Compressed  Name
+------------------- ----- ------------ ------------  ------------------------
+2025-04-30 14:07:21 .....      9338560      4220788  celestial_scribe.apk
+------------------- ----- ------------ ------------  ------------------------
+2025-04-30 14:07:21            9338560      4220788  1 files

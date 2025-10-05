@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 238
+ETag: W/"ee-13MzUelGtW8Myiihu1U6FZapSyE"
+Date: Sun, 05 Oct 2025 22:10:16 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"success":true,"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZmE4OTg5LTIxMTItNDg4ZC05Mjk4LTViNTFkMjEwNjQ2NSIsImVtYWlsIjoiYUBhLmNvbSIsImlhdCI6MTc1OTcwMjIxNiwiZXhwIjoxNzU5NzAzMTE2fQ.jiTxxiN34fA71qxvCQKAPodbCZDAxQ3L1fLLNzHbf1k"}
