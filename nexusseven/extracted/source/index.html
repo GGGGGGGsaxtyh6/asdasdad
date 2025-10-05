@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://img.icons8.com/lollipop/48/globe.png" type="image/png">
+    <title>NEXUS-7 // SURVEILLANCE SYSTEM</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+        
+        :root {
+            --neon-cyan: #0ff;
+            --neon-magenta: #f0f;
+            --neon-green: #0f0;
+            --dark-bg: #0a0a0f;
+            --panel-bg: rgba(16, 20, 31, 0.8);
+            --terminal-bg: rgba(0, 10, 15, 0.9);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Share Tech Mono', monospace;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--neon-cyan);
+            overflow: hidden;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr 1fr 1fr;
+            gap: 10px;
+            padding: 10px;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 80%),
+                linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+        }
+        
+        .header {
+            grid-column: 1 / 4;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid var(--neon-cyan);
+            text-shadow: 0 0 5px var(--neon-cyan);
+        }
+        
+        .panel {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+            padding: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .panel::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+            animation: scan-line 3s linear infinite;
+        }
+        
+        .panel-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: var(--neon-cyan);
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(0, 255, 255, 0.3);
+            padding-bottom: 5px;
+        }
+        
+        .panel-title .status {
+            color: var(--neon-green);
+        }
+        
+        .camera-feed {
+            grid-column: 1 / 3;
+            grid-row: 2 / 4;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .camera-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .camera-feed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(0.7) sepia(0.3) hue-rotate(160deg) brightness(0.8) contrast(1.2);
+        }
+        
+        .camera-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            pointer-events: none;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        
+        .camera-info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-left: 2px solid var(--neon-cyan);
+        }
+        
+        .camera-scan {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, transparent, var(--neon-cyan), transparent);
+            animation: camera-scan 3s linear infinite;
+            opacity: 0.7;
+        }
+        
+        .terminal {
+            grid-column: 1 / 3;
+            grid-row: 4 / 5;
+            background-color: var(--terminal-bg);
+            color: var(--neon-green);
+            font-size: 0.8rem;
+            overflow: hidden;
+        }
+        
+        .terminal-content {
+            height: 100%;
+            overflow-y: auto;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .terminal-line {
+            margin-bottom: 3px;
+            animation: fade-in 0.5s ease-out;
+        }
+        
+        .target-info {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+        
+        .target-data {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5px 10px;
+            font-size: 0.8rem;
+        }
+        
+        .target-data dt {
+            color: rgba(0, 255, 255, 0.7);
+        }
+        
+        .target-data dd {
+            color: white;
+        }
+        
+        .map-panel {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(0, 20, 30, 0.8);
+        }
+        
+        .map {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            filter: hue-rotate(160deg) saturate(0.7) brightness(0.6);
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--neon-magenta);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px var(--neon-magenta);
+            animation: pulse 2s infinite;
+        }
+        
+        .map-marker::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid var(--neon-magenta);
+            animation: expand 2s infinite;
+        }
+        
+        .system-status {
+            grid-column: 3 / 4;
+            grid-row: 4 / 5;
+        }
+        
+        .status-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            height: calc(100% - 30px);
+        }
+        
+        .status-item {
+            background-color: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 255, 255, 0.3);
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .status-label {
+            font-size: 0.7rem;
+            color: rgba(0, 255, 255, 0.7);
+            margin-bottom: 5px;
+        }
+        
+        .status-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .status-value.online {
+            color: var(--neon-green);
+        }
+        
+        .status-value.warning {
+            color: #ff0;
+        }
+        
+        .status-value.danger {
+            color: #f00;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background-color: var(--neon-cyan);
+            width: 0%;
+            animation: progress-animation 10s infinite;
+        }
+        
+        .glitch-effect {
+            animation: glitch 5s infinite;
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes scan-line {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+        
+        @keyframes camera-scan {
+            0% {
+                top: 0;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes expand {
+            0% {
+                width: 10px;
+                height: 10px;
+                opacity: 1;
+            }
+            100% {
+                width: 40px;
+                height: 40px;
+                opacity: 0;
+            }
+        }
+        
+        @keyframes progress-animation {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 70%;
+            }
+            70% {
+                width: 60%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+        
+        @keyframes glitch {
+            0% {
+                opacity: 1;
+            }
+            0.1% {
+                opacity: 0;
+            }
+            0.2% {
+                opacity: 1;
+            }
+            5% {
+                opacity: 1;
+            }
+            5.1% {
+                opacity: 0;
+            }
+            5.2% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>NEXUS-7 // SURVEILLANCE SYSTEM</h1>
+            <div>SECURITY CLEARANCE: ALPHA</div>
+        </div>
+        <div id="datetime" class="datetime">--:--:-- | --/--/----</div>
+    </header>
+    
+    <div class="panel camera-feed">
+        <div class="panel-title">
+            <span>LIVE FEED: SECTOR 12-B</span>
+            <span class="status">RECORDING</span>
+        </div>
+        <div class="camera-container">
+            <img src="https://images.unsplash.com/photo-1667328931918-b6362ed95c1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Surveillance camera feed showing urban area">
+            <div class="camera-overlay"></div>
+            <div class="camera-scan"></div>
+            <div class="camera-info">
+                CAM-12B // NIGHT VISION ACTIVE // FACIAL RECOGNITION ENABLED
+            </div>
+        </div>
+    </div>
+    
+    <div class="panel terminal">
+        <div class="panel-title">
+            <span>SYSTEM TERMINAL</span>
+            <span class="status">CONNECTED</span>
+        </div>
+        <div class="terminal-content" id="terminal">
+            <!-- Terminal content will be added by JavaScript -->
+        </div>
+    </div>
+    
+    <div class="panel target-info">
+        <div class="panel-title">
+            <span>TARGET PROFILE</span>
+            <span class="status">CLASSIFIED</span>
+        </div>
+        <div class="target-data">
+            <dt>ID:</dt>
+            <dd>XR-7429-ALPHA</dd>
+            
+            <dt>NAME:</dt>
+            <dd>REDACTED</dd>
+            
+            <dt>ALIAS:</dt>
+            <dd>GHOST</dd>
+            
+            <dt>AGE:</dt>
+            <dd>34</dd>
+            
+            <dt>OCCUPATION:</dt>
+            <dd>NETRUNNER</dd>
+            
+            <dt>THREAT LEVEL:</dt>
+            <dd class="glitch-effect" style="color: var(--neon-magenta);">HIGH</dd>
+            
+            <dt>LAST SEEN:</dt>
+            <dd>NIGHT CITY, SECTOR 12</dd>
+            
+            <dt>KNOWN ASSOCIATES:</dt>
+            <dd>BLACKWALL COLLECTIVE</dd>
+            
+            <dt>CYBERNETIC IMPLANTS:</dt>
+            <dd>NEURAL LINK, OPTIC BOOST, REFLEX ENHANCER</dd>
+            
+            <dt>STATUS:</dt>
+            <dd>UNDER SURVEILLANCE <span class="blink">■</span></dd>
+        </div>
+    </div>
+    
+    <div class="panel map-panel">
+        <div class="panel-title">
+            <span>LOCATION TRACKING</span>
+            <span class="status">ACTIVE</span>
+        </div>
+        <div class="map-container">
+            <img class="map" src="https://images.unsplash.com/photo-1446776899648-aa78eefe8ed0?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="City map with target location">
+            <div class="map-marker" style="top: 45%; left: 65%;"></div>
+        </div>
+    </div>
+    
+    <div class="panel system-status">
+        <div class="panel-title">
+            <span>SYSTEM STATUS</span>
+            <span class="status">MONITORING</span>
+        </div>
+        <div class="status-grid">
+            <div class="status-item">
+                <div class="status-label">NETWORK</div>
+                <div class="status-value online">ONLINE</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 92%;"></div>
+                </div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">ENCRYPTION</div>
+                <div class="status-value online">ACTIVE</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">FACIAL RECOGNITION</div>
+                <div class="status-value online">RUNNING</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 78%;"></div>
+                </div>
+            </div>
+            <div class="status-item">
+                <div class="status-label">FIREWALL</div>
+                <div class="status-value warning">WARNING</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 45%; background-color: #ff0;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update date and time
+        function updateDateTime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const year = now.getFullYear();
+            
+            document.getElementById('datetime').textContent = 
+                `${hours}:${minutes}:${seconds} | ${day}/${month}/${year}`;
+        }
+        
+        setInterval(updateDateTime, 1000);
+        updateDateTime();
+        
+        // Terminal text
+        const terminalElement = document.getElementById('terminal');
+        const terminalLines = [
+            "> SYSTEM BOOT SEQUENCE INITIATED",
+            "> LOADING NEXUS-7 SURVEILLANCE PROTOCOLS...",
+            "> CONNECTING TO SECURE NETWORK...",
+            "> ACCESS GRANTED. WELCOME AGENT #7734",
+            "> INITIALIZING FACIAL RECOGNITION SYSTEMS...",
+            "> SCANNING DATABASE FOR TARGET MATCHES...",
+            "> WARNING: UNAUTHORIZED ACCESS ATTEMPT DETECTED IN SECTOR 9",
+            "> SECURITY COUNTERMEASURES DEPLOYED",
+            "> TRACKING TARGET MOVEMENT THROUGH SECTOR 12-B",
+            "> ANALYZING COMMUNICATION PATTERNS...",
+            "> INTERCEPTING ENCRYPTED TRANSMISSIONS...",
+            "> DECRYPTION IN PROGRESS... 34% COMPLETE",
+            "> ALERT: TARGET SPOTTED AT COORDINATES 34.05, -118.24",
+            "> DEPLOYING ADDITIONAL SURVEILLANCE DRONES",
+            "> CROSS-REFERENCING BIOMETRIC DATA...",
+            "> MATCH FOUND: 98.7% CONFIDENCE",
+            "> UPDATING TARGET PROFILE...",
+            "> FIREWALL BREACH ATTEMPT DETECTED",
+            "> TRACING SOURCE... ORIGIN: NIGHT CITY LOWER DISTRICT",
+            "> REINFORCING SECURITY PROTOCOLS...",
+            "> SCANNING FOR KNOWN ASSOCIATES IN VICINITY..."
+        ];
+        
+        let lineIndex = 0;
+        
+        function addTerminalLine() {
+            if (lineIndex < terminalLines.length) {
+                const line = document.createElement('div');
+                line.className = 'terminal-line';
+                line.textContent = terminalLines[lineIndex];
+                terminalElement.appendChild(line);
+                terminalElement.scrollTop = terminalElement.scrollHeight;
+                lineIndex++;
+                
+                // Random delay between lines
+                const delay = 1000 + Math.random() * 2000;
+                setTimeout(addTerminalLine, delay);
+            } else {
+                // Start over with a delay
+                setTimeout(() => {
+                    lineIndex = 0;
+                    addTerminalLine();
+                }, 5000);
+            }
+        }
+        
+        // Start terminal animation
+        setTimeout(addTerminalLine, 1000);
+        
+        // Simulate random system alerts
+        function randomAlert() {
+            const alerts = [
+                "FACIAL RECOGNITION MATCH: 87% CONFIDENCE",
+                "UNAUTHORIZED ACCESS ATTEMPT BLOCKED",
+                "NEW TARGET LOCATION ACQUIRED",
+                "COMMUNICATION INTERCEPTED",
+                "SECURITY BREACH ATTEMPT DETECTED"
+            ];
+            
+            const randomAlert = alerts[Math.floor(Math.random() * alerts.length)];
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.textContent = `> ALERT: ${randomAlert}`;
+            line.style.color = '#f0f';
+            terminalElement.appendChild(line);
+            terminalElement.scrollTop = terminalElement.scrollHeight;
+            
+            // Schedule next alert
+            setTimeout(randomAlert, 10000 + Math.random() * 20000);
+        }
+        
+        // Start random alerts after a delay
+        setTimeout(randomAlert, 8000);
+    </script>
+</body>
+</html>
