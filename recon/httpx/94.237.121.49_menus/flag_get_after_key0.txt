@@ -1,0 +1,9 @@
+Connection to 94.237.121.49 41769 port [tcp/*] succeeded!
+1) Get flag
+2) Encrypt Message
+3) Decrypt Message
+Your option: ccbd6cae78dcbd07c5691ca4b99513
+1) Get flag
+2) Encrypt Message
+3) Decrypt Message
+Your option: 

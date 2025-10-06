@@ -1,0 +1,7 @@
+Connection to 94.237.121.49 36986 port [tcp/*] succeeded!
+Choose an option:
+1. Generate prime
+2. Update key
+3. Encrypt flag
+4. Exit
+> Encrypted key:
