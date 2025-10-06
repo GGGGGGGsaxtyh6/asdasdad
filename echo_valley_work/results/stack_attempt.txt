@@ -1,0 +1,20 @@
+[x] Opening connection to shape-facility.picoctf.net on port 64633
+[x] Opening connection to shape-facility.picoctf.net on port 64633: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 64633: Done
+[*] Leaks: [b'0x7ffd7d0acbe0', b'0x625b50cc2413', b'0x7ffd7d0acc80']
+[*] Base: 0x625b50cc1000
+[*] print_flag: 0x625b50cc2269
+[*] Return address value: 0x625b50cc2413
+[*] Stack addresses: 0x7ffd7d0acbe0, 0x7ffd7d0acc80
+[*] Estimated ret addr location: 0x7ffd7d0acc30
+[*] Payload: 58 bytes
+[x] Receiving all data
+[x] Receiving all data: 93B
+[x] Receiving all data: 115B
+[+] Receiving all data: Done (115B)
+[*] Closed connection to shape-facility.picoctf.net port 64633
+
+[*] Response:
+0
+You heard in the distance: }You heard in the distance: }You heard in the distance: }The Valley Disappears
+

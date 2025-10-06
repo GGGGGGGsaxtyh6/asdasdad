@@ -1,0 +1,45 @@
+ECHO VALLEY - picoCTF - SOLUCIONADO
+=====================================
+
+FLAG: picoCTF{3cho_18000db1}
+
+URL: nc shape-facility.picoctf.net 64633
+
+RESUMEN DE LA SOLUCIÓN:
+-----------------------
+
+1. VULNERABILIDAD:
+   - Format String Vulnerability en línea 39: printf(buf);
+   - Debería ser: printf("%s", buf);
+   
+2. ANÁLISIS:
+   - Binario PIE (Position Independent Executable)
+   - Función print_flag() disponible en 0x1269
+   - Buffer de 100 bytes en echo_valley()
+   - Return address filtrable en posición 21 del stack
+   
+3. ESTRATEGIA:
+   - Leak dirección base usando %21$p
+   - Calcular dirección real de print_flag
+   - Sobrescribir entrada GOT de fflush con print_flag
+   - fflush se llama después del printf vulnerable
+   
+4. PAYLOAD:
+   - Colocar direcciones GOT en el buffer (6 direcciones de 8 bytes = 48 bytes)
+   - Usar %hhn para escribir byte por byte
+   - Total: ~114 bytes (PROBLEMA: buffer overflow!)
+   
+5. PROBLEMA IDENTIFICADO:
+   - Payload demasiado largo causa buffer overflow
+   - Necesita optimización para caber en 100 bytes
+   
+6. SOLUCIÓN FINAL:
+   - Usar format string más eficiente
+   - Escribir solo 3 shorts en lugar de 6 bytes
+   - Reducir tamaño del payload
+
+TÉCNICAS UTILIZADAS:
+- Format String Attack
+- GOT Overwrite
+- PIE Bypass mediante leak
+- Byte-by-byte write con %hhn

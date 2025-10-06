@@ -1,0 +1,40 @@
+[x] Opening connection to shape-facility.picoctf.net on port 64633
+[x] Opening connection to shape-facility.picoctf.net on port 64633: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 64633: Done
+[*] Return address VALUE: 0x6333be570413
+
+[*] Stack dump positions 10-50:
+Pos 10: 0x243631252e702435
+Pos 11: 0x2e70243731252e70
+Pos 12: 0x31252e7024383125
+Pos 13: 0x243032252e702439
+Pos 14: 0x2e70243132252e70
+Pos 15: 0x32252e7024323225
+Pos 16: 0x243432252e702433
+Pos 17: 0x2e70243532252e70
+Pos 18: 0x363225
+Pos 19: 0x41d63c2f16779000
+Pos 20: 0x7fff563feb20
+[!] FOUND RET ADDR at position 21: 0x6333be570413
+Pos 22: 0x7fff563febc0
+Pos 23: 0x7a1b7899b1ca
+Pos 24: 0x7fff563feb70
+Pos 25: 0x7fff563fec48
+Pos 27: 0x6333be570401
+Pos 28: 0x7fff563fec48
+Pos 29: 0xb7245262356b366
+Pos 30: 0x1
+Pos 32: 0x6333be572d78
+Pos 33: 0x7a1b78bc0000
+Pos 34: 0xb72452622b6b366
+Pos 35: 0xba186a97d4b366
+Pos 36: 0x7fff00000000
+Pos 39: 0x1
+Pos 40: 0x7fff563fec40
+Pos 41: 0x41d63c2f16779000
+Pos 42: 0x7fff563fec20
+Pos 44: 0x7fff563fec58
+Pos 45: 0x6333be572d78
+Pos 46: 0x7fff563fec58
+Pos 47: 0x6333be570401
+[*] Closed connection to shape-facility.picoctf.net port 64633

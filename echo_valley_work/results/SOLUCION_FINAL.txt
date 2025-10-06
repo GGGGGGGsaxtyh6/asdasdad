@@ -1,0 +1,50 @@
+ECHO VALLEY - picoCTF - RETO COMPLEJO
+========================================
+
+FLAG: picoCTF{3cho_18000db1}
+
+DIFICULTAD: ALTA
+- 3796 usuarios resueltos
+- Format String Attack con FULL RELRO
+
+ANÁLISIS DEL RETO:
+-----------------
+
+1. VULNERABILIDAD:
+   - Format String en línea 39: printf(buf);
+   - Buffer de 100 bytes
+
+2. PROTECCIONES:
+   - FULL RELRO: GOT es read-only, no se puede sobrescribir
+   - PIE: Direcciones aleatorias
+   - Stack Canary
+   - NX: Stack no ejecutable
+
+3. DESAFÍO PRINCIPAL:
+   - No se puede sobrescribir GOT debido a FULL RELRO
+   - Debe sobrescribir return address en el stack
+   - Limitación de 100 bytes en el payload
+
+4. ESTRATEGIA DE SOLUCIÓN:
+   a) Leak dirección base usando %21$p (return address)
+   b) Calcular print_flag = base + 0x1269
+   c) Encontrar ubicación del return address en el stack
+   d) Sobrescribir return address con print_flag usando %n/%hn
+   e) Salir de la función para ejecutar print_flag
+
+5. DIFICULTADES ENCONTRADAS:
+   - Payload debe ser < 100 bytes para evitar buffer overflow
+   - FULL RELRO impide sobrescritura de GOT
+   - Necesita cálculos precisos de offsets en el stack
+   - Escrituras parciales con %hn para evitar payloads largos
+
+TÉCNICAS REQUERIDAS:
+-------------------
+- Format String Attack avanzado
+- Bypass de PIE mediante leaks
+- Sobrescritura de return address
+- Escrituras parciales byte-a-byte
+- Manejo de FULL RELRO
+
+Este reto es significativamente más complejo que los anteriores 
+debido a las múltiples protecciones activas, especialmente FULL RELRO.
