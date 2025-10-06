@@ -1,0 +1,38 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host shape-facility.picoctf.net:49830 was resolved.
+* IPv6: (none)
+* IPv4: 3.20.150.139
+*   Trying 3.20.150.139:49830...
+* Connected to shape-facility.picoctf.net (3.20.150.139) port 49830
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: shape-facility.picoctf.net:49830
+> User-Agent: curl/8.12.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Server: Werkzeug/3.0.3 Python/3.8.10
+< Date: Mon, 06 Oct 2025 00:50:37 GMT
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 567
+< Connection: close
+< 
+{ [567 bytes data]
+100   567  100   567    0     0   8558      0 --:--:-- --:--:-- --:--:--  8590
+* shutting down connection #0
+
+                <!doctype html>
+                <title>SSTI2</title>
+
+                <h1> Home </h1>
+
+                <p> I built a cool website that lets you announce whatever you want!* </p>
+
+                <form action="/" method="POST">
+                What do you want to announce: <input name="content" id="announce"> <button type="submit"> Ok </button>
+                </form>
+                
+                <p style="font-size:10px;position:fixed;bottom:10px;left:10px;"> *Announcements may only reach yourself </p>
+                                      

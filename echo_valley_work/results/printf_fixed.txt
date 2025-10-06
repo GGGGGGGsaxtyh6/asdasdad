@@ -1,0 +1,4 @@
+  File "/workspace/echo_valley_work/exploits/final_exploit.py", line 93
+    work/results/FLAG.txt', 'w') as f:
+                              ^
+SyntaxError: unterminated string literal (detected at line 93)

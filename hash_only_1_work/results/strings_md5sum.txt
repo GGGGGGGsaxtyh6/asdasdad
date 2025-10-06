@@ -1,0 +1,5 @@
+[]A\A]A^A_
+Computing the MD5 hash of /root/flag.txt.... 
+/bin/bash -c 'md5sum /root/flag.txt'
+Error: system() call returned non-zero value: 
+:*3$"

@@ -1,0 +1,13 @@
+[*] Trying stack24 + 0x48 = 0x7ffdff45eda8
+[*] Trying stack24 + 0x48 = 0x7ffdd1a978d8
+[*] Trying stack24 + 0x48 = 0x7fffa30cfad8
+[*] Trying stack24 + 0x50 = 0x7ffd54ee20c0
+[*] Trying stack24 + 0x50 = 0x7fff04e9b2d0
+[*] Trying stack24 + 0x50 = 0x7ffe8541e1d0
+[*] Trying stack24 + 0x58 = 0x7ffd4f0d63a8
+[*] Trying stack24 + 0x58 = 0x7ffe8c98f2e8
+[*] Trying stack24 + 0x58 = 0x7fff7ee58968
+[*] Trying stack24 + 0x60 = 0x7ffd4ef84050
+[*] Trying stack24 + 0x60 = 0x7fff0b00ad40
+[*] Trying stack24 + 0x60 = 0x7fffcf7887a0
+[!] No success with targeted offsets

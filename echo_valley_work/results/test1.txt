@@ -1,0 +1,2 @@
+Welcome to the Echo Valley, Try Shouting: 
+You heard in the distance: AAAA 0x749ce08ac5c0 (nil) (nil) 0x587ae6af82cd (nil) 0x2070252041414141 0x7025207025207025 0x2520702520702520

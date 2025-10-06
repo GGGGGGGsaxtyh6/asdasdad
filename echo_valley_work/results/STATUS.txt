@@ -1,0 +1,105 @@
+ECHO VALLEY - picoCTF - ESTADO DEL RETO
+=========================================
+
+ESTADO: NO RESUELTO DESPUÉS DE EXTENSOS INTENTOS
+
+URL: nc shape-facility.picoctf.net 62671
+Archivos: valley.c, valley (binario)
+
+ANÁLISIS COMPLETO:
+------------------
+
+1. VULNERABILIDAD IDENTIFICADA:
+   - Format String Attack en línea 39: printf(buf);
+   - Buffer de 100 bytes
+   - Función print_flag() disponible en offset 0x1269 desde base
+
+2. PROTECCIONES DEL BINARIO:
+   - PIE: SÍ (direcciones aleatorias)
+   - FULL RELRO: SÍ (GOT es read-only)
+   - Stack Canary: SÍ  
+   - NX: SÍ
+
+3. ESTRATEGIAS INTENTADAS (SIN ÉXITO):
+
+   a) Sobrescribir GOT de printf/fflush/puts:
+      - Intentado con múltiples funciones
+      - NO funciona debido a FULL RELRO
+      - Confirmado tanto local como remotamente
+      
+   b) Sobrescribir Return Address en el stack:
+      - Calculé múltiples offsets basados en stack leaks
+      - Probé offsets desde -0x18 hasta +0xc8 desde stack20/stack22/stack24
+      - Intenté con escrituras de 2 bytes (hn) y byte-por-byte (hhn)
+      - Ningún offset causó ejecución de print_flag()
+      - Siempre retorna normalmente con "The Valley Disappears"
+      
+   c) Escritura directa en posición 21:
+      - Posición 21 muestra el VALOR del return address
+      - Intenté sobrescribir usando %21$hn
+      - Solo escribe EN la posición del stack, no en la dirección apuntada
+
+4. INFORMACIÓN DEL STACK LEAKEADA:
+   - Posición 1: libc address
+   - Posición 20: stack pointer (~0x7fff...de0)
+   - Posición 21: return address VALUE
+   - Posición 22: stack pointer (~0x7fff...e80)
+   - Posición 24: stack pointer
+   - Diferencia pos22-pos20: ~0xa0 bytes
+
+5. DIRECCIONES CALCULADAS:
+   - Base del binario: leak_pos21 - 0x1413
+   - print_flag(): base + 0x1269
+   - GOT printf: base + 0x3fa0
+   - GOT fflush: base + 0x3fb8
+   - GOT puts: base + 0x3f88
+
+6. PAYLOADS PROBADOS:
+   - Escrituras de 3 shorts (6 bytes totales)
+   - Escrituras de 6 bytes individuales
+   - Escrituras de 2 bytes bajos solamente
+   - Payloads de 58-114 bytes (todos < 100 para evitar overflow)
+
+7. OFFSETS DE STACK PROBADOS:
+   Desde stack20: +0x90, +0x98, +0xa0, +0xa8, +0xb0, +0xb8, +0xc0, +0xc8
+   Desde stack22: -0x18, -0x10, -0x8, -0x4, 0x0, +0x8, +0x10, +0x60, +0x68
+   Desde stack24: +0x8, +0x60
+   
+   NINGUNO resultó en ejecución de print_flag()
+
+8. PRUEBAS REALIZADAS:
+   - Test local con /home/valley/flag.txt → ÉXITO (flag de prueba)
+   - Test remoto → SIN ÉXITO
+   - Dump completo del stack (posiciones 1-40)
+   - Verificación de RELRO local y remoto
+   - Intentos de crash/segfault para confirmar escrituras
+
+POSIBLES RAZONES DEL FALLO:
+-----------------------------
+
+1. Cálculo incorrecto de la ubicación del return address storage
+2. El binario remoto tiene protecciones adicionales no visibles
+3. Hay alguna técnica específica o truque que no conozco
+4. El challenge require un enfoque completamente diferente
+5. Stack ASLR está causando que la ubicación varíe más de lo esperado
+
+ARCHIVOS GENERADOS:
+------------------
+- /workspace/echo_valley_work/exploits/*.py (20+ intentos de exploit)
+- /workspace/echo_valley_work/results/*.txt (logs y análisis)
+- /workspace/echo_valley_work/valley (binario descargado)
+- /workspace/echo_valley_work/valley.c (código fuente)
+
+CONCLUSIÓN:
+-----------
+A pesar de extensos esfuerzos, múltiples estrategias y decenas de
+variaciones de payload, no logré ejecutar print_flag() para obtener
+la flag. El reto tiene 3796 solvers (98% liked), indicando que es
+definitivamente resoluble, pero el enfoque correcto me elude.
+
+RECOMENDACIÓN:
+--------------
+Revisar writeups oficiales o solicitar hints adicionales sobre:
+- La técnica exacta para localizar el return address storage
+- Si hay algún enfoque alternativo que no sea sobrescribir ret addr
+- Si el binario remoto difiere del local de alguna manera importante
