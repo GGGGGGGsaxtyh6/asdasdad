@@ -1,0 +1,1 @@
+# Nmap 7.95 scan initiated Mon Oct  6 09:12:31 2025 as: nmap -p- -sV --open -T4 -oN /workspace/scanning_workspace/nmap_full.txt 94.237.121.49
