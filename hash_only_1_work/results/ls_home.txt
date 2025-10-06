@@ -1,0 +1,8 @@
+Warning: Permanently added '[shape-facility.picoctf.net]:61383' (ED25519) to the list of known hosts.
+total 24
+drwxr-xr-x 1 ctf-player ctf-player    20 Oct  6 00:59 .
+drwxr-xr-x 1 root       root          24 Aug 21 19:35 ..
+drwx------ 2 ctf-player ctf-player    34 Oct  6 00:59 .cache
+-rw-r--r-- 1 root       root          67 Aug 21 19:35 .profile
+-rwsr-xr-x 1 root       root       18312 Aug 21 19:35 flaghasher
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)

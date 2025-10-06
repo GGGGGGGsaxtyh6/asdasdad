@@ -58,13 +58,61 @@ ARCHIVOS GENERADOS:
 - /workspace/hash_only_2_work/results/strings_output.txt
 
 ================================================================================
+RETO 3: HASH-ONLY-1 (Binary Exploitation / Privilege Escalation)
+================================================================================
+
+FLAG: picoCTF{sy5teM_b!n@riEs_4r3_5c@red_0f_yoU_bb95ff8e}
+SSH: shape-facility.picoctf.net:61383
+USER: ctf-player
+PASS: 483e80d4
+
+TÉCNICA: PATH Hijacking en binario SUID
+DIFICULTAD: Media-Baja
+USUARIOS RESUELTOS: 3909
+
+VULNERABILIDAD:
+- Mismo binario que hash-only-2 (BuildID idéntico)
+- Binario SUID ubicado en ~/flaghasher (directorio home)
+- Ejecuta md5sum sin ruta absoluta
+- Comando ejecutado: /bin/bash -c 'md5sum /root/flag.txt'
+
+EXPLOTACIÓN:
+1. Crear script malicioso: /tmp/md5sum que ejecuta "cat /root/flag.txt"
+2. Modificar PATH: export PATH=/tmp:$PATH
+3. Ejecutar ./flaghasher desde el directorio home
+4. Obtener flag con privilegios de root
+
+NOTA: La única diferencia con hash-only-2 es la ubicación del binario:
+- hash-only-1: ~/flaghasher (home del usuario)
+- hash-only-2: /usr/local/bin/flaghasher (binario global)
+
+ARCHIVOS GENERADOS:
+- /workspace/hash_only_1_work/results/solucion.txt
+- /workspace/hash_only_1_work/results/flag.txt
+- /workspace/hash_only_1_work/flaghasher (binario descargado)
+
+================================================================================
 HERRAMIENTAS INSTALADAS
 ================================================================================
 
 Herramientas instaladas durante la sesión:
-- sshpass (para automatización de conexiones SSH)
+- sshpass (para automatización de conexiones SSH con password)
 
 Directorio de trabajo: /workspace/
+
+================================================================================
+ESTADÍSTICAS DE LA SESIÓN
+================================================================================
+
+Total de retos resueltos: 3
+- Web Exploitation: 1 (SSTI2)
+- Binary Exploitation: 2 (hash-only-1, hash-only-2)
+
+Tiempo promedio por reto: ~10 minutos
+Técnicas utilizadas:
+- SSTI bypass con encoding hexadecimal
+- PATH hijacking en binarios SUID
+- Privilege escalation mediante command injection
 
 ================================================================================
 NOTAS IMPORTANTES
@@ -72,8 +120,25 @@ NOTAS IMPORTANTES
 
 - Se siguió la política de NO usar timeout en escaneos (nmap, ffuf, nikto)
 - Se usó timeout en TODAS las conexiones SSH/nc para evitar colgados
+- Timeouts usados: 10-15 segundos para comandos SSH
 - Todos los scripts se ejecutaron en línea (bash -c, python3 -)
-- NO se dejaron archivos temporales en servidores remotos
-- Ambos retos resueltos de forma 100% autónoma sin buscar writeups
+- NO se dejaron archivos temporales en servidores remotos (limpieza completa)
+- Todos los retos resueltos de forma 100% autónoma sin buscar writeups
+- Se documentó cada paso en archivos de texto para referencia futura
+
+================================================================================
+ARCHIVOS DE TRABAJO GENERADOS
+================================================================================
+
+Directorios principales:
+- /workspace/ssti2_work/
+- /workspace/hash_only_1_work/
+- /workspace/hash_only_2_work/
+
+Cada directorio contiene:
+- results/solucion.txt - Documentación completa de la solución
+- results/*.txt - Logs de comandos y outputs
+- exploits/ - Scripts de explotación (si aplica)
+- scans/ - Resultados de escaneos (si aplica)
 
 ================================================================================
