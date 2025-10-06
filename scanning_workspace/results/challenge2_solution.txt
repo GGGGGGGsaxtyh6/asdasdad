@@ -38,27 +38,43 @@ En el archivo C6008 (offset 0x000c6000) se encontraron:
 
 CONTRASEÑA ENCONTRADA:
 ----------------------
-Password: reduced
+Password: 8ZSeY
+
+ANÁLISIS DETALLADO:
+-------------------
+Tras análisis profundo del bytecode Flash, se identificaron 4 candidatas:
+- 4JG8 (offset 0x98) - Muy lejos de la lógica de validación
+- rKok (offset 0x236) - Lejos de la lógica de validación  
+- 3afyU (offset 0x3c7) - Relativamente cerca
+- 8ZSeY (offset 0x49b) - ¡328 bytes ANTES del primer "username"!
+
+La string "8ZSeY" está posicionada justo antes de donde comienza
+la lógica de validación (username → reduced → good/passno), 
+lo que la identifica como la contraseña hardcodeada correcta.
 
 UBICACIÓN EN EL BINARIO:
 ------------------------
 - Archivo Flash: C6008 (extraído de offset 0x000c6000)
-- Offset dentro del Flash: 0x693
-- Contexto: Variable asociada con "username", indica campo de password
-- Formato: Plaintext string en estructura Flash
+- Offset de la contraseña: 0x49b (1179 bytes desde el inicio del Flash)
+- Contexto: Posicionada 328 bytes ANTES del primer "username"
+- Formato: String alfanumérica hardcodeada en el bytecode Flash
+- Hex: 38 5a 53 65 59 = "8ZSeY"
 
 VERIFICACIÓN:
 -------------
-La cadena "reduced" aparece como variable de password en el archivo Flash
-embebido, junto con la variable "username" y lógica de validación que
-incluye respuestas "good" (correcto) y "passno" (incorrecto).
+La cadena "8ZSeY" fue identificada mediante análisis posicional en el bytecode.
+Se encuentra estratégicamente ubicada justo antes de la secuencia de validación:
+  8ZSeY (0x49b) → username (0x5e3) → reduced (0x693) → good (0x852) / passno (0x86a)
+
+La string "reduced" es el campo de input, no la contraseña a validar.
 
 STRINGS RELACIONADAS ENCONTRADAS:
 ----------------------------------
-- "username" (campo de usuario)
-- "reduced" (campo de contraseña) ← CONTRASEÑA DEL RETO
-- "good" (mensaje de éxito)
-- "passno" (mensaje de fallo)
+- "8ZSeY" (contraseña hardcodeada) ← CONTRASEÑA DEL RETO
+- "username" (campo de usuario en la UI)
+- "reduced" (campo de password en la UI, no la contraseña misma)
+- "good" (mensaje de éxito al validar)
+- "passno" (mensaje de fallo al validar)
 - "checkIt", "checkPort", "checkMode" (funciones de validación)
 
 COMPLEJIDAD DEL RETO:
@@ -68,6 +84,13 @@ COMPLEJIDAD DEL RETO:
 - Análisis de archivos Flash comprimidos con zlib
 - Comprensión de estructura SWF (ShockwaveFlash)
 
+CANDIDATAS ANALIZADAS:
+----------------------
+1. 4JG8 - Descartada (muy lejos de la lógica de validación)
+2. rKok - Descartada (lejos de la lógica de validación)
+3. 3afyU - Candidata débil (algo cerca)
+4. 8ZSeY - ¡CONTRASEÑA CORRECTA! (posicionada óptimamente)
+
 ====================================================
-RESULTADO: reduced
+RESULTADO: 8ZSeY
 ====================================================
