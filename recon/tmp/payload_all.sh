@@ -1,0 +1,1 @@
+ip=1;curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZmE4OTg5LTIxMTItNDg4ZC05Mjk4LTViNTFkMjEwNjQ2NSIsImVtYWlsIjoiYUBhLmNvbSIsImlhdCI6MTc1OTcwNTk1NiwiZXhwIjoxNzU5NzA2ODU2fQ.rupWCr6PSu_qFSN-C02TDIokNR0DLu9n9WMsJMwBxEg' http://127.0.0.1:41412/api/notes/all

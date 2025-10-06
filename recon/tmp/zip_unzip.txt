@@ -1,0 +1,17 @@
+
+7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
+ 64-bit locale=en_US.UTF-8 Threads:4 OPEN_MAX:1048576, ASM
+
+Scanning the drive for archives:
+1 file, 4220994 bytes (4123 KiB)
+
+Extracting archive: Celestial Scribe (1).zip
+--
+Path = Celestial Scribe (1).zip
+Type = zip
+Physical Size = 4220994
+
+Everything is Ok
+
+Size:       9338560
+Compressed: 4220994

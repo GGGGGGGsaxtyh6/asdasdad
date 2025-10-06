@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ping IP</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form name='ping' class='form' method='post' id='form1' action='/ping'>
+        <center>
+            <h1>
+                <label for="ip">Ping Your IP:</label>
+                <center>127.0.0.
+                    <input type="number" id="ip" name="ip" min="1" max="255" maxlength="3"
+                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                        required>
+            </h1>
+        </center>
+        <br>
+        <button class='btn block-cube block-cube-hover' id='submit' type='submit'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='text'>
+                Ping
+            </div>
+        </button>
+    </form>
+</body>
+
+</html>

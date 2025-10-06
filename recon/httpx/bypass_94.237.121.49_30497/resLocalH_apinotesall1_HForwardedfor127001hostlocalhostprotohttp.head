@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 264
+ETag: W/"108-PaMX3O6B+Kie7e6htuEa642GUyw"
+Date: Mon, 06 Oct 2025 01:30:01 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"success":true,"notes":[{"id":"cfc022b7-381e-4985-961e-9ff9dd30888b","title":"Welcome to Secure Cloud Notes","createdAt":"2025-10-06T01:29:50.360Z"},{"id":"572b582f-5956-4618-9662-80c54abbc1c9","title":"Security Features","createdAt":"2025-10-06T01:29:50.360Z"}]}

@@ -1,0 +1,4 @@
+1) Get flag
+2) Encrypt Message
+3) Decrypt Message
+Your option: Enter ciphertext: An error occured.

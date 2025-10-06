@@ -1,0 +1,7 @@
+Connection to 94.237.121.49 56357 port [tcp/*] succeeded!
+[1]: Get encrypted flag
+[2]: Encrypt your own message
+> Input message as hex: Invalid message format
+[1]: Get encrypted flag
+[2]: Encrypt your own message
+> 

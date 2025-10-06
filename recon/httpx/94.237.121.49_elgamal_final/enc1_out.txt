@@ -1,0 +1,4 @@
+Invalid message format
+[1]: Get encrypted flag
+[2]: Encrypt your own message
+> 

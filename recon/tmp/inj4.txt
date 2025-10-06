@@ -1,0 +1,1 @@
+ip=1;curl -s http://127.0.0.1:41412/version || true

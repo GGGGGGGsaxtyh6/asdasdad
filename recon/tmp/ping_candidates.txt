@@ -1,0 +1,12 @@
+ping
+pingip
+ping-ip
+check
+health
+status
+api/ping
+api/pingip
+api/ping-ip
+api/check
+api/health
+api/status

@@ -1,0 +1,10 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 91
+ETag: W/"5b-rWgD8jifUCdq49iDMuHrj6LFQKA"
+Date: Mon, 06 Oct 2025 01:29:59 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+{"success":true,"userId":"e576ebfd-efd1-4774-a23c-01b434287296","message":"Token is valid"}

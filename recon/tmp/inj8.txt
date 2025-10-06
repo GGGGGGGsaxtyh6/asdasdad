@@ -1,0 +1,1 @@
+ip=1;ls -al /var/www/html 2>/dev/null

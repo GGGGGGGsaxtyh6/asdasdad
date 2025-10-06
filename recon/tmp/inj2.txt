@@ -1,0 +1,1 @@
+ip=1;grep -R "HTB{" -n / 2>/dev/null | head -n 100

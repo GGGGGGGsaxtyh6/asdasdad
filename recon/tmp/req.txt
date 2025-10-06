@@ -1,0 +1,5 @@
+GET /api/notes/all HTTP/1.1
+Host: 127.0.0.1:41412
+Connection: close
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZmE4OTg5LTIxMTItNDg4ZC05Mjk4LTViNTFkMjEwNjQ2NSIsImVtYWlsIjoiYUBhLmNvbSIsImlhdCI6MTc1OTcwODQ5MCwiZXhwIjoxNzU5NzA5MzkwfQ._vlepy_3B2Nyh52H4R_VjBv_s3bG6cqZe7GHKL8DDXs
+

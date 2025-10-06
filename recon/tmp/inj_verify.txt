@@ -1,0 +1,1 @@
+ip=1;curl -s -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImI0ZmE4OTg5LTIxMTItNDg4ZC05Mjk4LTViNTFkMjEwNjQ2NSIsImVtYWlsIjoiYUBhLmNvbSIsImlhdCI6MTc1OTcxMDU2NywiZXhwIjoxNzU5NzExNDY3fQ.cGR8nDdGWGcIG95Qy3XAnRvR20Ksc8FtD_kt9IAmLWc' http://127.0.0.1:41412/api/auth/verify
