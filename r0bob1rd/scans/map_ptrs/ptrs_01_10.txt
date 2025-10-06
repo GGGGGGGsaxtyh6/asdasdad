@@ -1,0 +1,33 @@
+-=[ R0boB1rd ]=-
+  ___                 ___
+ /___\               /___\  
+ (* *)               (* *) 
+(  V  )             (  V  )
+--m-m-----------------m-m--
++----+------------------+
+| ID |   R0bob1rd Name  |
++----+------------------+
+|  0 | MechWings        |
+|  1 | TechFeathers     |
+|  2 | CircuitBirds     |
+|  3 | SteelAvians      |
+|  4 | NanoNestlings    |
+|  5 | ByteBeaks        |
+|  6 | ElectricEaglets  |
+|  7 | GearRavens       |
+|  8 | SiliconSparrows  |
+|  9 | AutomataFowl     |
++----+------------------+
+
+Select a R0bob1rd > 
+You've chosen: MechWings
+
+Enter bird's little description
+> Crafting..
+   \\  
+   (*>  
+\\_//)
+ \_/_)
+  _|_  
+[Description]
+I1:0x7ff0f5d5b723 I2:(nil) I3:0x7ff0f5c7c077 I4:0xe I5:(nil) I6:(nil) I7:0xf5bfee93 I8:0x20702431253a3149 I9:0x20702432253a3249 I10:0x20702433253a3349

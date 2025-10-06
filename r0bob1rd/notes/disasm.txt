@@ -1,0 +1,436 @@
+
+/workspace/r0bob1rd/r0bob1rd:     file format elf64-x86-64
+
+
+Disassembly of section .init:
+
+0000000000400738 <_init>:
+  400738:	48 83 ec 08          	sub    $0x8,%rsp
+  40073c:	48 8b 05 b5 18 20 00 	mov    0x2018b5(%rip),%rax        # 601ff8 <__gmon_start__>
+  400743:	48 85 c0             	test   %rax,%rax
+  400746:	74 02                	je     40074a <_init+0x12>
+  400748:	ff d0                	call   *%rax
+  40074a:	48 83 c4 08          	add    $0x8,%rsp
+  40074e:	c3                   	ret
+
+Disassembly of section .plt:
+
+0000000000400750 <.plt>:
+  400750:	ff 35 b2 18 20 00    	push   0x2018b2(%rip)        # 602008 <_GLOBAL_OFFSET_TABLE_+0x8>
+  400756:	ff 25 b4 18 20 00    	jmp    *0x2018b4(%rip)        # 602010 <_GLOBAL_OFFSET_TABLE_+0x10>
+  40075c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400760 <_exit@plt>:
+  400760:	ff 25 b2 18 20 00    	jmp    *0x2018b2(%rip)        # 602018 <_exit@GLIBC_2.2.5>
+  400766:	68 00 00 00 00       	push   $0x0
+  40076b:	e9 e0 ff ff ff       	jmp    400750 <.plt>
+
+0000000000400770 <puts@plt>:
+  400770:	ff 25 aa 18 20 00    	jmp    *0x2018aa(%rip)        # 602020 <puts@GLIBC_2.2.5>
+  400776:	68 01 00 00 00       	push   $0x1
+  40077b:	e9 d0 ff ff ff       	jmp    400750 <.plt>
+
+0000000000400780 <__stack_chk_fail@plt>:
+  400780:	ff 25 a2 18 20 00    	jmp    *0x2018a2(%rip)        # 602028 <__stack_chk_fail@GLIBC_2.4>
+  400786:	68 02 00 00 00       	push   $0x2
+  40078b:	e9 c0 ff ff ff       	jmp    400750 <.plt>
+
+0000000000400790 <printf@plt>:
+  400790:	ff 25 9a 18 20 00    	jmp    *0x20189a(%rip)        # 602030 <printf@GLIBC_2.2.5>
+  400796:	68 03 00 00 00       	push   $0x3
+  40079b:	e9 b0 ff ff ff       	jmp    400750 <.plt>
+
+00000000004007a0 <alarm@plt>:
+  4007a0:	ff 25 92 18 20 00    	jmp    *0x201892(%rip)        # 602038 <alarm@GLIBC_2.2.5>
+  4007a6:	68 04 00 00 00       	push   $0x4
+  4007ab:	e9 a0 ff ff ff       	jmp    400750 <.plt>
+
+00000000004007b0 <fgets@plt>:
+  4007b0:	ff 25 8a 18 20 00    	jmp    *0x20188a(%rip)        # 602040 <fgets@GLIBC_2.2.5>
+  4007b6:	68 05 00 00 00       	push   $0x5
+  4007bb:	e9 90 ff ff ff       	jmp    400750 <.plt>
+
+00000000004007c0 <getchar@plt>:
+  4007c0:	ff 25 82 18 20 00    	jmp    *0x201882(%rip)        # 602048 <getchar@GLIBC_2.2.5>
+  4007c6:	68 06 00 00 00       	push   $0x6
+  4007cb:	e9 80 ff ff ff       	jmp    400750 <.plt>
+
+00000000004007d0 <signal@plt>:
+  4007d0:	ff 25 7a 18 20 00    	jmp    *0x20187a(%rip)        # 602050 <signal@GLIBC_2.2.5>
+  4007d6:	68 07 00 00 00       	push   $0x7
+  4007db:	e9 70 ff ff ff       	jmp    400750 <.plt>
+
+00000000004007e0 <fflush@plt>:
+  4007e0:	ff 25 72 18 20 00    	jmp    *0x201872(%rip)        # 602058 <fflush@GLIBC_2.2.5>
+  4007e6:	68 08 00 00 00       	push   $0x8
+  4007eb:	e9 60 ff ff ff       	jmp    400750 <.plt>
+
+00000000004007f0 <setvbuf@plt>:
+  4007f0:	ff 25 6a 18 20 00    	jmp    *0x20186a(%rip)        # 602060 <setvbuf@GLIBC_2.2.5>
+  4007f6:	68 09 00 00 00       	push   $0x9
+  4007fb:	e9 50 ff ff ff       	jmp    400750 <.plt>
+
+0000000000400800 <__isoc99_scanf@plt>:
+  400800:	ff 25 62 18 20 00    	jmp    *0x201862(%rip)        # 602068 <__isoc99_scanf@GLIBC_2.7>
+  400806:	68 0a 00 00 00       	push   $0xa
+  40080b:	e9 40 ff ff ff       	jmp    400750 <.plt>
+
+0000000000400810 <usleep@plt>:
+  400810:	ff 25 5a 18 20 00    	jmp    *0x20185a(%rip)        # 602070 <usleep@GLIBC_2.2.5>
+  400816:	68 0b 00 00 00       	push   $0xb
+  40081b:	e9 30 ff ff ff       	jmp    400750 <.plt>
+
+Disassembly of section .text:
+
+0000000000400820 <_start>:
+  400820:	31 ed                	xor    %ebp,%ebp
+  400822:	49 89 d1             	mov    %rdx,%r9
+  400825:	5e                   	pop    %rsi
+  400826:	48 89 e2             	mov    %rsp,%rdx
+  400829:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+  40082d:	50                   	push   %rax
+  40082e:	54                   	push   %rsp
+  40082f:	49 c7 c0 d0 0c 40 00 	mov    $0x400cd0,%r8
+  400836:	48 c7 c1 60 0c 40 00 	mov    $0x400c60,%rcx
+  40083d:	48 c7 c7 0f 0c 40 00 	mov    $0x400c0f,%rdi
+  400844:	ff 15 a6 17 20 00    	call   *0x2017a6(%rip)        # 601ff0 <__libc_start_main@GLIBC_2.2.5>
+  40084a:	f4                   	hlt
+  40084b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000400850 <_dl_relocate_static_pie>:
+  400850:	f3 c3                	repz ret
+  400852:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  400859:	00 00 00 
+  40085c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000400860 <deregister_tm_clones>:
+  400860:	55                   	push   %rbp
+  400861:	b8 f0 20 60 00       	mov    $0x6020f0,%eax
+  400866:	48 3d f0 20 60 00    	cmp    $0x6020f0,%rax
+  40086c:	48 89 e5             	mov    %rsp,%rbp
+  40086f:	74 17                	je     400888 <deregister_tm_clones+0x28>
+  400871:	b8 00 00 00 00       	mov    $0x0,%eax
+  400876:	48 85 c0             	test   %rax,%rax
+  400879:	74 0d                	je     400888 <deregister_tm_clones+0x28>
+  40087b:	5d                   	pop    %rbp
+  40087c:	bf f0 20 60 00       	mov    $0x6020f0,%edi
+  400881:	ff e0                	jmp    *%rax
+  400883:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  400888:	5d                   	pop    %rbp
+  400889:	c3                   	ret
+  40088a:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+0000000000400890 <register_tm_clones>:
+  400890:	be f0 20 60 00       	mov    $0x6020f0,%esi
+  400895:	55                   	push   %rbp
+  400896:	48 81 ee f0 20 60 00 	sub    $0x6020f0,%rsi
+  40089d:	48 89 e5             	mov    %rsp,%rbp
+  4008a0:	48 c1 fe 03          	sar    $0x3,%rsi
+  4008a4:	48 89 f0             	mov    %rsi,%rax
+  4008a7:	48 c1 e8 3f          	shr    $0x3f,%rax
+  4008ab:	48 01 c6             	add    %rax,%rsi
+  4008ae:	48 d1 fe             	sar    $1,%rsi
+  4008b1:	74 15                	je     4008c8 <register_tm_clones+0x38>
+  4008b3:	b8 00 00 00 00       	mov    $0x0,%eax
+  4008b8:	48 85 c0             	test   %rax,%rax
+  4008bb:	74 0b                	je     4008c8 <register_tm_clones+0x38>
+  4008bd:	5d                   	pop    %rbp
+  4008be:	bf f0 20 60 00       	mov    $0x6020f0,%edi
+  4008c3:	ff e0                	jmp    *%rax
+  4008c5:	0f 1f 00             	nopl   (%rax)
+  4008c8:	5d                   	pop    %rbp
+  4008c9:	c3                   	ret
+  4008ca:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+
+00000000004008d0 <__do_global_dtors_aux>:
+  4008d0:	80 3d 51 18 20 00 00 	cmpb   $0x0,0x201851(%rip)        # 602128 <completed.7698>
+  4008d7:	75 17                	jne    4008f0 <__do_global_dtors_aux+0x20>
+  4008d9:	55                   	push   %rbp
+  4008da:	48 89 e5             	mov    %rsp,%rbp
+  4008dd:	e8 7e ff ff ff       	call   400860 <deregister_tm_clones>
+  4008e2:	c6 05 3f 18 20 00 01 	movb   $0x1,0x20183f(%rip)        # 602128 <completed.7698>
+  4008e9:	5d                   	pop    %rbp
+  4008ea:	c3                   	ret
+  4008eb:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+  4008f0:	f3 c3                	repz ret
+  4008f2:	0f 1f 40 00          	nopl   0x0(%rax)
+  4008f6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  4008fd:	00 00 00 
+
+0000000000400900 <frame_dummy>:
+  400900:	55                   	push   %rbp
+  400901:	48 89 e5             	mov    %rsp,%rbp
+  400904:	5d                   	pop    %rbp
+  400905:	eb 89                	jmp    400890 <register_tm_clones>
+
+0000000000400907 <ignore_me_init_buffering>:
+  400907:	55                   	push   %rbp
+  400908:	48 89 e5             	mov    %rsp,%rbp
+  40090b:	48 8b 05 ee 17 20 00 	mov    0x2017ee(%rip),%rax        # 602100 <stdout@GLIBC_2.2.5>
+  400912:	b9 00 00 00 00       	mov    $0x0,%ecx
+  400917:	ba 02 00 00 00       	mov    $0x2,%edx
+  40091c:	be 00 00 00 00       	mov    $0x0,%esi
+  400921:	48 89 c7             	mov    %rax,%rdi
+  400924:	e8 c7 fe ff ff       	call   4007f0 <setvbuf@plt>
+  400929:	48 8b 05 e0 17 20 00 	mov    0x2017e0(%rip),%rax        # 602110 <stdin@GLIBC_2.2.5>
+  400930:	b9 00 00 00 00       	mov    $0x0,%ecx
+  400935:	ba 02 00 00 00       	mov    $0x2,%edx
+  40093a:	be 00 00 00 00       	mov    $0x0,%esi
+  40093f:	48 89 c7             	mov    %rax,%rdi
+  400942:	e8 a9 fe ff ff       	call   4007f0 <setvbuf@plt>
+  400947:	48 8b 05 d2 17 20 00 	mov    0x2017d2(%rip),%rax        # 602120 <stderr@GLIBC_2.2.5>
+  40094e:	b9 00 00 00 00       	mov    $0x0,%ecx
+  400953:	ba 02 00 00 00       	mov    $0x2,%edx
+  400958:	be 00 00 00 00       	mov    $0x0,%esi
+  40095d:	48 89 c7             	mov    %rax,%rdi
+  400960:	e8 8b fe ff ff       	call   4007f0 <setvbuf@plt>
+  400965:	90                   	nop
+  400966:	5d                   	pop    %rbp
+  400967:	c3                   	ret
+
+0000000000400968 <kill_on_timeout>:
+  400968:	55                   	push   %rbp
+  400969:	48 89 e5             	mov    %rsp,%rbp
+  40096c:	48 83 ec 10          	sub    $0x10,%rsp
+  400970:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  400973:	83 7d fc 0e          	cmpl   $0xe,-0x4(%rbp)
+  400977:	75 1b                	jne    400994 <kill_on_timeout+0x2c>
+  400979:	48 8d 3d e8 03 00 00 	lea    0x3e8(%rip),%rdi        # 400d68 <_IO_stdin_used+0x88>
+  400980:	b8 00 00 00 00       	mov    $0x0,%eax
+  400985:	e8 06 fe ff ff       	call   400790 <printf@plt>
+  40098a:	bf 00 00 00 00       	mov    $0x0,%edi
+  40098f:	e8 cc fd ff ff       	call   400760 <_exit@plt>
+  400994:	90                   	nop
+  400995:	c9                   	leave
+  400996:	c3                   	ret
+
+0000000000400997 <ignore_me_init_signal>:
+  400997:	55                   	push   %rbp
+  400998:	48 89 e5             	mov    %rsp,%rbp
+  40099b:	48 8d 35 c6 ff ff ff 	lea    -0x3a(%rip),%rsi        # 400968 <kill_on_timeout>
+  4009a2:	bf 0e 00 00 00       	mov    $0xe,%edi
+  4009a7:	e8 24 fe ff ff       	call   4007d0 <signal@plt>
+  4009ac:	bf 3c 00 00 00       	mov    $0x3c,%edi
+  4009b1:	e8 ea fd ff ff       	call   4007a0 <alarm@plt>
+  4009b6:	90                   	nop
+  4009b7:	5d                   	pop    %rbp
+  4009b8:	c3                   	ret
+
+00000000004009b9 <banner>:
+  4009b9:	55                   	push   %rbp
+  4009ba:	48 89 e5             	mov    %rsp,%rbp
+  4009bd:	48 8d 3d d3 03 00 00 	lea    0x3d3(%rip),%rdi        # 400d97 <_IO_stdin_used+0xb7>
+  4009c4:	e8 a7 fd ff ff       	call   400770 <puts@plt>
+  4009c9:	48 8d 3d d8 03 00 00 	lea    0x3d8(%rip),%rdi        # 400da8 <_IO_stdin_used+0xc8>
+  4009d0:	e8 9b fd ff ff       	call   400770 <puts@plt>
+  4009d5:	48 8d 3d e6 03 00 00 	lea    0x3e6(%rip),%rdi        # 400dc2 <_IO_stdin_used+0xe2>
+  4009dc:	e8 8f fd ff ff       	call   400770 <puts@plt>
+  4009e1:	48 8d 3d f7 03 00 00 	lea    0x3f7(%rip),%rdi        # 400ddf <_IO_stdin_used+0xff>
+  4009e8:	e8 83 fd ff ff       	call   400770 <puts@plt>
+  4009ed:	48 8d 3d 07 04 00 00 	lea    0x407(%rip),%rdi        # 400dfb <_IO_stdin_used+0x11b>
+  4009f4:	e8 77 fd ff ff       	call   400770 <puts@plt>
+  4009f9:	48 8d 3d 17 04 00 00 	lea    0x417(%rip),%rdi        # 400e17 <_IO_stdin_used+0x137>
+  400a00:	e8 6b fd ff ff       	call   400770 <puts@plt>
+  400a05:	90                   	nop
+  400a06:	5d                   	pop    %rbp
+  400a07:	c3                   	ret
+
+0000000000400a08 <start_screen>:
+  400a08:	55                   	push   %rbp
+  400a09:	48 89 e5             	mov    %rsp,%rbp
+  400a0c:	48 8d 3d 20 04 00 00 	lea    0x420(%rip),%rdi        # 400e33 <_IO_stdin_used+0x153>
+  400a13:	e8 58 fd ff ff       	call   400770 <puts@plt>
+  400a18:	48 8d 3d 1c 04 00 00 	lea    0x41c(%rip),%rdi        # 400e3b <_IO_stdin_used+0x15b>
+  400a1f:	e8 4c fd ff ff       	call   400770 <puts@plt>
+  400a24:	48 8d 3d 19 04 00 00 	lea    0x419(%rip),%rdi        # 400e44 <_IO_stdin_used+0x164>
+  400a2b:	e8 40 fd ff ff       	call   400770 <puts@plt>
+  400a30:	48 8d 3d 14 04 00 00 	lea    0x414(%rip),%rdi        # 400e4b <_IO_stdin_used+0x16b>
+  400a37:	e8 34 fd ff ff       	call   400770 <puts@plt>
+  400a3c:	48 8d 3d 0f 04 00 00 	lea    0x40f(%rip),%rdi        # 400e52 <_IO_stdin_used+0x172>
+  400a43:	e8 28 fd ff ff       	call   400770 <puts@plt>
+  400a48:	90                   	nop
+  400a49:	5d                   	pop    %rbp
+  400a4a:	c3                   	ret
+
+0000000000400a4b <printRobobirds>:
+  400a4b:	55                   	push   %rbp
+  400a4c:	48 89 e5             	mov    %rsp,%rbp
+  400a4f:	48 83 ec 20          	sub    $0x20,%rsp
+  400a53:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+  400a57:	48 8d 3d fc 03 00 00 	lea    0x3fc(%rip),%rdi        # 400e5a <_IO_stdin_used+0x17a>
+  400a5e:	e8 0d fd ff ff       	call   400770 <puts@plt>
+  400a63:	48 8d 3d 0a 04 00 00 	lea    0x40a(%rip),%rdi        # 400e74 <_IO_stdin_used+0x194>
+  400a6a:	e8 01 fd ff ff       	call   400770 <puts@plt>
+  400a6f:	48 8d 3d e4 03 00 00 	lea    0x3e4(%rip),%rdi        # 400e5a <_IO_stdin_used+0x17a>
+  400a76:	e8 f5 fc ff ff       	call   400770 <puts@plt>
+  400a7b:	c7 45 fc 00 00 00 00 	movl   $0x0,-0x4(%rbp)
+  400a82:	eb 31                	jmp    400ab5 <printRobobirds+0x6a>
+  400a84:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400a87:	48 98                	cltq
+  400a89:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+  400a90:	00 
+  400a91:	48 8b 45 e8          	mov    -0x18(%rbp),%rax
+  400a95:	48 01 d0             	add    %rdx,%rax
+  400a98:	48 8b 10             	mov    (%rax),%rdx
+  400a9b:	8b 45 fc             	mov    -0x4(%rbp),%eax
+  400a9e:	89 c6                	mov    %eax,%esi
+  400aa0:	48 8d 3d e7 03 00 00 	lea    0x3e7(%rip),%rdi        # 400e8e <_IO_stdin_used+0x1ae>
+  400aa7:	b8 00 00 00 00       	mov    $0x0,%eax
+  400aac:	e8 df fc ff ff       	call   400790 <printf@plt>
+  400ab1:	83 45 fc 01          	addl   $0x1,-0x4(%rbp)
+  400ab5:	83 7d fc 09          	cmpl   $0x9,-0x4(%rbp)
+  400ab9:	7e c9                	jle    400a84 <printRobobirds+0x39>
+  400abb:	48 8d 3d 98 03 00 00 	lea    0x398(%rip),%rdi        # 400e5a <_IO_stdin_used+0x17a>
+  400ac2:	e8 a9 fc ff ff       	call   400770 <puts@plt>
+  400ac7:	90                   	nop
+  400ac8:	c9                   	leave
+  400ac9:	c3                   	ret
+
+0000000000400aca <operation>:
+  400aca:	55                   	push   %rbp
+  400acb:	48 89 e5             	mov    %rsp,%rbp
+  400ace:	48 83 c4 80          	add    $0xffffffffffffff80,%rsp
+  400ad2:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+  400ad9:	00 00 
+  400adb:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+  400adf:	31 c0                	xor    %eax,%eax
+  400ae1:	48 8d 3d b7 03 00 00 	lea    0x3b7(%rip),%rdi        # 400e9f <_IO_stdin_used+0x1bf>
+  400ae8:	b8 00 00 00 00       	mov    $0x0,%eax
+  400aed:	e8 9e fc ff ff       	call   400790 <printf@plt>
+  400af2:	48 8b 05 07 16 20 00 	mov    0x201607(%rip),%rax        # 602100 <stdout@GLIBC_2.2.5>
+  400af9:	48 89 c7             	mov    %rax,%rdi
+  400afc:	e8 df fc ff ff       	call   4007e0 <fflush@plt>
+  400b01:	48 8d 45 8c          	lea    -0x74(%rbp),%rax
+  400b05:	48 89 c6             	mov    %rax,%rsi
+  400b08:	48 8d 3d a6 03 00 00 	lea    0x3a6(%rip),%rdi        # 400eb5 <_IO_stdin_used+0x1d5>
+  400b0f:	b8 00 00 00 00       	mov    $0x0,%eax
+  400b14:	e8 e7 fc ff ff       	call   400800 <__isoc99_scanf@plt>
+  400b19:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  400b1c:	85 c0                	test   %eax,%eax
+  400b1e:	78 36                	js     400b56 <operation+0x8c>
+  400b20:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  400b23:	83 f8 09             	cmp    $0x9,%eax
+  400b26:	7f 2e                	jg     400b56 <operation+0x8c>
+  400b28:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  400b2b:	48 98                	cltq
+  400b2d:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+  400b34:	00 
+  400b35:	48 8d 05 64 15 20 00 	lea    0x201564(%rip),%rax        # 6020a0 <robobirdNames>
+  400b3c:	48 8b 04 02          	mov    (%rdx,%rax,1),%rax
+  400b40:	48 89 c6             	mov    %rax,%rsi
+  400b43:	48 8d 3d 6e 03 00 00 	lea    0x36e(%rip),%rdi        # 400eb8 <_IO_stdin_used+0x1d8>
+  400b4a:	b8 00 00 00 00       	mov    $0x0,%eax
+  400b4f:	e8 3c fc ff ff       	call   400790 <printf@plt>
+  400b54:	eb 2b                	jmp    400b81 <operation+0xb7>
+  400b56:	8b 45 8c             	mov    -0x74(%rbp),%eax
+  400b59:	48 98                	cltq
+  400b5b:	48 8d 14 c5 00 00 00 	lea    0x0(,%rax,8),%rdx
+  400b62:	00 
+  400b63:	48 8d 05 36 15 20 00 	lea    0x201536(%rip),%rax        # 6020a0 <robobirdNames>
+  400b6a:	48 01 d0             	add    %rdx,%rax
+  400b6d:	48 89 c6             	mov    %rax,%rsi
+  400b70:	48 8d 3d 41 03 00 00 	lea    0x341(%rip),%rdi        # 400eb8 <_IO_stdin_used+0x1d8>
+  400b77:	b8 00 00 00 00       	mov    $0x0,%eax
+  400b7c:	e8 0f fc ff ff       	call   400790 <printf@plt>
+  400b81:	e8 3a fc ff ff       	call   4007c0 <getchar@plt>
+  400b86:	48 8d 3d 43 03 00 00 	lea    0x343(%rip),%rdi        # 400ed0 <_IO_stdin_used+0x1f0>
+  400b8d:	e8 de fb ff ff       	call   400770 <puts@plt>
+  400b92:	48 8d 3d 59 03 00 00 	lea    0x359(%rip),%rdi        # 400ef2 <_IO_stdin_used+0x212>
+  400b99:	b8 00 00 00 00       	mov    $0x0,%eax
+  400b9e:	e8 ed fb ff ff       	call   400790 <printf@plt>
+  400ba3:	48 8b 15 66 15 20 00 	mov    0x201566(%rip),%rdx        # 602110 <stdin@GLIBC_2.2.5>
+  400baa:	48 8d 45 90          	lea    -0x70(%rbp),%rax
+  400bae:	be 6a 00 00 00       	mov    $0x6a,%esi
+  400bb3:	48 89 c7             	mov    %rax,%rdi
+  400bb6:	e8 f5 fb ff ff       	call   4007b0 <fgets@plt>
+  400bbb:	48 8d 3d 33 03 00 00 	lea    0x333(%rip),%rdi        # 400ef5 <_IO_stdin_used+0x215>
+  400bc2:	e8 a9 fb ff ff       	call   400770 <puts@plt>
+  400bc7:	bf 80 84 1e 00       	mov    $0x1e8480,%edi
+  400bcc:	e8 3f fc ff ff       	call   400810 <usleep@plt>
+  400bd1:	b8 00 00 00 00       	mov    $0x0,%eax
+  400bd6:	e8 2d fe ff ff       	call   400a08 <start_screen>
+  400bdb:	48 8d 3d 1e 03 00 00 	lea    0x31e(%rip),%rdi        # 400f00 <_IO_stdin_used+0x220>
+  400be2:	e8 89 fb ff ff       	call   400770 <puts@plt>
+  400be7:	48 8d 45 90          	lea    -0x70(%rbp),%rax
+  400beb:	48 89 c7             	mov    %rax,%rdi
+  400bee:	b8 00 00 00 00       	mov    $0x0,%eax
+  400bf3:	e8 98 fb ff ff       	call   400790 <printf@plt>
+  400bf8:	90                   	nop
+  400bf9:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+  400bfd:	64 48 33 04 25 28 00 	xor    %fs:0x28,%rax
+  400c04:	00 00 
+  400c06:	74 05                	je     400c0d <operation+0x143>
+  400c08:	e8 73 fb ff ff       	call   400780 <__stack_chk_fail@plt>
+  400c0d:	c9                   	leave
+  400c0e:	c3                   	ret
+
+0000000000400c0f <main>:
+  400c0f:	55                   	push   %rbp
+  400c10:	48 89 e5             	mov    %rsp,%rbp
+  400c13:	48 83 ec 10          	sub    $0x10,%rsp
+  400c17:	89 7d fc             	mov    %edi,-0x4(%rbp)
+  400c1a:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+  400c1e:	b8 00 00 00 00       	mov    $0x0,%eax
+  400c23:	e8 df fc ff ff       	call   400907 <ignore_me_init_buffering>
+  400c28:	b8 00 00 00 00       	mov    $0x0,%eax
+  400c2d:	e8 65 fd ff ff       	call   400997 <ignore_me_init_signal>
+  400c32:	b8 00 00 00 00       	mov    $0x0,%eax
+  400c37:	e8 7d fd ff ff       	call   4009b9 <banner>
+  400c3c:	48 8d 3d 5d 14 20 00 	lea    0x20145d(%rip),%rdi        # 6020a0 <robobirdNames>
+  400c43:	e8 03 fe ff ff       	call   400a4b <printRobobirds>
+  400c48:	b8 00 00 00 00       	mov    $0x0,%eax
+  400c4d:	e8 78 fe ff ff       	call   400aca <operation>
+  400c52:	b8 00 00 00 00       	mov    $0x0,%eax
+  400c57:	c9                   	leave
+  400c58:	c3                   	ret
+  400c59:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+
+0000000000400c60 <__libc_csu_init>:
+  400c60:	41 57                	push   %r15
+  400c62:	41 56                	push   %r14
+  400c64:	49 89 d7             	mov    %rdx,%r15
+  400c67:	41 55                	push   %r13
+  400c69:	41 54                	push   %r12
+  400c6b:	4c 8d 25 8e 11 20 00 	lea    0x20118e(%rip),%r12        # 601e00 <__frame_dummy_init_array_entry>
+  400c72:	55                   	push   %rbp
+  400c73:	48 8d 2d 8e 11 20 00 	lea    0x20118e(%rip),%rbp        # 601e08 <__do_global_dtors_aux_fini_array_entry>
+  400c7a:	53                   	push   %rbx
+  400c7b:	41 89 fd             	mov    %edi,%r13d
+  400c7e:	49 89 f6             	mov    %rsi,%r14
+  400c81:	4c 29 e5             	sub    %r12,%rbp
+  400c84:	48 83 ec 08          	sub    $0x8,%rsp
+  400c88:	48 c1 fd 03          	sar    $0x3,%rbp
+  400c8c:	e8 a7 fa ff ff       	call   400738 <_init>
+  400c91:	48 85 ed             	test   %rbp,%rbp
+  400c94:	74 20                	je     400cb6 <__libc_csu_init+0x56>
+  400c96:	31 db                	xor    %ebx,%ebx
+  400c98:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+  400c9f:	00 
+  400ca0:	4c 89 fa             	mov    %r15,%rdx
+  400ca3:	4c 89 f6             	mov    %r14,%rsi
+  400ca6:	44 89 ef             	mov    %r13d,%edi
+  400ca9:	41 ff 14 dc          	call   *(%r12,%rbx,8)
+  400cad:	48 83 c3 01          	add    $0x1,%rbx
+  400cb1:	48 39 dd             	cmp    %rbx,%rbp
+  400cb4:	75 ea                	jne    400ca0 <__libc_csu_init+0x40>
+  400cb6:	48 83 c4 08          	add    $0x8,%rsp
+  400cba:	5b                   	pop    %rbx
+  400cbb:	5d                   	pop    %rbp
+  400cbc:	41 5c                	pop    %r12
+  400cbe:	41 5d                	pop    %r13
+  400cc0:	41 5e                	pop    %r14
+  400cc2:	41 5f                	pop    %r15
+  400cc4:	c3                   	ret
+  400cc5:	90                   	nop
+  400cc6:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+  400ccd:	00 00 00 
+
+0000000000400cd0 <__libc_csu_fini>:
+  400cd0:	f3 c3                	repz ret
+
+Disassembly of section .fini:
+
+0000000000400cd4 <_fini>:
+  400cd4:	48 83 ec 08          	sub    $0x8,%rsp
+  400cd8:	48 83 c4 08          	add    $0x8,%rsp
+  400cdc:	c3                   	ret

@@ -1,0 +1,88 @@
+
+/workspace/r0bob1rd/r0bob1rd:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000400238 l    d  .interp	0000000000000000              .interp
+0000000000400248 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+0000000000400268 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+0000000000400290 l    d  .gnu.hash	0000000000000000              .gnu.hash
+00000000004002c0 l    d  .dynsym	0000000000000000              .dynsym
+0000000000400470 l    d  .dynstr	0000000000000000              .dynstr
+000000000040053c l    d  .gnu.version	0000000000000000              .gnu.version
+0000000000400560 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+00000000004005a0 l    d  .rela.dyn	0000000000000000              .rela.dyn
+0000000000400618 l    d  .rela.plt	0000000000000000              .rela.plt
+0000000000400738 l    d  .init	0000000000000000              .init
+0000000000400750 l    d  .plt	0000000000000000              .plt
+0000000000400820 l    d  .text	0000000000000000              .text
+0000000000400cd4 l    d  .fini	0000000000000000              .fini
+0000000000400ce0 l    d  .rodata	0000000000000000              .rodata
+0000000000400f10 l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+0000000000400f88 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000601e00 l    d  .init_array	0000000000000000              .init_array
+0000000000601e08 l    d  .fini_array	0000000000000000              .fini_array
+0000000000601e10 l    d  .dynamic	0000000000000000              .dynamic
+0000000000601ff0 l    d  .got	0000000000000000              .got
+0000000000602000 l    d  .got.plt	0000000000000000              .got.plt
+0000000000602080 l    d  .data	0000000000000000              .data
+0000000000602100 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000400860 l     F .text	0000000000000000              deregister_tm_clones
+0000000000400890 l     F .text	0000000000000000              register_tm_clones
+00000000004008d0 l     F .text	0000000000000000              __do_global_dtors_aux
+0000000000602128 l     O .bss	0000000000000001              completed.7698
+0000000000601e08 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+0000000000400900 l     F .text	0000000000000000              frame_dummy
+0000000000601e00 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              r0bob1rd.c
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000401164 l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+0000000000601e08 l       .init_array	0000000000000000              __init_array_end
+0000000000601e10 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000601e00 l       .init_array	0000000000000000              __init_array_start
+0000000000400f10 l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000602000 l     O .got.plt	0000000000000000              _GLOBAL_OFFSET_TABLE_
+0000000000400cd0 g     F .text	0000000000000002              __libc_csu_fini
+0000000000602100 g     O .bss	0000000000000008              stdout@@GLIBC_2.2.5
+0000000000400907 g     F .text	0000000000000061              ignore_me_init_buffering
+0000000000602080  w      .data	0000000000000000              data_start
+0000000000000000       F *UND*	0000000000000000              _exit@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              puts@@GLIBC_2.2.5
+0000000000602110 g     O .bss	0000000000000008              stdin@@GLIBC_2.2.5
+00000000006020f0 g       .data	0000000000000000              _edata
+0000000000400cd4 g     F .fini	0000000000000000              _fini
+0000000000000000       F *UND*	0000000000000000              __stack_chk_fail@@GLIBC_2.4
+0000000000000000       F *UND*	0000000000000000              printf@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              alarm@@GLIBC_2.2.5
+0000000000400a08 g     F .text	0000000000000043              start_screen
+00000000004009b9 g     F .text	000000000000004f              banner
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              fgets@@GLIBC_2.2.5
+0000000000602080 g       .data	0000000000000000              __data_start
+0000000000000000       F *UND*	0000000000000000              getchar@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              signal@@GLIBC_2.2.5
+0000000000400a4b g     F .text	000000000000007f              printRobobirds
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000400968 g     F .text	000000000000002f              kill_on_timeout
+0000000000602088 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000400ce0 g     O .rodata	0000000000000004              _IO_stdin_used
+0000000000400aca g     F .text	0000000000000145              operation
+0000000000400c60 g     F .text	0000000000000065              __libc_csu_init
+0000000000000000       F *UND*	0000000000000000              fflush@@GLIBC_2.2.5
+0000000000602130 g       .bss	0000000000000000              _end
+0000000000400850 g     F .text	0000000000000002              .hidden _dl_relocate_static_pie
+0000000000400820 g     F .text	000000000000002b              _start
+00000000006020f0 g       .bss	0000000000000000              __bss_start
+0000000000400c0f g     F .text	000000000000004a              main
+0000000000000000       F *UND*	0000000000000000              setvbuf@@GLIBC_2.2.5
+0000000000400997 g     F .text	0000000000000022              ignore_me_init_signal
+00000000006020a0 g     O .data	0000000000000050              robobirdNames
+0000000000000000       F *UND*	0000000000000000              __isoc99_scanf@@GLIBC_2.7
+00000000006020f0 g     O .data	0000000000000000              .hidden __TMC_END__
+0000000000400738 g     F .init	0000000000000000              _init
+0000000000000000       F *UND*	0000000000000000              usleep@@GLIBC_2.2.5
+0000000000602120 g     O .bss	0000000000000008              stderr@@GLIBC_2.2.5
+
+
