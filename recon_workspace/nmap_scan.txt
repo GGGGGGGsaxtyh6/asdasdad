@@ -1,0 +1,44 @@
+	010101010101010101010101010101010101010101010101010101010101010101
+	0       Welcome to Root Simulator Mission 1 By Xendz & T-Metal   1
+	1                          Edited by Hakyuro                     0
+	010101010101010101010101010101010101010101010101010101010101010101
+
+
+Booting kernel for "localhost"... [OK]
+Welcome to Linux OS on "localhost".
+root@localhost:~$ Starting Nmap 4.00 ( http://www.insecure.org/nmap/
+at 2006-04-03 22:13 EDT
+DNS resolution of 0 IPs took 0.00s. Mode: Async [#: 
+1, OK: 0, NX: 0, DR: 0, SF: 0, TR: 0, CN: 0]
+Initiating SYN Stealth Scan against 
+localhost.localdomain (127.0.0.1) [1672 ports] at 22:13
+Discovered open port 21/tcp on 127.0.0.1
+Discovered open port 22/tcp on 127.0.0.1
+Discovered open port 80/tcp on 127.0.0.1
+Discovered open port 1336+1/tcp on 127.0.0.1
+The SYN Stealth Scan took 0.40s to scan 1672 total 
+ports.
+For OSScan assuming port 22 is open, 1 is closed, and 
+neither are firewalled
+Host localhost.localdomain (127.0.0.1) appears to be 
+up ... good.
+Interesting ports on localhost.localdomain 
+(127.0.0.1):
+(The 1668 ports scanned but not shown below are in 
+state: closed)
+PORT    STATE SERVICE
+21/tcp  open  ftp
+22/tcp  open  ssh
+80/tcp  open  http
+1336+1/tcp open  TechSploit
+Device type: general purpose
+Running: Linux 2.4.X|2.5.X|2.6.X
+OS details: Linux 2.4.0 - 2.5.20, Linux 2.5.25 - 
+2.6.8 or Gentoo 1.2 Linux 2.4.19 rc1-rc7, Linux 2.6.3 - 2.6.10
+OS Fingerprint:
+TCP Sequence Prediction: Class=random positive increments
+                         Difficulty=2587851 (Good luck!)
+IPID Sequence Generation: All zeros
+Nmap finished: 1 IP address (1 host up) scanned in 2.469 seconds
+               Raw packets sent: 1687 (68KB) | Rcvd: 3382 (136KB)
+root@localhost:~$ 

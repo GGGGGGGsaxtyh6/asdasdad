@@ -1,0 +1,22 @@
+	010101010101010101010101010101010101010101010101010101010101010101
+	0       Welcome to Root Simulator Mission 1 By Xendz & T-Metal   1
+	1                          Edited by Hakyuro                     0
+	010101010101010101010101010101010101010101010101010101010101010101
+
+
+Booting kernel for "localhost"... [OK]
+Welcome to Linux OS on "localhost".
+root@localhost:~$ bash: ftp 69.13.37.42: command not found
+root@localhost:~$ bash: anonymous: command not found
+root@localhost:~$ bash: anonymous: command not found
+root@localhost:~$ bash: ls: command not found
+root@localhost:~$ bash: dir: command not found
+root@localhost:~$ GNU bash, version 2.05b.0(1)-release (i386-pc-linux-gnu)
+These shell commands are defined internally. Type 'help' to see this list.
+
+
+help	ftp
+telnet	nmap
+exit	
+root@localhost:~$ bash: quit: command not found
+root@localhost:~$ 
