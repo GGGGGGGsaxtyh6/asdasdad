@@ -1,0 +1,12 @@
+RETO: Análisis de tráfico Wireshark - CryptoHack.org
+====================================================
+
+Archivo analizado: cryptohack.org.pcapng
+IP del servidor CryptoHack.org: 178.62.74.206
+
+Resultados:
+-----------
+- Total de paquetes en la captura: 51
+- Paquetes recibidos por CryptoHack.org (destination): 15
+
+La respuesta al reto es: 15
