@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">اوپر نیویگیٹ کریں</string>
+    <string name="abc_action_mode_done">ہو گیا</string>
+    <string name="abc_capital_off">آف</string>
+    <string name="abc_capital_on">آن</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+‎</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+‎</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+‎</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+‎</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+‎</string>
+    <string name="abc_menu_space_shortcut_label">space</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+‎</string>
+    <string name="abc_prepend_shortcut_label">Menu+‎</string>
+    <string name="abc_search_hint">تلاش کریں…</string>
+    <string name="abc_searchview_description_clear">استفسار صاف کریں</string>
+    <string name="abc_searchview_description_search">تلاش کریں</string>
+    <string name="abc_searchview_description_submit">استفسار جمع کرائیں</string>
+    <string name="abc_searchview_description_voice">صوتی تلاش</string>
+    <string name="abc_toolbar_collapse_description">سکیڑیں</string>
+    <string name="call_notification_answer_action">جواب دیں</string>
+    <string name="call_notification_answer_video_action">ویڈیو</string>
+    <string name="call_notification_decline_action">مسترد کریں</string>
+    <string name="call_notification_hang_up_action">منقطع کر دیں</string>
+    <string name="call_notification_incoming_text">اِن کمنگ کال</string>
+    <string name="call_notification_ongoing_text">جاری کال</string>
+    <string name="call_notification_screening_text">اِن کمنگ کال کی اسکریننگ</string>
+    <string name="close_drawer">نیویگیشن مینیو بند کریں</string>
+    <string name="close_sheet">شیٹ بند کریں</string>
+    <string name="default_error_message">غلط ان پٹ</string>
+    <string name="default_popup_window_title">پاپ اپ ونڈو</string>
+    <string name="range_end">رینج کا اختتام</string>
+    <string name="range_start">رینج کی شروعات</string>
+    <string name="selected">منتخب کردہ</string>
+    <string name="template_percent">%1$d فیصد۔</string>
+</resources>
