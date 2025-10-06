@@ -1,0 +1,11 @@
+	010101010101010101010101010101010101010101010101010101010101010101
+	0       Welcome to Root Simulator Mission 1 By Xendz & T-Metal   1
+	1                          Edited by Hakyuro                     0
+	010101010101010101010101010101010101010101010101010101010101010101
+
+
+Booting kernel for "localhost"... [OK]
+Welcome to Linux OS on "localhost".
+root@localhost:~$ bash: telnet 69.13.37.42 21: command not found
+root@localhost:~$ bash: quit: command not found
+root@localhost:~$ 
