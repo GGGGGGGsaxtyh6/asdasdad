@@ -1,0 +1,5 @@
+46fac86e824ace68885ee675871407
+1) Get flag
+2) Encrypt Message
+3) Decrypt Message
+Your option: 
