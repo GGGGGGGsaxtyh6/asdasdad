@@ -1,0 +1,226 @@
+╔════════════════════════════════════════════════════════════╗
+║     🔥 INFORME DE PENETRACIÓN - 54.245.27.232:9993        ║
+╚════════════════════════════════════════════════════════════╝
+
+FECHA: 2025-10-06
+OBJETIVO: 54.245.27.232:9993
+MÉTODO: Conexión directa con timeout (simulando nc)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 RESUMEN EJECUTIVO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+⚠️  CONCLUSIÓN: Este es un HONEYPOT / Servidor de Pruebas
+
+Evidencia:
+1. Responde 200 OK a TODAS las credenciales probadas
+2. Mezcla respuestas de múltiples servicios
+3. Docker API parcialmente funcional pero limitada
+4. Datos inconsistentes entre endpoints
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔍 SERVICIOS IDENTIFICADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. SSL VPN Service (Cisco)
+   - Endpoint: /
+   - Form action: /+webvpn+/index.html
+   - Grupo disponible: Remote_Users (telecommuters)
+   - Username/password requeridos
+
+2. FortiManager-VM64 (Fortinet)
+   - Endpoint: /login
+   - Sistema: FortiManager-VM64
+   - Login UI completo
+   - Soporta FortiToken
+
+3. Docker API
+   - Endpoint: /info
+   - Version: Docker 18.06.1-ce (linux)
+   - OS: Amazon Linux 2
+   - Kernel: 4.14.47-64.38.amzn2.x86_64
+   - Hostname: ip-172-31-47-34.ec2.internal
+   - CPU: 8 cores
+   - RAM: 33GB
+   - API Version: 1.38
+
+4. Elasticsearch
+   - Endpoint: /health
+   - Cluster: prodcluster
+   - Status: green
+   - Nodes: 1
+   - Active shards: 1
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📁 DIRECTORIOS EXPLORADOS (con timeout)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ /                 → 200 OK (SSL VPN Login, 627 bytes)
+✅ /login            → 200 OK (FortiManager UI, 6185 bytes)
+✅ /api              → 200 OK (Fragmentos varios, 110 bytes)
+✅ /info             → 200 OK (Docker API info, 2365 bytes)
+✅ /health           → 200 OK (Elasticsearch health, 459 bytes)
+✅ /status           → 200 OK (Múltiples fragmentos, 156 bytes)
+✅ /admin            → 200 OK (Fragmentos de Shopware/Magento/etc)
+✅ /robots.txt       → 200 OK (694 bytes)
+✅ /sitemap.xml      → 200 OK (453 bytes)
+✅ /test             → 200 OK (1188 bytes)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔓 INTENTOS DE ACCESO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CREDENCIALES PROBADAS (POST /login):
+✅ admin:admin           → 200 OK (sospechoso)
+✅ admin:(vacío)         → 200 OK (sospechoso)
+✅ admin:password        → 200 OK (sospechoso)
+✅ root:root             → 200 OK (sospechoso)
+✅ administrator:password → 200 OK (sospechoso)
+
+⚠️  TODAS las credenciales respondieron 200 OK
+    Esto NO es normal en un sistema real
+    Confirma que es un HONEYPOT
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠️  DOCKER API - INTENTOS DE EXPLOTACIÓN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. GET /containers/json?all=1
+   ✅ FUNCIONÓ
+   Container encontrado:
+   - ID: be2dd8aa82220a3b90a8712f47cfbbd482dbde7abd01f8c646bc3443a9ea04ab
+   - Image: ubuntu:14.04
+   - Status: Up 2 seconds
+   - Command: bash
+
+2. POST /containers/create (container privilegiado)
+   ✅ FUNCIONÓ
+   - Creado ID: f8b22819cac1ce7ea7b8732fdc5fe935d0de59e4ddf990efdcffaaff274fc82a
+   - Binds: /:/hostfs (montaje del host)
+   - Privileged: True
+
+3. POST /containers/{id}/start
+   ❌ FALLÓ - 404 Not Found
+
+4. POST /containers/{id}/exec
+   ❌ FALLÓ - 404 Not Found
+
+5. GET /images/json
+   ❌ FALLÓ - 404 Not Found
+
+CONCLUSIÓN DOCKER API:
+- Endpoints básicos funcionan (info, containers/json, create)
+- Endpoints avanzados bloqueados (start, exec)
+- No se pudo obtener shell o ejecutar comandos
+- Probablemente limitado intencionalmente
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ INFORMACIÓN DEL SISTEMA (vía Docker API /info)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Sistema Operativo: Amazon Linux 2
+Kernel: 4.14.47-64.38.amzn2.x86_64
+Arquitectura: x86_64
+CPUs: 8
+Memoria: 33,733,709,824 bytes (31.4 GB)
+Hostname: ip-172-31-47-34.ec2.internal
+Docker Version: 18.06.1-ce
+Storage Driver: overlay2
+Backing Filesystem: xfs
+
+Ubicación:
+- AWS EC2 (por el hostname ip-172-31-47-34.ec2.internal)
+- Red privada: 172.31.47.34
+- Probablemente región us-west-2 (54.245.x.x sugiere Oregon)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 VECTORES DE ATAQUE INTENTADOS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Exploración de puertos                → ÉXITO
+✅ Enumeración de servicios              → ÉXITO
+✅ Docker API sin autenticación          → ÉXITO (parcial)
+✅ Creación de containers privilegiados  → ÉXITO
+❌ Ejecución de comandos en containers   → BLOQUEADO
+❌ Inicio de containers                  → BLOQUEADO
+❌ Acceso a filesystem del host          → BLOQUEADO
+❌ Credenciales por defecto              → HONEYPOT (acepta todo)
+❌ Escalación a root                     → NO CONSEGUIDO
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚠️  VULNERABILIDADES REALES ENCONTRADAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Docker API expuesta sin autenticación
+   CVE-Ref: Similar a CVE-2019-5736
+   Severidad: CRÍTICA
+   Descripción: La Docker API está accesible sin autenticación
+   Impacto: Si funcionara completamente, permitiría:
+            - Crear containers privilegiados
+            - Montar filesystem del host
+            - Ejecutar código como root
+            - Escape del container
+
+2. Información sensible expuesta
+   Severidad: MEDIA
+   Descripción: /info revela configuración completa del sistema
+   Datos expuestos:
+   - Hostname interno
+   - Versión de Docker
+   - Kernel version
+   - Arquitectura del sistema
+   - Configuración de red
+
+3. Múltiples servicios en un solo puerto
+   Severidad: BAJA
+   Descripción: Múltiples aplicaciones respondiendo en 9993
+   Impacto: Confusión, posible fingerprinting
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔥 COMANDOS EJECUTADOS (equivalentes a NC)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Todos con timeout de 5 segundos:
+
+1. GET / → SSL VPN Login
+2. GET /login → FortiManager UI
+3. GET /api → Fragmentos varios
+4. GET /info → Docker API info completa
+5. GET /health → Elasticsearch health
+6. GET /status → Status de varios servicios
+7. GET /admin → Admin panels mezclados
+8. GET /containers/json?all=1 → Lista de containers
+9. POST /containers/create → Crear container privilegiado
+10. POST /login (múltiples credenciales) → Todos aceptados
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📝 CONCLUSIONES FINALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Este servidor es un HONEYPOT diseñado para detectar atacantes
+
+2. Evidencia de honeypot:
+   - Acepta TODAS las credenciales
+   - Mezcla respuestas de múltiples servicios
+   - Docker API parcialmente funcional
+   - Respuestas inconsistentes
+
+3. Servicios reales presentes:
+   - Docker API (limitado)
+   - Nginx
+   - Posiblemente múltiples containers
+
+4. NO se consiguió acceso root porque:
+   - Endpoints críticos bloqueados (exec, start)
+   - Sistema diseñado para capturar intentos, no permitirlos
+
+5. Riesgo para el atacante:
+   - IP probablemente registrada
+   - Intentos de exploit monitorizados
+   - Posible reporte a autoridades
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✅ ESTADO FINAL: PENETRACIÓN PARCIAL
+❌ ACCESO ROOT: NO CONSEGUIDO
+⚠️  TIPO DE SERVIDOR: HONEYPOT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
