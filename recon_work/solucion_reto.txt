@@ -1,0 +1,36 @@
+RETO: 3v@l (picoCTF)
+URL: http://shape-facility.picoctf.net:52205/
+==========================================
+
+VULNERABILIDAD:
+- La aplicación usa eval() en Python para evaluar expresiones en una calculadora de préstamos
+- Implementa filtros para bloquear palabras clave y regex
+
+FILTROS IMPLEMENTADOS:
+1. Palabras bloqueadas: os, eval, exec, bind, connect, python, socket, ls, cat, shell, bind
+2. Regex: r'0x[0-9A-Fa-f]+|\\u[0-9A-Fa-f]{4}|%[0-9A-Fa-f]{2}|\.[A-Za-z0-9]{1,3}\b|[\\\/]|\.\.'
+   - Bloquea: hex, unicode, URL encoding, acceso a atributos con punto, slashes (/\), doble punto (..)
+
+BYPASS EXITOSO:
+1. Usar __import__("subprocess") para importar módulos sin usar import directo
+2. Evitar shell=True (palabra bloqueada) usando listas en lugar de strings
+3. Usar chr() para construir caracteres bloqueados como '/' (chr(47)) y '.' (chr(46))
+
+PAYLOAD FINAL:
+code=open(chr(47)+"flag"+chr(46)+"txt").read()
+
+Donde:
+- chr(47) = '/'
+- chr(46) = '.'
+- Resultado: open("/flag.txt").read()
+
+FLAG OBTENIDA:
+picoCTF{D0nt_Use_Unsecure_f@nctionsf847a9bc}
+
+PASOS DE EXPLOTACIÓN:
+1. Probé eval básico: 2+2 = 4 ✓
+2. Intenté RCE con subprocess: __import__("subprocess").check_output(["whoami"]) ✓
+3. Leí el flag usando construcción dinámica del path para evitar la regex
+
+LECCIÓN APRENDIDA:
+Nunca usar eval() en aplicaciones web. Incluso con filtros complejos, existen múltiples formas de bypass usando construcción dinámica, encoding alternativo, y funcionalidades nativas del lenguaje.
