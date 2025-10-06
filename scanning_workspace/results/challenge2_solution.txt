@@ -1,0 +1,73 @@
+====================================================
+HBH Application Cracking Challenge 2 - SOLUCIÓN
+====================================================
+
+Archivo analizado: app2.exe
+Tipo: PE32 executable (GUI) Intel 80386, for MS Windows
+Tamaño: 813,060 bytes (795KB)
+
+METODOLOGÍA DE ANÁLISIS:
+------------------------
+1. Descarga del archivo desde mega.nz
+2. Extracción del ZIP (HBH-application-cracking-2.zip)
+3. Análisis con 'strings' - 7,045 strings encontradas
+4. Análisis con radare2 para examinar la estructura del binario
+5. Detección de archivos Flash (SWF) embebidos usando binwalk
+6. Extracción de archivos Flash comprimidos (CWS format)
+7. Descompresión zlib de archivos SWF
+8. Análisis de strings en archivos Flash descomprimidos
+9. Análisis hexadecimal para encontrar contexto de variables
+
+HALLAZGOS PRINCIPALES:
+----------------------
+- Aplicación: Basada en ShockwaveFlash
+- Framework: Windows application con Flash Player embebido
+- Archivos Flash encontrados en offsets:
+  * 0x000a2b50: CWS (Flash comprimido)
+  * 0x000a6da0: CWS  
+  * 0x000ac9d0: CWS
+  * 0x000c6000: CWS (contiene la contraseña)
+
+ANÁLISIS DEL ARCHIVO FLASH:
+----------------------------
+En el archivo C6008 (offset 0x000c6000) se encontraron:
+- Variable "username" 
+- Variable "reduced" (inmediatamente después de username)
+- Strings de validación: "good", "passno"
+- Funciones: checkPort, checkIt, checkMode, checkSlider
+
+CONTRASEÑA ENCONTRADA:
+----------------------
+Password: reduced
+
+UBICACIÓN EN EL BINARIO:
+------------------------
+- Archivo Flash: C6008 (extraído de offset 0x000c6000)
+- Offset dentro del Flash: 0x693
+- Contexto: Variable asociada con "username", indica campo de password
+- Formato: Plaintext string en estructura Flash
+
+VERIFICACIÓN:
+-------------
+La cadena "reduced" aparece como variable de password en el archivo Flash
+embebido, junto con la variable "username" y lógica de validación que
+incluye respuestas "good" (correcto) y "passno" (incorrecto).
+
+STRINGS RELACIONADAS ENCONTRADAS:
+----------------------------------
+- "username" (campo de usuario)
+- "reduced" (campo de contraseña) ← CONTRASEÑA DEL RETO
+- "good" (mensaje de éxito)
+- "passno" (mensaje de fallo)
+- "checkIt", "checkPort", "checkMode" (funciones de validación)
+
+COMPLEJIDAD DEL RETO:
+---------------------
+- Nivel: Medio
+- Requiere extracción de recursos embebidos
+- Análisis de archivos Flash comprimidos con zlib
+- Comprensión de estructura SWF (ShockwaveFlash)
+
+====================================================
+RESULTADO: reduced
+====================================================
