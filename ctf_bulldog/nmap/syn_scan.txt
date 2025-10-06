@@ -1,0 +1,7 @@
+# Nmap 7.95 scan initiated Mon Oct  6 22:29:07 2025 as: nmap -Pn -sS -p 1-10000 --min-rate=2000 -oN nmap/syn_scan.txt 212.129.28.21
+Nmap scan report for ctf02.root-me.org (212.129.28.21)
+Host is up.
+All 10000 scanned ports on ctf02.root-me.org (212.129.28.21) are in ignored states.
+Not shown: 10000 filtered tcp ports (no-response)
+
+# Nmap done at Mon Oct  6 22:29:18 2025 -- 1 IP address (1 host up) scanned in 11.28 seconds
