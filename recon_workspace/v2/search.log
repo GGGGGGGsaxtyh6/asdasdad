@@ -1,0 +1,30 @@
+Precalculating pool...
+Pool ready
+[04:47:38] Att 1: NEW BEST 58/128, rate=143.4/s
+[04:47:38] Att 2: NEW BEST 62/128, rate=150.1/s
+[04:47:38] Att 6: NEW BEST 71/128, rate=161.3/s
+[04:47:38] Att 10: NEW BEST 72/128, rate=165.9/s
+[04:47:38] Att 27: NEW BEST 73/128, rate=170.9/s
+[04:47:39] Att 38: NEW BEST 74/128, rate=172.0/s
+[04:47:39] Att 64: NEW BEST 75/128, rate=173.2/s
+[04:47:39] Att 131: NEW BEST 76/128, rate=173.9/s
+[04:47:40] Att 337: NEW BEST 78/128, rate=174.4/s
+[04:47:41] Att 500: NEW BEST 79/128, rate=174.4/s
+[04:47:42] Att 611: NEW BEST 81/128, rate=174.3/s
+[04:47:44] Att 1000: best=81/128, rate=174.4/s, ETA=6.2e+28y
+[04:47:50] Att 2000: best=81/128, rate=174.4/s, ETA=6.2e+28y
+[04:47:51] Att 2217: NEW BEST 85/128, rate=173.4/s
+[04:47:56] Att 3000: best=85/128, rate=173.7/s, ETA=6.2e+28y
+[04:48:01] Att 4000: best=85/128, rate=173.9/s, ETA=6.2e+28y
+[04:48:07] Att 5000: best=85/128, rate=174.0/s, ETA=6.2e+28y
+[04:48:13] Att 6000: best=85/128, rate=174.0/s, ETA=6.2e+28y
+[04:48:19] Att 7000: best=85/128, rate=174.0/s, ETA=6.2e+28y
+[04:48:24] Att 8000: best=85/128, rate=174.1/s, ETA=6.2e+28y
+[04:48:30] Att 9000: best=85/128, rate=174.2/s, ETA=6.2e+28y
+[04:48:36] Att 10000: best=85/128, rate=174.2/s, ETA=6.2e+28y
+[04:48:44] Att 11000: best=85/128, rate=168.2/s, ETA=6.4e+28y
+[04:48:49] Att 12000: best=85/128, rate=168.7/s, ETA=6.4e+28y
+[04:48:55] Att 13000: best=85/128, rate=169.1/s, ETA=6.4e+28y
+[04:49:01] Att 14000: best=85/128, rate=169.5/s, ETA=6.4e+28y
+[04:49:07] Att 15000: best=85/128, rate=169.2/s, ETA=6.4e+28y
+[04:49:13] Att 16000: best=85/128, rate=169.5/s, ETA=6.4e+28y
