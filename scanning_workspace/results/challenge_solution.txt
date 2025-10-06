@@ -1,0 +1,51 @@
+====================================================
+HBH Application Cracking Challenge 1 - SOLUCIÓN
+====================================================
+
+Archivo analizado: app1.exe
+Tipo: PE32 executable (GUI) Intel 80386, for MS Windows
+Tamaño: 28,672 bytes
+
+METODOLOGÍA DE ANÁLISIS:
+------------------------
+1. Descarga del archivo desde mega.nz
+2. Extracción del ZIP (HBH-application-cracking-1.zip)
+3. Análisis con 'strings' para extraer cadenas legibles
+4. Análisis con radare2 para examinar la estructura del binario
+5. Identificación de cadenas relevantes en la sección .text
+
+HALLAZGOS PRINCIPALES:
+----------------------
+- Aplicación: "Password Safe v2" 
+- Framework: Visual Basic 6 (MSVBVM60.DLL)
+- Mensaje del reto: "HBH Application Challenge Password:"
+
+CONTRASEÑA ENCONTRADA:
+----------------------
+Password: frozenIce
+
+UBICACIÓN EN EL BINARIO:
+------------------------
+- Offset: 0x00003c3f
+- Sección: .text
+- Contexto: Entre "Label4" y "MS Sans Serif"
+
+STRINGS RELACIONADAS ENCONTRADAS:
+----------------------------------
+- "password"
+- "Password Safe v2"
+- "Enter the password to access Password Safe v2"
+- "password2"
+- "HBH Application Challenge Password:"
+- "Your stored passwords are below:"
+- "Welcome to Password Safe v2."
+- "frozenIce" ← CONTRASEÑA DEL RETO
+
+VERIFICACIÓN:
+-------------
+La cadena "frozenIce" aparece en la sección de código (.text) del ejecutable,
+indicando que es probablemente la contraseña hardcodeada para validar el acceso.
+
+====================================================
+RESULTADO: frozenIce
+====================================================
