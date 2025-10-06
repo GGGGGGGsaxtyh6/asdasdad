@@ -1,0 +1,30 @@
+RETO: Guess My Cheese (Part 1) (picoCTF)
+URL: nc verbal-sleep.picoctf.net 64953
+==========================================
+
+MECANISMO:
+Cifrado afín con parámetros aleatorios en cada sesión:
+E(x) = (ax + b) mod 26
+D(y) = a^(-1)(y - b) mod 26
+
+Donde a debe ser coprimo con 26: {1, 3, 5, 7, 9, 11, 15, 17, 19, 21, 23, 25}
+
+ESTRATEGIA:
+1. Conectar al servicio y obtener el cifrado objetivo
+2. Usar opción (e)ncrypt con "CHEDDAR" (queso conocido válido)
+3. Con el par CHEDDAR -> ENCRYPTED calcular parámetros a y b:
+   - C(2) -> cipher[0]: cipher[0] = (2a + b) mod 26
+   - H(7) -> cipher[1]: cipher[1] = (7a + b) mod 26
+   - Resolver el sistema para encontrar a y b
+4. Calcular a^(-1) (inverso modular de a mod 26)
+5. Descifrar objetivo: D(y) = a^(-1)(y - b) mod 26
+6. Enviar respuesta descifrada
+
+EJEMPLO DE SESIÓN:
+- Cifrado objetivo: DKLLAUXV
+- CHEDDAR -> CXABBEN
+- Calculado: a=25, b=4, a_inv=25
+- Descifrado: BUTTEKHJ (probablemente BUTTERKASE o similar)
+
+FLAG OBTENIDA:
+picoCTF{ChEeSydd15526f}
