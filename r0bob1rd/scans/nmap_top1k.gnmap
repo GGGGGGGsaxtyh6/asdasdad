@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Oct  6 04:04:18 2025 as: nmap -Pn -sC -sV -oA /workspace/r0bob1rd/scans/nmap_top1k 94.237.121.49
+Host: 94.237.121.49 (94-237-121-49.uk-lon1.upcloud.host)	Status: Up
+Host: 94.237.121.49 (94-237-121-49.uk-lon1.upcloud.host)	Ports: 19/filtered/tcp//chargen///, 22/open/tcp//ssh//OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)/, 25/filtered/tcp//smtp///, 111/open/tcp//rpcbind//2-4 (RPC #100000)/	Ignored State: closed (996)
+# Nmap done at Mon Oct  6 04:04:29 2025 -- 1 IP address (1 host up) scanned in 11.21 seconds

@@ -1,0 +1,134 @@
+./glibc/ld.so.2
+libc.so.6
+fflush
+__isoc99_scanf
+signal
+puts
+__stack_chk_fail
+stdin
+_exit
+printf
+fgets
+getchar
+stdout
+stderr
+alarm
+usleep
+setvbuf
+__libc_start_main
+GLIBC_2.7
+GLIBC_2.4
+GLIBC_2.2.5
+./glibc/
+__gmon_start__
+AWAVI
+AUATL
+[]A\A]A^A_
+MechWings
+TechFeathers
+CircuitBirds
+SteelAvians
+NanoNestlings
+ByteBeaks
+ElectricEaglets
+GearRavens
+SiliconSparrows
+AutomataFowl
+[!] Anti DoS Signal. Patch me out for testing.
+-=[ R0boB1rd ]=-
+  ___                 ___
+ /___\               /___\  
+ (* *)               (* *) 
+(  V  )             (  V  )
+--m-m-----------------m-m--
+   \\  
+   (*>  
+\\_//)
+ \_/_)
+  _|_  
++----+------------------+
+| ID |   R0bob1rd Name  |
+| %2d | %-16s |
+Select a R0bob1rd > 
+You've chosen: %s
+Enter bird's little description
+Crafting..
+[Description]
+;*3$"
+GCC: (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+crtstuff.c
+deregister_tm_clones
+__do_global_dtors_aux
+completed.7698
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+r0bob1rd.c
+__FRAME_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+stdout@@GLIBC_2.2.5
+ignore_me_init_buffering
+_exit@@GLIBC_2.2.5
+puts@@GLIBC_2.2.5
+stdin@@GLIBC_2.2.5
+_edata
+__stack_chk_fail@@GLIBC_2.4
+printf@@GLIBC_2.2.5
+alarm@@GLIBC_2.2.5
+start_screen
+banner
+__libc_start_main@@GLIBC_2.2.5
+fgets@@GLIBC_2.2.5
+__data_start
+getchar@@GLIBC_2.2.5
+signal@@GLIBC_2.2.5
+printRobobirds
+__gmon_start__
+kill_on_timeout
+__dso_handle
+_IO_stdin_used
+operation
+__libc_csu_init
+fflush@@GLIBC_2.2.5
+_dl_relocate_static_pie
+__bss_start
+main
+setvbuf@@GLIBC_2.2.5
+ignore_me_init_signal
+robobirdNames
+__isoc99_scanf@@GLIBC_2.7
+__TMC_END__
+usleep@@GLIBC_2.2.5
+stderr@@GLIBC_2.2.5
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.got
+.got.plt
+.data
+.bss
+.comment
