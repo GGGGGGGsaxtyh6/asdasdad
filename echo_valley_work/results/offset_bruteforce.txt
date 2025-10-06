@@ -1,0 +1,77 @@
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset -0x18 -> location 0x7ffe8a5b3808
+[x] Receiving all data
+[x] Receiving all data: 38B
+[x] Receiving all data: 60B
+[+] Receiving all data: Done (60B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset -0x10 -> location 0x7ffdaa2823e0
+[x] Receiving all data
+[x] Receiving all data: 6B
+[x] Receiving all data: 28B
+[+] Receiving all data: Done (28B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset -0x8 -> location 0x7ffef56b6a08
+[x] Receiving all data
+[x] Receiving all data: 38B
+[x] Receiving all data: 60B
+[+] Receiving all data: Done (60B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset -0x4 -> location 0x7ffd2d9bd7ec
+[x] Receiving all data
+[x] Receiving all data: 6B
+[x] Receiving all data: 28B
+[+] Receiving all data: Done (28B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset 0x0 -> location 0x7ffe2c5ab6a0
+[x] Receiving all data
+[x] Receiving all data: 6B
+[x] Receiving all data: 28B
+[+] Receiving all data: Done (28B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset 0x8 -> location 0x7ffcf83792e8
+[x] Receiving all data
+[x] Receiving all data: 6B
+[x] Receiving all data: 28B
+[+] Receiving all data: Done (28B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
+[x] Opening connection to shape-facility.picoctf.net on port 62671
+[x] Opening connection to shape-facility.picoctf.net on port 62671: Trying 3.20.150.139
+[+] Opening connection to shape-facility.picoctf.net on port 62671: Done
+
+[*] Trying offset 0x10 -> location 0x7ffefa0aa420
+[x] Receiving all data
+[x] Receiving all data: 93B
+[x] Receiving all data: 115B
+[+] Receiving all data: Done (115B)
+[*] Closed connection to shape-facility.picoctf.net port 62671
+[!] Normal exit
