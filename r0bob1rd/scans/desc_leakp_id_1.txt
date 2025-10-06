@@ -1,0 +1,33 @@
+-=[ R0boB1rd ]=-
+  ___                 ___
+ /___\               /___\  
+ (* *)               (* *) 
+(  V  )             (  V  )
+--m-m-----------------m-m--
++----+------------------+
+| ID |   R0bob1rd Name  |
++----+------------------+
+|  0 | MechWings        |
+|  1 | TechFeathers     |
+|  2 | CircuitBirds     |
+|  3 | SteelAvians      |
+|  4 | NanoNestlings    |
+|  5 | ByteBeaks        |
+|  6 | ElectricEaglets  |
+|  7 | GearRavens       |
+|  8 | SiliconSparrows  |
+|  9 | AutomataFowl     |
++----+------------------+
+
+Select a R0bob1rd > 
+You've chosen: TechFeathers
+
+Enter bird's little description
+> Crafting..
+   \\  
+   (*>  
+\\_//)
+ \_/_)
+  _|_  
+[Description]
+LEAKP:.0x7fdd44f4b723.(nil).0x7fdd44e6c077.0xe.(nil).(nil).0x144deee93.0x252e3a504b41454c.0x2e70252e70252e70.0x70252e70252e7025.0x252e70252e70252e.0x2e70252e70252e70.0x70252e70252e7025.0x252e70252e70252e.0x2e70252e70252e70.0x70252e70252e7025.0x252e70252e70252e.0x2e70252e70252e70.0x70252e70252e7025.0x252e70252e70252e.0xf56612c88d0f0070.0x7ffc3523b420.0x400c52.0x7ffc3523b518.0x100000000.(nil).0x7fdd44d82083.0x1700000000.0x7ffc3523b518.0x144f467a0.0x400c0f.0x400c60.0x7115f96e46529d2
