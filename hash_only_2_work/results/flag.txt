@@ -1,0 +1,6 @@
+Computing the MD5 hash of /root/flag.txt.... 
+
+rbash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
+picoCTF{Co-@utH0r_Of_Sy5tem_b!n@riEs_f6f1b3d4}/bin/bash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)

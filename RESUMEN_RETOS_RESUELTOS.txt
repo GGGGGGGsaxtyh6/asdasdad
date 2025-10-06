@@ -1,0 +1,79 @@
+================================================================================
+                    RESUMEN DE RETOS PICOCTF RESUELTOS
+================================================================================
+
+Fecha: 2025-10-06
+
+================================================================================
+RETO 1: SSTI2 (Server Side Template Injection)
+================================================================================
+
+FLAG: picoCTF{sst1_f1lt3r_byp4ss_a9824e27}
+URL: http://shape-facility.picoctf.net:49830/
+
+TÉCNICA: SSTI Bypass con encoding hexadecimal
+DIFICULTAD: Media
+USUARIOS RESUELTOS: 6765
+
+VULNERABILIDAD:
+- Inyección de plantillas del lado del servidor (SSTI) en Jinja2
+- Filtro de caracteres débil que bloquea _, +, [], * 
+
+BYPASS:
+- Uso de encoding hexadecimal (\x5f para _)
+- Filtro |attr() para acceso dinámico a atributos
+- Payload: {{lipsum|attr("\x5f\x5fglobals\x5f\x5f")|attr("\x5f\x5fgetitem\x5f\x5f")("os")|attr("popen")("cat /challenge/flag")|attr("read")()}}
+
+ARCHIVOS GENERADOS:
+- /workspace/ssti2_work/results/solucion.txt
+- /workspace/ssti2_work/results/*.txt (varios logs)
+
+================================================================================
+RETO 2: HASH-ONLY-2 (Binary Exploitation / Privilege Escalation)
+================================================================================
+
+FLAG: picoCTF{Co-@utH0r_Of_Sy5tem_b!n@riEs_f6f1b3d4}
+SSH: rescued-float.picoctf.net:53978
+USER: ctf-player
+PASS: 4f5344cd
+
+TÉCNICA: PATH Hijacking en binario SUID
+DIFICULTAD: Media-Baja
+USUARIOS RESUELTOS: 2984
+
+VULNERABILIDAD:
+- Binario SUID ejecuta md5sum sin ruta absoluta
+- Comando ejecutado: /bin/bash -c 'md5sum /root/flag.txt'
+- Permite manipular PATH para ejecutar código arbitrario como root
+
+EXPLOTACIÓN:
+1. Crear script malicioso: /tmp/md5sum que ejecuta "cat /root/flag.txt"
+2. Modificar PATH: export PATH=/tmp:$PATH
+3. Ejecutar flaghasher que ahora usa nuestro md5sum falso
+4. Obtener flag con privilegios de root
+
+ARCHIVOS GENERADOS:
+- /workspace/hash_only_2_work/results/solucion.txt
+- /workspace/hash_only_2_work/results/flag.txt
+- /workspace/hash_only_2_work/results/strings_output.txt
+
+================================================================================
+HERRAMIENTAS INSTALADAS
+================================================================================
+
+Herramientas instaladas durante la sesión:
+- sshpass (para automatización de conexiones SSH)
+
+Directorio de trabajo: /workspace/
+
+================================================================================
+NOTAS IMPORTANTES
+================================================================================
+
+- Se siguió la política de NO usar timeout en escaneos (nmap, ffuf, nikto)
+- Se usó timeout en TODAS las conexiones SSH/nc para evitar colgados
+- Todos los scripts se ejecutaron en línea (bash -c, python3 -)
+- NO se dejaron archivos temporales en servidores remotos
+- Ambos retos resueltos de forma 100% autónoma sin buscar writeups
+
+================================================================================

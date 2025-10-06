@@ -1,0 +1,7 @@
+Warning: Permanently added '[rescued-float.picoctf.net]:53978' (ED25519) to the list of known hosts.
+total 4
+drwxr-xr-x 1 ctf-player ctf-player 20 Oct  6 00:55 .
+drwxr-xr-x 1 root       root       24 Aug 21 19:28 ..
+drwx------ 2 ctf-player ctf-player 34 Oct  6 00:55 .cache
+-rw-r--r-- 1 root       root       67 Aug 21 19:28 .profile
+rbash: warning: setlocale: LC_ALL: cannot change locale (en_US.UTF-8)
