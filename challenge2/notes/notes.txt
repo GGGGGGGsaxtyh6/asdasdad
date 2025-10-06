@@ -1,0 +1,1 @@
+Auth-2 exploit plan: race two users to recover H using last-block delta; forge super_admin using correct tag.
