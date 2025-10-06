@@ -10,3 +10,26 @@ Resultados:
 - Paquetes recibidos por CryptoHack.org (destination): 15
 
 La respuesta al reto es: 15
+
+====================================================
+RETO 2: ServerHello Random
+====================================================
+
+Análisis del mensaje ServerHello (Paquete #12):
+------------------------------------------------
+
+El ServerHello es el mensaje donde el servidor responde al
+ClientHello con sus propios parámetros. Incluye:
+- Version de TLS
+- Random (32 bytes para prevenir replay attacks)
+- Cipher suite elegido
+- Extensiones
+
+Campo Random extraído del ServerHello:
+67c6bf8ffda56fcb359fba7f0149f85422223cf021ab1a0af701de5dd2091498
+
+Este valor de 32 bytes (64 caracteres hex) es usado junto con
+el Random del cliente para generar las claves de sesión y
+prevenir ataques de replay.
+
+La respuesta al reto es: 67c6bf8ffda56fcb359fba7f0149f85422223cf021ab1a0af701de5dd2091498
