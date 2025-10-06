@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Mon Oct  6 04:18:12 2025 as: nmap -Pn -sV -p- -oA /workspace/r0bob1rd/scans/nmap_allports 94.237.121.49 -->
+<nmaprun scanner="nmap" args="nmap -Pn -sV -p- -oA /workspace/r0bob1rd/scans/nmap_allports 94.237.121.49" start="1759724292" startstr="Mon Oct  6 04:18:12 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="65535" services="1-65535"/>

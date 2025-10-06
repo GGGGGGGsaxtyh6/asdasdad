@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Oct  6 04:05:33 2025 as: nmap -Pn -sC -sV -p 47305 -oA /workspace/r0bob1rd/scans/nmap_47305 94.237.121.49
+Host: 94.237.121.49 (94-237-121-49.uk-lon1.upcloud.host)	Status: Up
+Host: 94.237.121.49 (94-237-121-49.uk-lon1.upcloud.host)	Ports: 47305/open/tcp//unknown///
+# Nmap done at Mon Oct  6 04:05:57 2025 -- 1 IP address (1 host up) scanned in 23.56 seconds

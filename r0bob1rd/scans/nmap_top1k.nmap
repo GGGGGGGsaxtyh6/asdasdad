@@ -1,0 +1,22 @@
+# Nmap 7.95 scan initiated Mon Oct  6 04:04:18 2025 as: nmap -Pn -sC -sV -oA /workspace/r0bob1rd/scans/nmap_top1k 94.237.121.49
+Nmap scan report for 94-237-121-49.uk-lon1.upcloud.host (94.237.121.49)
+Host is up (0.084s latency).
+Not shown: 996 closed tcp ports (conn-refused)
+PORT    STATE    SERVICE VERSION
+19/tcp  filtered chargen
+22/tcp  open     ssh     OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)
+| ssh-hostkey: 
+|   256 fb:59:76:bd:e5:95:59:3b:82:22:39:ec:1f:40:d6:6f (ECDSA)
+|_  256 2c:f8:35:42:1c:8b:87:78:c5:8e:10:59:ac:58:4d:8f (ED25519)
+25/tcp  filtered smtp
+111/tcp open     rpcbind 2-4 (RPC #100000)
+| rpcinfo: 
+|   program version    port/proto  service
+|   100000  2,3,4        111/tcp   rpcbind
+|   100000  2,3,4        111/udp   rpcbind
+|   100000  3,4          111/tcp6  rpcbind
+|_  100000  3,4          111/udp6  rpcbind
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Oct  6 04:04:29 2025 -- 1 IP address (1 host up) scanned in 11.21 seconds
