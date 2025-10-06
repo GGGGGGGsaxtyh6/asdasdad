@@ -1,0 +1,39 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: celestial_scribe.apk
+compressionType: false
+doNotCompress:
+- resources.arsc
+- assets/dexopt/baseline.prof
+- assets/dexopt/baseline.profm
+- lib/arm64-v8a/libconscrypt_jni.so
+- lib/armeabi-v7a/libconscrypt_jni.so
+- lib/x86/libconscrypt_jni.so
+- lib/x86_64/libconscrypt_jni.so
+- webp
+- png
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '24'
+  targetSdkVersion: '35'
+sharedLibrary: false
+sparseResources: false
+unknownFiles:
+  DebugProbesKt.bin: '8'
+  VERSION: '8'
+  kotlin-tooling-metadata.json: '8'
+  okhttp3/internal/publicsuffix/NOTICE: '8'
+  okhttp3/internal/publicsuffix/publicsuffixes.gz: '8'
+  org/bouncycastle/x509/CertPathReviewerMessages.properties: '8'
+  org/bouncycastle/x509/CertPathReviewerMessages_de.properties: '8'
+  org/conscrypt/conscrypt.properties: '8'
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.7.0-dirty
+versionInfo:
+  versionCode: '1'
+  versionName: '1.0'

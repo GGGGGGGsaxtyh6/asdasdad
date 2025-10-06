@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">Πλοήγηση προς τα επάνω</string>
+    <string name="abc_action_mode_done">Τέλος</string>
+    <string name="abc_capital_off">ΑΠΕΝΕΡΓΟΠΟΙΗΣΗ</string>
+    <string name="abc_capital_on">ΕΝΕΡΓΟΠΟΙΗΣΗ</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">διάστημα</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Αναζήτηση…</string>
+    <string name="abc_searchview_description_clear">Διαγραφή ερωτήματος</string>
+    <string name="abc_searchview_description_search">Αναζήτηση</string>
+    <string name="abc_searchview_description_submit">Υποβολή ερωτήματος</string>
+    <string name="abc_searchview_description_voice">Φωνητική αναζήτηση</string>
+    <string name="abc_toolbar_collapse_description">Σύμπτυξη</string>
+    <string name="call_notification_answer_action">Απάντηση</string>
+    <string name="call_notification_answer_video_action">Βίντεο</string>
+    <string name="call_notification_decline_action">Απόρριψη</string>
+    <string name="call_notification_hang_up_action">Τερματισμός</string>
+    <string name="call_notification_incoming_text">Εισερχόμενη κλήση</string>
+    <string name="call_notification_ongoing_text">Κλήση σε εξέλιξη</string>
+    <string name="call_notification_screening_text">Διαλογή εισερχόμενης κλήσης</string>
+    <string name="close_drawer">Κλείσιμο του μενού πλοήγησης</string>
+    <string name="close_sheet">Κλείσιμο φύλλου</string>
+    <string name="default_error_message">Μη έγκυρη καταχώριση</string>
+    <string name="default_popup_window_title">Αναδυόμενο παράθυρο</string>
+    <string name="range_end">Τέλος εύρους</string>
+    <string name="range_start">Αρχή εύρους</string>
+    <string name="selected">Επιλεγμένο</string>
+    <string name="template_percent">%1$d τοις εκατό.</string>
+</resources>
