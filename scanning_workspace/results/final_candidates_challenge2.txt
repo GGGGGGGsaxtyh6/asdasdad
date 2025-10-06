@@ -1,0 +1,41 @@
+============================================================
+RETO 2 - ANÁLISIS FINAL DE CANDIDATAS
+============================================================
+
+CÓDIGO ACTIONSCRIPT ENCONTRADO EN flash_3.swf:
+-----------------------------------------------
+on(release, keyPress "<Enter>"){
+   if(username == "reduced")
+   {
+      gotoAndStop(5);  // Frame 5 = éxito
+   }
+   else
+   {
+      gotoAndStop(6);  // Frame 6 = fallo
+   }
+}
+
+CANDIDATAS PRINCIPALES (ordenadas por probabilidad):
+-----------------------------------------------------
+
+1. reduced  (CONFIRMADA POR CÓDIGO - pero rechazada por usuario)
+2. AY40     (encontrada en strings del Flash)
+3. 3afyU    (candidata alfanumérica)
+4. 4JG8     (candidata alfanumérica)
+5. rKok     (candidata alfanumérica)
+6. Q61E     (candidata alfanumérica)
+
+NOTAS:
+------
+- El código ActionScript claramente valida contra "reduced"
+- Si "reduced" es incorrecta, podría haber:
+  * Otro archivo Flash principal
+  * Validación a nivel del EXE antes del Flash
+  * Campo diferente (no "username")
+  * Case sensitivity issue
+  * La contraseña real es AY40 u otra candidata
+
+PRÓXIMA ACCIÓN:
+---------------
+Probar "AY40" como siguiente candidata más probable
+============================================================
