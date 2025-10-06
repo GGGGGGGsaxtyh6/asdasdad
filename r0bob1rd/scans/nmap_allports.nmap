@@ -1,0 +1,564 @@
+# Nmap 7.95 scan initiated Mon Oct  6 04:18:12 2025 as: nmap -Pn -sV -p- -oA /workspace/r0bob1rd/scans/nmap_allports 94.237.121.49
+Nmap scan report for 94-237-121-49.uk-lon1.upcloud.host (94.237.121.49)
+Host is up (0.082s latency).
+Not shown: 65286 closed tcp ports (conn-refused)
+PORT      STATE    SERVICE     VERSION
+19/tcp    filtered chargen
+22/tcp    open     ssh         OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)
+25/tcp    filtered smtp
+111/tcp   open     rpcbind     2-4 (RPC #100000)
+4240/tcp  open     daap        mt-daapd DAAP
+9962/tcp  open     http        Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+10256/tcp open     http        Golang net/http server (Go-IPFS json-rpc or InfluxDB API)
+30421/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+30570/tcp open     ssl/unknown
+30786/tcp open     http        lighttpd 1.4.76
+30970/tcp open     http        nginx 1.19.2
+30987/tcp open     http        nginx 1.26.1
+31069/tcp open     http        nginx 1.22.1
+31206/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+31468/tcp open     http        Werkzeug httpd 3.0.1 (Python 3.11.8)
+31701/tcp open     http        Werkzeug httpd 3.0.1 (Python 3.11.8)
+31900/tcp open     http        Apache httpd 2.4.38 ((Debian))
+32036/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+32088/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+32306/tcp open     http        Werkzeug httpd 3.0.4 (Python 3.11.2)
+32618/tcp open     http        nginx
+32713/tcp open     http        Werkzeug httpd 3.0.1 (Python 3.11.8)
+32995/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+33016/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+33052/tcp open     http        Werkzeug httpd 1.0.0 (Python 2.7.17)
+33093/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+33128/tcp open     http        Uvicorn
+33151/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+33289/tcp open     ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+33482/tcp open     http        Werkzeug httpd 1.0.1 (Python 2.7.17)
+33582/tcp open     ssh         OpenSSH 10.0 (protocol 2.0)
+33686/tcp open     http        nginx
+33720/tcp open     http        Werkzeug httpd 2.2.2 (Python 3.7.13)
+33995/tcp open     http        nginx
+34006/tcp open     http        Gunicorn
+34094/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+34105/tcp open     http        Node.js Express framework
+34188/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+34225/tcp open     http        Apache httpd 2.4.7
+34424/tcp open     mysql       MariaDB 5.5.5-10.7.3
+34443/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+34561/tcp open     mysql       MariaDB 5.5.5-10.7.3
+34798/tcp open     http        nginx
+35041/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+35358/tcp open     http        Apache httpd 2.4.38 ((Debian))
+35604/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+35615/tcp open     ssl/http    nginx 1.22.1
+35689/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+35713/tcp open     http        nginx
+35812/tcp open     tcpwrapped
+36200/tcp open     http        Werkzeug httpd 2.0.0 (Python 3.8.15)
+36304/tcp open     http        nginx
+36387/tcp open     http        SimpleHTTPServer 0.6 (Python 3.9.2)
+36441/tcp open     unknown
+36442/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+36554/tcp open     unknown
+36854/tcp open     http        Werkzeug httpd 2.0.0 (Python 3.8.15)
+37077/tcp open     http        Apache httpd 2.4.38 ((Debian))
+37137/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+37333/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+37334/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+37383/tcp open     http        nginx 1.26.1
+37477/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+37818/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+37826/tcp open     unknown
+37959/tcp open     http        nginx 1.19.2
+38338/tcp open     ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+38360/tcp open     http        Apache httpd 2.4.38 ((Debian))
+38386/tcp open     http        Werkzeug httpd 3.0.3 (Python 3.12.3)
+38540/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+38999/tcp open     http        nginx 1.19.2
+39020/tcp open     http        Werkzeug httpd 3.0.4 (Python 3.11.10)
+39031/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+39101/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+39276/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+39331/tcp open     http        nginx 1.19.2
+39388/tcp open     http        Apache httpd 2.4.7
+39496/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+39508/tcp open     http        Apache httpd 2.4.18 ((Ubuntu))
+39549/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+39836/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+40019/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+40051/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+40131/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+40393/tcp open     ssl/http    nginx 1.22.1
+40568/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+40596/tcp open     http        nginx 1.19.2
+40855/tcp open     http        Node.js Express framework
+40901/tcp open     tcpwrapped
+40962/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+41094/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+41231/tcp open     http        nginx 1.19.2
+41330/tcp open     tcpwrapped
+41353/tcp open     http        nginx
+41430/tcp open     http        nginx
+41533/tcp open     tcpwrapped
+41535/tcp open     http        lighttpd 1.4.76
+41759/tcp open     ssh         OpenSSH 9.6p1 Ubuntu 3ubuntu13.4 (Ubuntu Linux; protocol 2.0)
+41995/tcp open     http        nginx 1.19.2
+42011/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+42272/tcp open     http        nginx 1.19.2
+42674/tcp open     http        nginx 1.19.2
+42720/tcp open     http        nginx 1.19.2
+42742/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+42833/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+42869/tcp open     http        Apache httpd 2.4.61
+43015/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+43214/tcp open     unknown
+43556/tcp open     http        Werkzeug httpd 3.0.4 (Python 3.11.2)
+43720/tcp open     http        Werkzeug httpd 3.0.3 (Python 3.11.2)
+43927/tcp open     http        lighttpd 1.4.76
+43954/tcp open     ssl/http    nginx 1.22.1
+44077/tcp open     ssl/http    nginx 1.22.1
+44134/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+44329/tcp open     http        nginx 1.19.2
+44558/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+44707/tcp open     http        Apache httpd 2.4.38 ((Debian))
+44767/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+44865/tcp open     http        Node.js Express framework
+44902/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+45090/tcp open     http        nginx 1.19.2
+45153/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+45184/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+45369/tcp open     ssl/http    Apache httpd 2.4.54 ((Unix))
+45571/tcp open     http        nginx 1.19.2
+45704/tcp open     ssl/http    nginx 1.22.1
+45742/tcp open     tcpwrapped
+45941/tcp open     http        nginx 1.19.2
+45968/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+46156/tcp open     ssl/http    nginx 1.22.1
+46193/tcp open     http        nginx 1.26.1
+46397/tcp open     http        nginx 1.26.1
+46774/tcp open     mysql       MariaDB 5.5.5-10.7.3
+46876/tcp open     http        nginx 1.19.2
+46897/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+46962/tcp open     http        nginx 1.19.2
+46966/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+46980/tcp open     http        Apache httpd 2.4.61
+47063/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+47149/tcp open     http        Node.js Express framework
+47305/tcp open     unknown
+47453/tcp open     http        Apache httpd 2.4.38 ((Debian))
+47680/tcp open     http        Uvicorn
+47778/tcp open     http        nginx
+47816/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+47838/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+47869/tcp open     http        nginx 1.19.2
+47936/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+47941/tcp open     ssh         OpenSSH 9.6p1 Ubuntu 3ubuntu13.4 (Ubuntu Linux; protocol 2.0)
+47988/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+48076/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+48386/tcp open     http        Node.js Express framework
+48466/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+48521/tcp open     http        nginx 1.26.1
+48547/tcp open     http        nginx 1.28.0
+48612/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+48794/tcp open     unknown
+49009/tcp open     http        nginx 1.27.1
+49055/tcp open     tcpwrapped
+49740/tcp open     tcpwrapped
+49745/tcp open     http        Werkzeug httpd 3.1.3 (Python 3.11.12)
+49836/tcp open     http        Node.js Express framework
+50082/tcp open     ssl/http    nginx
+50091/tcp open     tcpwrapped
+50183/tcp open     http        Apache httpd 2.4.62 ((Debian))
+50201/tcp open     http        Apache httpd 2.4.61
+50322/tcp open     http        Microsoft Kestrel httpd
+50413/tcp open     http        lighttpd 1.4.76
+50419/tcp open     unknown
+50509/tcp open     http        lighttpd 1.4.76
+50635/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+50689/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+50790/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+50839/tcp open     http        Werkzeug httpd 3.0.1 (Python 3.11.8)
+50993/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+51042/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+51045/tcp open     http        Node.js Express framework
+51332/tcp open     http        nginx 1.22.1
+51393/tcp open     http        nginx 1.26.1
+51473/tcp open     ssh         OpenSSH 9.6p1 Ubuntu 3ubuntu13.4 (Ubuntu Linux; protocol 2.0)
+51559/tcp open     http        Apache httpd 2.4.59 ((Unix))
+51598/tcp open     http        nginx 1.19.2
+51604/tcp open     tcpwrapped
+51658/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+51894/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+51896/tcp open     http        Node.js Express framework
+51923/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+51930/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+52060/tcp open     unknown
+52163/tcp open     tcpwrapped
+52183/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+52285/tcp open     tcpwrapped
+52562/tcp open     tcpwrapped
+52580/tcp open     tcpwrapped
+52589/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+52753/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+52853/tcp open     http        nginx
+53051/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+53096/tcp open     http        Apache httpd 2.4.38 ((Debian))
+53245/tcp open     http        nginx 1.19.2
+53873/tcp open     ssh         OpenSSH 8.9p1 Ubuntu 3ubuntu0.10 (Ubuntu Linux; protocol 2.0)
+54112/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+54146/tcp open     http        Apache httpd 2.4.61
+54210/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+54386/tcp open     http        lighttpd 1.4.76
+54533/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+54641/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+54712/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+54715/tcp open     http        Apache httpd 2.4.59
+54716/tcp open     http        Werkzeug httpd 2.3.7 (Python 3.11.2)
+54753/tcp open     http        Werkzeug httpd 3.1.3 (Python 3.13.0b4)
+54992/tcp open     tcpwrapped
+55208/tcp open     http        Werkzeug httpd 3.0.3 (Python 3.12.3)
+55451/tcp open     http        Uvicorn
+55588/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+55721/tcp open     http        Microsoft Kestrel httpd
+55733/tcp open     tcpwrapped
+55794/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+55867/tcp open     http        Microsoft Kestrel httpd
+55926/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+56048/tcp open     mysql       MariaDB 5.5.5-10.7.3
+56122/tcp open     http        nginx (reverse proxy)
+56164/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+56357/tcp open     unknown
+56385/tcp open     ssl/http    nginx 1.22.1
+56467/tcp open     http        nginx 1.19.2
+56482/tcp open     http        nginx 1.19.2
+56718/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+56820/tcp open     ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.1 (Ubuntu Linux; protocol 2.0)
+56949/tcp open     http        lighttpd 1.4.76
+57403/tcp open     ssl/http    nginx 1.22.1
+57529/tcp open     http        Apache httpd 2.4.29 ((Ubuntu))
+57581/tcp open     http        Node.js Express framework
+57794/tcp open     http        nginx 1.19.2
+57841/tcp open     http        nginx 1.19.2
+57950/tcp open     mysql       MariaDB 5.5.5-10.7.3
+58030/tcp open     http        Werkzeug httpd 2.0.0 (Python 3.8.15)
+58068/tcp open     http        lighttpd 1.4.76
+58100/tcp open     http        Node.js Express framework
+58214/tcp open     http        nginx 1.19.2
+58329/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+58363/tcp open     http        nginx 1.19.2
+58808/tcp open     http        Node.js Express framework
+58953/tcp open     http        nginx 1.19.2
+58960/tcp open     http        nginx 1.26.1
+59086/tcp open     http        nginx 1.19.2
+59507/tcp open     http        Node.js Express framework
+59783/tcp open     http        Werkzeug httpd 3.0.1 (Python 3.11.8)
+59914/tcp open     http        Apache httpd 2.4.41 ((Ubuntu))
+9 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port36441-TCP:V=7.95%I=7%D=10/6%Time=68E344CF%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,220,"=====\x20THE\x20FRAY:\x20THE\x20VIDEO\x20GAME\x20=====\nWelcom
+SF:e!\nThis\x20video\x20game\x20is\x20very\x20simple\nYou\x20are\x20a\x20c
+SF:ompetitor\x20in\x20The\x20Fray,\x20running\x20the\x20GAUNTLET\nI\x20wil
+SF:l\x20give\x20you\x20one\x20of\x20three\x20scenarios:\x20GORGE,\x20PHREA
+SF:K\x20or\x20FIRE\nYou\x20have\x20to\x20tell\x20me\x20if\x20I\x20need\x20
+SF:to\x20STOP,\x20DROP\x20or\x20ROLL\nIf\x20I\x20tell\x20you\x20there's\x2
+SF:0a\x20GORGE,\x20you\x20send\x20back\x20STOP\nIf\x20I\x20tell\x20you\x20
+SF:there's\x20a\x20PHREAK,\x20you\x20send\x20back\x20DROP\nIf\x20I\x20tell
+SF:\x20you\x20there's\x20a\x20FIRE,\x20you\x20send\x20back\x20ROLL\nSometi
+SF:mes,\x20I\x20will\x20send\x20back\x20more\x20than\x20one!\x20Like\x20th
+SF:is:\x20\nGORGE,\x20FIRE,\x20PHREAK\nIn\x20this\x20case,\x20you\x20need\
+SF:x20to\x20send\x20back\x20STOP-ROLL-DROP!\nAre\x20you\x20ready\?\x20\(y/
+SF:n\)\x20")%r(GenericLines,230,"=====\x20THE\x20FRAY:\x20THE\x20VIDEO\x20
+SF:GAME\x20=====\nWelcome!\nThis\x20video\x20game\x20is\x20very\x20simple\
+SF:nYou\x20are\x20a\x20competitor\x20in\x20The\x20Fray,\x20running\x20the\
+SF:x20GAUNTLET\nI\x20will\x20give\x20you\x20one\x20of\x20three\x20scenario
+SF:s:\x20GORGE,\x20PHREAK\x20or\x20FIRE\nYou\x20have\x20to\x20tell\x20me\x
+SF:20if\x20I\x20need\x20to\x20STOP,\x20DROP\x20or\x20ROLL\nIf\x20I\x20tell
+SF:\x20you\x20there's\x20a\x20GORGE,\x20you\x20send\x20back\x20STOP\nIf\x2
+SF:0I\x20tell\x20you\x20there's\x20a\x20PHREAK,\x20you\x20send\x20back\x20
+SF:DROP\nIf\x20I\x20tell\x20you\x20there's\x20a\x20FIRE,\x20you\x20send\x2
+SF:0back\x20ROLL\nSometimes,\x20I\x20will\x20send\x20back\x20more\x20than\
+SF:x20one!\x20Like\x20this:\x20\nGORGE,\x20FIRE,\x20PHREAK\nIn\x20this\x20
+SF:case,\x20you\x20need\x20to\x20send\x20back\x20STOP-ROLL-DROP!\nAre\x20y
+SF:ou\x20ready\?\x20\(y/n\)\x20That's\x20a\x20shame!\n")%r(GetRequest,230,
+SF:"=====\x20THE\x20FRAY:\x20THE\x20VIDEO\x20GAME\x20=====\nWelcome!\nThis
+SF:\x20video\x20game\x20is\x20very\x20simple\nYou\x20are\x20a\x20competito
+SF:r\x20in\x20The\x20Fray,\x20running\x20the\x20GAUNTLET\nI\x20will\x20giv
+SF:e\x20you\x20one\x20of\x20three\x20scenarios:\x20GORGE,\x20PHREAK\x20or\
+SF:x20FIRE\nYou\x20have\x20to\x20tell\x20me\x20if\x20I\x20need\x20to\x20ST
+SF:OP,\x20DROP\x20or\x20ROLL\nIf\x20I\x20tell\x20you\x20there's\x20a\x20GO
+SF:RGE,\x20you\x20send\x20back\x20STOP\nIf\x20I\x20tell\x20you\x20there's\
+SF:x20a\x20PHREAK,\x20you\x20send\x20back\x20DROP\nIf\x20I\x20tell\x20you\
+SF:x20there's\x20a\x20FIRE,\x20you\x20send\x20back\x20ROLL\nSometimes,\x20
+SF:I\x20will\x20send\x20back\x20more\x20than\x20one!\x20Like\x20this:\x20\
+SF:nGORGE,\x20FIRE,\x20PHREAK\nIn\x20this\x20case,\x20you\x20need\x20to\x2
+SF:0send\x20back\x20STOP-ROLL-DROP!\nAre\x20you\x20ready\?\x20\(y/n\)\x20T
+SF:hat's\x20a\x20shame!\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port36554-TCP:V=7.95%I=7%D=10/6%Time=68E344CF%P=x86_64-pc-linux-gnu%r(G
+SF:enericLines,71,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nServer:\x20HTB\x2
+SF:0proxy\r\nContent-Length:\x2020\r\nContent-Type:\x20text/plain\r\n\r\ni
+SF:nvalid\x20request\x20line")%r(GetRequest,7F,"HTTP/1\.1\x20501\x20Not\x2
+SF:0Implemented\r\nServer:\x20HTB\x20proxy\r\nContent-Length:\x2030\r\nCon
+SF:tent-Type:\x20text/plain\r\n\r\nProtocol\x20version\x20not\x20supported
+SF:")%r(HTTPOptions,7F,"HTTP/1\.1\x20501\x20Not\x20Implemented\r\nServer:\
+SF:x20HTB\x20proxy\r\nContent-Length:\x2030\r\nContent-Type:\x20text/plain
+SF:\r\n\r\nProtocol\x20version\x20not\x20supported")%r(RTSPRequest,7F,"HTT
+SF:P/1\.1\x20501\x20Not\x20Implemented\r\nServer:\x20HTB\x20proxy\r\nConte
+SF:nt-Length:\x2030\r\nContent-Type:\x20text/plain\r\n\r\nProtocol\x20vers
+SF:ion\x20not\x20supported")%r(RPCCheck,71,"HTTP/1\.1\x20400\x20Bad\x20Req
+SF:uest\r\nServer:\x20HTB\x20proxy\r\nContent-Length:\x2020\r\nContent-Typ
+SF:e:\x20text/plain\r\n\r\ninvalid\x20request\x20line")%r(DNSVersionBindRe
+SF:qTCP,71,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nServer:\x20HTB\x20proxy\
+SF:r\nContent-Length:\x2020\r\nContent-Type:\x20text/plain\r\n\r\ninvalid\
+SF:x20request\x20line")%r(DNSStatusRequestTCP,71,"HTTP/1\.1\x20400\x20Bad\
+SF:x20Request\r\nServer:\x20HTB\x20proxy\r\nContent-Length:\x2020\r\nConte
+SF:nt-Type:\x20text/plain\r\n\r\ninvalid\x20request\x20line")%r(Help,71,"H
+SF:TTP/1\.1\x20400\x20Bad\x20Request\r\nServer:\x20HTB\x20proxy\r\nContent
+SF:-Length:\x2020\r\nContent-Type:\x20text/plain\r\n\r\ninvalid\x20request
+SF:\x20line")%r(SSLSessionReq,7F,"HTTP/1\.1\x20501\x20Not\x20Implemented\r
+SF:\nServer:\x20HTB\x20proxy\r\nContent-Length:\x2030\r\nContent-Type:\x20
+SF:text/plain\r\n\r\nProtocol\x20version\x20not\x20supported")%r(TerminalS
+SF:erverCookie,71,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nServer:\x20HTB\x2
+SF:0proxy\r\nContent-Length:\x2020\r\nContent-Type:\x20text/plain\r\n\r\ni
+SF:nvalid\x20request\x20line")%r(TLSSessionReq,71,"HTTP/1\.1\x20400\x20Bad
+SF:\x20Request\r\nServer:\x20HTB\x20proxy\r\nContent-Length:\x2020\r\nCont
+SF:ent-Type:\x20text/plain\r\n\r\ninvalid\x20request\x20line")%r(Kerberos,
+SF:7F,"HTTP/1\.1\x20501\x20Not\x20Implemented\r\nServer:\x20HTB\x20proxy\r
+SF:\nContent-Length:\x2030\r\nContent-Type:\x20text/plain\r\n\r\nProtocol\
+SF:x20version\x20not\x20supported");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port37826-TCP:V=7.95%I=7%D=10/6%Time=68E344D9%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,1BF7,"HTTP/1\.1\x20200\x20OK\r\nDate:\x20Mon,\x2006\x20Oct\x2
+SF:02025\x2004:26:00\x20GMT\r\nContent-Type:\x20text/html;\x20charset=utf-
+SF:8\r\nContent-Length:\x207022\r\nConnection:\x20close\r\n\r\n<!DOCTYPE\x
+SF:20html>\n<html\x20lang=\"en\">\n\n<head>\n\x20\x20\x20\x20<meta\x20char
+SF:set=\"UTF-8\">\n\x20\x20\x20\x20<meta\x20name=\"viewport\"\x20content=\
+SF:"width=device-width,\x20initial-scale=1\.0\">\n\x20\x20\x20\x20<title>L
+SF:ogin\x20\|\x20Desires</title>\n\x20\x20\x20\x20<link\x20rel=\"preconnec
+SF:t\"\x20href=\"https://fonts\.googleapis\.com\">\n\x20\x20\x20\x20<link\
+SF:x20rel=\"preconnect\"\x20href=\"https://fonts\.gstatic\.com\"\x20crosso
+SF:rigin>\n\x20\x20\x20\x20<link\x20href=\"https://fonts\.googleapis\.com/
+SF:css2\?family=Inter:wght@400;500;600;700&display=swap\"\x20rel=\"stylesh
+SF:eet\">\n\x20\x20\x20\x20<style>\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\n
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\*\x20{\n\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20margin:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\x20\x20padding:\x200;\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\
+SF:x20box-sizing:\x20border-box;\n\x20\x20\x20\x20\x20\x20\x20\x20}\n\n\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20body\x20{\n\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20font-family:\x20'Inter',\x20sans-serif;\n\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20color:\x20#fff;\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20min-height:\x20100vh;\n\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20position:\x20relative;\n\x20\x20\x20\x20\x
+SF:20\x20\x20\x20\x20\x20\x20\x20overflow-x:\x20hidden;\n\x20\x20\x20\x20\
+SF:x20\x20\x20\x20}\n\n\x20\x20\x20\x20\x20\x20\x20\x20\x20\n\x20\x20")%r(
+SF:HTTPOptions,BC,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nDate:\x
+SF:20Mon,\x2006\x20Oct\x202025\x2004:26:00\x20GMT\r\nContent-Type:\x20text
+SF:/plain;\x20charset=utf-8\r\nContent-Length:\x2018\r\nAllow:\x20GET,\x20
+SF:HEAD\r\nConnection:\x20close\r\n\r\nMethod\x20Not\x20Allowed")%r(RTSPRe
+SF:quest,BC,"HTTP/1\.1\x20405\x20Method\x20Not\x20Allowed\r\nDate:\x20Mon,
+SF:\x2006\x20Oct\x202025\x2004:26:00\x20GMT\r\nContent-Type:\x20text/plain
+SF:;\x20charset=utf-8\r\nContent-Length:\x2018\r\nAllow:\x20GET,\x20HEAD\r
+SF:\nConnection:\x20close\r\n\r\nMethod\x20Not\x20Allowed");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port43214-TCP:V=7.95%I=7%D=10/6%Time=68E344EA%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,43,"Hey,\x20just\x20because\x20I\x20am\x20hungry\x20doesn't\x20mean
+SF:\x20I'll\x20execute\x20everything\n")%r(GenericLines,43,"Hey,\x20just\x
+SF:20because\x20I\x20am\x20hungry\x20doesn't\x20mean\x20I'll\x20execute\x2
+SF:0everything\n")%r(GetRequest,6D,"Hey,\x20just\x20because\x20I\x20am\x20
+SF:hungry\x20doesn't\x20mean\x20I'll\x20execute\x20everything\nHehe,\x20to
+SF:ld\x20you\.\.\.\x20won't\x20accept\x20everything\n")%r(HTTPOptions,6D,"
+SF:Hey,\x20just\x20because\x20I\x20am\x20hungry\x20doesn't\x20mean\x20I'll
+SF:\x20execute\x20everything\nHehe,\x20told\x20you\.\.\.\x20won't\x20accep
+SF:t\x20everything\n")%r(RTSPRequest,6D,"Hey,\x20just\x20because\x20I\x20a
+SF:m\x20hungry\x20doesn't\x20mean\x20I'll\x20execute\x20everything\nHehe,\
+SF:x20told\x20you\.\.\.\x20won't\x20accept\x20everything\n")%r(RPCCheck,43
+SF:,"Hey,\x20just\x20because\x20I\x20am\x20hungry\x20doesn't\x20mean\x20I'
+SF:ll\x20execute\x20everything\n")%r(DNSVersionBindReqTCP,6D,"Hey,\x20just
+SF:\x20because\x20I\x20am\x20hungry\x20doesn't\x20mean\x20I'll\x20execute\
+SF:x20everything\nHehe,\x20told\x20you\.\.\.\x20won't\x20accept\x20everyth
+SF:ing\n")%r(Help,43,"Hey,\x20just\x20because\x20I\x20am\x20hungry\x20does
+SF:n't\x20mean\x20I'll\x20execute\x20everything\n")%r(SSLSessionReq,6D,"He
+SF:y,\x20just\x20because\x20I\x20am\x20hungry\x20doesn't\x20mean\x20I'll\x
+SF:20execute\x20everything\nHehe,\x20told\x20you\.\.\.\x20won't\x20accept\
+SF:x20everything\n")%r(TerminalServerCookie,6D,"Hey,\x20just\x20because\x2
+SF:0I\x20am\x20hungry\x20doesn't\x20mean\x20I'll\x20execute\x20everything\
+SF:nHehe,\x20told\x20you\.\.\.\x20won't\x20accept\x20everything\n")%r(TLSS
+SF:essionReq,6D,"Hey,\x20just\x20because\x20I\x20am\x20hungry\x20doesn't\x
+SF:20mean\x20I'll\x20execute\x20everything\nHehe,\x20told\x20you\.\.\.\x20
+SF:won't\x20accept\x20everything\n")%r(Kerberos,6D,"Hey,\x20just\x20becaus
+SF:e\x20I\x20am\x20hungry\x20doesn't\x20mean\x20I'll\x20execute\x20everyth
+SF:ing\nHehe,\x20told\x20you\.\.\.\x20won't\x20accept\x20everything\n")%r(
+SF:SMBProgNeg,6D,"Hey,\x20just\x20because\x20I\x20am\x20hungry\x20doesn't\
+SF:x20mean\x20I'll\x20execute\x20everything\nHehe,\x20told\x20you\.\.\.\x2
+SF:0won't\x20accept\x20everything\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port47305-TCP:V=7.95%I=7%D=10/6%Time=68E344FC%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,21D,"-=\[\x20R0boB1rd\x20\]=-\n\x20\x20___\x20\x20\x20\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20___\n\x20/___\\\x20\x20\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20/___\\\x20\x20\n\x20\(\*
+SF:\x20\*\)\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\(\
+SF:*\x20\*\)\x20\n\(\x20\x20V\x20\x20\)\x20\x20\x20\x20\x20\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\(\x20\x20V\x20\x20\)\n--m-m-----------------m-m--\n\+
+SF:----\+------------------\+\n\|\x20ID\x20\|\x20\x20\x20R0bob1rd\x20Name\
+SF:x20\x20\|\n\+----\+------------------\+\n\|\x20\x200\x20\|\x20MechWings
+SF:\x20\x20\x20\x20\x20\x20\x20\x20\|\n\|\x20\x201\x20\|\x20TechFeathers\x
+SF:20\x20\x20\x20\x20\|\n\|\x20\x202\x20\|\x20CircuitBirds\x20\x20\x20\x20
+SF:\x20\|\n\|\x20\x203\x20\|\x20SteelAvians\x20\x20\x20\x20\x20\x20\|\n\|\
+SF:x20\x204\x20\|\x20NanoNestlings\x20\x20\x20\x20\|\n\|\x20\x205\x20\|\x2
+SF:0ByteBeaks\x20\x20\x20\x20\x20\x20\x20\x20\|\n\|\x20\x206\x20\|\x20Elec
+SF:tricEaglets\x20\x20\|\n\|\x20\x207\x20\|\x20GearRavens\x20\x20\x20\x20\
+SF:x20\x20\x20\|\n\|\x20\x208\x20\|\x20SiliconSparrows\x20\x20\|\n\|\x20\x
+SF:209\x20\|\x20AutomataFowl\x20\x20\x20\x20\x20\|\n\+----\+--------------
+SF:----\+\n\nSelect\x20a\x20R0bob1rd\x20>\x20")%r(GenericLines,21D,"-=\[\x
+SF:20R0boB1rd\x20\]=-\n\x20\x20___\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20___\n\x20/___\\\x20\x20\x20\x20\x20\x20\x20
+SF:\x20\x20\x20\x20\x20\x20\x20\x20/___\\\x20\x20\n\x20\(\*\x20\*\)\x20\x2
+SF:0\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\(\*\x20\*\)\x20\n
+SF:\(\x20\x20V\x20\x20\)\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x
+SF:20\(\x20\x20V\x20\x20\)\n--m-m-----------------m-m--\n\+----\+---------
+SF:---------\+\n\|\x20ID\x20\|\x20\x20\x20R0bob1rd\x20Name\x20\x20\|\n\+--
+SF:--\+------------------\+\n\|\x20\x200\x20\|\x20MechWings\x20\x20\x20\x2
+SF:0\x20\x20\x20\x20\|\n\|\x20\x201\x20\|\x20TechFeathers\x20\x20\x20\x20\
+SF:x20\|\n\|\x20\x202\x20\|\x20CircuitBirds\x20\x20\x20\x20\x20\|\n\|\x20\
+SF:x203\x20\|\x20SteelAvians\x20\x20\x20\x20\x20\x20\|\n\|\x20\x204\x20\|\
+SF:x20NanoNestlings\x20\x20\x20\x20\|\n\|\x20\x205\x20\|\x20ByteBeaks\x20\
+SF:x20\x20\x20\x20\x20\x20\x20\|\n\|\x20\x206\x20\|\x20ElectricEaglets\x20
+SF:\x20\|\n\|\x20\x207\x20\|\x20GearRavens\x20\x20\x20\x20\x20\x20\x20\|\n
+SF:\|\x20\x208\x20\|\x20SiliconSparrows\x20\x20\|\n\|\x20\x209\x20\|\x20Au
+SF:tomataFowl\x20\x20\x20\x20\x20\|\n\+----\+------------------\+\n\nSelec
+SF:t\x20a\x20R0bob1rd\x20>\x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port48794-TCP:V=7.95%I=7%D=10/6%Time=68E34507%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,37,"The\x20input\x20must\x20be\x20a\x20binary\x20signal\x20of\x2016
+SF:\x20bits\.\n\nInput\x20:\x20")%r(GenericLines,89,"The\x20input\x20must\
+SF:x20be\x20a\x20binary\x20signal\x20of\x2016\x20bits\.\n\nInput\x20:\x20E
+SF:rror\x20:\x20Invalid\x20length\x20of\x20bits\.\n\nInput\x20:\x20Error\x
+SF:20:\x20Invalid\x20length\x20of\x20bits\.\n\nInput\x20:\x20")%r(GetReque
+SF:st,89,"The\x20input\x20must\x20be\x20a\x20binary\x20signal\x20of\x2016\
+SF:x20bits\.\n\nInput\x20:\x20Error\x20:\x20Invalid\x20length\x20of\x20bit
+SF:s\.\n\nInput\x20:\x20Error\x20:\x20Invalid\x20length\x20of\x20bits\.\n\
+SF:nInput\x20:\x20")%r(HTTPOptions,89,"The\x20input\x20must\x20be\x20a\x20
+SF:binary\x20signal\x20of\x2016\x20bits\.\n\nInput\x20:\x20Error\x20:\x20I
+SF:nvalid\x20length\x20of\x20bits\.\n\nInput\x20:\x20Error\x20:\x20Invalid
+SF:\x20length\x20of\x20bits\.\n\nInput\x20:\x20")%r(RTSPRequest,89,"The\x2
+SF:0input\x20must\x20be\x20a\x20binary\x20signal\x20of\x2016\x20bits\.\n\n
+SF:Input\x20:\x20Error\x20:\x20Invalid\x20length\x20of\x20bits\.\n\nInput\
+SF:x20:\x20Error\x20:\x20Invalid\x20length\x20of\x20bits\.\n\nInput\x20:\x
+SF:20")%r(RPCCheck,37,"The\x20input\x20must\x20be\x20a\x20binary\x20signal
+SF:\x20of\x2016\x20bits\.\n\nInput\x20:\x20")%r(DNSVersionBindReqTCP,37,"T
+SF:he\x20input\x20must\x20be\x20a\x20binary\x20signal\x20of\x2016\x20bits\
+SF:.\n\nInput\x20:\x20")%r(DNSStatusRequestTCP,37,"The\x20input\x20must\x2
+SF:0be\x20a\x20binary\x20signal\x20of\x2016\x20bits\.\n\nInput\x20:\x20")%
+SF:r(Help,60,"The\x20input\x20must\x20be\x20a\x20binary\x20signal\x20of\x2
+SF:016\x20bits\.\n\nInput\x20:\x20Error\x20:\x20Invalid\x20length\x20of\x2
+SF:0bits\.\n\nInput\x20:\x20")%r(SSLSessionReq,60,"The\x20input\x20must\x2
+SF:0be\x20a\x20binary\x20signal\x20of\x2016\x20bits\.\n\nInput\x20:\x20Err
+SF:or\x20:\x20Invalid\x20length\x20of\x20bits\.\n\nInput\x20:\x20")%r(Term
+SF:inalServerCookie,60,"The\x20input\x20must\x20be\x20a\x20binary\x20signa
+SF:l\x20of\x2016\x20bits\.\n\nInput\x20:\x20Error\x20:\x20Invalid\x20lengt
+SF:h\x20of\x20bits\.\n\nInput\x20:\x20")%r(TLSSessionReq,60,"The\x20input\
+SF:x20must\x20be\x20a\x20binary\x20signal\x20of\x2016\x20bits\.\n\nInput\x
+SF:20:\x20Error\x20:\x20Invalid\x20length\x20of\x20bits\.\n\nInput\x20:\x2
+SF:0");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port50419-TCP:V=7.95%I=7%D=10/6%Time=68E3450C%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,66,"\nChoose\x20as\x20you\x20please\n\n1\.\x20Get\x20parameters\n2\
+SF:.\x20Reset\x20parameters!!\x20This\x20can\x20take\x20some\x20time\n3\.\
+SF:x20Get\x20Flag\n\n>\x20")%r(GenericLines,66,"\nChoose\x20as\x20you\x20p
+SF:lease\n\n1\.\x20Get\x20parameters\n2\.\x20Reset\x20parameters!!\x20This
+SF:\x20can\x20take\x20some\x20time\n3\.\x20Get\x20Flag\n\n>\x20")%r(GetReq
+SF:uest,66,"\nChoose\x20as\x20you\x20please\n\n1\.\x20Get\x20parameters\n2
+SF:\.\x20Reset\x20parameters!!\x20This\x20can\x20take\x20some\x20time\n3\.
+SF:\x20Get\x20Flag\n\n>\x20")%r(HTTPOptions,66,"\nChoose\x20as\x20you\x20p
+SF:lease\n\n1\.\x20Get\x20parameters\n2\.\x20Reset\x20parameters!!\x20This
+SF:\x20can\x20take\x20some\x20time\n3\.\x20Get\x20Flag\n\n>\x20")%r(RTSPRe
+SF:quest,66,"\nChoose\x20as\x20you\x20please\n\n1\.\x20Get\x20parameters\n
+SF:2\.\x20Reset\x20parameters!!\x20This\x20can\x20take\x20some\x20time\n3\
+SF:.\x20Get\x20Flag\n\n>\x20")%r(RPCCheck,66,"\nChoose\x20as\x20you\x20ple
+SF:ase\n\n1\.\x20Get\x20parameters\n2\.\x20Reset\x20parameters!!\x20This\x
+SF:20can\x20take\x20some\x20time\n3\.\x20Get\x20Flag\n\n>\x20")%r(DNSVersi
+SF:onBindReqTCP,66,"\nChoose\x20as\x20you\x20please\n\n1\.\x20Get\x20param
+SF:eters\n2\.\x20Reset\x20parameters!!\x20This\x20can\x20take\x20some\x20t
+SF:ime\n3\.\x20Get\x20Flag\n\n>\x20")%r(DNSStatusRequestTCP,66,"\nChoose\x
+SF:20as\x20you\x20please\n\n1\.\x20Get\x20parameters\n2\.\x20Reset\x20para
+SF:meters!!\x20This\x20can\x20take\x20some\x20time\n3\.\x20Get\x20Flag\n\n
+SF:>\x20")%r(Help,66,"\nChoose\x20as\x20you\x20please\n\n1\.\x20Get\x20par
+SF:ameters\n2\.\x20Reset\x20parameters!!\x20This\x20can\x20take\x20some\x2
+SF:0time\n3\.\x20Get\x20Flag\n\n>\x20")%r(SSLSessionReq,66,"\nChoose\x20as
+SF:\x20you\x20please\n\n1\.\x20Get\x20parameters\n2\.\x20Reset\x20paramete
+SF:rs!!\x20This\x20can\x20take\x20some\x20time\n3\.\x20Get\x20Flag\n\n>\x2
+SF:0")%r(TerminalServerCookie,66,"\nChoose\x20as\x20you\x20please\n\n1\.\x
+SF:20Get\x20parameters\n2\.\x20Reset\x20parameters!!\x20This\x20can\x20tak
+SF:e\x20some\x20time\n3\.\x20Get\x20Flag\n\n>\x20")%r(TLSSessionReq,66,"\n
+SF:Choose\x20as\x20you\x20please\n\n1\.\x20Get\x20parameters\n2\.\x20Reset
+SF:\x20parameters!!\x20This\x20can\x20take\x20some\x20time\n3\.\x20Get\x20
+SF:Flag\n\n>\x20");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port52060-TCP:V=7.95%I=7%D=10/6%Time=68E3451A%P=x86_64-pc-linux-gnu%r(G
+SF:etRequest,79,"HTTP/1\.1\x20404\x20Not\x20Found\r\nContent-Type:\x20text
+SF:/plain\r\nDate:\x20Mon,\x2006\x20Oct\x202025\x2004:27:06\x20GMT\r\nConn
+SF:ection:\x20close\r\n\r\n404\x20Not\x20Found")%r(HTTPOptions,79,"HTTP/1\
+SF:.1\x20404\x20Not\x20Found\r\nContent-Type:\x20text/plain\r\nDate:\x20Mo
+SF:n,\x2006\x20Oct\x202025\x2004:27:06\x20GMT\r\nConnection:\x20close\r\n\
+SF:r\n404\x20Not\x20Found")%r(RTSPRequest,79,"HTTP/1\.1\x20404\x20Not\x20F
+SF:ound\r\nContent-Type:\x20text/plain\r\nDate:\x20Mon,\x2006\x20Oct\x2020
+SF:25\x2004:27:07\x20GMT\r\nConnection:\x20close\r\n\r\n404\x20Not\x20Foun
+SF:d")%r(RPCCheck,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x2
+SF:0close\r\n\r\n")%r(DNSVersionBindReqTCP,2F,"HTTP/1\.1\x20400\x20Bad\x20
+SF:Request\r\nConnection:\x20close\r\n\r\n")%r(DNSStatusRequestTCP,2F,"HTT
+SF:P/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(Hel
+SF:p,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\
+SF:n")%r(SSLSessionReq,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnectio
+SF:n:\x20close\r\n\r\n")%r(TerminalServerCookie,2F,"HTTP/1\.1\x20400\x20Ba
+SF:d\x20Request\r\nConnection:\x20close\r\n\r\n")%r(TLSSessionReq,2F,"HTTP
+SF:/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(Kerb
+SF:eros,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n
+SF:\r\n")%r(SMBProgNeg,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnectio
+SF:n:\x20close\r\n\r\n")%r(X11Probe,2F,"HTTP/1\.1\x20400\x20Bad\x20Request
+SF:\r\nConnection:\x20close\r\n\r\n")%r(FourOhFourRequest,79,"HTTP/1\.1\x2
+SF:0404\x20Not\x20Found\r\nContent-Type:\x20text/plain\r\nDate:\x20Mon,\x2
+SF:006\x20Oct\x202025\x2004:27:08\x20GMT\r\nConnection:\x20close\r\n\r\n40
+SF:4\x20Not\x20Found")%r(LPDString,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\
+SF:r\nConnection:\x20close\r\n\r\n")%r(LDAPSearchReq,2F,"HTTP/1\.1\x20400\
+SF:x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(LDAPBindReq,2F,"H
+SF:TTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20close\r\n\r\n")%r(S
+SF:IPOptions,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConnection:\x20clos
+SF:e\r\n\r\n")%r(LANDesk-RC,2F,"HTTP/1\.1\x20400\x20Bad\x20Request\r\nConn
+SF:ection:\x20close\r\n\r\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port56357-TCP:V=7.95%I=7%D=10/6%Time=68E34529%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,38,"\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x
+SF:20own\x20message\n>\x20")%r(GenericLines,CC,"\[1\]:\x20Get\x20encrypted
+SF:\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x20Invalid\x20
+SF:menu\x20item\n\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20
+SF:your\x20own\x20message\n>\x20Invalid\x20menu\x20item\n\[1\]:\x20Get\x20
+SF:encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x20")
+SF:%r(GetRequest,CC,"\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt
+SF:\x20your\x20own\x20message\n>\x20Invalid\x20menu\x20item\n\[1\]:\x20Get
+SF:\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x
+SF:20Invalid\x20menu\x20item\n\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x
+SF:20Encrypt\x20your\x20own\x20message\n>\x20")%r(HTTPOptions,CC,"\[1\]:\x
+SF:20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message
+SF:\n>\x20Invalid\x20menu\x20item\n\[1\]:\x20Get\x20encrypted\x20flag\n\[2
+SF:\]:\x20Encrypt\x20your\x20own\x20message\n>\x20Invalid\x20menu\x20item\
+SF:n\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x
+SF:20message\n>\x20")%r(RTSPRequest,CC,"\[1\]:\x20Get\x20encrypted\x20flag
+SF:\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x20Invalid\x20menu\x20
+SF:item\n\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20
+SF:own\x20message\n>\x20Invalid\x20menu\x20item\n\[1\]:\x20Get\x20encrypte
+SF:d\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x20")%r(RPCCh
+SF:eck,38,"\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x
+SF:20own\x20message\n>\x20")%r(DNSVersionBindReqTCP,38,"\[1\]:\x20Get\x20e
+SF:ncrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x20")%
+SF:r(DNSStatusRequestTCP,38,"\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x2
+SF:0Encrypt\x20your\x20own\x20message\n>\x20")%r(Help,82,"\[1\]:\x20Get\x2
+SF:0encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\n>\x20I
+SF:nvalid\x20menu\x20item\n\[1\]:\x20Get\x20encrypted\x20flag\n\[2\]:\x20E
+SF:ncrypt\x20your\x20own\x20message\n>\x20")%r(SSLSessionReq,82,"\[1\]:\x2
+SF:0Get\x20encrypted\x20flag\n\[2\]:\x20Encrypt\x20your\x20own\x20message\
+SF:n>\x20Invalid\x20menu\x20item\n\[1\]:\x20Get\x20encrypted\x20flag\n\[2\
+SF:]:\x20Encrypt\x20your\x20own\x20message\n>\x20");
+Service Info: Hosts: 192.168.150.48, 192.168.26.44, 192.168.150.215, 192.168.40.54, 192.168.19.93; OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Oct  6 04:30:27 2025 -- 1 IP address (1 host up) scanned in 735.16 seconds
