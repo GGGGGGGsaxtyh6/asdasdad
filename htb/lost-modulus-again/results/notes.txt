@@ -1,0 +1,18 @@
+Challenge: Lost Modulus Again (HTB)
+Date: 2025-10-06T09:02:39+00:00
+
+Notes:
+- Recuperado n por gcd(m^3 - c) con e=3.
+- n es de 2048 bits.
+- No es raíz cúbica perfecta para cFlag1/cFlag2.
+- Intentos: Fermat, Pollard p-1, Pollard Rho bajo presupuesto de 40s, sin éxito.
+- Buscado k pequeño para c + k*n = cubo perfecto hasta 5e6, sin éxito.
+- Exploré raíces 2-ádicas y GCD polinomial; sin solución en búsqueda acotada.
+
+Siguientes pasos (si se amplía tiempo):
+- Ejecutar Pollard Rho con mayor tiempo y más semillas.
+- Probar ECM (msieve/GMP-ECM).
+- Ampliar búsqueda de k o usar técnicas de lattice (Coppersmith small-root).
+- n (2048 bits) recuperado en results/n.txt
+- ciphertexts guardados en results/ciphertexts.txt
+- ECM/LLL ejecutados sin factorizar n en 2x40s
