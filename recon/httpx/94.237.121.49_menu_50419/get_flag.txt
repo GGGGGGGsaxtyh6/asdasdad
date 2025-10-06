@@ -1,0 +1,16 @@
+
+Choose as you please
+
+1. Get parameters
+2. Reset parameters!! This can take some time
+3. Get Flag
+
+> encrypted = 430f2b4257acb4e0fe3873edbd0b5d97b4f96852f4ae5191b973c4106fbf3c00
+
+Choose as you please
+
+1. Get parameters
+2. Reset parameters!! This can take some time
+3. Get Flag
+
+> 
