@@ -1,0 +1,118 @@
+╔════════════════════════════════════════════════════════════╗
+║          🔥 SERVIDORES ENCONTRADOS CON CONTENIDO           ║
+╚════════════════════════════════════════════════════════════╝
+
+De 66 IPs escaneadas, solo 2 tienen contenido web accesible:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 SERVIDOR #1: 54.245.27.232:9993
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tipo: Docker API / vRealize Operations Manager
+Estado: ✅ COMPLETAMENTE ACCESIBLE
+
+📁 DIRECTORIOS ENCONTRADOS (10 recursos):
+
+1. / (763 bytes, XML)
+   - Página principal en XML
+
+2. /robots.txt (694 bytes)
+   - Archivo robots para crawlers
+
+3. /sitemap.xml (453 bytes)
+   - Mapa del sitio
+
+4. /admin (332 bytes)
+   - Panel de administración
+
+5. /login (6322 bytes, HTML)
+   - Página de login/autenticación
+   - Título: vRealize Operations Manager
+
+6. /api (257 bytes, JSON/API)
+   - Endpoint API
+
+7. /status (303 bytes)
+   - Estado del servidor
+
+8. /health (595 bytes, JSON)
+   - Health check endpoint
+
+9. /info (2591 bytes, JSON)
+   - Información del sistema
+   - Docker API endpoint
+   - ID: O6SV:Q6P4:INWD:SJ5O:J2I7:ICZP:Q5W4:BFZC:VR75:64WL:GROL:T5S7
+   - Containers: 0
+   - Images: 0
+   - Driver: overlay2
+
+10. /test (1188 bytes, HTML)
+    - Página de prueba
+
+🔍 DETALLES:
+- Sistema: vRealize Operations Manager (VMware)
+- Puerto: 9993
+- Servicios: Docker API, Web UI
+- Todos los endpoints responden 200 OK
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 SERVIDOR #2: 152.70.137.18:8888
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Tipo: Sistema de Gestión de Activos (资产管理系统 - Chino)
+Estado: ✅ PARCIALMENTE ACCESIBLE
+
+📁 DIRECTORIOS ENCONTRADOS (2 recursos):
+
+1. / (21241 bytes, HTML)
+   - Página principal
+   - Título: 资产管理系统 (Sistema de gestión de activos)
+   - Aplicación web en chino
+
+2. /test (7338 bytes, HTML)
+   - Página de prueba
+   - Título: 市场数据测试 (Prueba de datos del mercado)
+
+🔍 DETALLES:
+- Sistema: Aplicación web personalizada
+- Idioma: Chino
+- Puerto: 8888
+- Tipo: Sistema de gestión/inventario
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📊 RESUMEN GENERAL DE LAS 66 IPs
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ 2 IPs con servidores web accesibles
+🔒 Múltiples IPs con 403 Forbidden (Cloudflare/protección)
+🚫 Múltiples IPs con 407 (requieren autenticación de proxy)
+⚡ Mayoría son PROXIES PUROS (no tienen contenido web propio)
+
+CONCLUSIÓN:
+La mayoría de las 66 IPs son proxies que sirven para:
+- Redirigir tráfico
+- Hacer peticiones a OTROS sitios
+- No tienen contenido web propio
+
+Solo 2 IPs tienen servidores web con contenido:
+1. 54.245.27.232:9993 - Docker API completa
+2. 152.70.137.18:8888 - Sistema de gestión de activos
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔧 CÓMO ACCEDER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Para ver el contenido:
+
+Servidor #1 (Docker API):
+  curl http://54.245.27.232:9993/info
+  curl http://54.245.27.232:9993/login
+  curl http://54.245.27.232:9993/api
+
+Servidor #2 (Sistema chino):
+  curl http://152.70.137.18:8888/
+  curl http://152.70.137.18:8888/test
+
+O con navegador:
+  http://54.245.27.232:9993/login
+  http://152.70.137.18:8888/
