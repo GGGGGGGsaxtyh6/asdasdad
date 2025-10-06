@@ -1,0 +1,29 @@
+RETO: Quantum Scrambler (picoCTF)
+URL: nc verbal-sleep.picoctf.net 57221
+==========================================
+
+MECANISMO:
+El programa scramble() modifica una lista de listas con valores hex:
+- Itera desde i=2 hasta el final
+- En cada paso: A[i-2] += A.pop(i-1) y A[i-1].append(A[:i-2])
+- Esto crea una estructura anidada compleja
+
+SOLUCIÓN:
+El cipher mantiene los valores hex originales en el nivel superior de cada sublista.
+Solo necesitamos extraer los strings hex de cada elemento (ignorando listas anidadas).
+
+SCRIPT DECODIFICADOR:
+with open('cipher_output.txt', 'r') as f:
+    cipher = eval(f.read().strip())
+
+def decode_scrambled(cipher):
+    flag_chars = []
+    for item in cipher:
+        hex_values = [x for x in item if isinstance(x, str) and x.startswith('0x')]
+        flag_chars.extend(hex_values)
+    return ''.join([chr(int(h, 16)) for h in flag_chars])
+
+flag = decode_scrambled(cipher)
+
+FLAG OBTENIDA:
+picoCTF{python_is_weird797ef9bd}
