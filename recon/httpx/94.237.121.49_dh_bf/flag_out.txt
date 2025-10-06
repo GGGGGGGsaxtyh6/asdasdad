@@ -1,0 +1,9 @@
+encrypted = b8a92d16aafaf6a2e6956330ac84dad02c1a230267e760c3f488faaa005648b2
+
+Choose as you please
+
+1. Get parameters
+2. Reset parameters!! This can take some time
+3. Get Flag
+
+> 
