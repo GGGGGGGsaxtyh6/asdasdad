@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="abc_action_bar_up_description">Перейти вгору</string>
+    <string name="abc_action_mode_done">Готово</string>
+    <string name="abc_capital_off">ВИМКНЕНО</string>
+    <string name="abc_capital_on">УВІМКНЕНО</string>
+    <string name="abc_menu_alt_shortcut_label">Alt+</string>
+    <string name="abc_menu_ctrl_shortcut_label">Ctrl+</string>
+    <string name="abc_menu_delete_shortcut_label">delete</string>
+    <string name="abc_menu_enter_shortcut_label">enter</string>
+    <string name="abc_menu_function_shortcut_label">Function+</string>
+    <string name="abc_menu_meta_shortcut_label">Meta+</string>
+    <string name="abc_menu_shift_shortcut_label">Shift+</string>
+    <string name="abc_menu_space_shortcut_label">пробіл</string>
+    <string name="abc_menu_sym_shortcut_label">Sym+</string>
+    <string name="abc_prepend_shortcut_label">Menu+</string>
+    <string name="abc_search_hint">Введіть пошуковий запит…</string>
+    <string name="abc_searchview_description_clear">Очистити запит</string>
+    <string name="abc_searchview_description_search">Пошук</string>
+    <string name="abc_searchview_description_submit">Наіслати запит</string>
+    <string name="abc_searchview_description_voice">Голосовий пошук</string>
+    <string name="abc_toolbar_collapse_description">Згорнути</string>
+    <string name="call_notification_answer_action">Відповісти</string>
+    <string name="call_notification_answer_video_action">Відео</string>
+    <string name="call_notification_decline_action">Відхилити</string>
+    <string name="call_notification_hang_up_action">Завершити</string>
+    <string name="call_notification_incoming_text">Вхідний виклик</string>
+    <string name="call_notification_ongoing_text">Активний виклик</string>
+    <string name="call_notification_screening_text">Вхідний виклик (Фільтр)</string>
+    <string name="close_drawer">Закрити меню навігації</string>
+    <string name="close_sheet">Закрити аркуш</string>
+    <string name="default_error_message">Введено недійсні дані</string>
+    <string name="default_popup_window_title">Спливаюче вікно</string>
+    <string name="range_end">Кінець діапазону</string>
+    <string name="range_start">Початок діапазону</string>
+    <string name="selected">Вибрано</string>
+    <string name="template_percent">Відсотків: %1$d.</string>
+</resources>
