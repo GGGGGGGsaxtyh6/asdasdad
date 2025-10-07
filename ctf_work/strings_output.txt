@@ -1,0 +1,100 @@
+!This program cannot be run in DOS mode.
+Richi~]
+>C7c
+.text
+`.rdata
+@.data
+.pdata
+@_RDATA
+@.reloc
+D$P0
+T$PH
+D$X3
+D$@A
+D$ H
+T$PH
+\$@H
+t$HH
+D$8H
+D$8H
+D$@H
+D$(H
+D$(H
+T$0H
+\$ WH
+T$PH
+L$XH
+T$PL
+L$0L
+L$`H
+L$(3
+\$hH
+@SVWH
+T$`H
+L$hH
+T$`L
+L$0L
+L$pH
+L$(3
+@_^[
+t!eH
+uxHc
+uTL+
+\$ UH
+M H1E
+ H3E H3E
+\$HH
+L$0L
+L$(H
+L$ 3
+L$PH
+D$PH
+D$@H
+D$H3
+u0HcH<H
+;csm
+\$03
+\$0H
+\$0H
+ntelA
+GenuD
+ineI
+t(=`
+t!=p
+ w$H
+T$ H
+D$ "
+D$ $
+\$(3
+t$0H
+WATAUAVAWH
+_8M+
+l$0H
+|$8;3
+L$0I
+x}~t
+D$(I
+ tDE3
+\$@I
+A_A^A]A\_
+9csm
+A - 
+t7HcP
+t=L;
+ffff
+t#eH
+\$0H
+t$8H
+WATAUAVAWH
+Wu-D
+\$PH
+l$XH
+t$`H
+ A_A^A]A\_
+\$0H
+\$0H
+t$8H
+ffff
+ffffff
+fffffff
+ob0f
