@@ -1,0 +1,52 @@
+==============================================
+RETO: Event-Viewing (picoCTF)
+==============================================
+
+OBJETIVO:
+Analizar logs de Windows de un equipo infectado con malware que causa
+shutdowns automáticos al iniciar sesión.
+
+METODOLOGÍA:
+1. Descargado archivo Windows_Logs.evtx
+2. Convertido a XML usando evtx_dump.py
+3. Análisis de eventos relevantes
+
+EVIDENCIAS ENCONTRADAS:
+
+1. INSTALACIÓN DE SOFTWARE MALICIOSO
+   - Event ID: 1033 (MsiInstaller)
+   - Software: "Totally_Legit_Software"
+   - Flag Parte 1: cGljb0NURntFdjNudF92aTN3djNyXw==
+   - Decodificada: picoCTF{Ev3nt_vi3wv3r_
+   - Timestamp: 2024-07-15 15:55:57
+
+2. EJECUCIÓN Y PERSISTENCIA
+   - Event ID: 4657 (Modificación de Registro)
+   - Acción: Creó entrada en HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+   - Nombre: "Immediate Shutdown (MXNfYV9wcjN0dHlfdXMzZnVsXw==)"
+   - Valor: C:\Program Files (x86)\Totally_Legit_Software\custom_shutdown.exe
+   - Flag Parte 2: MXNfYV9wcjN0dHlfdXMzZnVsXw==
+   - Decodificada: 1s_a_pr3tty_us3ful_
+   - Timestamp: 2024-07-15 15:56:19
+
+3. MECANISMO DE SHUTDOWN
+   - Encontrado en datos binarios del log
+   - Flag Parte 3: dDAwbF84MWJhM2ZlOX0=
+   - Decodificada: t00l_81ba3fe9}
+   - El malware configuró custom_shutdown.exe para ejecutarse al inicio
+
+TÉCNICA DE ATAQUE:
+El malware se instaló como "Totally_Legit_Software", luego modificó el
+registro de Windows para ejecutar custom_shutdown.exe en cada inicio de
+sesión, causando shutdowns automáticos.
+
+FLAG COMPLETA:
+picoCTF{Ev3nt_vi3wv3r_1s_a_pr3tty_us3ful_t00l_81ba3fe9}
+
+HERRAMIENTAS UTILIZADAS:
+- evtx_dump.py (python3-evtx)
+- grep/sed/awk
+- Python para análisis de datos
+- base64 para decodificación
+
+==============================================
