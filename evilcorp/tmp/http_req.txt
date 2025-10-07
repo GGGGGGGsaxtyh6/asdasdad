@@ -1,0 +1,6 @@
+GET / HTTP/1.1
+Host: 83.136.250.244
+User-Agent: curl/8
+Connection: close
+
+
