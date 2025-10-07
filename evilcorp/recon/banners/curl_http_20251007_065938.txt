@@ -1,0 +1,15 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 83.136.250.244:56528...
+* Connected to 83.136.250.244 (83.136.250.244) port 56528
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: 83.136.250.244:56528
+> User-Agent: curl/8.12.1
+> Accept: */*
+> 
+* Request completely sent off
+* Received HTTP/0.9 when not allowed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* closing connection #0
+curl: (1) Received HTTP/0.9 when not allowed

@@ -1,0 +1,28 @@
+Connection to 83.136.250.244 56528 port [tcp/*] succeeded!
+[2J[H[1m[34mE[0m-Corp[0m 
+Welcome employer and have a nice day. 
+欢迎雇主并祝您有愉快的一天。 
+--------------------------------------------------
+Please login , 请登录 
+Username: Password: Sorry, please try again or contact your system administrator.
+抱歉，请重试或致电系统管理员。
+[2J[H[1m[34mE[0m-Corp[0m 
+Welcome employer and have a nice day. 
+欢迎雇主并祝您有愉快的一天。 
+--------------------------------------------------
+Please login , 请登录 
+Username: Password: Sorry, please try again or contact your system administrator.
+抱歉，请重试或致电系统管理员。
+[2J[H[1m[34mE[0m-Corp[0m 
+Welcome employer and have a nice day. 
+欢迎雇主并祝您有愉快的一天。 
+--------------------------------------------------
+Please login , 请登录 
+Username: Password: Sorry, please try again or contact your system administrator.
+抱歉，请重试或致电系统管理员。
+[2J[H[1m[34mE[0m-Corp[0m 
+Welcome employer and have a nice day. 
+欢迎雇主并祝您有愉快的一天。 
+--------------------------------------------------
+Please login , 请登录 
+Username: 

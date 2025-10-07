@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Tue Oct  7 06:58:38 2025 as: nmap -Pn -n -sS -sV -sC -p 56528 --version-intensity 5 --reason -oA /workspace/evilcorp/recon/nmap/initial_20251007_065838 83.136.250.244
+Host: 83.136.250.244 ()	Status: Up
+Host: 83.136.250.244 ()	Ports: 56528/open/tcp//unknown///
+# Nmap done at Tue Oct  7 06:59:31 2025 -- 1 IP address (1 host up) scanned in 53.12 seconds
