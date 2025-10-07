@@ -1,0 +1,26 @@
+CryptoHack Challenge Analysis
+=============================
+
+Challenge: "Bob got a bit more careful with the way he verifies parameters. He's still insisting on using the p and g values provided by his partner."
+
+Key Findings:
+1. Bob's secret exponent b is CONSTANT across connections
+2. Bob accepts small values like A=3, A=g^64, etc (but rejects A=1, A=g, A=p, A=p-1)
+3. Encryption uses SHA1(str(shared_secret)) for key derivation (not SHA256!)
+4. When we send A=k, Bob computes shared_secret = k^b mod p and encrypts a message
+5. We can decrypt Bob's message if we know k^b mod p
+
+Attack Strategy:
+- Send small A values to Bob
+- Bob responds with encrypted message using shared_secret = A^b mod p
+- Need to find b (Bob's secret exponent) to decrypt Alice's original message
+- Alice's message uses shared_secret_alice = B^a mod p where B = g^b
+
+Problem: b is too large for direct brute force (>1000)
+
+Possible approaches:
+1. Pohlig-Hellman: if p-1 has small factors, can solve discrete log modulo each factor
+2. Multiple queries with different A values to leak information about b
+3. Find some other vulnerability in Bob's parameter checking
+
+Current status: Can decrypt Bob's responses but not Alice's original message (which contains the flag)
