@@ -1,0 +1,1 @@
+crypto{My new Diffie-Hellman code is perfect. I implemented all poncho's suggestions!}
