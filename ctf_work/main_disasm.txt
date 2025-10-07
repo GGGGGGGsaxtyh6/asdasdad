@@ -1,0 +1,17 @@
+            ; CALL XREF from entry0 @ 0x14000145b(x)
+┌ 54: int main (int argc, char **argv, char **envp);
+│           0x140001180      4883ec28       sub rsp, 0x28
+│           0x140001184      488d0db5d1..   lea rcx, str.Running_Firefox__105.0.1__Hooking_Module ; 0x14000e340 ; "Running Firefox (105.0.1) Hooking Module" ; LPCSTR lpOutputString
+│           0x14000118b      ff156fce0000   call qword [sym.imp.KERNEL32.dll_OutputDebugStringA] ; [0x14000e000:8]=0x16998 reloc.KERNEL32.dll_OutputDebugStringA ; VOID OutputDebugStringA(LPCSTR lpOutputString)
+│           0x140001191      33c9           xor ecx, ecx
+│           0x140001193      488d05665e..   lea rax, section..data     ; 0x140017000
+│           ; CODE XREF from main @ 0x1400011a8(x)
+│       ┌─> 0x14000119a      803072         xor byte [rax], 0x72       ; [0x72:1]=255 ; 114
+│       ╎   0x14000119d      ffc1           inc ecx
+│       ╎   0x14000119f      48ffc0         inc rax
+│       ╎   0x1400011a2      81f9a4050000   cmp ecx, 0x5a4             ; 1444
+│       └─< 0x1400011a8      72f0           jb 0x14000119a
+│           0x1400011aa      e851feffff     call section..text
+│           0x1400011af      33c0           xor eax, eax
+│           0x1400011b1      4883c428       add rsp, 0x28
+└           0x1400011b5      c3             ret
