@@ -1,0 +1,77 @@
+# Nmap 7.95 scan initiated Tue Oct  7 21:46:03 2025 as: nmap -Pn -n -sS -sV -p30004 -oN /workspace/recon/GrownUp/nmap/svc_30004.txt 167.71.125.23 134.209.56.140
+Nmap scan report for 167.71.125.23
+Host is up (0.072s latency).
+
+PORT      STATE SERVICE        VERSION
+30004/tcp open  amicon-fpsu-s?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30004-TCP:V=7.95%I=7%D=10/7%Time=68E58A21%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(
+SF:GenericLines,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:
+SF:\x20")%r(GetRequest,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\
+SF:[y/N\]:\x20")%r(HTTPOptions,22,"Are\x20you\x2018\x20years\x20or\x20olde
+SF:r\?\x20\[y/N\]:\x20")%r(RTSPRequest,22,"Are\x20you\x2018\x20years\x20or
+SF:\x20older\?\x20\[y/N\]:\x20")%r(RPCCheck,22,"Are\x20you\x2018\x20years\
+SF:x20or\x20older\?\x20\[y/N\]:\x20")%r(DNSVersionBindReqTCP,22,"Are\x20yo
+SF:u\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(DNSStatusRequestT
+SF:CP,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(H
+SF:elp,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(
+SF:SSLSessionReq,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]
+SF::\x20")%r(TerminalServerCookie,22,"Are\x20you\x2018\x20years\x20or\x20o
+SF:lder\?\x20\[y/N\]:\x20")%r(TLSSessionReq,22,"Are\x20you\x2018\x20years\
+SF:x20or\x20older\?\x20\[y/N\]:\x20")%r(Kerberos,22,"Are\x20you\x2018\x20y
+SF:ears\x20or\x20older\?\x20\[y/N\]:\x20")%r(SMBProgNeg,22,"Are\x20you\x20
+SF:18\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(X11Probe,22,"Are\x20yo
+SF:u\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(FourOhFourRequest
+SF:,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(LPD
+SF:String,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")
+SF:%r(LDAPSearchReq,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/
+SF:N\]:\x20")%r(LDAPBindReq,22,"Are\x20you\x2018\x20years\x20or\x20older\?
+SF:\x20\[y/N\]:\x20")%r(SIPOptions,22,"Are\x20you\x2018\x20years\x20or\x20
+SF:older\?\x20\[y/N\]:\x20")%r(LANDesk-RC,22,"Are\x20you\x2018\x20years\x2
+SF:0or\x20older\?\x20\[y/N\]:\x20")%r(TerminalServer,22,"Are\x20you\x2018\
+SF:x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(NCP,22,"Are\x20you\x2018\
+SF:x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(NotesRPC,22,"Are\x20you\x
+SF:2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(JavaRMI,22,"Are\x20y
+SF:ou\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(WMSRequest,22,"A
+SF:re\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20");
+
+Nmap scan report for 134.209.56.140
+Host is up (0.070s latency).
+
+PORT      STATE SERVICE        VERSION
+30004/tcp open  amicon-fpsu-s?
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30004-TCP:V=7.95%I=7%D=10/7%Time=68E58A21%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(
+SF:GenericLines,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:
+SF:\x20")%r(GetRequest,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\
+SF:[y/N\]:\x20")%r(HTTPOptions,22,"Are\x20you\x2018\x20years\x20or\x20olde
+SF:r\?\x20\[y/N\]:\x20")%r(RTSPRequest,22,"Are\x20you\x2018\x20years\x20or
+SF:\x20older\?\x20\[y/N\]:\x20")%r(RPCCheck,22,"Are\x20you\x2018\x20years\
+SF:x20or\x20older\?\x20\[y/N\]:\x20")%r(DNSVersionBindReqTCP,22,"Are\x20yo
+SF:u\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(DNSStatusRequestT
+SF:CP,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(H
+SF:elp,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(
+SF:SSLSessionReq,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]
+SF::\x20")%r(TerminalServerCookie,22,"Are\x20you\x2018\x20years\x20or\x20o
+SF:lder\?\x20\[y/N\]:\x20")%r(TLSSessionReq,22,"Are\x20you\x2018\x20years\
+SF:x20or\x20older\?\x20\[y/N\]:\x20")%r(Kerberos,22,"Are\x20you\x2018\x20y
+SF:ears\x20or\x20older\?\x20\[y/N\]:\x20")%r(SMBProgNeg,22,"Are\x20you\x20
+SF:18\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(X11Probe,22,"Are\x20yo
+SF:u\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(FourOhFourRequest
+SF:,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(LPD
+SF:String,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")
+SF:%r(LDAPSearchReq,22,"Are\x20you\x2018\x20years\x20or\x20older\?\x20\[y/
+SF:N\]:\x20")%r(LDAPBindReq,22,"Are\x20you\x2018\x20years\x20or\x20older\?
+SF:\x20\[y/N\]:\x20")%r(SIPOptions,22,"Are\x20you\x2018\x20years\x20or\x20
+SF:older\?\x20\[y/N\]:\x20")%r(LANDesk-RC,22,"Are\x20you\x2018\x20years\x2
+SF:0or\x20older\?\x20\[y/N\]:\x20")%r(TerminalServer,22,"Are\x20you\x2018\
+SF:x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(NCP,22,"Are\x20you\x2018\
+SF:x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(NotesRPC,22,"Are\x20you\x
+SF:2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(JavaRMI,22,"Are\x20y
+SF:ou\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20")%r(WMSRequest,22,"A
+SF:re\x20you\x2018\x20years\x20or\x20older\?\x20\[y/N\]:\x20");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Tue Oct  7 21:46:14 2025 -- 2 IP addresses (2 hosts up) scanned in 10.68 seconds

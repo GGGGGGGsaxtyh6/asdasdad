@@ -1,0 +1,2 @@
+167.71.125.23   svc.pwnable.xyz
+134.209.56.140  svc.pwnable.xyz
