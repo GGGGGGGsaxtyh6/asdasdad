@@ -1,0 +1,51 @@
+==============================================
+RETO: Bitlocker-1 (picoCTF)
+==============================================
+
+OBJETIVO:
+Crackear la encriptación de BitLocker de una imagen de disco
+que usa una contraseña simple.
+
+METODOLOGÍA:
+1. Descargado imagen bitlocker-1.dd (100 MB)
+2. Extraído hash de BitLocker usando bitlocker2john.py
+3. Crackeado hash con hashcat modo 22100
+4. Montado volumen con dislocker y ntfs-3g
+5. Extraída la flag
+
+INFORMACIÓN DEL VOLUMEN:
+- Volume GUID: 4967D63B-2E29-4AD8-8399-F6A339E3D001
+- Encryption: AES-128-NODIFFUSER
+- Computer: DESKTOP-EKVR84B
+- Estado: ENCRYPTED
+
+HASH EXTRAÍDO:
+$bitlocker$0$16$cb4809fe9628471a411f8380e0f668db$1048576$12$d04d9c58eed6da010a000000$60$68156e51e53f0a01c076a32ba2b2999afffce8530fbe5d84b4c19ac71f6c79375b87d40c2d871ed2b7b5559d71ba31b6779c6f41412fd6869442d66d
+
+CONTRASEÑA ENCONTRADA:
+jacqueline
+
+PROCESO DE CRACKING:
+- Herramienta: hashcat v6.2.6
+- Modo: 22100 (BitLocker)
+- Wordlist: rockyou.txt (top 10,000)
+- Tiempo: ~34 segundos
+- Posición en wordlist: ~1,800 de 10,000
+- Velocidad: ~56 H/s
+
+FLAG ENCONTRADA:
+picoCTF{us3_b3tt3r_p4ssw0rd5_pl5!_3242adb1}
+
+LECCIÓN APRENDIDA:
+La contraseña "jacqueline" es demasiado simple y común,
+aparece en el top 2000 de rockyou.txt. Para BitLocker se
+debe usar una contraseña más fuerte o una recovery password.
+
+HERRAMIENTAS UTILIZADAS:
+- bitlocker2john.py (extracción de hash)
+- hashcat v6.2.6 (cracking con GPU/CPU)
+- dislocker (desencriptación de volumen)
+- ntfs-3g (montaje del sistema de archivos)
+- rockyou.txt (wordlist)
+
+==============================================
