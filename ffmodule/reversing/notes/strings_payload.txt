@@ -1,0 +1,45 @@
+[Strings]
+nth paddr      vaddr      len size section type    string
+―――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+0   0x00000061 0x00000061 4   6            utf8    }ĪCt
+1   0x0000006b 0x0000006b 4   6            utf8    ӋB$L
+2   0x00000090 0x00000090 5   6            ascii   :POST
+3   0x0000009b 0x0000009b 17  18           ascii   AWAVAUAQAPWVRQSPH
+4   0x000000c3 0x000000c3 7   8            ascii   D$rASta
+5   0x000000e0 0x000000e0 6   7            ascii   D$pWSH
+6   0x000000fe 0x000000fe 4   5            ascii   K@ H
+7   0x00000107 0x00000107 6   7            ascii   D$vrtH
+8   0x00000116 0x00000116 5   6            ascii   D$xup
+9   0x00000134 0x00000134 4   5            ascii   T$pf
+10  0x00000148 0x00000148 4   5            ascii   jt"I
+11  0x00000161 0x00000161 4   5            ascii   t\nSH
+12  0x0000017a 0x0000017a 4   5            ascii   D$HL
+13  0x0000018a 0x0000018a 4   6            utf8    fǄ$p
+14  0x000001ba 0x000001ba 8   9            ascii   D$rcketL
+15  0x000001d0 0x000001d0 4   5            ascii   D$@H
+16  0x000001e4 0x000001e4 4   6            utf8    fǄ$v
+17  0x000001f5 0x000001f5 4   6            utf8    fǄ$r
+18  0x00000208 0x00000208 4   6            utf8    fǄ$p
+19  0x0000021b 0x0000021b 6   7            ascii   D$ttoI
+20  0x00000225 0x00000225 4   5            ascii   T$pL
+21  0x0000023d 0x0000023d 6   7            ascii   D$xket
+22  0x00000273 0x00000273 4   5            ascii   Taa8
+23  0x000002c3 0x000002c3 4   5            ascii   \$@H
+24  0x000002d5 0x000002d5 4   6            utf8    fǄ$r
+25  0x000002e1 0x000002e1 4   5            ascii   \$ I
+26  0x000002f7 0x000002f7 5   6            ascii   esocH
+27  0x0000030c 0x0000030c 6   7            ascii   D$pclH
+28  0x0000032b 0x0000032b 4   5            ascii   T$pL
+29  0x00000350 0x00000350 4   5            ascii   lean
+30  0x00000361 0x00000361 8   9            ascii   D$pWSACH
+31  0x0000036a 0x0000036a 4   5            ascii   T$pH
+32  0x00000380 0x00000380 23  24           ascii   X[YZ^_AXAYA]A^A_A\AZAUM
+33  0x000003a3 0x000003a3 4   5            ascii    egH
+34  0x000003c7 0x000003c7 12  13           ascii   VirtualAlloc
+35  0x0000041e 0x0000041e 14  15           ascii   VirtualProtect
+36  0x00000444 0x00000444 6   7            ascii   D$\begH
+37  0x0000046c 0x0000046c 4   5            ascii   FPH1
+38  0x000004ae 0x000004ae 8   9            ascii   PR_Write
+39  0x000004d8 0x000004d8 4   9            utf16le nss3
+40  0x000004f2 0x000004f2 4   5            ascii   t$\bH
+41  0x00000546 0x00000546 7   8            ascii   \aAUATfA

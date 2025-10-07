@@ -1,0 +1,6 @@
+POST /login HTTP/1.1
+Host: localhost
+User-Agent: Test
+Content-Length: 32
+
+username=alice&password=HTB{dummy_flag}
