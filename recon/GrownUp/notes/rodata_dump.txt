@@ -1,0 +1,8 @@
+
+GrownUpRedist:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 4009f0 01000200 00000000 41726520 796f7520  ........Are you 
+ 400a00 31382079 65617273 206f7220 6f6c6465  18 years or olde
+ 400a10 723f205b 792f4e5d 3a20004e 616d653a  r? [y/N]: .Name:
+ 400a20 20005765 6c636f6d 652000              .Welcome .     
