@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                String         @id @default(cuid())
+  email             String         @unique
+  username          String         @unique
+  name              String
+  password          String
+  balance           Float          @default(10000)
+  avatar            String?
+  emailVerified     DateTime?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  twoFactorEnabled  Boolean        @default(false)
+  twoFactorSecret   String?
+  theme             String         @default("dark")
+  notificationPref  String         @default("all")
+  
+  sentTransactions     Transaction[] @relation("sender")
+  receivedTransactions Transaction[] @relation("receiver")
+  notifications        Notification[]
+  
+  @@index([email])
+  @@index([username])
+}
+
+model Transaction {
+  id          String   @id @default(cuid())
+  amount      Float
+  type        String   // 'send', 'receive', 'request'
+  status      String   @default("completed") // 'pending', 'completed', 'failed'
+  description String?
+  createdAt   DateTime @default(now())
+  
+  senderId    String
+  sender      User     @relation("sender", fields: [senderId], references: [id])
+  
+  receiverId  String
+  receiver    User     @relation("receiver", fields: [receiverId], references: [id])
+  
+  @@index([senderId])
+  @@index([receiverId])
+  @@index([createdAt])
+}
+
+model Notification {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  title     String
+  message   String
+  type      String   // 'transaction', 'security', 'info'
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+  
+  @@index([userId])
+  @@index([read])
+}
+
+model PasswordReset {
+  id        String   @id @default(cuid())
+  email     String
+  token     String   @unique
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  
+  @@index([email])
+  @@index([token])
+}
