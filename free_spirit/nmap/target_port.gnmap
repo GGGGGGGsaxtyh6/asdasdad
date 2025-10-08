@@ -1,0 +1,5 @@
+# Nmap 7.95 scan initiated Wed Oct  8 13:47:52 2025 as: nmap -Pn -n -vv -p 30005 -sS -sV -sC --reason --open -oA /workspace/free_spirit/nmap/target_port svc.pwnable.xyz
+# Ports scanned: TCP(1;30005) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 167.71.125.23 ()	Status: Up
+Host: 167.71.125.23 ()	Ports: 30005/open/tcp//unknown///
+# Nmap done at Wed Oct  8 13:48:08 2025 -- 1 IP address (1 host up) scanned in 15.93 seconds

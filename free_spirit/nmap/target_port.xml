@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Wed Oct  8 13:47:52 2025 as: nmap -Pn -n -vv -p 30005 -sS -sV -sC -&#45;reason -&#45;open -oA /workspace/free_spirit/nmap/target_port svc.pwnable.xyz -->
+<nmaprun scanner="nmap" args="nmap -Pn -n -vv -p 30005 -sS -sV -sC -&#45;reason -&#45;open -oA /workspace/free_spirit/nmap/target_port svc.pwnable.xyz" start="1759931272" startstr="Wed Oct  8 13:47:52 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="30005"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1759931272"/>
+<taskend task="NSE" time="1759931272"/>
+<taskbegin task="NSE" time="1759931272"/>
+<taskend task="NSE" time="1759931272"/>
+<taskbegin task="NSE" time="1759931272"/>
+<taskend task="NSE" time="1759931272"/>
+<taskbegin task="SYN Stealth Scan" time="1759931272"/>
+<taskend task="SYN Stealth Scan" time="1759931272" extrainfo="1 total ports"/>
+<taskbegin task="Service scan" time="1759931272"/>
+<taskend task="Service scan" time="1759931282" extrainfo="1 service on 1 host"/>
+<taskbegin task="NSE" time="1759931282"/>
+<taskend task="NSE" time="1759931288"/>
+<taskbegin task="NSE" time="1759931288"/>
+<taskend task="NSE" time="1759931288"/>
+<taskbegin task="NSE" time="1759931288"/>
+<taskend task="NSE" time="1759931288"/>
+<host starttime="1759931272" endtime="1759931288"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="167.71.125.23" addrtype="ipv4"/>
+<hostnames>
+<hostname name="svc.pwnable.xyz" type="user"/>
+</hostnames>
+<ports><port protocol="tcp" portid="30005"><state state="open" reason="syn-ack" reason_ttl="46"/><service name="unknown" servicefp="SF-Port30005-TCP:V=7.95%I=7%D=10/8%Time=68E66B8E%P=x86_64-pc-linux-gnu%r(NULL,2,&quot;&gt;\x20&quot;)%r(GenericLines,2,&quot;&gt;\x20&quot;)%r(GetRequest,2,&quot;&gt;\x20&quot;)%r(HTTPOptions,2,&quot;&gt;\x20&quot;)%r(RTSPRequest,2,&quot;&gt;\x20&quot;)%r(RPCCheck,2,&quot;&gt;\x20&quot;)%r(DNSVersionBindReqTCP,2,&quot;&gt;\x20&quot;)%r(DNSStatusRequestTCP,2,&quot;&gt;\x20&quot;)%r(Help,2,&quot;&gt;\x20&quot;)%r(SSLSessionReq,2,&quot;&gt;\x20&quot;)%r(TerminalServerCookie,2,&quot;&gt;\x20&quot;)%r(TLSSessionReq,2,&quot;&gt;\x20&quot;)%r(Kerberos,2,&quot;&gt;\x20&quot;)%r(SMBProgNeg,2,&quot;&gt;\x20&quot;)%r(X11Probe,2,&quot;&gt;\x20&quot;)%r(FourOhFourRequest,2,&quot;&gt;\x20&quot;)%r(LPDString,2,&quot;&gt;\x20&quot;)%r(LDAPSearchReq,2,&quot;&gt;\x20&quot;)%r(LDAPBindReq,2,&quot;&gt;\x20&quot;)%r(SIPOptions,2,&quot;&gt;\x20&quot;)%r(LANDesk-RC,2,&quot;&gt;\x20&quot;)%r(TerminalServer,2,&quot;&gt;\x20&quot;)%r(NCP,2,&quot;&gt;\x20&quot;)%r(NotesRPC,2,&quot;&gt;\x20&quot;)%r(JavaRMI,2,&quot;&gt;\x20&quot;)%r(WMSRequest,2,&quot;&gt;\x20&quot;)%r(oracle-tns,2,&quot;&gt;\x20&quot;)%r(ms-sql-s,2,&quot;&gt;\x20&quot;)%r(afp,2,&quot;&gt;\x20&quot;)%r(giop,2,&quot;&gt;\x20&quot;);" method="table" conf="3"/></port>
+</ports>
+<times srtt="75074" rttvar="75074" to="375370"/>
+</host>
+<taskbegin task="NSE" time="1759931288"/>
+<taskend task="NSE" time="1759931288"/>
+<taskbegin task="NSE" time="1759931288"/>
+<taskend task="NSE" time="1759931288"/>
+<taskbegin task="NSE" time="1759931288"/>
+<taskend task="NSE" time="1759931288"/>
+<runstats><finished time="1759931288" timestr="Wed Oct  8 13:48:08 2025" summary="Nmap done at Wed Oct  8 13:48:08 2025; 1 IP address (1 host up) scanned in 15.93 seconds" elapsed="15.93" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

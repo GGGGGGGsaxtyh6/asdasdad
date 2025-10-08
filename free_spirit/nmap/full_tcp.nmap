@@ -1,0 +1,61 @@
+# Nmap 7.95 scan initiated Wed Oct  8 13:48:17 2025 as: nmap -Pn -n -vv -p- -sS --min-rate 2000 --open --reason -oA /workspace/free_spirit/nmap/full_tcp svc.pwnable.xyz
+Warning: Hostname svc.pwnable.xyz resolves to 2 IPs. Using 134.209.56.140.
+Nmap scan report for svc.pwnable.xyz (134.209.56.140)
+Host is up, received user-set (0.069s latency).
+Other addresses for svc.pwnable.xyz (not scanned): 167.71.125.23
+Scanned at 2025-10-08 13:48:17 UTC for 65s
+Not shown: 65486 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE        REASON
+30000/tcp open  ndmps          syn-ack ttl 47
+30001/tcp open  pago-services1 syn-ack ttl 47
+30002/tcp open  pago-services2 syn-ack ttl 47
+30003/tcp open  amicon-fpsu-ra syn-ack ttl 47
+30004/tcp open  amicon-fpsu-s  syn-ack ttl 47
+30005/tcp open  unknown        syn-ack ttl 44
+30006/tcp open  unknown        syn-ack ttl 47
+30007/tcp open  unknown        syn-ack ttl 47
+30008/tcp open  unknown        syn-ack ttl 44
+30009/tcp open  unknown        syn-ack ttl 44
+30010/tcp open  unknown        syn-ack ttl 44
+30011/tcp open  unknown        syn-ack ttl 47
+30012/tcp open  unknown        syn-ack ttl 47
+30013/tcp open  unknown        syn-ack ttl 45
+30014/tcp open  unknown        syn-ack ttl 47
+30015/tcp open  unknown        syn-ack ttl 45
+30016/tcp open  unknown        syn-ack ttl 47
+30017/tcp open  unknown        syn-ack ttl 47
+30018/tcp open  unknown        syn-ack ttl 47
+30019/tcp open  unknown        syn-ack ttl 47
+30020/tcp open  unknown        syn-ack ttl 47
+30021/tcp open  unknown        syn-ack ttl 47
+30022/tcp open  unknown        syn-ack ttl 47
+30023/tcp open  unknown        syn-ack ttl 47
+30024/tcp open  unknown        syn-ack ttl 47
+30025/tcp open  unknown        syn-ack ttl 47
+30026/tcp open  unknown        syn-ack ttl 47
+30027/tcp open  unknown        syn-ack ttl 47
+30028/tcp open  unknown        syn-ack ttl 47
+30029/tcp open  unknown        syn-ack ttl 47
+30030/tcp open  unknown        syn-ack ttl 47
+30031/tcp open  unknown        syn-ack ttl 47
+30032/tcp open  unknown        syn-ack ttl 45
+30033/tcp open  unknown        syn-ack ttl 47
+30034/tcp open  unknown        syn-ack ttl 47
+30035/tcp open  unknown        syn-ack ttl 47
+30036/tcp open  unknown        syn-ack ttl 47
+30037/tcp open  unknown        syn-ack ttl 47
+30038/tcp open  unknown        syn-ack ttl 47
+30039/tcp open  unknown        syn-ack ttl 47
+30040/tcp open  unknown        syn-ack ttl 47
+30041/tcp open  unknown        syn-ack ttl 44
+30042/tcp open  unknown        syn-ack ttl 45
+30043/tcp open  unknown        syn-ack ttl 47
+30044/tcp open  unknown        syn-ack ttl 47
+30045/tcp open  unknown        syn-ack ttl 47
+30046/tcp open  unknown        syn-ack ttl 47
+30047/tcp open  unknown        syn-ack ttl 47
+30048/tcp open  unknown        syn-ack ttl 47
+
+Read data files from: /usr/bin/../share/nmap
+# Nmap done at Wed Oct  8 13:49:22 2025 -- 1 IP address (1 host up) scanned in 65.81 seconds

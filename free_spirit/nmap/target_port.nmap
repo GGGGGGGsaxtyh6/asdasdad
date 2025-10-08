@@ -1,0 +1,26 @@
+# Nmap 7.95 scan initiated Wed Oct  8 13:47:52 2025 as: nmap -Pn -n -vv -p 30005 -sS -sV -sC --reason --open -oA /workspace/free_spirit/nmap/target_port svc.pwnable.xyz
+Warning: Hostname svc.pwnable.xyz resolves to 2 IPs. Using 167.71.125.23.
+Nmap scan report for svc.pwnable.xyz (167.71.125.23)
+Host is up, received user-set (0.075s latency).
+Other addresses for svc.pwnable.xyz (not scanned): 134.209.56.140
+Scanned at 2025-10-08 13:47:52 UTC for 16s
+
+PORT      STATE SERVICE REASON         VERSION
+30005/tcp open  unknown syn-ack ttl 46
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30005-TCP:V=7.95%I=7%D=10/8%Time=68E66B8E%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,2,">\x20")%r(GenericLines,2,">\x20")%r(GetRequest,2,">\x20")%r(HTTP
+SF:Options,2,">\x20")%r(RTSPRequest,2,">\x20")%r(RPCCheck,2,">\x20")%r(DNS
+SF:VersionBindReqTCP,2,">\x20")%r(DNSStatusRequestTCP,2,">\x20")%r(Help,2,
+SF:">\x20")%r(SSLSessionReq,2,">\x20")%r(TerminalServerCookie,2,">\x20")%r
+SF:(TLSSessionReq,2,">\x20")%r(Kerberos,2,">\x20")%r(SMBProgNeg,2,">\x20")
+SF:%r(X11Probe,2,">\x20")%r(FourOhFourRequest,2,">\x20")%r(LPDString,2,">\
+SF:x20")%r(LDAPSearchReq,2,">\x20")%r(LDAPBindReq,2,">\x20")%r(SIPOptions,
+SF:2,">\x20")%r(LANDesk-RC,2,">\x20")%r(TerminalServer,2,">\x20")%r(NCP,2,
+SF:">\x20")%r(NotesRPC,2,">\x20")%r(JavaRMI,2,">\x20")%r(WMSRequest,2,">\x
+SF:20")%r(oracle-tns,2,">\x20")%r(ms-sql-s,2,">\x20")%r(afp,2,">\x20")%r(g
+SF:iop,2,">\x20");
+
+Read data files from: /usr/bin/../share/nmap
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct  8 13:48:08 2025 -- 1 IP address (1 host up) scanned in 15.93 seconds

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Wed Oct  8 13:48:17 2025 as: nmap -Pn -n -vv -p- -sS -&#45;min-rate 2000 -&#45;open -&#45;reason -oA /workspace/free_spirit/nmap/full_tcp svc.pwnable.xyz -->
+<nmaprun scanner="nmap" args="nmap -Pn -n -vv -p- -sS -&#45;min-rate 2000 -&#45;open -&#45;reason -oA /workspace/free_spirit/nmap/full_tcp svc.pwnable.xyz" start="1759931297" startstr="Wed Oct  8 13:48:17 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="2"/>
+<debugging level="0"/>
+<taskbegin task="SYN Stealth Scan" time="1759931297"/>
+<taskprogress task="SYN Stealth Scan" time="1759931328" percent="46.95" remaining="36" etc="1759931363"/>
+<taskend task="SYN Stealth Scan" time="1759931362" extrainfo="65535 total ports"/>
+<host starttime="1759931297" endtime="1759931362"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="134.209.56.140" addrtype="ipv4"/>
+<hostnames>
+<hostname name="svc.pwnable.xyz" type="user"/>
+</hostnames>
+<ports><extraports state="filtered" count="65486">
+<extrareasons reason="no-response" count="65486" proto="tcp" ports="1-29999,30049-65535"/>
+</extraports>
+<port protocol="tcp" portid="30000"><state state="open" reason="syn-ack" reason_ttl="47"/><service name="ndmps" method="table" conf="3"/></port>
+<port protocol="tcp" portid="30001"><state state="open" reason="syn-ack" reason_ttl="47"/><service name="pago-services1" method="table" conf="3"/></port>
+<port protocol="tcp" portid="30002"><state state="open" reason="syn-ack" reason_ttl="47"/><service name="pago-services2" method="table" conf="3"/></port>
+<port protocol="tcp" portid="30003"><state state="open" reason="syn-ack" reason_ttl="47"/><service name="amicon-fpsu-ra" method="table" conf="3"/></port>
+<port protocol="tcp" portid="30004"><state state="open" reason="syn-ack" reason_ttl="47"/><service name="amicon-fpsu-s" method="table" conf="3"/></port>
+<port protocol="tcp" portid="30005"><state state="open" reason="syn-ack" reason_ttl="44"/></port>
+<port protocol="tcp" portid="30006"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30007"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30008"><state state="open" reason="syn-ack" reason_ttl="44"/></port>
+<port protocol="tcp" portid="30009"><state state="open" reason="syn-ack" reason_ttl="44"/></port>
+<port protocol="tcp" portid="30010"><state state="open" reason="syn-ack" reason_ttl="44"/></port>
+<port protocol="tcp" portid="30011"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30012"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30013"><state state="open" reason="syn-ack" reason_ttl="45"/></port>
+<port protocol="tcp" portid="30014"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30015"><state state="open" reason="syn-ack" reason_ttl="45"/></port>
+<port protocol="tcp" portid="30016"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30017"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30018"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30019"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30020"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30021"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30022"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30023"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30024"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30025"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30026"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30027"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30028"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30029"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30030"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30031"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30032"><state state="open" reason="syn-ack" reason_ttl="45"/></port>
+<port protocol="tcp" portid="30033"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30034"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30035"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30036"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30037"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30038"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30039"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30040"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30041"><state state="open" reason="syn-ack" reason_ttl="44"/></port>
+<port protocol="tcp" portid="30042"><state state="open" reason="syn-ack" reason_ttl="45"/></port>
+<port protocol="tcp" portid="30043"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30044"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30045"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30046"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30047"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+<port protocol="tcp" portid="30048"><state state="open" reason="syn-ack" reason_ttl="47"/></port>
+</ports>
+<times srtt="69100" rttvar="320" to="100000"/>
+</host>
+<runstats><finished time="1759931362" timestr="Wed Oct  8 13:49:22 2025" summary="Nmap done at Wed Oct  8 13:49:22 2025; 1 IP address (1 host up) scanned in 65.81 seconds" elapsed="65.81" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>
