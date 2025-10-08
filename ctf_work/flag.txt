@@ -1,1 +1,1 @@
-picoCTF{b1g_numb3rs_FAKE_FLAG_TEST}
+picoCTF{local_test_flag_12345678}
