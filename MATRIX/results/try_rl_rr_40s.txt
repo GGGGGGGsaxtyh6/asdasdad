@@ -1,0 +1,20 @@
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'rl'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'rr'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'rl\n'
+
+---
+Welcome to the M A T R I X
+PAYLOAD b'rr\n'
+Can you make it out alive?
+
+---
