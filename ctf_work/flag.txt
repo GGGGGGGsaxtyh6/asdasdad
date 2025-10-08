@@ -1,0 +1,1 @@
+picoCTF{local_test_flag_12345678}
