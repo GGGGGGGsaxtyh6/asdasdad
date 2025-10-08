@@ -1,0 +1,8 @@
+
+/workspace/recon/tmp/challenge:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 0ba0 01000200 63617420 666c6167 00546865  ....cat flag.The
+ 0bb0 20506f6f 706f6c61 746f7200 3e20f09f   Poopolator.> ..
+ 0bc0 92a92020 2000256c 6420256c 6420256c  ..   .%ld %ld %l
+ 0bd0 64005265 73756c74 3a20256c 640a00    d.Result: %ld.. 

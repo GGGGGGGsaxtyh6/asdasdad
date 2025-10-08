@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Wed Oct  8 12:01:02 2025 as: nmap -Pn -p 30029 -sV -sC -oA /workspace/recon/nmap/svc_pwnable_xyz_30029_pn svc.pwnable.xyz -->
+<nmaprun scanner="nmap" args="nmap -Pn -p 30029 -sV -sC -oA /workspace/recon/nmap/svc_pwnable_xyz_30029_pn svc.pwnable.xyz" start="1759924862" startstr="Wed Oct  8 12:01:02 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="1" services="30029"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1759924862" endtime="1759924879"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="167.71.125.23" addrtype="ipv4"/>
+<hostnames>
+<hostname name="svc.pwnable.xyz" type="user"/>
+</hostnames>
+<ports><port protocol="tcp" portid="30029"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="unknown" servicefp="SF-Port30029-TCP:V=7.95%I=7%D=10/8%Time=68E65284%P=x86_64-pc-linux-gnu%r(NULL,18,&quot;The\x20Poopolator\n&gt;\x20\xf0\x9f\x92\xa9\x20\x20\x20&quot;)%r(GenericLines,18,&quot;The\x20Poopolator\n&gt;\x20\xf0\x9f\x92\xa9\x20\x20\x20&quot;);" method="table" conf="3"/><script id="fingerprint-strings" output="&#xa;  GenericLines, NULL: &#xa;    The Poopolator"><elem key="GenericLines, NULL">&#xa;    The Poopolator</elem>
+</script></port>
+</ports>
+<times srtt="73924" rttvar="73924" to="369620"/>
+</host>
+<runstats><finished time="1759924879" timestr="Wed Oct  8 12:01:19 2025" summary="Nmap done at Wed Oct  8 12:01:19 2025; 1 IP address (1 host up) scanned in 16.99 seconds" elapsed="16.99" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

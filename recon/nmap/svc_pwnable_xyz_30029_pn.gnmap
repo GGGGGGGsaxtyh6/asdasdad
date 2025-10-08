@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Wed Oct  8 12:01:02 2025 as: nmap -Pn -p 30029 -sV -sC -oA /workspace/recon/nmap/svc_pwnable_xyz_30029_pn svc.pwnable.xyz
+Host: 167.71.125.23 ()	Status: Up
+Host: 167.71.125.23 ()	Ports: 30029/open/tcp//unknown///
+# Nmap done at Wed Oct  8 12:01:19 2025 -- 1 IP address (1 host up) scanned in 16.99 seconds

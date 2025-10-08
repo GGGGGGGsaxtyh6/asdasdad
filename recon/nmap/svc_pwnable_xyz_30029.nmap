@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Wed Oct  8 12:00:50 2025 as: nmap -p 30029 -sV -sC -oA /workspace/recon/nmap/svc_pwnable_xyz_30029 svc.pwnable.xyz
+# Nmap done at Wed Oct  8 12:00:53 2025 -- 1 IP address (0 hosts up) scanned in 3.27 seconds
