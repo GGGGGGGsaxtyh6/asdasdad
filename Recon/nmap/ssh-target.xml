@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Wed Oct  8 07:09:35 2025 as: nmap -Pn -sV -sC -p 48117 -oA /workspace/Recon/nmap/ssh-target 94.237.122.241 -->
+<nmaprun scanner="nmap" args="nmap -Pn -sV -sC -p 48117 -oA /workspace/Recon/nmap/ssh-target 94.237.122.241" start="1759907375" startstr="Wed Oct  8 07:09:35 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="1" services="48117"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1759907376" endtime="1759907378"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="94.237.122.241" addrtype="ipv4"/>
+<hostnames>
+<hostname name="94-237-122-241.uk-lon1.upcloud.host" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="48117"><state state="open" reason="syn-ack" reason_ttl="47"/><service name="ssh" product="OpenSSH" version="9.6p1 Ubuntu 3ubuntu13.4" extrainfo="Ubuntu Linux; protocol 2.0" ostype="Linux" method="probed" conf="10"><cpe>cpe:/a:openbsd:openssh:9.6p1</cpe><cpe>cpe:/o:linux:linux_kernel</cpe></service><script id="ssh-hostkey" output="&#xa;  256 76:d9:5e:01:30:f1:31:37:95:14:48:ab:d7:00:03:ac (ECDSA)&#xa;  256 c1:a0:5e:9b:b3:f3:e0:fb:70:28:9f:1b:26:a7:bd:0f (ED25519)"><table>
+<elem key="type">ecdsa-sha2-nistp256</elem>
+<elem key="key">AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBeitCQ8kHP+wkej4EtsPID02t8MxT0HBvjAgrZBh+syl+VLlneo4BfXv07mO72u/7FKGj8vULmSyV1MCQHjgI4=</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">76d95e0130f13137951448abd70003ac</elem>
+</table>
+<table>
+<elem key="type">ssh-ed25519</elem>
+<elem key="key">AAAAC3NzaC1lZDI1NTE5AAAAIEpHLkowD8NAdcK2LhZLZbJlwipxmfG8YnLzcYQKB3P6</elem>
+<elem key="bits">256</elem>
+<elem key="fingerprint">c1a05e9bb3f3e0fb70289f1b26a7bd0f</elem>
+</table>
+</script></port>
+</ports>
+<times srtt="83167" rttvar="83167" to="415835"/>
+</host>
+<runstats><finished time="1759907378" timestr="Wed Oct  8 07:09:38 2025" summary="Nmap done at Wed Oct  8 07:09:38 2025; 1 IP address (1 host up) scanned in 2.88 seconds" elapsed="2.88" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

@@ -1,0 +1,111 @@
+$ echo 'ENV_LD'; env | egrep '^LD_' || true
+ENV_LD
+
+
+$ echo 'PRELOAD_BAK'; cat /etc/ld.so.preload.bak.disabled 2>/dev/null || echo 'NO_BAK'
+PRELOAD_BAK
+/lib/x86_64-linux-gnu/libc.hook.so.6
+
+
+$ echo 'LD_DEBUG_TRUE'; LD_DEBUG=libs /bin/true 2>&1 | head -n 80
+LD_DEBUG_TRUE
+       925:	find library=libc.so.6 [0]; searching
+       925:	 search cache=/etc/ld.so.cache
+       925:	  trying file=/lib/x86_64-linux-gnu/libc.so.6
+       925:	
+       925:	
+       925:	calling init: /lib64/ld-linux-x86-64.so.2
+       925:	
+       925:	
+       925:	calling init: /lib/x86_64-linux-gnu/libc.so.6
+       925:	
+       925:	
+       925:	initialize program: /bin/true
+       925:	
+       925:	
+       925:	transferring control: /bin/true
+       925:	
+       925:	
+       925:	calling fini:  [0]
+       925:	
+       925:	
+       925:	calling fini: /lib/x86_64-linux-gnu/libc.so.6 [0]
+       925:	
+       925:	
+       925:	calling fini: /lib64/ld-linux-x86-64.so.2 [0]
+       925:	
+
+
+$ echo 'LD_DEBUG_LS'; LD_DEBUG=libs /bin/ls >/dev/null 2>&1 | head -n 80
+LD_DEBUG_LS
+
+
+$ echo 'LDD_LS'; ldd /bin/ls 2>&1 | head -n 50
+LDD_LS
+	linux-vdso.so.1 (0x00007ffdffb1f000)
+	libselinux.so.1 => /lib/x86_64-linux-gnu/libselinux.so.1 (0x00007f9bb3187000)
+	libc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007f9bb2f75000)
+	libpcre2-8.so.0 => /lib/x86_64-linux-gnu/libpcre2-8.so.0 (0x00007f9bb2edb000)
+	/lib64/ld-linux-x86-64.so.2 (0x00007f9bb31de000)
+
+
+$ echo 'LOADER_PATH'; ls -l /lib64/ld-linux-x86-64.so.2 /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2 2>/dev/null
+LOADER_PATH
+-rwxr-xr-x 1 root root 236616 Apr 30  2024 /lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+lrwxrwxrwx 1 root root     44 Apr 30  2024 /lib64/ld-linux-x86-64.so.2 -> ../lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+
+
+$ echo 'PROC_MAPS'; head -n 50 /proc/$$/maps 2>/dev/null || true
+PROC_MAPS
+562c1d75e000-562c1d78e000 r--p 00000000 fe:02 2110723                    /usr/bin/bash
+562c1d78e000-562c1d87d000 r-xp 00030000 fe:02 2110723                    /usr/bin/bash
+562c1d87d000-562c1d8b2000 r--p 0011f000 fe:02 2110723                    /usr/bin/bash
+562c1d8b2000-562c1d8b6000 r--p 00154000 fe:02 2110723                    /usr/bin/bash
+562c1d8b6000-562c1d8bf000 rw-p 00158000 fe:02 2110723                    /usr/bin/bash
+562c1d8bf000-562c1d8ca000 rw-p 00000000 00:00 0 
+562c1daff000-562c1db20000 rw-p 00000000 00:00 0                          [heap]
+7f5cf2637000-7f5cf2690000 r--p 00000000 fe:02 2111044                    /usr/lib/locale/C.utf8/LC_CTYPE
+7f5cf2690000-7f5cf2691000 r--p 00000000 fe:02 2111051                    /usr/lib/locale/C.utf8/LC_NUMERIC
+7f5cf2691000-7f5cf2692000 r--p 00000000 fe:02 2111054                    /usr/lib/locale/C.utf8/LC_TIME
+7f5cf2692000-7f5cf2693000 r--p 00000000 fe:02 2111043                    /usr/lib/locale/C.utf8/LC_COLLATE
+7f5cf2693000-7f5cf2694000 r--p 00000000 fe:02 2111049                    /usr/lib/locale/C.utf8/LC_MONETARY
+7f5cf2694000-7f5cf2695000 r--p 00000000 fe:02 2111048                    /usr/lib/locale/C.utf8/LC_MESSAGES/SYS_LC_MESSAGES
+7f5cf2695000-7f5cf2696000 r--p 00000000 fe:02 2111052                    /usr/lib/locale/C.utf8/LC_PAPER
+7f5cf2696000-7f5cf2697000 r--p 00000000 fe:02 2111050                    /usr/lib/locale/C.utf8/LC_NAME
+7f5cf2697000-7f5cf2698000 r--p 00000000 fe:02 2111042                    /usr/lib/locale/C.utf8/LC_ADDRESS
+7f5cf2698000-7f5cf269f000 r--s 00000000 fe:02 2111349                    /usr/lib/x86_64-linux-gnu/gconv/gconv-modules.cache
+7f5cf269f000-7f5cf26a2000 rw-p 00000000 00:00 0 
+7f5cf26a2000-7f5cf26ca000 r--p 00000000 fe:02 2111376                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f5cf26ca000-7f5cf2852000 r-xp 00028000 fe:02 2111376                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f5cf2852000-7f5cf28a1000 r--p 001b0000 fe:02 2111376                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f5cf28a1000-7f5cf28a5000 r--p 001fe000 fe:02 2111376                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f5cf28a5000-7f5cf28a7000 rw-p 00202000 fe:02 2111376                    /usr/lib/x86_64-linux-gnu/libc.so.6
+7f5cf28a7000-7f5cf28b4000 rw-p 00000000 00:00 0 
+7f5cf28b4000-7f5cf28c2000 r--p 00000000 fe:02 2111478                    /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7f5cf28c2000-7f5cf28d5000 r-xp 0000e000 fe:02 2111478                    /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7f5cf28d5000-7f5cf28e3000 r--p 00021000 fe:02 2111478                    /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7f5cf28e3000-7f5cf28e7000 r--p 0002e000 fe:02 2111478                    /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7f5cf28e7000-7f5cf28e8000 rw-p 00032000 fe:02 2111478                    /usr/lib/x86_64-linux-gnu/libtinfo.so.6.4
+7f5cf28e8000-7f5cf28e9000 r--p 00000000 fe:02 2111053                    /usr/lib/locale/C.utf8/LC_TELEPHONE
+7f5cf28e9000-7f5cf28ea000 r--p 00000000 fe:02 2111046                    /usr/lib/locale/C.utf8/LC_MEASUREMENT
+7f5cf28ea000-7f5cf28eb000 r--p 00000000 fe:02 2111045                    /usr/lib/locale/C.utf8/LC_IDENTIFICATION
+7f5cf28eb000-7f5cf28ed000 rw-p 00000000 00:00 0 
+7f5cf28ed000-7f5cf28ee000 r--p 00000000 fe:02 2111356                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f5cf28ee000-7f5cf2919000 r-xp 00001000 fe:02 2111356                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f5cf2919000-7f5cf2923000 r--p 0002c000 fe:02 2111356                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f5cf2923000-7f5cf2925000 r--p 00036000 fe:02 2111356                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7f5cf2925000-7f5cf2927000 rw-p 00038000 fe:02 2111356                    /usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2
+7ffe98f89000-7ffe98faa000 rw-p 00000000 00:00 0                          [stack]
+7ffe98fce000-7ffe98fd2000 r--p 00000000 00:00 0                          [vvar]
+7ffe98fd2000-7ffe98fd4000 r-xp 00000000 00:00 0                          [vdso]
+
+
+$ echo 'HIDDEN_DIRS'; ls -la /root 2>/dev/null | head -n 50
+HIDDEN_DIRS
+total 24
+drwx------ 1 root root 4096 Oct  8 06:19 .
+drwxr-xr-x 1 root root 4096 Oct  8 06:18 ..
+-rw-r--r-- 1 root root 3106 Apr 22  2024 .bashrc
+drwx------ 2 root root 4096 Oct  8 06:19 .cache
+-rw-r--r-- 1 root root  161 Apr 22  2024 .profile
+drwx------ 2 root root 4096 Jul 24  2024 .ssh

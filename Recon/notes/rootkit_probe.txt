@@ -1,0 +1,36 @@
+$ echo 'LS_PRELOADS'; ls -l /etc/ld.so.preload /etc/ld.so.preload.bak.disabled 2>/dev/null
+LS_PRELOADS
+-rw-r--r-- 1 root root 37 Jul 24  2024 /etc/ld.so.preload.bak.disabled
+
+
+$ echo 'HOOK_PATH'; ls -l /lib/x86_64-linux-gnu/libc.hook.so.6 2>/dev/null || echo 'MISSING'
+HOOK_PATH
+-rw-rw-r-- 1 root root 15688 Jun  3  2024 /lib/x86_64-linux-gnu/libc.hook.so.6
+
+
+$ echo 'HOOK_HASH'; sha256sum /lib/x86_64-linux-gnu/libc.hook.so.6 2>/dev/null || true
+HOOK_HASH
+1f9f64f021be6a0e02d30c2adfa47af8849fee023d60a6f6e69083da04fb0a06  /lib/x86_64-linux-gnu/libc.hook.so.6
+
+
+$ echo 'HOOK_FILE'; file /lib/x86_64-linux-gnu/libc.hook.so.6 2>/dev/null || true
+HOOK_FILE
+
+
+$ echo 'HOOK_STRINGS_FLAG'; strings -a -n 6 /lib/x86_64-linux-gnu/libc.hook.so.6 2>/dev/null | egrep -i 'HTB\{|flag|rootkit|preload' | head -n 80
+HOOK_STRINGS_FLAG
+
+
+$ echo 'GREP_HOOK_CFG'; grep -R 'libc.hook.so.6' /etc /usr 2>/dev/null | head -n 50
+GREP_HOOK_CFG
+/etc/ld.so.preload.bak.disabled:/lib/x86_64-linux-gnu/libc.hook.so.6
+
+
+$ echo 'SEARCH_FLAGS_ROOT_OPT'; grep -R -i -E 'HTB\{|flag\{' /root /opt /var /home 2>/dev/null | head -n 40
+SEARCH_FLAGS_ROOT_OPT
+/var/pr3l04d_/flag.txt:HTB{Us3rL4nd_R00tK1t_R3m0v3dd!}
+
+
+$ echo 'FIND_FLAG_FILES'; find / -maxdepth 3 -type f -iname 'flag*' 2>/dev/null | head -n 40
+FIND_FLAG_FILES
+/var/pr3l04d_/flag.txt
