@@ -1,0 +1,161 @@
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=1 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=1 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=2 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=2 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=3 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=3 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+REPS=4 SUF=b''
+Can you make it out alive?
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=4 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=5 SUF=b''
+You were eaten by a grue.
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=5 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=6 SUF=b''
+
+---
+Welcome to the M A T R I X
+REPS=6 SUF=b'\n'
+Can you make it out alive?
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=7 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=7 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=8 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=8 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=9 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=9 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=10 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=10 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=11 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=11 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=12 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=12 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=13 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=13 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=14 SUF=b''
+
+---
+Welcome to the M A T R I X
+REPS=14 SUF=b'\n'
+Can you make it out alive?
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=15 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=15 SUF=b'\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=16 SUF=b''
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+REPS=16 SUF=b'\n'
+
+---

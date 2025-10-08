@@ -1,0 +1,54 @@
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: u
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: d
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+INPUT: l
+
+Can you make it out alive?
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: r
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: 1
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: 1d
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: 1l
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: 1r
+
+You were eaten by a grue.
+
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT: 1u
+
+You were eaten by a grue.
+
