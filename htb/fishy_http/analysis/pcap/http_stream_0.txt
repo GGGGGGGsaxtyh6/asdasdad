@@ -1,0 +1,44 @@
+
+===================================================================
+Follow: http,ascii
+Filter: tcp.stream eq 0
+Node 0: 10.142.0.4:49852
+Node 1: 10.142.0.3:80
+36
+GET / HTTP/1.1
+Host: 10.142.0.3
+
+
+	117
+HTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.11.2
+Date: Tue, 07 May 2024 09:37:38 GMT
+Content-type: text/html
+
+
+	871
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Web Server</title>
+</head>
+<body><button>leaf tree glasses uniform guitar tiger umbrella book</button>
+<button>panda universe quartz laptop</button>
+<ol><li>rabbit jewel avocado sun plane</li></ol>
+<div>house ball elephant trumpet fence mango fire hedgehog</div>
+<ol><li>jar garden</li></ol>
+<blockquote>mango yucca yurt bird lion</blockquote>
+<ol><li>ball question apple necklace penguin zone xanthan quadrilateral</li></ol>
+<h1>ice universe car tooth castle</h1>
+<ol><li>notebook popcorn flag helicopter ant mailbox</li></ol>
+<b>dinosaur door octopus</b>
+<ol><li>mouse pencil grape quill pear utensil quiver</li></ol>
+<span>utensil elephant grape cookie apple heart yucca knight anchor</span>
+</body>
+</html>
+
+
+===================================================================
