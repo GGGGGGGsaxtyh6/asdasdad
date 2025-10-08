@@ -1,0 +1,77 @@
+ELF
+/lib64/ld-linux-x86-64.so.2
+GNU
+GNU
+7)KcL
+gUa
+   
+libc.so.6
+__printf_chk
+exit
+__isoc99_scanf
+signal
+puts
+__stack_chk_fail
+stdin
+read
+stdout
+malloc
+alarm
+system
+__cxa_finalize
+setvbuf
+__libc_start_main
+write
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_Jv_RegisterClasses
+_ITM_registerTMCloneTable
+GLIBC_2.7
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.2.5
+   
+USH
+dH3
+PTL
+UH)
+t	]
+UH)
+u'H
+AWAVA
+AUATL
+t 1
+[]A\A]A^A_
+Welcome.
+Leak: %p
+Length of your message: 
+%lu
+Enter your message: 
+cat /flag
+;*3$"
+GCC: (Ubuntu 6.3.0-12ubuntu2) 6.3.0 20170406
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.init
+.plt
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.jcr
+.dynamic
+.data
+.bss
+.comment

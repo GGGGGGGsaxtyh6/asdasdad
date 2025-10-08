@@ -1,0 +1,50 @@
+image/challenge/challenge
+0000644
+0000000
+0000000
+00000023760
+13410516776
+015707
+ustar  
+root
+root
+0000000
+0000000
+/lib64/ld-linux-x86-64.so.2
+7)KcL
+libc.so.6
+__printf_chk
+exit
+__isoc99_scanf
+signal
+puts
+__stack_chk_fail
+stdin
+read
+stdout
+malloc
+alarm
+system
+__cxa_finalize
+setvbuf
+__libc_start_main
+write
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_Jv_RegisterClasses
+_ITM_registerTMCloneTable
+GLIBC_2.7
+GLIBC_2.3.4
+GLIBC_2.4
+GLIBC_2.2.5
+AWAVA
+AUATL
+[]A\A]A^A_
+Welcome.
+Leak: %p
+Length of your message: 
+Enter your message: 
+cat /flag
+;*3$"
+GCC: (Ubuntu 6.3.0-12ubuntu2) 6.3.0 20170406
+.shstrtab

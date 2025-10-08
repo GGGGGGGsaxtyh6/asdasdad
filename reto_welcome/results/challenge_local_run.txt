@@ -1,0 +1,1 @@
+timeout: failed to run command ‘/workspace/reto_welcome/bin/challenge_21_extracted/image/challenge/challenge’: Permission denied
