@@ -1,0 +1,17 @@
+# Nmap 7.95 scan initiated Wed Oct  8 12:01:02 2025 as: nmap -Pn -p 30029 -sV -sC -oA /workspace/recon/nmap/svc_pwnable_xyz_30029_pn svc.pwnable.xyz
+Nmap scan report for svc.pwnable.xyz (167.71.125.23)
+Host is up (0.074s latency).
+Other addresses for svc.pwnable.xyz (not scanned): 134.209.56.140
+
+PORT      STATE SERVICE VERSION
+30029/tcp open  unknown
+| fingerprint-strings: 
+|   GenericLines, NULL: 
+|_    The Poopolator
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30029-TCP:V=7.95%I=7%D=10/8%Time=68E65284%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,18,"The\x20Poopolator\n>\x20\xf0\x9f\x92\xa9\x20\x20\x20")%r(Generi
+SF:cLines,18,"The\x20Poopolator\n>\x20\xf0\x9f\x92\xa9\x20\x20\x20");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct  8 12:01:19 2025 -- 1 IP address (1 host up) scanned in 16.99 seconds

@@ -1,0 +1,9 @@
+target=svc.pwnable.xyz
+port=30029
+2025-10-08T12:00:49+00:00
+
+DNS lookup:
+134.209.56.140  svc.pwnable.xyz
+167.71.125.23   svc.pwnable.xyz
+
+Whois (domain):
