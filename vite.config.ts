@@ -6,10 +6,14 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
+    hmr: {
+      clientPort: 443,
+    },
   },
   preview: {
     port: 3000,
     host: true,
+    allowedHosts: ['af797897befe.ngrok-free.app', '.ngrok-free.app', '.ngrok.io'],
   },
   resolve: {
     alias: {

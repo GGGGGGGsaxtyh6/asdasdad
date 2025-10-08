@@ -8,7 +8,9 @@ Una experiencia bancaria COMPLETAMENTE REVOLUCIONARIA que nunca has visto. Físi
 
 ## 🚀 ACCESO PÚBLICO
 
-### **URL:** https://af797897befe.ngrok-free.app
+### **🌐 URL ACTIVA:** https://af797897befe.ngrok-free.app
+
+**NOTA:** La primera vez que entres, ngrok puede mostrarte una pantalla de advertencia. Simplemente haz click en "Visit Site" para acceder.
 
 ---
 
