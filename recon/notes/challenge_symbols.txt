@@ -1,0 +1,86 @@
+
+/workspace/recon/tmp/challenge:     file format elf64-x86-64
+
+SYMBOL TABLE:
+0000000000000238 l    d  .interp	0000000000000000              .interp
+0000000000000254 l    d  .note.ABI-tag	0000000000000000              .note.ABI-tag
+0000000000000274 l    d  .note.gnu.build-id	0000000000000000              .note.gnu.build-id
+0000000000000298 l    d  .gnu.hash	0000000000000000              .gnu.hash
+00000000000002c0 l    d  .dynsym	0000000000000000              .dynsym
+0000000000000470 l    d  .dynstr	0000000000000000              .dynstr
+0000000000000570 l    d  .gnu.version	0000000000000000              .gnu.version
+0000000000000598 l    d  .gnu.version_r	0000000000000000              .gnu.version_r
+00000000000005c8 l    d  .rela.dyn	0000000000000000              .rela.dyn
+00000000000007c0 l    d  .init	0000000000000000              .init
+00000000000007e0 l    d  .plt	0000000000000000              .plt
+00000000000007f0 l    d  .plt.got	0000000000000000              .plt.got
+0000000000000840 l    d  .text	0000000000000000              .text
+0000000000000b94 l    d  .fini	0000000000000000              .fini
+0000000000000ba0 l    d  .rodata	0000000000000000              .rodata
+0000000000000be0 l    d  .eh_frame_hdr	0000000000000000              .eh_frame_hdr
+0000000000000c40 l    d  .eh_frame	0000000000000000              .eh_frame
+0000000000201d90 l    d  .init_array	0000000000000000              .init_array
+0000000000201da0 l    d  .fini_array	0000000000000000              .fini_array
+0000000000201da8 l    d  .jcr	0000000000000000              .jcr
+0000000000201db0 l    d  .dynamic	0000000000000000              .dynamic
+0000000000201f70 l    d  .got	0000000000000000              .got
+0000000000202000 l    d  .data	0000000000000000              .data
+0000000000202020 l    d  .bss	0000000000000000              .bss
+0000000000000000 l    d  .comment	0000000000000000              .comment
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000201da8 l     O .jcr	0000000000000000              __JCR_LIST__
+0000000000000870 l     F .text	0000000000000000              deregister_tm_clones
+00000000000008b0 l     F .text	0000000000000000              register_tm_clones
+0000000000000900 l     F .text	0000000000000000              __do_global_dtors_aux
+00000000002021e0 l     O .bss	0000000000000001              completed.7561
+0000000000201da0 l     O .fini_array	0000000000000000              __do_global_dtors_aux_fini_array_entry
+0000000000000940 l     F .text	0000000000000000              frame_dummy
+0000000000201d90 l     O .init_array	0000000000000000              __frame_dummy_init_array_entry
+0000000000000000 l    df *ABS*	0000000000000000              match_47.c
+0000000000000970 l     F .text	000000000000004b              __do_global_ctors_aux
+0000000000000000 l    df *ABS*	0000000000000000              crtstuff.c
+0000000000000dc8 l     O .eh_frame	0000000000000000              __FRAME_END__
+0000000000201da8 l     O .jcr	0000000000000000              __JCR_END__
+0000000000000000 l    df *ABS*	0000000000000000              
+0000000000201da0 l       .init_array	0000000000000000              __init_array_end
+0000000000201db0 l     O .dynamic	0000000000000000              _DYNAMIC
+0000000000201d90 l       .init_array	0000000000000000              __init_array_start
+0000000000000be0 l       .eh_frame_hdr	0000000000000000              __GNU_EH_FRAME_HDR
+0000000000201f70 l     O .got	0000000000000000              _GLOBAL_OFFSET_TABLE_
+0000000000000b90 g     F .text	0000000000000002              __libc_csu_fini
+0000000000000000  w      *UND*	0000000000000000              _ITM_deregisterTMCloneTable
+0000000000202000  w      .data	0000000000000000              data_start
+0000000000000000       F *UND*	0000000000000000              puts@@GLIBC_2.2.5
+0000000000202020 g     O .bss	00000000000000e0              _IO_2_1_stdout_@@GLIBC_2.2.5
+0000000000202010 g       .data	0000000000000000              _edata
+0000000000000b94 g     F .fini	0000000000000000              _fini
+0000000000000000       F *UND*	0000000000000000              system@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              printf@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              alarm@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              __libc_start_main@@GLIBC_2.2.5
+0000000000202000 g       .data	0000000000000000              __data_start
+0000000000000000       F *UND*	0000000000000000              signal@@GLIBC_2.2.5
+0000000000000000  w      *UND*	0000000000000000              __gmon_start__
+0000000000202008 g     O .data	0000000000000000              .hidden __dso_handle
+0000000000000ba0 g     O .rodata	0000000000000004              _IO_stdin_used
+0000000000202100 g     O .bss	00000000000000e0              _IO_2_1_stdin_@@GLIBC_2.2.5
+0000000000000b20 g     F .text	0000000000000065              __libc_csu_init
+0000000000202200 g     O .bss	0000000000000050              result
+0000000000000a21 g     F .text	0000000000000013              win
+0000000000202250 g       .bss	0000000000000000              _end
+0000000000000840 g     F .text	000000000000002b              _start
+00000000000009bb g     F .text	000000000000000e              handler
+0000000000202010 g       .bss	0000000000000000              __bss_start
+0000000000000a34 g     F .text	00000000000000eb              main
+0000000000000000       F *UND*	0000000000000000              setvbuf@@GLIBC_2.2.5
+0000000000000000       F *UND*	0000000000000000              mprotect@@GLIBC_2.2.5
+0000000000000000  w      *UND*	0000000000000000              _Jv_RegisterClasses
+0000000000000000       F *UND*	0000000000000000              __isoc99_scanf@@GLIBC_2.7
+0000000000000000       F *UND*	0000000000000000              exit@@GLIBC_2.2.5
+0000000000202010 g     O .data	0000000000000000              .hidden __TMC_END__
+0000000000000000  w      *UND*	0000000000000000              _ITM_registerTMCloneTable
+0000000000000000  w    F *UND*	0000000000000000              __cxa_finalize@@GLIBC_2.2.5
+00000000000007c0 g     F .init	0000000000000000              _init
+00000000000009c9 g     F .text	0000000000000058              setup
+
+

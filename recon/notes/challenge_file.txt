@@ -1,0 +1,1 @@
+/dev/stdin: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=bac2fe3c00395534dfad4a02ef84c3b01eb0ca90, not stripped
