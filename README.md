@@ -4,7 +4,7 @@ Aplicación bancaria web de lujo con moneda interna **Smurf**. Experiencia visua
 
 ## 🌐 Acceso a la Aplicación
 
-**URL Pública:** https://678b099c4f7b.ngrok-free.app
+**URL Pública:** https://97cad18477b4.ngrok-free.app
 
 ## ✨ Características
 
@@ -156,7 +156,7 @@ npm start
 ## 🌐 Despliegue
 
 La aplicación está desplegada en:
-**https://678b099c4f7b.ngrok-free.app**
+**https://97cad18477b4.ngrok-free.app**
 
 Ngrok expone el puerto 3000 con SSL/TLS automático.
 
