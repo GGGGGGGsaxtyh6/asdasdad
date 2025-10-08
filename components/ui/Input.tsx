@@ -53,7 +53,7 @@ export function Input({ label, error, icon, type, className = '', ...props }: In
           animate={{
             scale: focused ? 1.01 : 1,
           }}
-          {...props}
+          {...(props as any)}
         />
         
         {type === 'password' && (

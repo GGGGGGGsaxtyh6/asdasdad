@@ -40,7 +40,7 @@ export function Button({
       whileHover={{ scale: disabled || loading ? 1 : 1.02 }}
       whileTap={{ scale: disabled || loading ? 1 : 0.98 }}
       disabled={disabled || loading}
-      {...props}
+      {...(props as any)}
     >
       {loading ? (
         <>
