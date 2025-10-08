@@ -1,0 +1,6 @@
+
+/workspace/free_spirit/bin/challenge_26:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 400ad0 01000200 63617420 2f666c61 67003e20  ....cat /flag.> 
+ 400ae0 0025700a 00496e76 616c6964 00        .%p..Invalid.   
