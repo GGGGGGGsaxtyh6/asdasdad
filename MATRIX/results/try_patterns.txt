@@ -1,0 +1,31 @@
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'u\nu\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'u\r\nu\r\n'
+You were eaten by a grue.
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'u\x00u\x00'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'u u'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'u\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+PAYLOAD b'u\nu'
+
+---

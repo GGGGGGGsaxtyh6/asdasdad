@@ -1,0 +1,40 @@
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'u8'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'u8\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'd8'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'd8\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'l8'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'l8\n'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'r8'
+
+---
+Welcome to the M A T R I X
+Can you make it out alive?
+INPUT=b'r8\n'
+
+---
