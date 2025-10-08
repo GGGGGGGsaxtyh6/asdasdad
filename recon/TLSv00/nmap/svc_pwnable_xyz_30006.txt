@@ -1,0 +1,70 @@
+# Nmap 7.95 scan initiated Wed Oct  8 22:46:08 2025 as: nmap -p 30006 -sV -sC -Pn --script ssl-enum-ciphers,ssl-cert -oN /workspace/recon/TLSv00/nmap/svc_pwnable_xyz_30006.txt svc.pwnable.xyz
+Nmap scan report for svc.pwnable.xyz (134.209.56.140)
+Host is up (0.070s latency).
+Other addresses for svc.pwnable.xyz (not scanned): 167.71.125.23
+
+PORT      STATE SERVICE VERSION
+30006/tcp open  unknown
+| fingerprint-strings: 
+|   DNSStatusRequestTCP, DNSVersionBindReqTCP, GenericLines, GetRequest, HTTPOptions, RTSPRequest: 
+|     Muahaha you thought I would never make a crypto chal?
+|     Re-generate key
+|     Load flag
+|     Print flag
+|     Invalid
+|     Re-generate key
+|     Load flag
+|     Print flag
+|   NULL: 
+|     Muahaha you thought I would never make a crypto chal?
+|     Re-generate key
+|     Load flag
+|     Print flag
+|   RPCCheck: 
+|     Muahaha you thought I would never make a crypto chal?
+|     Re-generate key
+|     Load flag
+|     Print flag
+|     Invalid
+|     Re-generate key
+|     Load flag
+|     Print flag
+|     Invalid
+|     Re-generate key
+|     Load flag
+|_    Print flag
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port30006-TCP:V=7.95%I=7%D=10/8%Time=68E6E9B6%P=x86_64-pc-linux-gnu%r(N
+SF:ULL,66,"Muahaha\x20you\x20thought\x20I\x20would\x20never\x20make\x20a\x
+SF:20crypto\x20chal\?\n1\.\x20Re-generate\x20key\n2\.\x20Load\x20flag\n3\.
+SF:\x20Print\x20flag\n>\x20")%r(GenericLines,9E,"Muahaha\x20you\x20thought
+SF:\x20I\x20would\x20never\x20make\x20a\x20crypto\x20chal\?\n1\.\x20Re-gen
+SF:erate\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20Invalid\n
+SF:1\.\x20Re-generate\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>
+SF:\x20")%r(GetRequest,9E,"Muahaha\x20you\x20thought\x20I\x20would\x20neve
+SF:r\x20make\x20a\x20crypto\x20chal\?\n1\.\x20Re-generate\x20key\n2\.\x20L
+SF:oad\x20flag\n3\.\x20Print\x20flag\n>\x20Invalid\n1\.\x20Re-generate\x20
+SF:key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20")%r(HTTPOptions,9
+SF:E,"Muahaha\x20you\x20thought\x20I\x20would\x20never\x20make\x20a\x20cry
+SF:pto\x20chal\?\n1\.\x20Re-generate\x20key\n2\.\x20Load\x20flag\n3\.\x20P
+SF:rint\x20flag\n>\x20Invalid\n1\.\x20Re-generate\x20key\n2\.\x20Load\x20f
+SF:lag\n3\.\x20Print\x20flag\n>\x20")%r(RTSPRequest,9E,"Muahaha\x20you\x20
+SF:thought\x20I\x20would\x20never\x20make\x20a\x20crypto\x20chal\?\n1\.\x2
+SF:0Re-generate\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20In
+SF:valid\n1\.\x20Re-generate\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20
+SF:flag\n>\x20")%r(RPCCheck,D6,"Muahaha\x20you\x20thought\x20I\x20would\x2
+SF:0never\x20make\x20a\x20crypto\x20chal\?\n1\.\x20Re-generate\x20key\n2\.
+SF:\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20Invalid\n1\.\x20Re-generat
+SF:e\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20Invalid\n1\.\
+SF:x20Re-generate\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20
+SF:")%r(DNSVersionBindReqTCP,9E,"Muahaha\x20you\x20thought\x20I\x20would\x
+SF:20never\x20make\x20a\x20crypto\x20chal\?\n1\.\x20Re-generate\x20key\n2\
+SF:.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20Invalid\n1\.\x20Re-genera
+SF:te\x20key\n2\.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20")%r(DNSStat
+SF:usRequestTCP,9E,"Muahaha\x20you\x20thought\x20I\x20would\x20never\x20ma
+SF:ke\x20a\x20crypto\x20chal\?\n1\.\x20Re-generate\x20key\n2\.\x20Load\x20
+SF:flag\n3\.\x20Print\x20flag\n>\x20Invalid\n1\.\x20Re-generate\x20key\n2\
+SF:.\x20Load\x20flag\n3\.\x20Print\x20flag\n>\x20");
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Wed Oct  8 22:48:48 2025 -- 1 IP address (1 host up) scanned in 159.79 seconds
