@@ -1,0 +1,4 @@
+=== Trying delta=0x40010 ===
+Welcome.
+Leak: 0x7f618f28b010
+Length of your message: Enter your message: 
