@@ -1,0 +1,10 @@
+
+/workspace/reto_welcome/bin/challenge_21_extracted/image/challenge/challenge:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 0c20 01000200 57656c63 6f6d652e 004c6561  ....Welcome..Lea
+ 0c30 6b3a2025 700a004c 656e6774 68206f66  k: %p..Length of
+ 0c40 20796f75 72206d65 73736167 653a2000   your message: .
+ 0c50 256c7500 456e7465 7220796f 7572206d  %lu.Enter your m
+ 0c60 65737361 67653a20 00636174 202f666c  essage: .cat /fl
+ 0c70 616700                               ag.             

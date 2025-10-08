@@ -1,0 +1,2 @@
+# Nmap 7.95 scan initiated Wed Oct  8 10:38:09 2025 as: nmap -sV -sC -p 30000 -oN /workspace/reto_welcome/recon/nmap/scan_30000.nmap -oG /workspace/reto_welcome/recon/nmap/scan_30000.gnmap -oX /workspace/reto_welcome/recon/nmap/scan_30000.xml svc.pwnable.xyz
+# Nmap done at Wed Oct  8 10:38:13 2025 -- 1 IP address (0 hosts up) scanned in 3.26 seconds

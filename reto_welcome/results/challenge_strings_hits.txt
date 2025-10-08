@@ -1,0 +1,2 @@
+45:Welcome.
+50:cat /flag

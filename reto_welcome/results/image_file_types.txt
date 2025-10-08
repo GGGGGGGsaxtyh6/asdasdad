@@ -1,0 +1,1 @@
+/workspace/reto_welcome/bin/challenge_21_extracted/image/challenge/challenge: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=1c86fc6fe1662d8037294b634c1cd0011bb304cb, stripped
