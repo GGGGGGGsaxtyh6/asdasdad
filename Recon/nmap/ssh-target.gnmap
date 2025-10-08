@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Wed Oct  8 07:09:35 2025 as: nmap -Pn -sV -sC -p 48117 -oA /workspace/Recon/nmap/ssh-target 94.237.122.241
+Host: 94.237.122.241 (94-237-122-241.uk-lon1.upcloud.host)	Status: Up
+Host: 94.237.122.241 (94-237-122-241.uk-lon1.upcloud.host)	Ports: 48117/open/tcp//ssh//OpenSSH 9.6p1 Ubuntu 3ubuntu13.4 (Ubuntu Linux; protocol 2.0)/
+# Nmap done at Wed Oct  8 07:09:38 2025 -- 1 IP address (1 host up) scanned in 2.88 seconds
