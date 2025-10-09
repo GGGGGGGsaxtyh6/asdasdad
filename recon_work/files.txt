@@ -1,0 +1,11 @@
+.git
+.env
+config
+config.php
+backup
+db
+database
+robot.txt
+robots.txt
+.htaccess
+web.config
