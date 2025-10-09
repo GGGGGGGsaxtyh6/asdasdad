@@ -1,0 +1,6 @@
+
+[+] off=0x58
+
+[+] off=0x60
+[!] err: [Errno 111] Connection refused
+[!] err: [Errno 111] Connection refused

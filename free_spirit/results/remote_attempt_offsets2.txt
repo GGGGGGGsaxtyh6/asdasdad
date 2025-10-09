@@ -1,0 +1,6 @@
+
+[try off=0x50]
+[err [Errno 111] Connection refused]
+[err [Errno 111] Connection refused]
+[err [Errno 111] Connection refused]
+[err [Errno 111] Connection refused]
