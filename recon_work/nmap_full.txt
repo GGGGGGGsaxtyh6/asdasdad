@@ -1,1 +1,10 @@
 Starting Nmap 7.95 ( https://nmap.org ) at 2025-10-09 13:58 UTC
+Nmap scan report for 075f427191b0741eaf4c5707655696dc.ctf.hacker101.com (35.81.71.222)
+Host is up (0.066s latency).
+Other addresses for 075f427191b0741eaf4c5707655696dc.ctf.hacker101.com (not scanned): 54.213.140.188
+rDNS record for 35.81.71.222: ec2-35-81-71-222.us-west-2.compute.amazonaws.com
+Not shown: 65534 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+443/tcp open  https
+
+Nmap done: 1 IP address (1 host up) scanned in 101.60 seconds
