@@ -1,0 +1,47 @@
+
+        /'___\  /'___\           /'___\       
+       /\ \__/ /\ \__/  __  __  /\ \__/       
+       \ \ ,__\\ \ ,__\/\ \/\ \ \ \ ,__\      
+        \ \ \_/ \ \ \_/\ \ \_\ \ \ \ \_/      
+         \ \_\   \ \_\  \ \____/  \ \_\       
+          \/_/    \/_/   \/___/    \/_/       
+
+       v2.1.0-dev
+________________________________________________
+
+ :: Method           : GET
+ :: URL              : https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=FUZZ
+ :: Wordlist         : FUZZ: /workspace/recon_workspace/wordlist.txt
+ :: Follow redirects : false
+ :: Calibration      : false
+ :: Timeout          : 10
+ :: Threads          : 10
+ :: Matcher          : Response status: all
+ :: Filter           : Response status: 404
+________________________________________________
+
+[2K:: Progress: [4/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [10/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [10/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kprivate                 [Status: 200, Size: 889, Words: 70, Lines: 28, Duration: 64ms][0m
+[2K:: Progress: [10/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Ktest                    [Status: 200, Size: 883, Words: 70, Lines: 28, Duration: 66ms][0m
+[2K:: Progress: [11/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Ksecret                  [Status: 200, Size: 887, Words: 70, Lines: 28, Duration: 65ms][0m
+[2K:: Progress: [12/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Khome                    [Status: 200, Size: 883, Words: 70, Lines: 28, Duration: 66ms][0m
+[2K:: Progress: [13/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kconfig                  [Status: 200, Size: 887, Words: 70, Lines: 28, Duration: 67ms][0m
+[2K:: Progress: [14/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kadmin                   [Status: 200, Size: 885, Words: 70, Lines: 28, Duration: 68ms][0m
+[2K:: Progress: [15/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Klogin                   [Status: 200, Size: 885, Words: 70, Lines: 28, Duration: 89ms][0m
+[2K:: Progress: [16/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Khidden                  [Status: 200, Size: 887, Words: 70, Lines: 28, Duration: 65ms][0m
+[2K:: Progress: [17/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kshell                   [Status: 200, Size: 885, Words: 70, Lines: 28, Duration: 77ms][0m
+[2K:: Progress: [18/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kdev                     [Status: 200, Size: 881, Words: 70, Lines: 28, Duration: 69ms][0m
+[2K:: Progress: [19/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [20/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [20/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kauth                    [Status: 200, Size: 883, Words: 70, Lines: 28, Duration: 354ms][0m
+[2K:: Progress: [20/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [21/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Ktmp                     [Status: 200, Size: 881, Words: 70, Lines: 28, Duration: 85ms][0m
+[2K:: Progress: [21/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [22/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kstaging                 [Status: 200, Size: 889, Words: 70, Lines: 28, Duration: 433ms][0m
+[2K:: Progress: [22/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kcmd                     [Status: 200, Size: 881, Words: 70, Lines: 28, Duration: 493ms][0m
+[2K:: Progress: [23/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kbackdoor                [Status: 200, Size: 891, Words: 70, Lines: 28, Duration: 506ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kconsole                 [Status: 200, Size: 889, Words: 70, Lines: 28, Duration: 498ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kdebug                   [Status: 200, Size: 885, Words: 70, Lines: 28, Duration: 499ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kflag                    [Status: 200, Size: 883, Words: 70, Lines: 28, Duration: 579ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kbackup                  [Status: 200, Size: 887, Words: 70, Lines: 28, Duration: 87ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kupload                  [Status: 200, Size: 887, Words: 70, Lines: 28, Duration: 500ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Kindex                   [Status: 200, Size: 158, Words: 22, Lines: 3, Duration: 662ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2K:: Progress: [24/24] :: Job [1/1] :: 0 req/sec :: Duration: [0:00:00] :: Errors: 0 ::[2Ktemp                    [Status: 200, Size: 883, Words: 70, Lines: 28, Duration: 414ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 35 req/sec :: Duration: [0:00:01] :: Errors: 0 ::[2Kbak                     [Status: 200, Size: 881, Words: 70, Lines: 28, Duration: 506ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 27 req/sec :: Duration: [0:00:01] :: Errors: 0 ::[2Kfiles                   [Status: 200, Size: 885, Words: 70, Lines: 28, Duration: 929ms][0m
+[2K:: Progress: [24/24] :: Job [1/1] :: 22 req/sec :: Duration: [0:00:01] :: Errors: 0 ::[2K:: Progress: [24/24] :: Job [1/1] :: 23 req/sec :: Duration: [0:00:01] :: Errors: 0 ::

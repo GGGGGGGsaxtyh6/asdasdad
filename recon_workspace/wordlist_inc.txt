@@ -1,0 +1,14 @@
+admin.auth.inc
+admin.inc
+home.inc
+index.inc
+config.inc
+auth.inc
+login.inc
+post.inc
+comment.inc
+header.inc
+footer.inc
+db.inc
+session.inc
+flag.inc
