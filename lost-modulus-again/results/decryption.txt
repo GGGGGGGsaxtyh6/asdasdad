@@ -1,0 +1,6 @@
+msg1_plain: Oե'L5+Cf!_bϣ/&3!<lԔLF8ɵКdR`C*QO7z
+msg2_plain: Jwӧz<ĤK\FHJa,_j	O8W,%>WNΙM}$mO}L'
+flag1_full_hex: 04b54b60c6c785dd40660e3fac3c99c175be3ccae20bc4ab8d57fd321bdcbe38ffd13b2520a5936de60082e4ecf0c3bd3985de5fdbec4e6928c0a9f0f425571c571ceeb82bd52c86058f6dcc3708a60029ff3a4031c9
+flag2_full_hex: 03c43c67c179bf2c3f294354fbd7eab94c9f921edab022f87b608c1a4ce66211e8a0cac1a9c23da6022101aed4529b933a6c7fa71d1e65513a36f3ab495241b76ef1e673dbfb7f2ec92a250592c005434240eda42f53
+flag_prefix_bytes_hex: 
+flag_prefix_utf8: 
