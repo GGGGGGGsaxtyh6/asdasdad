@@ -1,0 +1,45 @@
+=== RESUMEN COMPLETO DEL RETO: Micro-CMS v1 ===
+URL: https://74b895ace936d11bad1f67770addc689.ctf.hacker101.com/
+
+TODAS LAS FLAGS ENCONTRADAS (3/3):
+
+Flag0: ^FLAG^df2cb68f97efa6ba329e0ac5b12238479c0f1bf7d85e49f6006970f95c120ee4$FLAG$
+Flag1: ^FLAG^a870ad9405498b2a04c89f19e37259558f66e5c9d0f9bde4671be186eb65e7ba$FLAG$
+Flag2: ^FLAG^9875a40c0269e4f98a3253b5aefeb9c737e376045412f93b38e63e53a576132b$FLAG$
+
+VULNERABILIDADES ENCONTRADAS:
+
+1. IDOR + Bypass de 403 (Flag0):
+   - Páginas con IDs no secuenciales (1, 2, 6, 13, 14, 15, 16, etc.)
+   - Página ID 6 protegida con 403 Forbidden
+   - Bypass: acceso mediante /page/edit/6
+   - Flag0 en el contenido de la página privada
+
+2. SQL Injection (Flag1):
+   - Vulnerabilidad en parámetro ID del endpoint /page/edit/
+   - Payload: /page/edit/1' OR '1'='1
+   - La inyección SQL devuelve directamente la Flag1
+
+3. XSS con Sanitización Parcial (Flag2):
+   - Al usar tags HTML con event handlers maliciosos
+   - El sistema sanitiza pero agrega atributo flag= con la Flag2
+   - Payloads exitosos:
+     * <img src=x onerror=alert(1)>
+     * <svg onload=alert(1)>
+     * <button onclick=alert(1)>Click</button>
+   - Resultado: <tag flag="^FLAG^..." evento_malicioso>
+
+TÉCNICAS UTILIZADAS:
+✓ Enumeración de IDs
+✓ IDOR (Insecure Direct Object Reference)
+✓ Bypass de restricciones 403
+✓ SQL Injection (básica y UNION-based)
+✓ XSS (múltiples vectores y bypasses)
+
+HERRAMIENTAS:
+- curl: Reconocimiento y pruebas manuales
+- Python3 + requests: Automatización y exploits
+- ffuf: Fuzzing de directorios
+- nmap, nikto: Instaladas pero no necesarias
+
+RETO COMPLETADO: 3/3 FLAGS ✅
