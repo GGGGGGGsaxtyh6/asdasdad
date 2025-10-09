@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Thu Oct  9 08:41:44 2025 as: nmap -Pn -sV --top-ports 1000 --reason -oA /workspace/socratespanel/recon/nmap/top1000_new 94.237.48.12
+Host: 94.237.48.12 (94-237-48-12.uk-lon1.upcloud.host)	Status: Up
+Host: 94.237.48.12 (94-237-48-12.uk-lon1.upcloud.host)	Ports: 19/filtered/tcp//chargen///, 22/open/tcp//ssh//OpenSSH 9.2p1 Debian 2+deb12u3 (protocol 2.0)/, 25/filtered/tcp//smtp///, 111/open/tcp//rpcbind//2-4 (RPC #100000)/, 32776/open/tcp//http//Node.js Express framework/	Ignored State: closed (995)
+# Nmap done at Thu Oct  9 08:41:59 2025 -- 1 IP address (1 host up) scanned in 14.74 seconds

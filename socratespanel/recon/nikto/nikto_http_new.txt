@@ -1,0 +1,5 @@
+- Nikto v2.1.5/2.1.5
++ Target Host: 94-237-48-12.uk-lon1.upcloud.host
++ Target Port: 59855
++ GET /: The anti-clickjacking X-Frame-Options header is not present.
++ GET /: Uncommon header 'x-cache' found, with contents: hit

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.95 scan initiated Thu Oct  9 08:00:39 2025 as: nmap -Pn -sV -sC -p 59855,80,443 -&#45;reason -oA /workspace/socratespanel/recon/nmap/targeted_new 94.237.48.12 -->
+<nmaprun scanner="nmap" args="nmap -Pn -sV -sC -p 59855,80,443 -&#45;reason -oA /workspace/socratespanel/recon/nmap/targeted_new 94.237.48.12" start="1759996839" startstr="Thu Oct  9 08:00:39 2025" version="7.95" xmloutputversion="1.05">
+<scaninfo type="connect" protocol="tcp" numservices="3" services="80,443,59855"/>
+<verbose level="0"/>
+<debugging level="0"/>
+<host starttime="1759996840" endtime="1759996848"><status state="up" reason="user-set" reason_ttl="0"/>
+<address addr="94.237.48.12" addrtype="ipv4"/>
+<hostnames>
+<hostname name="94-237-48-12.uk-lon1.upcloud.host" type="PTR"/>
+</hostnames>
+<ports><port protocol="tcp" portid="80"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="http" method="table" conf="3"/></port>
+<port protocol="tcp" portid="443"><state state="closed" reason="conn-refused" reason_ttl="0"/><service name="https" method="table" conf="3"/></port>
+<port protocol="tcp" portid="59855"><state state="open" reason="syn-ack" reason_ttl="0"/><service name="http" product="Tornado httpd" version="6.4.2" method="probed" conf="10"><cpe>cpe:/a:tornadoweb:tornado:6.4.2</cpe></service><script id="http-server-header" output="TornadoServer/6.4.2"><elem>TornadoServer/6.4.2</elem>
+</script><script id="http-title" output="Socrates Panel"><elem key="title">Socrates Panel</elem>
+</script></port>
+</ports>
+<times srtt="79856" rttvar="45727" to="262764"/>
+</host>
+<runstats><finished time="1759996848" timestr="Thu Oct  9 08:00:48 2025" summary="Nmap done at Thu Oct  9 08:00:48 2025; 1 IP address (1 host up) scanned in 8.79 seconds" elapsed="8.79" exit="success"/><hosts up="1" down="0" total="1"/>
+</runstats>
+</nmaprun>

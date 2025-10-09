@@ -1,0 +1,145 @@
+=== / ===
+HTTP/1.1 302 Found
+X-Powered-By: Express
+Location: /register
+Vary: Accept
+Content-Type: text/plain; charset=utf-8
+Content-Length: 31
+Set-Cookie: connect.sid=s%3ALleLVNIpCqIMiWIMtGOvc6TDw6JOryJz.Ipw9nVIhlwN38V51h775C%2Bea5gv7p4BMOTGiRTc46pA; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Found. Redirecting to /register
+=== /register ===
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 28 Apr 2024 21:02:36 GMT
+ETag: W/"5e0-18f26844de0"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 1504
+Set-Cookie: connect.sid=s%3AdfmB4AgMuXY5h-tn3NOmGgIucwu_ZIuV.J8DdpOlxmLiy77hjaCQpVHQRibwFcIC7vTtKNWGIerc; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+</head>
+<body>
+    <div class="container">
+        <div id="alerts"></div>
+        <form class="form-signin" id="form">
+            <h2 class="form-signin-heading">Please sign up</h2>
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" class="form-control" placeholder="john.doe@hackthebox.com" required autofocus>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+            <a href="/login" class="btn btn-link">Already have an account? Sign in</a>
+        </form>
+    </div> 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+=== /login ===
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 28 Apr 2024 21:02:36 GMT
+ETag: W/"692-18f26844de0"
+Content-Type: text/html; charset=UTF-8
+Content-Length: 1682
+Set-Cookie: connect.sid=s%3AXmpq1LJTQPOY-uxhLXIWrli33M3xtBe6.pRcMXlraamcD1GtEVP5IqS7sknwU03fhU7gedcQSWy8; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+</head>
+<body>
+    <div class="container">
+        <div id="alerts"></div>
+        <form class="form-signin" action="/" id="form">
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" id="email" class="form-control" placeholder="john.doe@hackthebox.com" required autofocus>
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a href="/forgot-password" class="btn btn-link">Forgot Password?</a>
+        </form>
+
+=== /panel ===
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 18
+ETag: W/"12-BMp+E34en+6tlqffRbtn1as94ZA"
+Set-Cookie: connect.sid=s%3ACa2LOUpNHDwKDvKU0gyjESt2SH6joMGP.rDSvIM2NrbT9lkBCVioWNlreUuMVDFz%2FMZXyJU9FosE; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+404 page not found
+=== /api/prev_searches ===
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 18
+ETag: W/"12-BMp+E34en+6tlqffRbtn1as94ZA"
+Set-Cookie: connect.sid=s%3AL23aLt2AfPM-64DnN7WEGaxHKGbW76au.P5qhMohwyeLjFkbNbSidisKJZXRsaSSkA%2BzETqTLIVM; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:39 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+404 page not found
+=== /api/report ===
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 18
+ETag: W/"12-BMp+E34en+6tlqffRbtn1as94ZA"
+Set-Cookie: connect.sid=s%3AmMgB1fM38GXEuPsxMU22zCfpNXpAxZNH.ckt9p0Z5FORknXAeIbGDA%2BEaeA9TYWZqS0VpkmOLo%2FA; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:40 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+404 page not found
+=== /api/quotes ===
+HTTP/1.1 404 Not Found
+X-Powered-By: Express
+Content-Type: text/html; charset=utf-8
+Content-Length: 18
+ETag: W/"12-BMp+E34en+6tlqffRbtn1as94ZA"
+Set-Cookie: connect.sid=s%3AUzgsIuC3HfNewEOGQvwhiXkT7NcDMEqY.pa4HcdvxMNCcCXUcdRd8cseYHW3VZkme8HcoqVzEvJY; Path=/; HttpOnly
+Date: Thu, 09 Oct 2025 08:45:40 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+404 page not found

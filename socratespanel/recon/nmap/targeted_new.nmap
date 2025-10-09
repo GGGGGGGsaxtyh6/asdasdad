@@ -1,0 +1,13 @@
+# Nmap 7.95 scan initiated Thu Oct  9 08:00:39 2025 as: nmap -Pn -sV -sC -p 59855,80,443 --reason -oA /workspace/socratespanel/recon/nmap/targeted_new 94.237.48.12
+Nmap scan report for 94-237-48-12.uk-lon1.upcloud.host (94.237.48.12)
+Host is up, received user-set (0.080s latency).
+
+PORT      STATE  SERVICE REASON       VERSION
+80/tcp    closed http    conn-refused
+443/tcp   closed https   conn-refused
+59855/tcp open   http    syn-ack      Tornado httpd 6.4.2
+|_http-server-header: TornadoServer/6.4.2
+|_http-title: Socrates Panel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Oct  9 08:00:48 2025 -- 1 IP address (1 host up) scanned in 8.79 seconds
