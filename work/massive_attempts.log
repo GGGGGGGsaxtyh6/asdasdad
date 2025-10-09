@@ -1,0 +1,170 @@
+=== Intento 1 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 2 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 3 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 4 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 5 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 6 ===
+=== Intento 7 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 8 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 9 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 10 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 11 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 12 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 13 ===
+[ERROR] Could not connect to svc.pwnable.xyz on port 30005
+Traceback (most recent call last):
+  File "/workspace/work/simple_exploit.py", line 13, in <module>
+    io = remote("svc.pwnable.xyz", 30005)
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 85, in __init__
+    self.sock   = self._connect(fam, typ)
+                  ~~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/tubes/remote.py", line 134, in _connect
+    self.error("Could not connect to %s on port %s", self.rhost, self.rport)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/.local/lib/python3.13/site-packages/pwnlib/log.py", line 439, in error
+    raise PwnlibException(message % args)
+pwnlib.exception.PwnlibException: Could not connect to svc.pwnable.xyz on port 30005
+=== Intento 14 ===
