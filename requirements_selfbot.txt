@@ -1,0 +1,4 @@
+discord.py-self==2.0.1
+openai>=1.0.0
+requests
+aiohttp
