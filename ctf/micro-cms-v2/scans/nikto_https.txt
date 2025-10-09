@@ -1,0 +1,4 @@
+- Nikto v2.1.5/2.1.5
++ Target Host: eac07d77b90a29638c8a690f27c5dae8.ctf.hacker101.com
++ Target Port: 443
++ GET /: The anti-clickjacking X-Frame-Options header is not present.

@@ -1,0 +1,12 @@
+HTTP/2 302 
+date: Thu, 09 Oct 2025 17:27:21 GMT
+content-type: text/html; charset=utf-8
+content-length: 199
+server: openresty/1.27.1.2
+location: /login
+
+<!doctype html>
+<html lang=en>
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to the target URL: <a href="/login">/login</a>. If not, click the link.
