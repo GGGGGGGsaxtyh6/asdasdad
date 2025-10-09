@@ -1,0 +1,17 @@
+# Nmap 7.95 scan initiated Thu Oct  9 09:23:19 2025 as: nmap -Pn -sV -sC -oN /workspace/recon/148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/nmap/top-1000.txt 148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com
+Nmap scan report for 148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com (35.81.71.222)
+Host is up (0.066s latency).
+Other addresses for 148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com (not scanned): 54.213.140.188
+rDNS record for 35.81.71.222: ec2-35-81-71-222.us-west-2.compute.amazonaws.com
+Not shown: 999 filtered tcp ports (no-response)
+PORT    STATE SERVICE  VERSION
+443/tcp open  ssl/http OpenResty web app server 1.27.1.2
+| ssl-cert: Subject: commonName=*.ctf.hacker101.com
+| Subject Alternative Name: DNS:*.ctf.hacker101.com
+| Not valid before: 2024-12-10T00:00:00
+|_Not valid after:  2026-01-09T23:59:59
+|_http-title: Home -- Cody's First Blog
+|_http-server-header: openresty/1.27.1.2
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Oct  9 09:23:49 2025 -- 1 IP address (1 host up) scanned in 29.69 seconds

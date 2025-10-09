@@ -1,0 +1,10 @@
+# Nmap 7.95 scan initiated Thu Oct  9 09:23:20 2025 as: nmap -Pn -p- -T4 -oN /workspace/recon/148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/nmap/all-ports.txt 148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com
+Nmap scan report for 148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com (35.81.71.222)
+Host is up (0.065s latency).
+Other addresses for 148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com (not scanned): 54.213.140.188
+rDNS record for 35.81.71.222: ec2-35-81-71-222.us-west-2.compute.amazonaws.com
+Not shown: 65534 filtered tcp ports (no-response)
+PORT    STATE SERVICE
+443/tcp open  https
+
+# Nmap done at Thu Oct  9 09:24:51 2025 -- 1 IP address (1 host up) scanned in 90.43 seconds

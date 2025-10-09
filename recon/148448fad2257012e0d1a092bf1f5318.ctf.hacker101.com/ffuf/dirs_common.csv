@@ -1,0 +1,4 @@
+FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,duration,resultfile,Ffufhash
+index.php,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/index.php,,2210,200,2639,168,113,text/html,4.499449702s,,b1d368a2
+php.ini,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/php.ini,,3102,200,69889,9026,1931,,132.068056ms,,b1d36c1e
+posts,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/posts,http://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/posts/,3235,301,387,20,10,text/html; charset=iso-8859-1,1.500007194s,,b1d36ca3

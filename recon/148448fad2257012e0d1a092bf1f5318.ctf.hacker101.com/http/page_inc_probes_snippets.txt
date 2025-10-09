@@ -1,0 +1,65 @@
+=== backdoor.inc ===
+ <!doctype html>
+<html>
+	<head>
+		<title><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>27</b><br />
+ -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>30</b><br />
+</h1>
+		<br
+=== hidden.inc ===
+ <!doctype html>
+<html>
+	<head>
+		<title><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>27</b><br />
+ -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>30</b><br />
+</h1>
+		<br
+=== secret.inc ===
+ <!doctype html>
+<html>
+	<head>
+		<title><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>27</b><br />
+ -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>30</b><br />
+</h1>
+		<br
+=== private.inc ===
+ <!doctype html>
+<html>
+	<head>
+		<title><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>27</b><br />
+ -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>30</b><br />
+</h1>
+		<br
+=== flag2.inc ===
+ <!doctype html>
+<html>
+	<head>
+		<title><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>27</b><br />
+ -- Cody's First Blog</title>
+	</head>
+	<body>
+		<h1><br />
+<b>Notice</b>:  Undefined variable: title in <b>/app/index.php</b> on line <b>30</b><br />
+</h1>
+		<br
