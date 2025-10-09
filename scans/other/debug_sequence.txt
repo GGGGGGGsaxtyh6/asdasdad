@@ -1,0 +1,5 @@
+[banner] b'> '
+[leak] b'0x7ffd98e4c300\n> '
+[after writeA] b'> '
+[after copy] b'> '
+[after writeB] b'> '

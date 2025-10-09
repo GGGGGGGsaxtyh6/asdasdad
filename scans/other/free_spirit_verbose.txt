@@ -1,0 +1,9 @@
+[banner] b'> '
+[leak_raw] b'0x7fff38462190\n> '
+[calc] slot=0x7fff38462190 ra=0x7fff384621e8 slot-8=0x7fff38462188
+[after write heap->ra stage] b'> '
+[after copy to stack (ptr=ra)] b'> '
+[after write to RA] b'> '
+[after copy from RA (ptr=slot-8)] b'> '
+[after copy from slot-8 (ptr=orig)] b'> '
+[final_out] b''
