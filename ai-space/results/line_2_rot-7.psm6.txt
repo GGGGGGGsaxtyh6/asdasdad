@@ -1,0 +1,11 @@
+4 _
+B PF 8 PC
+A 2 4 3 ST
+GS S P
+_  G 1 3 B  X _
+ O2 OF F 7
+4 P BS 4
+I J 2 P A
+4 PS WARS S2 5
+RRS CT A 3
+L

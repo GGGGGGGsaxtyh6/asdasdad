@@ -1,0 +1,6 @@
+S
+CL 4 B BRE
+R  C PM 1
+H C O
+SL 2 A3 G  TE S 2  S SO
+SS A SC

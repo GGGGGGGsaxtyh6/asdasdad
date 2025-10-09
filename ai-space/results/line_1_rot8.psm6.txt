@@ -1,0 +1,17 @@
+S
+OY
+2
+4 8 M
+PB Y
+7 T 3 Y
+Y  S 7M 7
+2 4
+P TT 3 7
+H S
+ F 4
+R
+Y
+V S _ 3
+R
+1
+8 2

@@ -1,0 +1,13 @@
+4
+4 SS
+L P YY M SL _
+8
+A 27 30
+T 4 BR 10
+2 W
+2 F
+3 F  E C
+FF GE A
+A 4 7 4 L
+YP PF
+L

@@ -1,0 +1,8 @@
+A 7
+
+P 2 FF CD Z50 2
+
+A SD TO J
+
+S E W L NM 23 LY 4 NW
+S18
