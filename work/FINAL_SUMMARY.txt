@@ -1,0 +1,35 @@
+
+=== RESUMEN DEL ANÁLISIS ===
+
+VULNERABILIDAD: Arbitrary write via opción 3
+- Opción 3 copia 16 bytes desde *heap_ptr a rsp+0x08, sobrescribiendo heap_ptr mismo
+
+EXPLOIT DESARROLLADO:
+1. Leak stack con opción 2
+2. Calcular ret_addr
+3. Usar opción 3 para hacer heap_ptr = ret_addr  
+4. Escribir win() en ret_addr
+
+PROBLEMA BLOQUEANTE:
+- Opción 0 hace free(heap_ptr) antes de return
+- heap_ptr corrupto causa SIGABRT
+- Programa termina sin ejecutar return ni win()
+
+TÉCNICAS PROBADAS (TODAS FALLAN):
+- Fake chunks en stack/bss
+- heap_ptr = NULL (llama exit en vez de return)
+- ROP chain
+- Sobrescribir GOT (Full RELRO)
+- Sobrescribir desde saved_rbx
+- Esperar alarm timeout
+- Múltiples offsets de ret_addr
+
+HIPÓTESIS:
+- El servidor usa glibc vieja (2.17-2.23) con menos verificaciones
+- Hay una técnica específica de bypass que desconozco
+- Hay un detalle del challenge que no veo
+
+SIGUIENTE ACCIÓN:
+- Continuar intentando automáticamente en servidor
+- Probar con glibc viejas localmente
+- Buscar técnicas alternativas de heap exploitation
