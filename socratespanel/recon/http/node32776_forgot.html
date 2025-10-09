@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot & Reset Password</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id='alerts'></div>
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="forgot-tab" data-toggle="tab" href="#forgot" role="tab" aria-controls="forgot" aria-selected="true">Forgot Password</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="reset-tab" data-toggle="tab" href="#reset" role="tab" aria-controls="reset" aria-selected="false">Reset Password</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <!-- Forgot Password Tab -->
+                    <div class="tab-pane fade show active" id="forgot" role="tabpanel" aria-labelledby="forgot-tab">
+                        <div class="card-body">
+                            <form id="forgot-password-form">
+                                <div class="form-group">
+                                    <label for="forgotEmail">Email Address</label>
+                                    <input type="email" class="form-control" id="forgotEmail" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Send Reset Token</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Reset Password Tab -->
+                    <div class="tab-pane fade" id="reset" role="tabpanel" aria-labelledby="reset-tab">
+                        <div class="card-body">
+                            <form id="reset-password-form">
+                                <div class="form-group">
+                                    <label for="resetEmail">Email Address</label>
+                                    <input type="email" class="form-control" id="resetEmail" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="resetToken">Reset Token</label>
+                                    <input type="text" class="form-control" id="resetToken" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="newPassword">New Password</label>
+                                    <input type="password" class="form-control" id="newPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id='output'></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/static/js/reset.js"></script>
+</body>
+</html>

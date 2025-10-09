@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Thu Oct  9 08:00:39 2025 as: nmap -Pn -sV -sC -p 59855,80,443 --reason -oA /workspace/socratespanel/recon/nmap/targeted_new 94.237.48.12
+Host: 94.237.48.12 (94-237-48-12.uk-lon1.upcloud.host)	Status: Up
+Host: 94.237.48.12 (94-237-48-12.uk-lon1.upcloud.host)	Ports: 80/closed/tcp//http///, 443/closed/tcp//https///, 59855/open/tcp//http//Tornado httpd 6.4.2/
+# Nmap done at Thu Oct  9 08:00:48 2025 -- 1 IP address (1 host up) scanned in 8.79 seconds

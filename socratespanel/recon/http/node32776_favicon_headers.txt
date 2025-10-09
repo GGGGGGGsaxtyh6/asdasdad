@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Powered-By: Express
+Accept-Ranges: bytes
+Cache-Control: public, max-age=0
+Last-Modified: Sun, 28 Apr 2024 21:02:36 GMT
+ETag: W/"4830e-18f26844de0"
+Content-Type: image/png
+Content-Length: 295694
+Date: Thu, 09 Oct 2025 08:48:18 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+

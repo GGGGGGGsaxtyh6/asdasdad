@@ -1,0 +1,48 @@
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 09 Oct 2025 08:31:55 GMT
+Server: TornadoServer/6.4.2
+X-Cache: dynamic
+Content-Length: 997
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Socrates Panel</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header>
+<h1>Socrates Panel</h1>
+<nav>
+<ul>
+<li><a href="/quotes">Quotes</a></li>
+<li><a href="/search">Search</a></li>
+<li><a href="/panel">Panel</a></li>
+<li><a href="/login">Login</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<div class="container">
+<h1>Login</h1>
+
+<div class="alert error">
+<p>Invalid credentials.</p>
+</div>
+
+<form action="/login" method="post">
+<label for="username">Username:</label>
+<input type="text" id="username" name="username" required>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password" required>
+<button type="submit" name="submit">Login</button>
+</form>
+<p>Don't have an account? <a href="/register">Register here</a>.</p>
+</div>
+</main>
+</body>
+</html>
