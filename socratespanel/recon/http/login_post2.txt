@@ -1,0 +1,10 @@
+HTTP/1.1 302 Found
+Content-Type: text/html; charset=UTF-8
+Date: Thu, 09 Oct 2025 04:43:34 GMT
+Location: /quotes
+Server: TornadoServer/6.4.2
+Set-Cookie: username=2|1:0|10:1759985014|8:username|16:c29jcmF0ZXN0ZXN0|d16ccf30e7e87f6ec99f7d47e148483ce9d3422741d24223171a12598b9b085e; expires=Sat, 08 Nov 2025 04:43:34 GMT; HttpOnly; Path=/
+X-Cache: dynamic
+Content-Length: 1
+
+
