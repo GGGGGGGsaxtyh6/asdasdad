@@ -1,0 +1,8 @@
+> [leak] 0x7ffe3e4eb3b0
+> 
+[write heap->set ptr=ra]
+[copy heap->stack: ptr=ra]
+[write RA]
+[flip->slot-8]
+[flip->heap]
+[trigger]
