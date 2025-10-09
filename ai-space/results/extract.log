@@ -1,0 +1,17 @@
+
+7-Zip 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-29
+ 64-bit locale=en_US.UTF-8 Threads:4 OPEN_MAX:1048576, ASM
+
+Scanning the drive for archives:
+1 file, 24631248 bytes (24 MiB)
+
+Extracting archive: /workspace/ai-space/downloads/AI SPACE.zip
+--
+Path = /workspace/ai-space/downloads/AI SPACE.zip
+Type = zip
+Physical Size = 24631248
+
+Everything is Ok
+
+Size:       26151040
+Compressed: 24631248
