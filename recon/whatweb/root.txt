@@ -1,0 +1,35 @@
+WhatWeb report for [1m[34mhttps://075f427191b0741eaf4c5707655696dc.ctf.hacker101.com/[0m
+Status    : 200 OK
+Title     : [1m[33mTicketastic Deluxe - Home[0m
+IP        : 54.213.140.188
+Country   : [1m[31mUNITED STATES, US[0m
+
+Summary   : [1mHTML5[0m, [1mHTTPServer[0m[[1m[36mopenresty/1.27.1.2[0m], [1mOpenResty[0m[[1m[32m1.27.1.2[0m]
+
+Detected Plugins:
+[ [1mHTML5[0m ]
+	HTML version 5, detected by the doctype declaration 
+
+
+[ [1mHTTPServer[0m ]
+	HTTP server header string. This plugin also attempts to 
+	identify the operating system from the server header. 
+
+	String       : [1m[36mopenresty/1.27.1.2[0m (from server string)
+
+[ [1mOpenResty[0m ]
+	OpenResty® is a dynamic web platform based on NGINX and 
+	LuaJIT. 
+
+	Version      : [1m[32m1.27.1.2[0m
+	Google Dorks: (1)
+	Website     : https://openresty.org/
+
+HTTP Headers:
+	HTTP/1.1 200 OK
+	Date: Thu, 09 Oct 2025 14:05:21 GMT
+	Content-Type: text/html; charset=utf-8
+	Content-Length: 367
+	Connection: close
+	Server: openresty/1.27.1.2
+	

@@ -1,0 +1,17 @@
+- Nikto v2.1.5
+---------------------------------------------------------------------------
++ Target IP:          35.81.71.222
++ Target Hostname:    075f427191b0741eaf4c5707655696dc.ctf.hacker101.com
++ Target Port:        443
+---------------------------------------------------------------------------
++ SSL Info:        Subject: /CN=*.ctf.hacker101.com
+                   Ciphers: ECDHE-RSA-AES128-GCM-SHA256
+                   Issuer:  /C=US/O=Amazon/CN=Amazon RSA 2048 M02
++ Start Time:         2025-10-09 14:05:19 (GMT0)
+---------------------------------------------------------------------------
++ Server: openresty/1.27.1.2
++ IP address found in the 'server' header. The IP is "1.27.1.2".
++ The anti-clickjacking X-Frame-Options header is not present.
++ Server banner has changed from 'openresty/1.27.1.2' to 'awselb/2.0' which may suggest a WAF, load balancer or proxy is in place
++ Server is using a wildcard certificate: '*.ctf.hacker101.com'
++ Allowed HTTP Methods: HEAD, OPTIONS, GET 
