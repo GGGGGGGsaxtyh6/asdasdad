@@ -1,0 +1,23 @@
+STATUS 200
+URL https://075f427191b0741eaf4c5707655696dc.ctf.hacker101.com/
+HEADERS_START
+Date: Thu, 09 Oct 2025 14:04:51 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 367
+Connection: keep-alive
+Server: openresty/1.27.1.2
+HEADERS_END
+BODY_START
+<!doctype html>
+<html>
+	<head>
+		<title>Ticketastic Deluxe - Home</title>
+	</head>
+	<body>
+		<h1>Welcome to Ticketastic</h1>
+		<p><a href="newTicket">Submit a Ticket</a> | <a href="login">Admin Login</a></p>
+		<h2>Support Home</h2>
+		<p>If you're having problems with your installation of Ticketastic or the demo instance, please submit a ticket.</p>
+	</body>
+</html>
+BODY_END
