@@ -1,0 +1,13 @@
+/workspace/ai-space/results/ascii_art.txt
+/workspace/ai-space/results/ascii_art_large.txt
+/workspace/ai-space/results/ascii_art_large_hash.txt
+/workspace/ai-space/results/ascii_art_dilate.txt
+/workspace/ai-space/results/points_crop.png
+/workspace/ai-space/results/points_crop2.png
+/workspace/ai-space/results/points_crop_big.png
+/workspace/ai-space/results/band1.png
+/workspace/ai-space/results/band2.png
+/workspace/ai-space/results/band3.png
+/workspace/ai-space/results/ocr.txt
+/workspace/ai-space/results/ocr2.txt
+/workspace/ai-space/results/band1.psm6.txt

@@ -1,0 +1,10 @@
+7
+PS FS
+ R 5 OY 24 SY 24 TF Y
+A 7 Y B
+P 4 2 J P C F S 8
+T 4
+AL 3 T T Y 5
+2
+Y SR 3
+ST4

@@ -1,0 +1,11 @@
+CP
+Z
+8 2
+P L A WY A P _
+OC RT 2
+F 5 PC
+ O 1 47
+F 5
+7  R 4
+P
+P 2H

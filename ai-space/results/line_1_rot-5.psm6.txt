@@ -1,0 +1,11 @@
+CC
+ST _ P
+PS O F
+3 ZS 42
+8  S _
+RT A
+T L F W W M
+P 2
+F 1 4 7 2 FF
+Y 3 2
+FP
