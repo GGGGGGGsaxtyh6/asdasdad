@@ -1,0 +1,1 @@
+{"data":{"allUsers":{"edges":[{"node":{"id":"VXNlcnM6MQ==","username":"admin","bugs":{"edges":[{"node":{"id":"QnVnc186MQ==","reporterId":1,"private":false}}]}}},{"node":{"id":"VXNlcnM6Mg==","username":"victim","bugs":{"edges":[{"node":{"id":"QnVnc186Mg==","reporterId":2,"private":true}}]}}}]}}}

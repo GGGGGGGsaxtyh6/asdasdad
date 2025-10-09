@@ -1,0 +1,1 @@
+{"data":{"allBugs":{"edges":[{"node":{"id":"QnVnczox","reporterId":1,"private":false,"reporter":{"username":"admin"}}},{"node":{"id":"QnVnczoy","reporterId":2,"private":true,"reporter":{"username":"victim"}}}]}}}
