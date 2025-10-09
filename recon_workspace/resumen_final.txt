@@ -1,0 +1,44 @@
+=== RESUMEN FINAL: Micro-CMS v1 - TODAS LAS FLAGS ===
+URL: https://74b895ace936d11bad1f67770addc689.ctf.hacker101.com/
+
+✅ TODAS LAS FLAGS ENCONTRADAS (4/4):
+
+Flag0: ^FLAG^df2cb68f97efa6ba329e0ac5b12238479c0f1bf7d85e49f6006970f95c120ee4$FLAG$
+Flag1: ^FLAG^a870ad9405498b2a04c89f19e37259558f66e5c9d0f9bde4671be186eb65e7ba$FLAG$
+Flag2: ^FLAG^556a6f00f36db8a0e5e89af03723a206164dcefac48065e9618bd717582d8cba$FLAG$
+Flag3: ^FLAG^9875a40c0269e4f98a3253b5aefeb9c737e376045412f93b38e63e53a576132b$FLAG$
+
+VULNERABILIDADES Y MÉTODOS:
+
+1. Flag0 - IDOR + Bypass de 403:
+   - Página ID 6 protegida con 403 Forbidden en /page/6
+   - Bypass: acceso mediante /page/edit/6 (ventana alternativa)
+   - Flag en el contenido de la página privada
+
+2. Flag1 - SQL Injection (GET):
+   - Vulnerabilidad en parámetro ID de /page/edit/ID
+   - Payload: GET /page/edit/1' OR '1'='1
+   - También funciona en POST /page/edit/ID con SQL injection
+   - Respuesta directa con la flag
+
+3. Flag2 - XSS con Script Injection:
+   - Al crear página con título: <script>alert(1)</script>
+   - El sanitizador modifica el código a: <script>alert("^FLAG2^");</script>
+   - La flag se inyecta dentro de las comillas del alert()
+   - Visible en el listado de la página principal
+
+4. Flag3 - XSS con Atributo Flag:
+   - Tags HTML con event handlers: <img>, <svg>, <button>
+   - Payload: <img src=x onerror=alert(1)>
+   - El sanitizador agrega: <img src=x flag="^FLAG3^" onerror=alert(1)>
+   - La flag aparece como atributo HTML
+
+TÉCNICAS UTILIZADAS:
+✓ IDOR (Insecure Direct Object Reference)
+✓ Bypass de restricciones 403
+✓ SQL Injection (GET y POST)
+✓ XSS (múltiples vectores)
+✓ Análisis de sanitización de inputs
+✓ Fuzzing de IDs y endpoints
+
+RETO COMPLETADO: 4/4 FLAGS ✅

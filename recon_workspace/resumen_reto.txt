@@ -1,0 +1,37 @@
+=== RESUMEN DEL RETO: Micro-CMS v1 ===
+URL: https://74b895ace936d11bad1f67770addc689.ctf.hacker101.com/
+
+VULNERABILIDADES ENCONTRADAS:
+
+1. IDOR (Insecure Direct Object Reference) + Bypass de 403:
+   - Páginas con IDs no secuenciales (1, 2, 6, 13, 14, 15, 16, etc.)
+   - Página ID 6 estaba protegida con 403 Forbidden
+   - Se pudo acceder a través del endpoint /page/edit/6 (bypass)
+   - Flag0 encontrada en el contenido de la página privada
+
+2. SQL Injection:
+   - Vulnerabilidad en el parámetro ID del endpoint /page/edit/
+   - Payload exitoso: /page/edit/1' OR '1'='1
+   - La inyección SQL devuelve directamente la Flag1
+
+FLAGS OBTENIDAS:
+- Flag0: ^FLAG^df2cb68f97efa6ba329e0ac5b12238479c0f1bf7d85e49f6006970f95c120ee4$FLAG$
+- Flag1: ^FLAG^a870ad9405498b2a04c89f19e37259558f66e5c9d0f9bde4671be186eb65e7ba$FLAG$
+
+PROTECCIONES DETECTADAS:
+- XSS: Los caracteres < y > son escapados a &lt; y &gt;
+- JavaScript en Markdown: "javascript:" es convertido a "javascrubbed:"
+- Scripts no permitidos en el contenido Markdown
+
+HERRAMIENTAS UTILIZADAS:
+- curl: Reconocimiento inicial y pruebas manuales
+- Python3 + requests: Automatización de pruebas y exploits
+- ffuf: Fuzzing de directorios (sin resultados relevantes)
+
+METODOLOGÍA:
+1. Reconocimiento del sitio (estructura, funcionalidades)
+2. Análisis de secuencia de IDs de páginas
+3. Descubrimiento de páginas ocultas
+4. Bypass de restricción 403 mediante endpoints alternativos
+5. Pruebas de SQL injection en diferentes parámetros
+6. Descubrimiento de SQL injection en parámetro ID
