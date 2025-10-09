@@ -1,0 +1,8 @@
+FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,duration,resultfile,Ffufhash
+admin,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=admin.inc,,4,200,1185,53,47,text/html,2.036031742s,,3a1484
+Admin,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=Admin.inc,,180,200,1275,89,42,text/html,68.984543ms,,3a148b4
+home,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=home.inc,,140,200,2639,168,113,text/html,2.99881289s,,3a1488c
+Home,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=Home.inc,,845,200,2581,129,114,text/html,1.431834551s,,3a14834d
+ADMIN,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=ADMIN.inc,,1212,200,1275,89,42,text/html,2.499789273s,,3a1484bc
+HOME,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=HOME.inc,,8345,200,2581,129,114,text/html,2.500564158s,,3a1482099
+test123,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/?page=test123.inc,,13282,200,1009,73,34,text/html,999.220049ms,,3a14833e2

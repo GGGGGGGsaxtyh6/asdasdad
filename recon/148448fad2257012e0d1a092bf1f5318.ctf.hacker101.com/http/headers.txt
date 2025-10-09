@@ -1,0 +1,8 @@
+HTTP/2 200 
+date: Thu, 09 Oct 2025 09:22:11 GMT
+content-type: text/html
+content-length: 2100
+server: openresty/1.27.1.2
+x-powered-by: PHP/5.5.9-1ubuntu4.24
+vary: Accept-Encoding
+

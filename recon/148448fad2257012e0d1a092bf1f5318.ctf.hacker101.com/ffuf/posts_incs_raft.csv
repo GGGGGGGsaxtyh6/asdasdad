@@ -1,0 +1,2 @@
+FUZZ,url,redirectlocation,position,status_code,content_length,content_words,content_lines,content_type,duration,resultfile,Ffufhash
+first,https://148448fad2257012e0d1a092bf1f5318.ctf.hacker101.com/posts/first.inc.php,,2145,200,367,63,4,text/html,1.435680543s,,2ac4a861
