@@ -623,13 +623,13 @@ WINE REGISTRY Version 2
 [Software\\Wine\\FileOpenAssociations] 1760069628
 #time=1dc399c4767f93a
 
-[Software\\Wine\\Fonts] 1760071307
-#time=1dc39a02fbcc820
+[Software\\Wine\\Fonts] 1760074373
+#time=1dc39a7532310ce
 "Codepages"="1252,437"
 "LogPixels"=dword:00000060
 
-[Software\\Wine\\Fonts\\External Fonts] 1760071307
-#time=1dc39a02fbcfbe2
+[Software\\Wine\\Fonts\\External Fonts] 1760074373
+#time=1dc39a753234076
 "DejaVu Sans (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans.ttf"
 "DejaVu Sans Bold (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans-Bold.ttf"
 "DejaVu Sans Bold Oblique (TrueType)"="Z:\\usr\\share\\fonts\\truetype\\dejavu\\DejaVuSans-BoldOblique.ttf"
