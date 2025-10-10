@@ -1,0 +1,28 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host mercury.picoctf.net:53700 was resolved.
+* IPv6: (none)
+* IPv4: 18.189.209.142
+*   Trying 18.189.209.142:53700...
+* Connected to mercury.picoctf.net (18.189.209.142) port 53700
+* using HTTP/1.x
+> GET / HTTP/1.1
+> Host: mercury.picoctf.net:53700
+> User-Agent: curl/8.12.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 302 FOUND
+< Content-Type: text/html; charset=utf-8
+< Content-Length: 209
+< Location: http://mercury.picoctf.net:53700/
+< Vary: Cookie
+< Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcFw.NY3f90ym42KVtpn3EZs1usdDdL4; HttpOnly; Path=/
+< 
+{ [209 bytes data]
+100   209  100   209    0     0   3108      0 --:--:-- --:--:-- --:--:--  3119
+* Connection #0 to host mercury.picoctf.net left intact
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="/">/</a>.  If not click the link.
