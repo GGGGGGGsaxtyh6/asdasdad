@@ -1,0 +1,5 @@
+Welcome to my guessing game!
+
+What number would you like to guess?
+That's not a valid number!
+What number would you like to guess?
