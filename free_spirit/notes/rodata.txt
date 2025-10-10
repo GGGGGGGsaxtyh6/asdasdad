@@ -1,0 +1,7 @@
+
+String dump of section '.rodata':
+  [     4]  cat /flag
+  [     e]  > 
+  [    11]  %p\n
+  [    15]  Invalid
+
