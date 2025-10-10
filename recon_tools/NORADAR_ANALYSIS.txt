@@ -1,0 +1,58 @@
+ANÁLISIS DEL RETO NORADAR (HackTheBox - GamePwn)
+=================================================
+
+ARCHIVOS DESCARGADOS:
+- noradar: Ejecutable ELF 64-bit (juego SDL2)
+- assets.dmp: Archivo de assets del juego (3.8 MB)
+
+ANÁLISIS REALIZADO:
+
+1. FUNCIONES PRINCIPALES:
+   - green_cube1_new / green_cube1_update
+   - green_cube2_new (sin update)
+   - green_cube3_new / green_cube3_update
+
+2. WAYPOINTS:
+   - Encontrados 187 waypoints en offset 0x5060 del binario
+   - Formato: pares de doubles (x, y) de 8 bytes cada uno
+   - Rango: X=[0-7], Y=[0-7]
+   - Los waypoints (0,0) aparecen 24 veces como separadores
+
+3. LÓGICA DEL JUEGO:
+   - offset_x se incrementa en 14 unidades por cada waypoint no-(0,0)
+   - waypoint_index se resetea cuando llega a 0xbc (188)
+   - El green_cube3 sigue el camino de waypoints
+
+4. INTENTOS DE DECODIFICACIÓN:
+   - x*10 + y como ASCII
+   - x + y*8 como ASCII
+   - (x << 3) + y
+   - Primer/último punto después/antes de (0,0)
+   - Cada N-ésimo waypoint
+   - Coordenadas Y + offset
+   
+   NINGUNO PRODUJO UNA FLAG VÁLIDA
+
+5. BÚSQUEDAS:
+   - No se encontró "HTB{" en el binario
+   - No se encontró "flag" en el binario
+   - No hay strings obvios con la flag
+   - assets.dmp solo contiene datos binarios y nombres de texturas
+
+6. OBSERVACIONES:
+   - El juego requiere SDL2 para ejecutarse
+   - Se ejecuta con Xvfb pero no produce salida de texto
+   - La flag probablemente se muestra gráficamente o se genera dinámicamente
+
+CONCLUSIÓN:
+El reto es muy complejo. La flag podría estar:
+- Formada visualmente por el camino del cubo en el juego
+- Codificada en algún patrón que no he descubierto
+- Requeriendo ejecutar el juego y observar la salida gráfica
+- En alguna combinación matemática específica de los waypoints
+
+ARCHIVOS GENERADOS:
+- waypoints.txt: Todos los waypoints extraídos
+- flag_noradar.txt: Intentos de decodificación
+- NORADAR_ANALYSIS.txt: Este análisis
+
