@@ -1,0 +1,12 @@
+HTTP/1.0 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://94.237.57.1:34628/
+Set-Cookie: login_info=dXNlcm5hbWU9Z3Vlc3QmaXNMb2dnZWRJbj1GYWxzZQ==.NDY3MjEyOTY5M2ZjNzAyNzA2MGVjYmJlOWEwZDUyZGRiOWE5YTM1OWEzNzFiOGJiMjlmOGUwZjgzNmQzOTc1YWM2YmY2MTUxNGUyYjJhNjdkOTk4NDFjZDZmOGU0OWJlNDQ4NDg3ZDMzZTg4NGRhYzgxNDE5MGY1MjY0ODc1NzM=; Path=/
+Server: Werkzeug/1.0.1 Python/2.7.18
+Date: Fri, 10 Oct 2025 09:08:53 GMT
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>Redirecting...</title>
+<h1>Redirecting...</h1>
+<p>You should be redirected automatically to target URL: <a href="/">/</a>.  If not click the link.
