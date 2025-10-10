@@ -1,0 +1,22 @@
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Host mercury.picoctf.net:7585 was resolved.
+* IPv6: (none)
+* IPv4: 18.189.209.142
+*   Trying 18.189.209.142:7585...
+* Connected to mercury.picoctf.net (18.189.209.142) port 7585
+* using HTTP/1.x
+> HEAD / HTTP/1.1
+> Host: mercury.picoctf.net:7585
+> User-Agent: curl/8.12.1
+> Accept: */*
+> 
+* Request completely sent off
+< HTTP/1.1 200 OK
+< Content-type: text/html; charset=UTF-8
+< 
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Connection #0 to host mercury.picoctf.net left intact
+HTTP/1.1 200 OK
+Content-type: text/html; charset=UTF-8
+

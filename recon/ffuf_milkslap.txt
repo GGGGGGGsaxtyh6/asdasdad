@@ -1,0 +1,1 @@
+--: line 1: ffuf: command not found

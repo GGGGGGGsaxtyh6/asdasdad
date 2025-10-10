@@ -1,0 +1,357 @@
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEA.7ZYor5CVM37a5p6JLqpcBXV4lGA; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEQ.C5w9YZPdIxZq5lxpl3yzEWMtBlk; HttpOnly; Path=/
+
+HTTP/1.1 302 FOUND
+Content-Type: text/html; charset=utf-8
+Content-Length: 209
+Location: http://mercury.picoctf.net:53700/
+Vary: Cookie
+Set-Cookie: session=eyJ2ZXJ5X2F1dGgiOiJibGFuayJ9.aOkcEg.OcI6YhpTRiRyQEEyVovcLCVdO1s; HttpOnly; Path=/
+
