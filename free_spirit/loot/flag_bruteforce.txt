@@ -1,0 +1,10 @@
+
+[off=0x50]
+> 0x7ffcc3ca1e80
+> 
+[off=0x58]
+> 0x7ffc38655680
+> 
+[off=0x60] ERR [Errno 111] Connection refused
+
+[off=0x68] ERR [Errno 111] Connection refused

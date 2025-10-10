@@ -1,0 +1,1 @@
+/workspace/free_spirit/artifacts/image/challenge/challenge: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=f9c9a081578630d7b736a704a82a275c363b22d9, not stripped
