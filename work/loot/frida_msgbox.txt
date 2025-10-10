@@ -1,0 +1,2 @@
+Spawned `/usr/lib/wine/wine64 /workspace/work/targets/bininst2.exe -e (function(){ var a=Module.findExportByName(user32.dll,MessageBoxA); if(a){Interceptor.attach(a,{onEnter:function(args){ try{ var s=Memory.readCString(args[1]); send({t:MBA,s:s}); }catch(e){} }});} var w=Module.findExportByName(user32.dll,MessageBoxW); if(w){Interceptor.attach(w,{onEnter:function(args){ try{ var s=Memory.readUtf16String(args[1]); send({t:MBW,s:s}); }catch(e){} }});} })();`. Resuming main thread!
+Process terminated
