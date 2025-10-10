@@ -1,0 +1,36 @@
+ANÁLISIS DE VULNERABILIDAD - Super Serial
+
+CÓDIGO FUENTE OBTENIDO:
+- index.phps: Maneja login, serializa objeto permissions en cookie
+- authentication.phps: Define clase access_log con __toString() que lee archivos
+- cookie.phps: Deserializa cookie "login"
+
+CLASES RELEVANTES:
+
+1. class access_log (authentication.phps):
+   - public $log_file
+   - __toString() -> llama a read_log()
+   - read_log() -> return file_get_contents($this->log_file)
+
+2. class permissions (cookie.phps):
+   - Maneja autenticación
+
+VULNERABILIDAD IDENTIFICADA:
+En cookie.phps, catch block:
+  catch(Error $e){
+    die("Deserialization error. ".$perm);
+  }
+
+Al concatenar string con $perm, PHP invoca __toString() automáticamente.
+
+EXPLOTACIÓN:
+1. Crear objeto access_log con log_file = "../flag"
+2. Serializar el objeto
+3. Base64 encode
+4. URL encode  
+5. Enviar como cookie "login"
+6. El error de deserialización hará que se concatene el objeto
+7. __toString() se ejecuta -> lee ../flag
+
+PAYLOAD A CONSTRUIR:
+O:10:"access_log":1:{s:8:"log_file";s:7:"../flag";}
