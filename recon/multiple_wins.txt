@@ -4,9 +4,14 @@ What number would you like to guess?
 Congrats! You win! Your prize is this print statement!
 
 New winner!
-Name? Congrats test1
+Name? Congrats WIN1
 
 
+What number would you like to guess?
+Nope!
+
+What number would you like to guess?
+That's not a valid number!
 What number would you like to guess?
 Nope!
 

@@ -1,0 +1,7 @@
+Welcome to my guessing game!
+
+What number would you like to guess?
+Congrats! You win! Your prize is this print statement!
+
+New winner!
+Name? 
