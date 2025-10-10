@@ -1,0 +1,84 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                  SOLUCIÓN RETO NORADAR - HTB                     ║
+╚══════════════════════════════════════════════════════════════════╝
+
+FLAG: HTB{9R33N_CUB3_5T4LKER}
+
+═══════════════════════════════════════════════════════════════════
+
+METODOLOGÍA DE RESOLUCIÓN:
+
+1. DESCARGA Y ANÁLISIS INICIAL
+   - Descargado noradar (ejecutable ELF 64-bit SDL2)
+   - Descargado assets.dmp (archivo de assets del juego)
+   - Identificadas 3 funciones de cubos verdes
+
+2. EXTRACCIÓN DE WAYPOINTS
+   - Ubicados en offset 0x5060 del binario
+   - 187 waypoints totales (pares de doubles x,y)
+   - Formato: 8 bytes double (x) + 8 bytes double (y)
+   - Rango de coordenadas: X=[0-7], Y=[0-7]
+
+3. IDENTIFICACIÓN DE SEPARADORES
+   - 24 ocurrencias de (0,0) como separadores
+   - Divide los waypoints en 23 segmentos
+   - Cada segmento representa una letra
+
+4. DECODIFICACIÓN VISUAL
+   - Cada segmento dibuja una letra en un grid de 8x8
+   - Las letras están en ASCII art estilo blocky
+   - Los puntos se conectan en orden para formar las letras
+
+5. RECONSTRUCCIÓN DE LA FLAG
+   Segmento  Letra  Descripción
+   ────────────────────────────────────
+      0       H     Forma de H
+      1       T     T con barra horizontal abajo
+      2       B     Forma de B con protuberancias
+      3       {     Llave de apertura
+      4       9     Número nueve
+      5       R     Forma de R
+      6       3     Número tres
+      7       3     Número tres
+      8       N     Dos líneas verticales (N)
+      9       _     Guión bajo horizontal
+     10       C     Forma de C
+     11       U     Forma de U
+     12       B     Forma de B
+     13       3     Número tres
+     14       _     Guión bajo horizontal
+     15       5     Número cinco
+     16       T     Forma de T
+     17       4     Número cuatro
+     18       L     Forma de L
+     19       K     Forma de K con diagonales
+     20       E     Forma de E
+     21       R     Forma de R
+     22       }     Llave de cierre
+
+6. INTERPRETACIÓN LEETSPEAK
+   - 9R33N  = GREEN
+   - CUB3   = CUBE
+   - 5T4LKER = STALKER
+   
+   Mensaje: "GREEN CUBE STALKER" (Acechador del Cubo Verde)
+
+═══════════════════════════════════════════════════════════════════
+
+CÓDIGO DE GREEN_CUBE3_UPDATE:
+- Lee waypoints desde offset 0x5060
+- offset_x se incrementa en 14 unidades por waypoint
+- waypoint_index se resetea en 188 (0xbc)
+- El cubo verde sigue el camino dibujando las letras
+
+DIFICULTAD:
+La dificultad radicaba en darse cuenta de que los waypoints 
+NO son coordenadas para decodificar directamente a ASCII,
+sino que DIBUJAN letras visualmente en un grid de 8x8.
+
+LECCIÓN APRENDIDA:
+En retos de GamePwn, los datos pueden representar información
+visual/gráfica que debe interpretarse visualmente, no solo
+como valores numéricos directos.
+
+═══════════════════════════════════════════════════════════════════
