@@ -1,0 +1,43 @@
+=== ANÁLISIS WEB GAUNTLET 2 ===
+
+FILTROS BLOQUEADOS:
+- or, and, true, false, union, like, =, >, <, ;, --, /* */, admin
+
+QUERY ORIGINAL (visible en respuestas):
+SELECT username, password FROM users WHERE username='INPUT' AND password='INPUT'
+
+OBJETIVO: Loguearse como admin sin usar la palabra "admin"
+
+TÉCNICAS POTENCIALES:
+
+1. BYPASS DE "admin":
+   - Concatenación: 'admi'||'n'
+   - Case variation: aDmin, Admin, ADMIN
+   - CHAR(): char(97,100,109,105,110)
+   - SUBSTR/SUBSTRING de otra string
+   - Hex: x'61646d696e'
+   - Unicode normalization
+   
+2. BYPASS DE "=":
+   - IS / IS NOT
+   - GLOB pattern matching
+   - REGEXP (si está disponible)
+   - IN operator
+   
+3. BYPASS DE "AND":
+   - && (si SQLite lo soporta)
+   - Múltiples condiciones sin AND
+   - Cerrar query temprano
+   
+4. BYPASS DE COMENTARIOS:
+   - Null byte %00
+   - Balancear comillas correctamente
+   - Usar # (no estándar en SQLite)
+   
+5. ESTRATEGIAS DE INYECCIÓN:
+   - Inyectar en username para bypassear check de admin
+   - Inyectar en password para hacer tautología
+   - Combinar ambos campos
+   - Usar LIMIT, OFFSET
+   - Subconsultas (si no están filtradas)
+

@@ -1,0 +1,11 @@
+Connection to shape-facility.picoctf.net (3.20.150.139) 62602 port [tcp/*] succeeded!
+Welcome to my guessing game!
+
+What number would you like to guess?
+Congrats! You win! Your prize is this print statement!
+
+New winner!
+Name? Congrats test
+
+
+What number would you like to guess?
