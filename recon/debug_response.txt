@@ -1,0 +1,4 @@
+<pre>username: admin
+password: admin
+SQL query: SELECT * FROM users WHERE name='admin' AND password='admin'
+</pre><h1>Login failed.</h1>
