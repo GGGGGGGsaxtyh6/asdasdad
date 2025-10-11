@@ -1,5 +1,0 @@
-Visible base64 chars: 347
-Decoded bytes total: 260
-Declared integer length: 256
-Actual bytes available: 256
-Missing bytes: 0

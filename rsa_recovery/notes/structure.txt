@@ -1,6 +1,0 @@
-n bits: 4096
-e: 256
-Line 13 visible: AQ********
-Lines 14-39: redacted
-Line 40 partial start: ****AoIBAH7MSLvBg7Um
-Line 45 partial end: ********************
