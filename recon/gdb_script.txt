@@ -1,0 +1,10 @@
+break *0x400a5b
+break *0x400b3a
+run
+c
+info registers rax
+x/32gx $rax
+c
+info registers rbx
+x/32gx $rbx
+quit

@@ -1,0 +1,69 @@
+# Reporte de Progreso - Reto SUS
+
+## Información del Reto
+- Nombre: SUS - Single User Storage
+- Servidor: svc.pwnable.xyz:30011
+- Archivo: challenge_32.gz
+
+## Análisis Completado
+
+### 1. Reconocimiento Inicial
+- Binary: ELF 64-bit x86-64
+- Sin PIE (direcciones fijas)
+- Stack canary presente
+- NX habilitado (stack no ejecutable)
+
+### 2. Funcionalidades del Programa
+- Create user: aloca 32 bytes en heap, lee nombre y edad
+- Print user: imprime datos del usuario
+- Edit user: modifica nombre y edad
+- Exit: sale del programa
+
+### 3. Función Objetivo
+- win() en 0x400b71: ejecuta "cat flag"
+- Nunca llamada en flujo normal
+
+### 4. Vulnerabilidad Identificada
+- Use-After-Return en variable global `cur` (0x602268)
+- cur apunta a [rbp-0x1060] de create_user
+- Después del retorno, esta memoria es inválida
+- edit_usr escribe en [cur+0x48] = [rbp_create - 0x1018]
+
+### 5. Capacidades de Escritura
+- Nombre: 32 bytes en heap (via create/edit)
+- Edad: 4 bytes int32 en [cur+0x48] (via create/edit)
+
+## Intentos de Explotación
+
+1. ✗ Sobrescribir return address directamente
+2. ✗ Sobrescribir GOT entries
+3. ✗ Format string attacks
+4. ✗ Heap overflow
+5. ✗ Integer overflow con edad
+6. ✗ Múltiples creates/edits en varios órdenes
+7. ✗ Valores especiales (negativos, grandes, direcciones)
+
+## Análisis Pendiente
+
+1. Exploración más profunda de overlapping stack frames
+2. Timing attacks o condiciones de carrera
+3. Comportamiento específico del entorno remoto
+4. Técnicas avanzadas de use-after-return
+5. Posible corrupción indirecta de punteros
+6. Análisis con herramientas automáticas (angr, pwntools, etc.)
+
+## Observaciones
+
+- El servidor remoto se comporta ligeramente diferente que local
+- Algunos tests causaron crashes inconsistentes
+- El heap pointer se mantiene estable en memoria de pila antigua
+- No encontré forma directa de sobrescribir addresses críticas
+
+## Próximos Pasos
+
+1. Analizar con herramientas de symbolic execution
+2. Revisar writeups similares (sin buscar solución de este reto)
+3. Explorar ROP chains si hay buffer overflow oculto
+4. Considerar técnicas de heap feng shui
+5. Re-analizar con mente fresca después de descanso
+

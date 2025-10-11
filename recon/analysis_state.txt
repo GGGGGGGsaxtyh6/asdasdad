@@ -1,0 +1,40 @@
+=== ESTADO ACTUAL DEL ANÁLISIS ===
+
+LO QUE SÉ CON CERTEZA:
+1. Vulnerabilidad: Use-after-return
+   - cur apunta a [rbp_create-0x1060] (stack viejo)
+   - edit escribe en [cur+0x48] = [rbp_create-0x1018]
+   - Es una escritura en stack inválido (después del retorno)
+
+2. Objetivo: Ejecutar win() en 0x400b71
+
+3. Capacidad de escritura:
+   - Puedo escribir 4 bytes (int32) en [rbp_create-0x1018]
+   - Puedo hacerlo múltiples veces (mismo lugar)
+   - No puedo cambiar cur fácilmente
+
+4. Limitaciones:
+   - No PIE (direcciones fijas)
+   - Stack canary activo
+   - NX enabled (stack no ejecutable)
+   - Libc con ASLR
+
+LO QUE NO SÉ:
+1. ¿Qué función/cuando se reutiliza [rbp_create-0x1018]?
+2. ¿Cómo hacer que esa ubicación contenga return address u otro valor crítico?
+3. ¿Hay alguna secuencia específica de operaciones que active el exploit?
+
+INTENTOS FALLIDOS:
+- Múltiples secuencias de C/E/P
+- Diferentes valores de edad  
+- Intentar sobrescribir GOT (no alcanzable)
+- Intentar múltiples creates
+- Bruteforce de combinaciones
+
+POSIBLES DIRECCIONES:
+1. Recursión o call stack profundo que cause overlap
+2. Alguna función con offset específico que use esa ubicación
+3. Timing o condición de carrera
+4. Algo en el entorno remoto diferente al local
+5. Técnica avanzada de use-after-return que desconozco
+
