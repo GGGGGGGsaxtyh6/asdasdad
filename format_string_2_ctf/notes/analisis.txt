@@ -1,0 +1,105 @@
+ANÁLISIS DEL PROBLEMA:
+
+1. OBJETIVO: Cambiar sus (0x404060) de 0x21737573 a 0x67616c66
+
+2. VULNERABILIDAD: printf(buf) en línea 14
+
+3. RESTRICCIÓN CRÍTICA: scanf("%1024s", buf) se detiene en:
+   - Espacios
+   - Caracteres NULL (\x00)
+   
+4. PROBLEMA PRINCIPAL: 
+   - No puedo incluir bytes NULL en el payload
+   - Las direcciones de 64-bit tienen NULL bytes: 0x0000000000404060
+   - scanf cortará el payload en el primer NULL
+
+5. HALLAZGOS PREVIOS:
+   - Offset 14 en el stack apunta a nuestro buffer
+   - 0x4242424241414141 apareció en offset 14 cuando enviamos AAAABBBB
+
+6. NECESITO INVESTIGAR:
+   - ¿Hay alguna dirección en el stack que apunte cerca de 'sus'?
+   - ¿Puedo usar escrituras parciales para construir la dirección?
+   - ¿Debo usar una técnica diferente sin null bytes?
+
+=== PROBLEMA CONFIRMADO ===
+scanf("%s") se detiene en el primer byte NULL.
+No puedo incluir direcciones de 64-bit directamente porque tienen nulls.
+
+=== HINT DEL CTF ===
+"pwntools are very useful for this problem!"
+
+RAZONAMIENTO: pwntools tiene fmtstr_payload que maneja automáticamente
+las limitaciones de scanf. Voy a instalar pwntools y usarlo.
+
+
+=== NUEVO DESCUBRIMIENTO ===
+Offset confirmado: 14
+Buffer aparece en stack offset 14 cuando llamamos a printf
+
+PROBLEMA PERSISTENTE:
+- pwntools genera payload con direcciones
+- Direcciones contienen bytes NULL
+- scanf se detiene en NULL
+- Las direcciones nunca llegan al stack donde printf las necesita
+
+HIPÓTESIS NUEVA:
+¿Y si la solución no requiere poner direcciones en el buffer?
+¿Y si hay otro vector de ataque?
+
+Voy a revisar el código fuente más cuidadosamente...
+
+
+=== PROBLEMA FUNDAMENTAL IDENTIFICADO ===
+
+scanf("%s") se detiene en NULL bytes.
+Direcciones de 64-bit SIEMPRE tienen NULL bytes:
+  0x0000000000404060 -> \x60\x40\x40\x00\x00\x00\x00\x00
+
+Cuando intento poner direcciones en el buffer:
+- scanf lee hasta el primer NULL (byte 4 de la primera dirección)
+- El resto de las direcciones NO se leen
+- printf no puede acceder a direcciones que no están en el buffer
+
+TÉCNICAS INTENTADAS (FALLIDAS):
+1. Direcciones al inicio: scanf se detiene inmediatamente
+2. Formato primero, direcciones después: scanf lee formato pero no las direcciones completas  
+3. Usar pwntools: genera payloads con direcciones que tienen nulls
+4. Buscar punteros útiles en stack: no hay ninguno a 0x404060
+
+CONCLUSIÓN:
+Necesito una técnica avanzada que NO requiera poner direcciones completas en el buffer.
+Posibles enfoques no explorados:
+- Construcción indirecta de direcciones
+- Múltiples etapas de escritura  
+- Alguna característica de printf que no conozco
+
+
+=== ESTADO FINAL ===
+
+Después de intentos exhaustivos, he confirmado:
+
+1. La vulnerabilidad es format string en printf(buf)
+2. El objetivo es cambiar sus (0x404060) a 0x67616c66
+3. scanf("%s") bloquea null bytes, impidiendo incluir direcciones completas
+4. pwntools no puede generar payload sin nulls (error: "impossible to avoid a bad byte")
+5. No hay punteros útiles en el stack que apunten a sus
+6. El offset del buffer es 14 (confirmado múltiples veces)
+
+TÉCNICAS INTENTADAS SIN ÉXITO:
+- Direcciones al inicio/final del payload
+- Usar pwntools con todas las opciones
+- Modificar punteros existentes
+- Brute force de offsets
+- Múltiples estrategias y write sizes
+- Payload manual byte-a-byte
+
+CONCLUSIÓN:
+Debe existir una técnica avanzada específica para este escenario que desconozco.
+La técnica probablemente involucra:
+- Construcción indirecta de direcciones SIN usar null bytes
+- O alguna característica de printf/format string que no conozco
+- O alguna aproximación completamente diferente
+
+Necesito investigar técnicas avanzadas de format string con restricciones de scanf.
+
