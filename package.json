@@ -1,0 +1,16 @@
+{
+  "name": "jsonata-security-demo",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Demostración de vulnerabilidades y mitigaciones en JSONata",
+  "main": "vulnerable-server.js",
+  "scripts": {
+    "start:vulnerable": "node vulnerable-server.js",
+    "start:secure": "node secure-server.js",
+    "test": "node test-attacks.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "jsonata": "^2.0.3"
+  }
+}
