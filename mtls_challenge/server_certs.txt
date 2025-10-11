@@ -1,0 +1,99 @@
+Connecting to 35.205.223.136
+depth=1 C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+verify error:num=19:self-signed certificate in certificate chain
+verify return:1
+depth=1 C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+verify return:1
+depth=0 C=US, ST=California, L=Mountain View, O=Google, OU=CTF, CN=crypto-tls.2024-bq.ctfcompetition.com
+verify return:1
+CONNECTED(00000005)
+---
+Certificate chain
+ 0 s:C=US, ST=California, L=Mountain View, O=Google, OU=CTF, CN=crypto-tls.2024-bq.ctfcompetition.com
+   i:C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+   a:PKEY: rsaEncryption, 4096 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jul 29 12:25:38 2024 GMT; NotAfter: Jul 27 12:25:38 2034 GMT
+-----BEGIN CERTIFICATE-----
+MIIE7DCCA9SgAwIBAgIUQnzKKh7pg0oNNfE3orKz1cl8jTEwDQYJKoZIhvcNAQEL
+BQAwgZExCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQH
+DA1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKDAtHb29nbGUgSW5jLjEMMAoGA1UECwwD
+Q1RGMTEwLwYDVQQDDChjYS5jcnlwdG8tdGxzLjIwMjQtYnEuY3RmY29tcGV0aXRp
+b24uY29tMB4XDTI0MDcyOTEyMjUzOFoXDTM0MDcyNzEyMjUzOFowgYkxCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1Nb3VudGFpbiBW
+aWV3MQ8wDQYDVQQKDAZHb29nbGUxDDAKBgNVBAsMA0NURjEuMCwGA1UEAwwlY3J5
+cHRvLXRscy4yMDI0LWJxLmN0ZmNvbXBldGl0aW9uLmNvbTCCAiIwDQYJKoZIhvcN
+AQEBBQADggIPADCCAgoCggIBALZDqF53koRP+RN2E0bSkqAAKxfdhIR1YAt6d1fw
+i8cTVbaxPoSPffDKMXd+slp2CeDBe/RG0N5vpB08JmWOM08PLP8PnUrjK3gF+Z9Y
+Bt/Ns6f37IG346tDZP1nNngIu3LT5snTZgFVckuKcUpXlkNwkivbbHjv8+iAWJQw
+UnJ0upYAP+4QkUNIK+xxcbcPavjuZjIl94T7BTXdzvSke03uOPjGC7XvPU2M+Jvc
+J5RolbtMxXIotAYhqc9i4XhkLONQDM0lsTkxp/guzWAMzOyeFkHusQJTGJITUKW7
+hklTI6Wi6k+E3MKAyQ+XVoUAVUxVogr8IxzrI4fWBlxwYtU36TbPGVDIF4OgLFx3
+HSAD0fueKkCW3By8TQsk96O3yr+9lahNu2V3W3+wUNn22QAo3ZakTb+XabVMrlZV
+lPtF+ywuQAuMjwq0KJZUXwa8vWkw4FhTV/uQOqKF5zP8jV+x2mZSvfOMeBC4mtCB
+h5Tk8tNe80XVnCasfx+JahvBJ5/CiWW4lTHDS/Ts7iOIxoemGPNuD8AZAAmvTc77
+r8+uTf52zlM58xegm+z+YA06A+2Yprld5WFh/k3JSlkuiWZpKutUbHtiC3iiQ5N5
+UmzRQrK/CKzy3ZeHuoySjqhRdOpR4fg64qDUcH59pGsTfzsdrNcWLiLLHPDtKnv5
+YGATAgMBAAGjQjBAMB0GA1UdDgQWBBS3FX2t04ch/D8ZhjqRQUPirAUDyjAfBgNV
+HSMEGDAWgBQuG1YbgYbWYmZvGzJ67tRgIIjlWjANBgkqhkiG9w0BAQsFAAOCAQEA
+PilsT3O7aFoHFNbJhIqAFl99bqQqKLoVjD8RUctfHD//ttG/AWq1l2s/krd/FMQt
+5GQdN/dQlDxOjrqkxOSLizHCj4rUZDAjX2I2keVmVDG4h3ZhDOsQ+aDTo3JE3S92
+Z4lfUT8zIKiuw+2e5GaYpSgAHkroTHwOsWSA7XGXCS/pzX3Wx/pOdon7jeG4LGTm
+TUVC7oiQpXWU8wmgIYhX/9+a1b5sLBiAeCYifRSXwRAPnuomYxcIq4CcqcMe7Sr8
+8dRIO0J0VoR6S4wVk5lRYvU9e2U0Vli0cqfsnlYmgaioGG5cweh0U7WeWDGmMmzf
+pUgrYXlQ8hs181QH9Hhs5w==
+-----END CERTIFICATE-----
+ 1 s:C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+   i:C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+   a:PKEY: rsaEncryption, 2047 (bit); sigalg: RSA-SHA256
+   v:NotBefore: Jul 29 12:16:47 2024 GMT; NotAfter: Jul 27 12:16:47 2034 GMT
+-----BEGIN CERTIFICATE-----
+MIIEBDCCAuygAwIBAgIUfhSPktdXWndrtTz3EZELXX08ZscwDQYJKoZIhvcNAQEL
+BQAwgZExCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQH
+DA1Nb3VudGFpbiBWaWV3MRQwEgYDVQQKDAtHb29nbGUgSW5jLjEMMAoGA1UECwwD
+Q1RGMTEwLwYDVQQDDChjYS5jcnlwdG8tdGxzLjIwMjQtYnEuY3RmY29tcGV0aXRp
+b24uY29tMB4XDTI0MDcyOTEyMTY0N1oXDTM0MDcyNzEyMTY0N1owgZExCzAJBgNV
+BAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlhMRYwFAYDVQQHDA1Nb3VudGFpbiBW
+aWV3MRQwEgYDVQQKDAtHb29nbGUgSW5jLjEMMAoGA1UECwwDQ1RGMTEwLwYDVQQD
+DChjYS5jcnlwdG8tdGxzLjIwMjQtYnEuY3RmY29tcGV0aXRpb24uY29tMIIBITAN
+BgkqhkiG9w0BAQEFAAOCAQ4AMIIBCQKCAQBAQAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABAQAAAAgIAAAAAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA
+AAAAAAAAAAAAAAAAAAAgAAAAAAAEAAAAAAAAAAAAQAAAAAIAAAAAQMAgAAAAAAAg
+AAAAAQAEAAAAUTCAAAAACAAAAAAAAAAAAAAgAAAAAQAAAAAAQAAAAAAAAIAAAAAE
+AAAAAAEAAAAAAEAAAAAAAAAAAAAAAAAAAAAAIBCAAAAABAAAAAAAAAAAAAAACEAA
+AAAAAQgAIAAAAAAAAAAAAAAAAAAAAACACEAAAAAAAAAAAAAAAAAAAAAhAgMBAAGj
+UzBRMB0GA1UdDgQWBBQuG1YbgYbWYmZvGzJ67tRgIIjlWjAfBgNVHSMEGDAWgBQu
+G1YbgYbWYmZvGzJ67tRgIIjlWjAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEB
+CwUAA4IBAQAZIkugMh25NWNrydMTzCQO5/97/NMJQ5lyx8ydlN4Q+VoUpe8LnJ5E
+AFQAttYSoAmgh4lai4ijlJXD30QhDvtKGe35uzhvOPVbYs41KVzcwXZI1sYYwfgb
+8mpg2cJ4MZz6uNfQimTnHahIpF/27TznF3ThUo4TpCPGGFCCwwgtc0vR76LNiDpw
+3f68AGtcemvmkGwYJ0sDGsw0paF+mJXflRJRyWUM4Kk2M9L9muRQt5VnBGDJyN80
+e5s0vtJfkbi99bMhPPKrppgT4h+KKTRDBcybgs8WTpTENpKYaTl3h2TupjwTYabQ
+u1Q9dW2N7AdYhknKOPShdeymxuseOPJb
+-----END CERTIFICATE-----
+---
+Server certificate
+subject=C=US, ST=California, L=Mountain View, O=Google, OU=CTF, CN=crypto-tls.2024-bq.ctfcompetition.com
+issuer=C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+---
+Acceptable client certificate CA names
+C=US, ST=California, L=Mountain View, O=Google Inc., OU=CTF, CN=ca.crypto-tls.2024-bq.ctfcompetition.com
+Requested Signature Algorithms: RSA-PSS+SHA256:ECDSA+SHA256:ed25519:RSA-PSS+SHA384:RSA-PSS+SHA512:RSA+SHA256:RSA+SHA384:RSA+SHA512:ECDSA+SHA384:ECDSA+SHA512:RSA+SHA1:ECDSA+SHA1
+Shared Requested Signature Algorithms: RSA-PSS+SHA256:ECDSA+SHA256:ed25519:RSA-PSS+SHA384:RSA-PSS+SHA512:RSA+SHA256:RSA+SHA384:RSA+SHA512:ECDSA+SHA384:ECDSA+SHA512
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 3320 bytes and written 444 bytes
+Verification error: self-signed certificate in certificate chain
+---
+New, TLSv1.3, Cipher is TLS_AES_128_GCM_SHA256
+Protocol: TLSv1.3
+Server public key is 4096 bit
+This TLS version forbids renegotiation.
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 19 (self-signed certificate in certificate chain)
+---
+DONE
