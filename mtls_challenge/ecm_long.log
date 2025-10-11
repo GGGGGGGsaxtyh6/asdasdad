@@ -41,3 +41,655 @@ Step 1 took 13410ms
 Step 2 took 3321ms
 Run 11 out of 1000:
 Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:498400078
+Step 1 took 13495ms
+Step 2 took 3312ms
+Run 12 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:86174445
+Step 1 took 13365ms
+Step 2 took 3317ms
+Run 13 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3241014071
+Step 1 took 13481ms
+Step 2 took 3316ms
+Run 14 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:103929142
+Step 1 took 13408ms
+Step 2 took 3326ms
+Run 15 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2929750314
+Step 1 took 13387ms
+Step 2 took 3313ms
+Run 16 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1973636032
+Step 1 took 13367ms
+Step 2 took 3329ms
+Run 17 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3929579747
+Step 1 took 13442ms
+Step 2 took 3345ms
+Run 18 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:332743566
+Step 1 took 13384ms
+Step 2 took 3330ms
+Run 19 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1395249015
+Step 1 took 13432ms
+Step 2 took 3314ms
+Run 20 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:320727408
+Step 1 took 13377ms
+Step 2 took 3331ms
+Run 21 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1377551561
+Step 1 took 13825ms
+Step 2 took 3332ms
+Run 22 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1493103458
+Step 1 took 13391ms
+Step 2 took 3321ms
+Run 23 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1894874757
+Step 1 took 13390ms
+Step 2 took 3329ms
+Run 24 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1756955228
+Step 1 took 13395ms
+Step 2 took 3360ms
+Run 25 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3317075156
+Step 1 took 13496ms
+Step 2 took 3349ms
+Run 26 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3064925003
+Step 1 took 13490ms
+Step 2 took 3368ms
+Run 27 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3385966138
+Step 1 took 13495ms
+Step 2 took 3366ms
+Run 28 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1727005849
+Step 1 took 13380ms
+Step 2 took 3367ms
+Run 29 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:393692270
+Step 1 took 13476ms
+Step 2 took 3376ms
+Run 30 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1572517694
+Step 1 took 13465ms
+Step 2 took 3358ms
+Run 31 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:8679179
+Step 1 took 13605ms
+Step 2 took 3355ms
+Run 32 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2976579135
+Step 1 took 12852ms
+Step 2 took 3139ms
+Run 33 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:225788874
+Step 1 took 12509ms
+Step 2 took 3107ms
+Run 34 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2551584022
+Step 1 took 12397ms
+Step 2 took 3095ms
+Run 35 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4054087122
+Step 1 took 12357ms
+Step 2 took 3094ms
+Run 36 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3690542114
+Step 1 took 12387ms
+Step 2 took 3110ms
+Run 37 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1536120735
+Step 1 took 12317ms
+Step 2 took 3131ms
+Run 38 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3906458835
+Step 1 took 12370ms
+Step 2 took 3099ms
+Run 39 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3450737381
+Step 1 took 12362ms
+Step 2 took 3107ms
+Run 40 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:563007808
+Step 1 took 12462ms
+Step 2 took 3122ms
+Run 41 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1034597973
+Step 1 took 12440ms
+Step 2 took 3154ms
+Run 42 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1596694465
+Step 1 took 12316ms
+Step 2 took 3085ms
+Run 43 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1389153941
+Step 1 took 12305ms
+Step 2 took 3100ms
+Run 44 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:595685383
+Step 1 took 12352ms
+Step 2 took 3085ms
+Run 45 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1085874449
+Step 1 took 12327ms
+Step 2 took 3132ms
+Run 46 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2764785983
+Step 1 took 12367ms
+Step 2 took 3121ms
+Run 47 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:474094398
+Step 1 took 12367ms
+Step 2 took 3105ms
+Run 48 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4071573590
+Step 1 took 12417ms
+Step 2 took 3090ms
+Run 49 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2678172263
+Step 1 took 12367ms
+Step 2 took 3489ms
+Run 50 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1200433729
+Step 1 took 14722ms
+Step 2 took 3446ms
+Run 51 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3348801351
+Step 1 took 13027ms
+Step 2 took 3145ms
+Run 52 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1987795319
+Step 1 took 12902ms
+Step 2 took 3328ms
+Run 53 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4114058866
+Step 1 took 13259ms
+Step 2 took 3330ms
+Run 54 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4011490884
+Step 1 took 13496ms
+Step 2 took 3388ms
+Run 55 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1818789741
+Step 1 took 13414ms
+Step 2 took 3351ms
+Run 56 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3738862972
+Step 1 took 13502ms
+Step 2 took 3385ms
+Run 57 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3705442029
+Step 1 took 13646ms
+Step 2 took 3418ms
+Run 58 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3944349101
+Step 1 took 13664ms
+Step 2 took 3348ms
+Run 59 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2937791660
+Step 1 took 13521ms
+Step 2 took 3432ms
+Run 60 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4028724517
+Step 1 took 13511ms
+Step 2 took 3447ms
+Run 61 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:217157553
+Step 1 took 13505ms
+Step 2 took 3372ms
+Run 62 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4226529835
+Step 1 took 13470ms
+Step 2 took 3354ms
+Run 63 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3728585204
+Step 1 took 13687ms
+Step 2 took 3389ms
+Run 64 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:76780456
+Step 1 took 13411ms
+Step 2 took 3391ms
+Run 65 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1334693019
+Step 1 took 13492ms
+Step 2 took 3384ms
+Run 66 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2539048520
+Step 1 took 13723ms
+Step 2 took 3497ms
+Run 67 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:359655407
+Step 1 took 13743ms
+Step 2 took 3509ms
+Run 68 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4222674310
+Step 1 took 13814ms
+Step 2 took 3469ms
+Run 69 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:191883424
+Step 1 took 13748ms
+Step 2 took 3418ms
+Run 70 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1432617014
+Step 1 took 13734ms
+Step 2 took 3447ms
+Run 71 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4065182395
+Step 1 took 13908ms
+Step 2 took 3411ms
+Run 72 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3076091305
+Step 1 took 13746ms
+Step 2 took 3447ms
+Run 73 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3483911914
+Step 1 took 13873ms
+Step 2 took 3453ms
+Run 74 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:434322887
+Step 1 took 13864ms
+Step 2 took 3493ms
+Run 75 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2123795316
+Step 1 took 13623ms
+Step 2 took 3419ms
+Run 76 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:698809598
+Step 1 took 13595ms
+Step 2 took 3427ms
+Run 77 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3609927660
+Step 1 took 13721ms
+Step 2 took 3512ms
+Run 78 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4097640370
+Step 1 took 13761ms
+Step 2 took 3399ms
+Run 79 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3321848357
+Step 1 took 13616ms
+Step 2 took 3421ms
+Run 80 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2965658453
+Step 1 took 13803ms
+Step 2 took 3437ms
+Run 81 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:224801179
+Step 1 took 13595ms
+Step 2 took 3407ms
+Run 82 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3902875385
+Step 1 took 13708ms
+Step 2 took 3425ms
+Run 83 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:295827847
+Step 1 took 13719ms
+Step 2 took 3429ms
+Run 84 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3630594043
+Step 1 took 13677ms
+Step 2 took 3456ms
+Run 85 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1002703769
+Step 1 took 13844ms
+Step 2 took 3394ms
+Run 86 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:439777702
+Step 1 took 13584ms
+Step 2 took 3381ms
+Run 87 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2092093
+Step 1 took 13562ms
+Step 2 took 3390ms
+Run 88 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3716991241
+Step 1 took 13755ms
+Step 2 took 3412ms
+Run 89 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3787183745
+Step 1 took 13664ms
+Step 2 took 3377ms
+Run 90 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:23421959
+Step 1 took 13900ms
+Step 2 took 3408ms
+Run 91 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1733687451
+Step 1 took 13635ms
+Step 2 took 3358ms
+Run 92 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:570279799
+Step 1 took 13540ms
+Step 2 took 3394ms
+Run 93 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:343687316
+Step 1 took 13745ms
+Step 2 took 3399ms
+Run 94 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1928481839
+Step 1 took 13638ms
+Step 2 took 3402ms
+Run 95 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1448148056
+Step 1 took 13859ms
+Step 2 took 3472ms
+Run 96 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3840697254
+Step 1 took 13877ms
+Step 2 took 3504ms
+Run 97 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2189160510
+Step 1 took 14128ms
+Step 2 took 3510ms
+Run 98 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2103169390
+Step 1 took 13906ms
+Step 2 took 3442ms
+Run 99 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2312036146
+Step 1 took 13908ms
+Step 2 took 3487ms
+Run 100 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1851729421
+Step 1 took 14046ms
+Step 2 took 3460ms
+Run 101 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4123681085
+Step 1 took 14014ms
+Step 2 took 3407ms
+Run 102 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2604726846
+Step 1 took 13665ms
+Step 2 took 3521ms
+Run 103 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:693477930
+Step 1 took 14040ms
+Step 2 took 3468ms
+Run 104 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2394261710
+Step 1 took 13967ms
+Step 2 took 3496ms
+Run 105 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3049325843
+Step 1 took 14118ms
+Step 2 took 3493ms
+Run 106 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:768877781
+Step 1 took 13986ms
+Step 2 took 3492ms
+Run 107 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1427501589
+Step 1 took 13940ms
+Step 2 took 3443ms
+Run 108 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2516597439
+Step 1 took 14197ms
+Step 2 took 3581ms
+Run 109 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3053246896
+Step 1 took 13991ms
+Step 2 took 3426ms
+Run 110 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:764324760
+Step 1 took 13758ms
+Step 2 took 3439ms
+Run 111 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:667729658
+Step 1 took 13701ms
+Step 2 took 3458ms
+Run 112 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3434590272
+Step 1 took 13908ms
+Step 2 took 3426ms
+Run 113 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:501331840
+Step 1 took 13852ms
+Step 2 took 3452ms
+Run 114 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1816173411
+Step 1 took 13770ms
+Step 2 took 3446ms
+Run 115 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3502777478
+Step 1 took 13715ms
+Step 2 took 3412ms
+Run 116 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:969013312
+Step 1 took 13593ms
+Step 2 took 3378ms
+Run 117 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1731137244
+Step 1 took 13612ms
+Step 2 took 3405ms
+Run 118 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3872861201
+Step 1 took 13750ms
+Step 2 took 3480ms
+Run 119 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4014637937
+Step 1 took 13735ms
+Step 2 took 3381ms
+Run 120 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:646855661
+Step 1 took 13594ms
+Step 2 took 3415ms
+Run 121 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1392758855
+Step 1 took 13641ms
+Step 2 took 3371ms
+Run 122 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:319905547
+Step 1 took 13688ms
+Step 2 took 3457ms
+Run 123 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2807516953
+Step 1 took 13976ms
+Step 2 took 3442ms
+Run 124 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:892628137
+Step 1 took 13664ms
+Step 2 took 3438ms
+Run 125 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1646282778
+Step 1 took 13770ms
+Step 2 took 3376ms
+Run 126 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3513256503
+Step 1 took 13677ms
+Step 2 took 3399ms
+Run 127 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:99386350
+Step 1 took 13710ms
+Step 2 took 3412ms
+Run 128 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3485453539
+Step 1 took 13774ms
+Step 2 took 3453ms
+Run 129 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1941617077
+Step 1 took 13720ms
+Step 2 took 3414ms
+Run 130 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2712269840
+Step 1 took 13813ms
+Step 2 took 3426ms
+Run 131 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2529049464
+Step 1 took 13547ms
+Step 2 took 3424ms
+Run 132 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:603631079
+Step 1 took 13565ms
+Step 2 took 3405ms
+Run 133 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2139719360
+Step 1 took 13657ms
+Step 2 took 3425ms
+Run 134 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1889939969
+Step 1 took 13616ms
+Step 2 took 3394ms
+Run 135 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1208448628
+Step 1 took 13689ms
+Step 2 took 3446ms
+Run 136 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2760525784
+Step 1 took 13815ms
+Step 2 took 3400ms
+Run 137 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2333448688
+Step 1 took 13666ms
+Step 2 took 3408ms
+Run 138 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:525694112
+Step 1 took 13566ms
+Step 2 took 3415ms
+Run 139 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2905045422
+Step 1 took 13625ms
+Step 2 took 3528ms
+Run 140 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3172082175
+Step 1 took 13449ms
+Step 2 took 3357ms
+Run 141 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3929938621
+Step 1 took 13523ms
+Step 2 took 3360ms
+Run 142 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2266486140
+Step 1 took 13603ms
+Step 2 took 3342ms
+Run 143 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1963808531
+Step 1 took 13455ms
+Step 2 took 3351ms
+Run 144 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1439150365
+Step 1 took 13445ms
+Step 2 took 3350ms
+Run 145 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1706918162
+Step 1 took 13496ms
+Step 2 took 3435ms
+Run 146 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:925548999
+Step 1 took 13492ms
+Step 2 took 3338ms
+Run 147 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2966339207
+Step 1 took 13400ms
+Step 2 took 3370ms
+Run 148 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1088153686
+Step 1 took 13407ms
+Step 2 took 3358ms
+Run 149 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4118150233
+Step 1 took 13572ms
+Step 2 took 3372ms
+Run 150 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3108399026
+Step 1 took 13568ms
+Step 2 took 3381ms
+Run 151 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1406331773
+Step 1 took 13466ms
+Step 2 took 3338ms
+Run 152 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:703127694
+Step 1 took 13443ms
+Step 2 took 3327ms
+Run 153 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2732773081
+Step 1 took 13423ms
+Step 2 took 3348ms
+Run 154 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3056886118
+Step 1 took 13427ms
+Step 2 took 3361ms
+Run 155 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3466224340
+Step 1 took 13464ms
+Step 2 took 3353ms
+Run 156 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:4117312557
+Step 1 took 13696ms
+Step 2 took 3392ms
+Run 157 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3832475031
+Step 1 took 13529ms
+Step 2 took 3401ms
+Run 158 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3232464114
+Step 1 took 13526ms
+Step 2 took 3374ms
+Run 159 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3991491784
+Step 1 took 13547ms
+Step 2 took 3392ms
+Run 160 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1030730540
+Step 1 took 13428ms
+Step 2 took 3396ms
+Run 161 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2724653867
+Step 1 took 13499ms
+Step 2 took 3394ms
+Run 162 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2586780682
+Step 1 took 13511ms
+Step 2 took 3409ms
+Run 163 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3161798001
+Step 1 took 13497ms
+Step 2 took 3355ms
+Run 164 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3865320306
+Step 1 took 13497ms
+Step 2 took 3380ms
+Run 165 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1002526542
+Step 1 took 13425ms
+Step 2 took 3407ms
+Run 166 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1278613198
+Step 1 took 13435ms
+Step 2 took 3488ms
+Run 167 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3203744323
+Step 1 took 13521ms
+Step 2 took 3413ms
+Run 168 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:1791068625
+Step 1 took 13444ms
+Step 2 took 3364ms
+Run 169 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3403361331
+Step 1 took 13565ms
+Step 2 took 3430ms
+Run 170 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2935988946
+Step 1 took 13578ms
+Step 2 took 3360ms
+Run 171 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2799860784
+Step 1 took 13578ms
+Step 2 took 3436ms
+Run 172 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3635715225
+Step 1 took 13508ms
+Step 2 took 3420ms
+Run 173 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:2282790140
+Step 1 took 13425ms
+Step 2 took 3371ms
+Run 174 out of 1000:
+Using B1=1000000, B2=974637522, polynomial Dickson(3), sigma=1:3217613337

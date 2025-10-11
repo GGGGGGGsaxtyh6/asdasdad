@@ -1,0 +1,243 @@
+GMP-ECM 7.0.6 [configured with GMP 6.3.0, --enable-asm-redc] [ECM]
+Input number is 8110811094069266480745823543933767240072396861442265035407713647337730830751023671618171555125664136748412088230039411442092043295453880735938238777860985694962826111129533680366956211595831197712376188069591435278106489565999493223044111461445524957062624809306647755056328250455428307021378254036891726570252525740510355226565257689258322111195176094633565118502183379962066388191906039645008502092544265938311166806733481739249316948418877611128634958776359753199897263877821453462574083751017510354302053914975387469256387992175739535738866910506253826240263197420364291377848980161197244950543511305005641498657 (616 digits)
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:630394125
+Step 1 took 40383ms
+Step 2 took 9295ms
+Run 2 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1422641800
+Step 1 took 40373ms
+Step 2 took 9389ms
+Run 3 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1177849742
+Step 1 took 40467ms
+Step 2 took 8969ms
+Run 4 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2482086602
+Step 1 took 37504ms
+Step 2 took 8568ms
+Run 5 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2653438292
+Step 1 took 37021ms
+Step 2 took 8606ms
+Run 6 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3845048766
+Step 1 took 37300ms
+Step 2 took 8608ms
+Run 7 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1475267011
+Step 1 took 37245ms
+Step 2 took 8530ms
+Run 8 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:686471581
+Step 1 took 37097ms
+Step 2 took 8642ms
+Run 9 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:166890628
+Step 1 took 37082ms
+Step 2 took 8922ms
+Run 10 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:770547841
+Step 1 took 40828ms
+Step 2 took 8865ms
+Run 11 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2570958996
+Step 1 took 40006ms
+Step 2 took 9328ms
+Run 12 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3965813184
+Step 1 took 40807ms
+Step 2 took 9426ms
+Run 13 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:402719066
+Step 1 took 40256ms
+Step 2 took 9419ms
+Run 14 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:886271770
+Step 1 took 40377ms
+Step 2 took 9440ms
+Run 15 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1849226438
+Step 1 took 40539ms
+Step 2 took 9619ms
+Run 16 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:4008014065
+Step 1 took 41263ms
+Step 2 took 9531ms
+Run 17 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2156863946
+Step 1 took 41284ms
+Step 2 took 9543ms
+Run 18 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2175283249
+Step 1 took 41746ms
+Step 2 took 9581ms
+Run 19 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2630997153
+Step 1 took 41009ms
+Step 2 took 9635ms
+Run 20 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1323269898
+Step 1 took 41110ms
+Step 2 took 9557ms
+Run 21 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2299718575
+Step 1 took 40881ms
+Step 2 took 9549ms
+Run 22 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:905528373
+Step 1 took 41228ms
+Step 2 took 9357ms
+Run 23 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2451082070
+Step 1 took 40893ms
+Step 2 took 9359ms
+Run 24 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2559720899
+Step 1 took 41102ms
+Step 2 took 9361ms
+Run 25 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3355870600
+Step 1 took 41035ms
+Step 2 took 9533ms
+Run 26 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1641712410
+Step 1 took 41698ms
+Step 2 took 9653ms
+Run 27 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:105641084
+Step 1 took 41772ms
+Step 2 took 9453ms
+Run 28 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2561877957
+Step 1 took 41594ms
+Step 2 took 9770ms
+Run 29 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1445766055
+Step 1 took 41833ms
+Step 2 took 9686ms
+Run 30 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1706053571
+Step 1 took 41424ms
+Step 2 took 9636ms
+Run 31 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3206598349
+Step 1 took 41356ms
+Step 2 took 9574ms
+Run 32 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:165787731
+Step 1 took 41273ms
+Step 2 took 9425ms
+Run 33 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3545238044
+Step 1 took 40995ms
+Step 2 took 9614ms
+Run 34 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2036354961
+Step 1 took 40904ms
+Step 2 took 9499ms
+Run 35 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:62564349
+Step 1 took 41273ms
+Step 2 took 9480ms
+Run 36 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:522414346
+Step 1 took 41140ms
+Step 2 took 9513ms
+Run 37 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:829299733
+Step 1 took 41141ms
+Step 2 took 9461ms
+Run 38 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2897406855
+Step 1 took 40932ms
+Step 2 took 9526ms
+Run 39 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:289171810
+Step 1 took 41130ms
+Step 2 took 9448ms
+Run 40 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2539882112
+Step 1 took 40947ms
+Step 2 took 9506ms
+Run 41 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1658177182
+Step 1 took 40499ms
+Step 2 took 9390ms
+Run 42 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3058108640
+Step 1 took 40520ms
+Step 2 took 9281ms
+Run 43 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3927652416
+Step 1 took 40657ms
+Step 2 took 9270ms
+Run 44 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:318605647
+Step 1 took 40496ms
+Step 2 took 9426ms
+Run 45 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:851969745
+Step 1 took 40416ms
+Step 2 took 9250ms
+Run 46 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:408083369
+Step 1 took 40497ms
+Step 2 took 9426ms
+Run 47 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3685976061
+Step 1 took 40623ms
+Step 2 took 9348ms
+Run 48 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:632342264
+Step 1 took 40455ms
+Step 2 took 9385ms
+Run 49 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2252512196
+Step 1 took 40497ms
+Step 2 took 9416ms
+Run 50 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1802238678
+Step 1 took 40441ms
+Step 2 took 9352ms
+Run 51 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:3584465548
+Step 1 took 40547ms
+Step 2 took 9386ms
+Run 52 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2601155464
+Step 1 took 40416ms
+Step 2 took 9452ms
+Run 53 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:1760299272
+Step 1 took 40230ms
+Step 2 took 9315ms
+Run 54 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:761285866
+Step 1 took 39572ms
+Step 2 took 8919ms
+Run 55 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:4257983562
+Step 1 took 37228ms
+Step 2 took 8714ms
+Run 56 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:8547730
+Step 1 took 37194ms
+Step 2 took 8652ms
+Run 57 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:938698176
+Step 1 took 36910ms
+Step 2 took 8591ms
+Run 58 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:189242009
+Step 1 took 37013ms
+Step 2 took 8516ms
+Run 59 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2575817030
+Step 1 took 36976ms
+Step 2 took 8582ms
+Run 60 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:599331171
+Step 1 took 39738ms
+Step 2 took 9392ms
+Run 61 out of 200:
+Using B1=3000000, B2=4592487916, polynomial Dickson(6), sigma=1:2768918679
