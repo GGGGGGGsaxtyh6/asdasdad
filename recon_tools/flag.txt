@@ -1,1 +1,1 @@
-picoCTF{N0t_StaTa_fLa31355_conn}
+picoCTF{N0t_a_fLag}
