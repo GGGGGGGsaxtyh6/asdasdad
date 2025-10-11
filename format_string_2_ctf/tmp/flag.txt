@@ -1,1 +1,1 @@
-picoCTF{test_flag_local}
+picoCTF{test_flag_local_456}

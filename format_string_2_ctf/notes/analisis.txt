@@ -103,3 +103,37 @@ La técnica probablemente involucra:
 
 Necesito investigar técnicas avanzadas de format string con restricciones de scanf.
 
+
+=== ANÁLISIS FINAL Y PROFUNDO ===
+
+Después de análisis exhaustivo, he confirmado DEFINITIVAMENTE:
+
+1. scanf("%s") se detiene en el PRIMER byte NULL
+2. El payload de pwntools contiene direcciones con NULL bytes
+3. scanf lee solo los primeros 43 bytes (el formato), NO las direcciones
+4. Por lo tanto, el payload estándar de pwntools NO PUEDE funcionar
+
+TEST REALIZADO:
+- Payload de pwntools: 56 bytes
+- Primer NULL en byte 43
+- scanf lee: "%97c%24$hhn%5c%25$hhnc%26$hhn%5c%27$hhnab@@"
+- scanf NO lee: las 4 direcciones de 8 bytes que vienen después
+
+PROBLEMA:
+- Cuando printf procesa "%24$hhn", busca en offset 24 del stack
+- Pero offset 24 NO contiene ninguna dirección útil porque las direcciones
+  nunca llegaron al buffer
+
+CONCLUSIÓN:
+Existe una técnica avanzada que desconozco. Posibilidades:
+1. Usar direcciones parciales de alguna forma creativa
+2. Construir direcciones dinámicamente en el stack
+3. Alguna característica de printf/glibc que permite algo especial
+4. El binario del servidor es diferente al descargado
+5. Hay un wrapper o proxy que procesa los datos diferente
+
+2576 usuarios lo resolvieron, así que DEBE haber una solución.
+
+NECESITO: Ayuda externa, documentación especializada, o probar directamente
+en el servidor cuando esté disponible.
+

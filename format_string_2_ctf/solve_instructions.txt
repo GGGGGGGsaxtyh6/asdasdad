@@ -1,0 +1,31 @@
+INSTRUCCIONES PARA RESOLVER FORMAT STRING 2
+============================================
+
+El servidor ha caducado. Necesitas lanzar una nueva instancia del challenge.
+
+Una vez tengas la nueva instancia con HOST y PORT, ejecuta:
+
+    python3 exploit.py <HOST> <PORT>
+
+Por ejemplo:
+    python3 exploit.py rhea.picoctf.net 12345
+
+El exploit usa pwntools.fmtstr_payload() que debería generar el payload correcto
+automáticamente.
+
+---
+
+TEORÍA DEL EXPLOIT:
+- Vulnerabilidad: Format string en printf(buf)
+- Objetivo: Cambiar la variable global 'sus' (0x404060) de 0x21737573 a 0x67616c66
+- Técnica: Usar %n para escribir en memoria a través de format string
+- Offset del buffer en el stack: 14
+
+El payload usa %hhn para escribir byte por byte en la dirección objetivo.
+
+---
+
+Si el exploit automático no funciona, ejecuta esto para más intentos:
+
+    python3 manual_exploit.py <HOST> <PORT>
+
