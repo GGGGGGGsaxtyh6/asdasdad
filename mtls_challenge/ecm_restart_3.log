@@ -9,3 +9,7 @@ Step 1 took 179042ms
 Step 2 took 44122ms
 Run 3 out of 300:
 Using B1=11000000, B2=30114149530, polynomial Dickson(12), sigma=1:2312546026
+Step 1 took 160236ms
+Step 2 took 52027ms
+Run 4 out of 300:
+Using B1=11000000, B2=30114149530, polynomial Dickson(12), sigma=1:1788222749
