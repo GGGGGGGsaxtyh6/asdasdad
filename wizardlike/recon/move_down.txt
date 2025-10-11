@@ -1,0 +1,42 @@
+            ; CALL XREF from main @ 0x402b08(x)
+┌ 124: fcn.004022c3 ();
+│           0x004022c3      f30f1efa       endbr64
+│           0x004022c7      55             push rbp
+│           0x004022c8      4889e5         mov rbp, rsp
+│           0x004022cb      8b05a31c1300   mov eax, dword [0x00533f74] ; [0x533f74:4]=1
+│           0x004022d1      8d5001         lea edx, [rax + 1]
+│           0x004022d4      8b05961c1300   mov eax, dword [0x00533f70] ; [0x533f70:4]=2
+│           0x004022da      89d6           mov esi, edx
+│           0x004022dc      89c7           mov edi, eax
+│           0x004022de      e8a5feffff     call fcn.00402188
+│           0x004022e3      84c0           test al, al
+│       ┌─< 0x004022e5      7455           je 0x40233c
+│       │   0x004022e7      8b15871c1300   mov edx, dword [0x00533f74] ; [0x533f74:4]=1
+│       │   0x004022ed      8b05a9441300   mov eax, dword [0x0053679c] ; [0x53679c:4]=0
+│       │   0x004022f3      89c1           mov ecx, eax
+│       │   0x004022f5      c1e91f         shr ecx, 0x1f
+│       │   0x004022f8      01c8           add eax, ecx
+│       │   0x004022fa      d1f8           sar eax, 1
+│       │   0x004022fc      39c2           cmp edx, eax
+│      ┌──< 0x004022fe      7c2d           jl 0x40232d
+│      ││   0x00402300      8b0596441300   mov eax, dword [0x0053679c] ; [0x53679c:4]=0
+│      ││   0x00402306      89c2           mov edx, eax
+│      ││   0x00402308      c1ea1f         shr edx, 0x1f
+│      ││   0x0040230b      01d0           add eax, edx
+│      ││   0x0040230d      d1f8           sar eax, 1
+│      ││   0x0040230f      f7d8           neg eax
+│      ││   0x00402311      8d5063         lea edx, [rax + 0x63]
+│      ││   0x00402314      8b055a1c1300   mov eax, dword [0x00533f74] ; [0x533f74:4]=1
+│      ││   0x0040231a      39c2           cmp edx, eax
+│     ┌───< 0x0040231c      7c0f           jl 0x40232d
+│     │││   0x0040231e      8b0570441300   mov eax, dword [0x00536794] ; [0x536794:4]=0
+│     │││   0x00402324      83c001         add eax, 1
+│     │││   0x00402327      890567441300   mov dword [0x00536794], eax ; [0x536794:4]=0
+│     │││   ; CODE XREFS from fcn.004022c3 @ 0x4022fe(x), 0x40231c(x)
+│     └└──> 0x0040232d      8b05411c1300   mov eax, dword [0x00533f74] ; [0x533f74:4]=1
+│       │   0x00402333      83c001         add eax, 1
+│       │   0x00402336      8905381c1300   mov dword [0x00533f74], eax ; [0x533f74:4]=1
+│       │   ; CODE XREF from fcn.004022c3 @ 0x4022e5(x)
+│       └─> 0x0040233c      90             nop
+│           0x0040233d      5d             pop rbp
+└           0x0040233e      c3             ret
