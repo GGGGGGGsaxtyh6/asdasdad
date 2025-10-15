@@ -1,0 +1,616 @@
+%PDF-1.4
+1 0 obj
+<</Creator (Mozilla/5.0 \(Windows NT 10.0; Win64; x64\) AppleWebKit/537.36 \(KHTML, like Gecko\) Typora/0.9.86 Chrome/76.0.3809.146 Electron/6.1.4 Safari/537.36)
+/Producer (Skia/PDF m76)
+/CreationDate (D:20200728031225+00'00')
+/ModDate (D:20200728031225+00'00')>>
+endobj
+3 0 obj
+<</ca 1
+/BM /Normal>>
+endobj
+6 0 obj
+<</CA 1
+/SA true
+/BM /Normal>>
+endobj
+8 0 obj
+<</Type /XObject
+/Subtype /Image
+/Width 391
+/Height 281
+/ColorSpace /DeviceRGB
+/BitsPerComponent 8
+/Filter /FlateDecode
+/Length 9072>> stream
+D	 " K
+MOO/((
+DUDdpV
+`BHX$\
+N,D	*d{
+E	-w|"W<]
+vjj*rh,
+v^?qrq
+5KMMM	
+7u	Mb\e
+=[rd~m
+bLGc)zDa
+}mNu42
+uVgBD\F
+*	"JAN
+#!55U_Xq
+SCFdx@
+ND|D#F
+FEskyjy
+IftO5!
+c}N|D	
+6}nE9W
+T QUs:J
+endstream
+endobj
+9 0 obj
+<</Type /Annot
+/Subtype /Link
+/Border [0 0 0]
+/Rect [518.22729 751.39142 524.23004 781.40533]
+/A <</Type /Action
+/S /URI
+/URI (af://n0)>>>>
+endobj
+10 0 obj
+<</Type /Annot
+/Subtype /Link
+/Border [0 0 0]
+/Rect [518.22729 683.10968 524.23004 713.1236]
+/A <</Type /Action
+/S /URI
+/URI (af://n3)>>>>
+endobj
+11 0 obj
+<</Type /Annot
+/Subtype /Link
+/Border [0 0 0]
+/Rect [518.22729 409.98276 524.23004 439.99673]
+/A <</Type /Action
+/S /URI
+/URI (af://n8)>>>>
+endobj
+12 0 obj
+<</Type /Annot
+/Subtype /Link
+/Border [0 0 0]
+/Rect [518.22729 53.567139 522.72937 76.828003]
+/A <</Type /Action
+/S /URI
+/URI (af://n13)>>>>
+endobj
+13 0 obj
+<</Filter /FlateDecode
+/Length 3322>> stream
+KX\]]\^qSR
+J$\:#	
+M-*.Dw*
+0)W|2{H
+x>k&cYTm
+b]Tlm 
+endstream
+endobj
+15 0 obj
+<</Type /XObject
+/Subtype /Image
+/Width 1478
+/Height 327
+/ColorSpace /DeviceRGB
+/BitsPerComponent 8
+/Filter /FlateDecode
+/Length 8109>> stream
+(*@pyQ
+(*@pyQY
+(*@pyQY
+)*@$yQ
+(*@pyQY
+(*@0YQ
+)*@ yQ
+|!@5yQY
+PT(7~Q
+|!@5yQ
+PT(7~Q
+PT(7~Q
+NQy^Qa
+z)*@pyQ
+PS^TN:
+(*@ #YQ
+u7)*@p
+d}^T&_
+(*@pW]
+endstream
+endobj
+16 0 obj
+<</Type /XObject
+/Subtype /Image
+/Width 872
+/Height 326
+/ColorSpace /DeviceRGB
+/BitsPerComponent 8
+/Filter /FlateDecode
+/Length 77844>> stream
+WZ^n8g
+GakE0Z
+9zLE5*;
+7i*n,6l
+%KWNxiJX
+V7l|5`@
+>{Ha{Z
+{%KW<w
+?uKT.V
+)`*Mom
+b%*Hc!=
+}0?l,T
+Db$UY)
+8s"t,-
+adyy0E
+gmwkP;
+JpIqU:
+w/?]_`d
+,IKp*n
+Uh]sUA
+WWz+Ia
+3\c.8@
+7\{rG:
+jEUh{BJ:Y#
+!T:=aSw
+0~i3iS
+=J)2S(Y
+Fx(@%;*
+EFi:E8_N
+5T[E5%guB
+Z^|:~"a
+-^.z*c
+Uz|:R%
+"c	|QG.P
+6lw3\3
+6lCm\3
+o08bLl
+O@l&$~
+Tkqv$}dr
+$fTu8;
+&+XD'8 
+sv$A:1M
+iGU$Dbt
+CVz(J/
+#sUH]"
+($f`S$dUG
+[Zm dP
+	B)D\&
+]NA=Uu+
+[0lvIt$
+c|	,{K
+-[u`-K"LR
+i"L<-"
+F0gJZH
+t 7}EL
+{098Pl
+0z2i5r
+Ul>EIo7
+uI7uS'
+D6Y:y`Kh
+GQOBR	
+hfL!./aj
+(jxC',
+.Zh ^H
+.'_LKu
+N<q5&.+
++I9Ei 
+"y'-=x
+>-PJyU
+FO^1gL
+lp$"06
+Px-+ST
+v^1glP
+q&cZc1
+p#@:{W
+X&cZk`
+8Iprfr
+Jl:s&e
+cbNo2T
+W2jCM;
+@bQdBT
+s2;V]h
+r${`\Dz
+ 3>DJ.&
+/	&pGs
+%Fa1'O
+-JU]^X]
+J\|c\[E
+g^smdgA
+x%|"px
+%M,G2y
+}w~V0j
+^	{J$e
+4IFRdx
+4-K+du
+vXJtuQ
+Ox~+^x$#)>
+ETCIjc
+`tA-zQ
+Me_yey
+8GP>	WD
+BK\&S0
+<4ZD,I
+od#G0t
+d1pktX
+d]N7*@
+O<#Y'#
+tCLO"f
+w?R/|iX
+B4Fn1r
+x.5:,%"
+-y4I2.
+o%~#XC
+k#;Sg0u
+=`)B.<
+^oy%8g
+M1(x+<
+.)l!8l
+:Tq$R)O
+;@D:'O
+RRA	q\
+MeCJI&<D
+PvRTZC8
+ ={>A53
+pQQw$t
+-j?P_%
+e_FI#>
+QI=t]x
+- s5{*
+VI\g-d
+'Jnc@F
+;*	=:t
+T2j3+3
+>KZTT|h
+endstream
+endobj
+17 0 obj
+<</Type /Annot
+/Subtype /Link
+/Border [0 0 0]
+/Rect [518.22729 455.00372 522.72937 478.2645]
+/A <</Type /Action
+/S /URI
+/URI (af://n31)>>>>
+endobj
+18 0 obj
+<</Filter /FlateDecode
+/Length 1807>> stream
+(2yt'rZ
+(2!k'rZ
+@JDz[z?
+iPPc6(
+rh&#0\
+endstream
+endobj
+2 0 obj
+<</Type /Page
+/Resources <</ProcSets [/PDF /Text /ImageB /ImageC /ImageI]
+/ExtGState <</G3 3 0 R
+/G6 6 0 R>>
+/XObject <</X8 8 0 R>>
+/Font <</F4 4 0 R
+/F5 5 0 R
+/F7 7 0 R>>>>
+/MediaBox [0 0 594.95996 841.91998]
+/Annots [9 0 R 10 0 R 11 0 R 12 0 R]
+/Contents 13 0 R
+/StructParents 0
+/Parent 19 0 R>>
+endobj
+14 0 obj
+<</Type /Page
+/Resources <</ProcSets [/PDF /Text /ImageB /ImageC /ImageI]
+/ExtGState <</G3 3 0 R>>
+/XObject <</X15 15 0 R
+/X16 16 0 R>>
+/Font <</F4 4 0 R
+/F5 5 0 R>>>>
+/MediaBox [0 0 594.95996 841.91998]
+/Annots [17 0 R]
+/Contents 18 0 R
+/StructParents 1
+/Parent 19 0 R>>
+endobj
+19 0 obj
+<</Type /Pages
+/Count 2
+/Kids [2 0 R 14 0 R]>>
+endobj
+20 0 obj
+<</Type /Catalog
+/Pages 19 0 R>>
+endobj
+21 0 obj
+<</Length1 15588
+/Filter /FlateDecode
+/Length 8212>> stream
+#N@9\C
+dm.<,^
+Z&|u\1_
+?<?<?<?<?<?<
+;R/ONR
+s9)i{^
+>0PY9@
+S>X|WG;
+wy~?)u~
+\wOGScSW
+endstream
+endobj
+22 0 obj
+<</Type /FontDescriptor
+/FontName /OpenSans-Bold
+/Flags 4
+/Ascent 1068.84766
+/Descent 292.96875
+/StemV 83.984375
+/CapHeight 713.86719
+/ItalicAngle 0
+/FontBBox [-619.14063 -292.96875 1318.84766 1068.84766]
+/FontFile2 21 0 R>>
+endobj
+23 0 obj
+<</Type /Font
+/FontDescriptor 22 0 R
+/BaseFont /OpenSans-Bold
+/Subtype /CIDFontType2
+/CIDToGIDMap /Identity
+/CIDSystemInfo <</Registry (Adobe)
+/Ordering (Identity)
+/Supplement 0>>
+/W [0 [600.09766 0 0 259.76563] 17 [285.15625] 18 35 570.80078 36 [689.94141 671.875 637.20703] 44 [331.05469 0 0 564.94141 0 0 795.89844 627.92969 0 0 550.78125 579.10156 755.85938] 68 [604.00391 0 514.16016 632.8125 590.82031 0 564.94141 657.22656 305.17578 0 620.11719 305.17578 981.93359 657.22656 619.14063 632.8125 0 454.10156 497.07031 434.08203 657.22656] 89 878 568.84766 879 [691.89453]]
+/DW 0>>
+endobj
+24 0 obj
+<</Filter /FlateDecode
+/Length 329>> stream
+endstream
+endobj
+4 0 obj
+<</Type /Font
+/Subtype /Type0
+/BaseFont /OpenSans-Bold
+/Encoding /Identity-H
+/DescendantFonts [23 0 R]
+/ToUnicode 24 0 R>>
+endobj
+25 0 obj
+<</Length1 18528
+/Filter /FlateDecode
+/Length 10379>> stream
+(sz~E_(
+B@hC>?
+_r+a8=
+1$&/fY
+S~L~H~P^$
+2IW-UWM
+"RUR]'
+C}MMII
+OsRSsR
+}~}~}~}~}~}n
+(]4ndU
+	6\(7	=
+>]4H#}
+V`1:Pe
+ L?iRrD
+;GIcCYl
+l*O_G(
+ O{"OM
+'ZWFi</4
+/d3s;V
+y)Y{H>&
+>ffjzW
+NyS>4+g
+endstream
+endobj
+26 0 obj
+<</Type /FontDescriptor
+/FontName /OpenSans
+/Flags 4
+/Ascent 1068.84766
+/Descent 292.96875
+/StemV 45.898438
+/CapHeight 713.86719
+/ItalicAngle 0
+/FontBBox [-549.80469 -270.99609 1204.10156 1047.85156]
+/FontFile2 25 0 R>>
+endobj
+27 0 obj
+<</Type /Font
+/FontDescriptor 26 0 R
+/BaseFont /OpenSans
+/Subtype /CIDFontType2
+/CIDToGIDMap /Identity
+/CIDSystemInfo <</Registry (Adobe)
+/Ordering (Identity)
+/Supplement 0>>
+/W [0 [600.09766 0 0 259.76563] 9 [729.98047 221.19141 295.89844 295.89844 0 0 245.11719 321.77734 266.11328] 18 28 571.77734 29 [266.11328] 36 [632.8125 647.94922 630.85938 729.00391 556.15234 516.11328 0 737.79297 278.80859 0 0 0 902.83203 0 778.80859 0 0 618.16406 548.82813 553.22266 0 595.21484 925.78125] 68 [556.15234 612.79297 476.07422 612.79297 561.03516 338.86719 547.85156 613.76953 252.92969 252.92969 524.90234 252.92969 930.17578 613.76953 604.00391 612.79297 612.79297 408.20313 477.05078 353.02734 613.76953 500.97656 777.83203 523.92578 503.90625 467.77344] 98 [259.76563] 878 [678.22266 591.79688 591.79688 932.12891]]
+/DW 0>>
+endobj
+28 0 obj
+<</Filter /FlateDecode
+/Length 333>> stream
+`lt?EE
+endstream
+endobj
+5 0 obj
+<</Type /Font
+/Subtype /Type0
+/BaseFont /OpenSans
+/Encoding /Identity-H
+/DescendantFonts [27 0 R]
+/ToUnicode 28 0 R>>
+endobj
+29 0 obj
+<</Length1 12472
+/Filter /FlateDecode
+/Length 6404>> stream
+5x_	C!
+lZoj1=h
+g|OZOr
+zpmo&md
+(/UbTI
+Vg0Di#
+ kt:o/
+eRMu]M
+{mMiCI}
+Jlsy*c(
+Pn@N}6!o`Y
+:G]{Q5
+.h2CD=
+%5FBx<Z
+endstream
+endobj
+30 0 obj
+<</Type /FontDescriptor
+/FontName /LucidaConsole
+/Flags 4
+/Ascent 789.0625
+/Descent 210.9375
+/StemV 68.847656
+/CapHeight 626.46484
+/ItalicAngle 0
+/FontBBox [0 -210.9375 630.37109 789.0625]
+/FontFile2 29 0 R>>
+endobj
+31 0 obj
+<</Type /Font
+/FontDescriptor 30 0 R
+/BaseFont /LucidaConsole
+/Subtype /CIDFontType2
+/CIDToGIDMap /Identity
+/CIDSystemInfo <</Registry (Adobe)
+/Ordering (Identity)
+/Supplement 0>>
+/W [0 92 602.53906]
+/DW 0>>
+endobj
+32 0 obj
+<</Filter /FlateDecode
+/Length 301>> stream
+endstream
+endobj
+7 0 obj
+<</Type /Font
+/Subtype /Type0
+/BaseFont /LucidaConsole
+/Encoding /Identity-H
+/DescendantFonts [31 0 R]
+/ToUnicode 32 0 R>>
+endobj
+0000000000 65535 f 
+0000000015 00000 n 
+0000102017 00000 n 
+0000000294 00000 n 
+0000112272 00000 n 
+0000124354 00000 n 
+0000000331 00000 n 
+0000131799 00000 n 
+0000000407 00000 n 
+0000009647 00000 n 
+0000009807 00000 n 
+0000009967 00000 n 
+0000010128 00000 n 
+0000010290 00000 n 
+0000102330 00000 n 
+0000013684 00000 n 
+0000021963 00000 n 
+0000099977 00000 n 
+0000100138 00000 n 
+0000102618 00000 n 
+0000102681 00000 n 
+0000102730 00000 n 
+0000111029 00000 n 
+0000111270 00000 n 
+0000111872 00000 n 
+0000112410 00000 n 
+0000122877 00000 n 
+0000123113 00000 n 
+0000123950 00000 n 
+0000124487 00000 n 
+0000130978 00000 n 
+0000131203 00000 n 
+0000131427 00000 n 
+trailer
+<</Size 33
+/Root 20 0 R
+/Info 1 0 R>>
+startxref
+131937
+%%EOF33 0 obj
+<</Type /Catalog
+/Pages 19 0 R
+/PageMode /UseOutlines
+/Outlines 34 0 R
+endobj
+34 0 obj
+/Type /Outlines
+/First 35 0 R
+/Last 39 0 R
+/Count 5
+endobj
+35 0 obj
+/Parent 34 0 R
+/Dest [ 2 0 R /XYZ null 781.48535 null ]
+/Title (\376\377\000O\000m\000e\000g\000a\000 \000v\0001\000.\0000)
+/Next 36 0 R
+/Count 0
+endobj
+36 0 obj
+/Parent 34 0 R
+/Dest [ 2 0 R /XYZ null 713.20362 null ]
+/Title (\376\377\000U\000s\000e\000 \000C\000a\000s\000e)
+/Next 37 0 R
+/Prev 35 0 R
+/Count 0
+endobj
+37 0 obj
+/Parent 34 0 R
+/Dest [ 2 0 R /XYZ null 440.07675 null ]
+/Title (\376\377\000A\000r\000c\000h\000i\000t\000e\000c\000t\000u\000r\000e)
+/First 38 0 R
+/Last 39 0 R
+/Prev 36 0 R
+/Count 2
+endobj
+38 0 obj
+/Parent 37 0 R
+/Dest [ 2 0 R /XYZ null 76.90802299999996 null ]
+/Title (\376\377\000A\000l\000a\000r\000m\000 \000P\000a\000c\000k\000e\000t\000 \000S\000t\000r\000u\000c\000t\000u\000r\000e)
+/Next 39 0 R
+/Count 0
+endobj
+39 0 obj
+/Parent 37 0 R
+/Dest [ 14 0 R /XYZ null 478.34452 null ]
+/Title (\376\377\000L\000a\000s\000e\000r\000 \000P\000a\000c\000k\000e\000t\000 \000S\000t\000r\000u\000c\000t\000u\000r\000e)
+/Prev 38 0 R
+/Count 0
+endobj
+40 0 obj
+/Creator (\376\377\000T\000y\000p\000o\000r\000a)
+/Producer (\376\377\000T\000y\000p\000o\000r\000a)
+/CreationDate (20200728031227)
+/ModDate (20200728031227)
+endobj
+0000132675 00000 n 
+0000132765 00000 n 
+0000132839 00000 n 
+0000133007 00000 n 
+0000133178 00000 n 
+0000133383 00000 n 
+0000133619 00000 n 
+0000133848 00000 n 
+trailer
+/Size 41
+/Info 40 0 R
+/Root 33 0 R
+/Prev 131937
+startxref
+134028
