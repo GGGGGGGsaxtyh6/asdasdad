@@ -1,0 +1,9 @@
+filename:       /workspace/htb_cyberpsychosis/rev_cyberpsychosis/diamorphine.ko
+description:    LKM rootkit
+author:         m0nad
+license:        Dual BSD/GPL
+srcversion:     39C9AFE44143084E37251EA
+depends:        
+retpoline:      Y
+name:           diamorphine
+vermagic:       5.15.0-82-generic SMP mod_unload modversions 
