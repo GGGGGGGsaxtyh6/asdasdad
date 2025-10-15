@@ -1,0 +1,1 @@
+/workspace/htb_cyberpsychosis/rev_cyberpsychosis/diamorphine.ko: ELF 64-bit LSB relocatable, x86-64, version 1 (SYSV), BuildID[sha1]=e6a635e5bd8219ae93d2bc26574fff42dc4e1105, with debug_info, not stripped

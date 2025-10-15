@@ -1,0 +1,90 @@
+sym.diamorphine_cleanup 0x800097d [CODE:--x] jmp str.psychosis
+            ;-- section..init.text:
+            ;-- init_module:
+            ; CODE XREF from sym.module_hide @ 0x800081e(x)
+┌ 232: sym.diamorphine_init ();
+│ afv: vars(1:sp[0x10..0x10])
+│           0x08000823      e800000000     call 0x8000828              ; [05] -r-x section size 232 named .init.text
+│           ; CALL XREF from sym.diamorphine_init @ 0x8000823(x)
+│           0x08000828      55             push rbp
+│           0x08000829      4889e5         mov rbp, rsp
+│           0x0800082c      4883ec10       sub rsp, 0x10
+│           0x08000830      65488b0425..   mov rax, qword gs:[0x28]
+│           0x08000839      488945f8       mov qword [var_8h], rax
+│           0x0800083d      31c0           xor eax, eax
+│           0x0800083f      e800000000     call 0x8000844
+│           ; CALL XREF from sym.diamorphine_init @ 0x800083f(x)
+│           0x08000844      4183c8ff       or r8d, 0xffffffff          ; -1
+│           0x08000848      4889050000..   mov qword [0x0800084f], rax ; [0x800084e:8]=0x96840fc0854800
+│           0x0800084f      4885c0         test rax, rax
+│       ┌─< 0x08000852      0f8496000000   je 0x80008ee
+│       │   0x08000858      ff14250000..   call qword [0]
+│       │   0x0800085f      4889050000..   mov qword [0x08000866], rax ; [0x8000865:8]=0x8b4800000000e800
+│       │   0x08000866      e800000000     call 0x800086b
+│       │   ; CALL XREF from sym.diamorphine_init @ 0x8000866(x)
+│       │   0x0800086b      488b3d0000..   mov rdi, qword [0x08000872] ; [0x8000872:8]=0x158b4800000000e8
+│       │   ; DATA XREF from sym.diamorphine_init @ 0x800086b(r)
+│       │   0x08000872      e800000000     call 0x8000877
+│       │   ; CALL XREF from sym.diamorphine_init @ 0x8000872(x)
+│       │   0x08000877      488b150000..   mov rdx, qword [0x0800087e] ; [0x800087e:8]=0x5c748
+│       │   ; DATA XREF from sym.diamorphine_init @ 0x8000877(r)
+│       │   0x0800087e      48c7050000..   mov qword [0x08000889], 0   ; [0x8000888:8]=0x270828b4800
+│       │   0x08000889      488b827002..   mov rax, qword [rdx + 0x270]
+│       │   0x08000890      4889050000..   mov qword [0x08000897], rax ; [0x8000896:8]=0x6c8828b4800
+│       │   0x08000897      488b82c806..   mov rax, qword [rdx + 0x6c8]
+│       │   0x0800089e      4889050000..   mov qword [0x080008a5], rax ; [0x80008a4:8]=0x1f0828b4800
+│       │   0x080008a5      488b82f001..   mov rax, qword [rdx + 0x1f0]
+│       │   0x080008ac      4889050000..   mov qword [0x080008b3], rax ; [0x80008b2:8]=0x58b4800
+│       │   0x080008b3      488b050000..   mov rax, qword [0x080008ba] ; [0x80008ba:8]=0xffffe18148c18948
+│       │   ; DATA XREF from sym.diamorphine_init @ 0x80008b3(r)
+│       │   0x080008ba      4889c1         mov rcx, rax
+│       │   0x080008bd      4881e1ffff..   and rcx, 0xfffffffffffeffff
+│       │   0x080008c4      0f22c1         mov cr0, rcx
+│       │   0x080008c7      48c7827002..   mov qword [rdx + 0x270], 0
+│       │   0x080008d2      48c782c806..   mov qword [rdx + 0x6c8], 0  ; [0x6c8:8]=-1
+│       │   0x080008dd      48c782f001..   mov qword [rdx + 0x1f0], 0
+│       │   0x080008e8      0f22c0         mov cr0, rax
+│       │   0x080008eb      4531c0         xor r8d, r8d
+│       │   ; CODE XREF from sym.diamorphine_init @ 0x8000852(x)
+│       └─> 0x080008ee      488b45f8       mov rax, qword [var_8h]
+│           0x080008f2      65482b0425..   sub rax, qword gs:[0x28]
+│       ┌─< 0x080008fb      7405           je 0x8000902
+│       │   0x080008fd      e800000000     call 0x8000902
+│       │   ; CALL XREF from sym.diamorphine_init @ 0x80008fd(x)
+│       └─> 0x08000902      c9             leave
+│           0x08000903      4489c0         mov eax, r8d
+└       ┌─< 0x08000906      e900000000     jmp sym.diamorphine_cleanup
+            ;-- section..exit.text:
+            ;-- cleanup_module:
+            ; CODE XREF from sym.diamorphine_init @ 0x8000906(x)
+┌ 119: sym.diamorphine_cleanup ();
+│ afv: vars(1:sp[0x10..0x10])
+│           0x0800090b      55             push rbp                    ; [07] -r-x section size 119 named .exit.text
+│           0x0800090c      4889e5         mov rbp, rsp
+│           0x0800090f      4883ec10       sub rsp, 0x10
+│           0x08000913      65488b0425..   mov rax, qword gs:[0x28]
+│           0x0800091c      488945f8       mov qword [var_8h], rax
+│           0x08000920      488b050000..   mov rax, qword [0x08000927] ; [0x8000927:8]=0xffffe28148c28948
+│           ; DATA XREF from sym.diamorphine_cleanup @ 0x8000920(r)
+│           0x08000927      4889c2         mov rdx, rax
+│           0x0800092a      4881e2ffff..   and rdx, 0xfffffffffffeffff
+│           0x08000931      0f22c2         mov cr0, rdx
+│           0x08000934      488b150000..   mov rdx, qword [0x0800093b] ; [0x800093b:8]=0x48000000000d8b48
+│           ; DATA XREF from sym.diamorphine_cleanup @ 0x8000934(r)
+│           0x0800093b      488b0d0000..   mov rcx, qword [0x08000942] ; [0x8000942:8]=0x48000002708a8948
+│           ; DATA XREF from sym.diamorphine_cleanup @ 0x800093b(r)
+│           0x08000942      48898a7002..   mov qword [rdx + 0x270], rcx
+│           0x08000949      488b0d0000..   mov rcx, qword [0x08000950] ; [0x8000950:8]=0x48000006c88a8948
+│           ; DATA XREF from sym.diamorphine_cleanup @ 0x8000949(r)
+│           0x08000950      48898ac806..   mov qword [rdx + 0x6c8], rcx ; [0x6c8:8]=-1 ; 1736
+│           0x08000957      488b0d0000..   mov rcx, qword [0x0800095e] ; [0x800095e:8]=0xf000001f08a8948
+│           ; DATA XREF from sym.diamorphine_cleanup @ 0x8000957(r)
+│           0x0800095e      48898af001..   mov qword [rdx + 0x1f0], rcx
+│           0x08000965      0f22c0         mov cr0, rax
+│           0x08000968      488b45f8       mov rax, qword [var_8h]
+│           0x0800096c      65482b0425..   sub rax, qword gs:[0x28]
+│       ┌─< 0x08000975      7405           je 0x800097c
+│       │   0x08000977      e800000000     call 0x800097c
+│       │   ; CALL XREF from sym.diamorphine_cleanup @ 0x8000977(x)
+│       └─> 0x0800097c      c9             leave
+└       ┌─< 0x0800097d      e900000000     jmp str.psychosis
