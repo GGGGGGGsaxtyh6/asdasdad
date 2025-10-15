@@ -1,0 +1,42 @@
+Packet Type Packet Identifier
+
+Suppress OxF1
+
+Alert OxAO
+
+Broadcast 0x03
+Broadcast: In order to consume low power, all the alarms are in idle mode at regular intervals.
+All sensors broadcast messages to nearby devices with an allowed 0.05 seconds delay.
+Alert: If broadcast mode is disrupted, then the nearby receiver (which acts as master) sends a
+signal to all alarms to put them into alert mode.
+Suppress: This mode helps in silencing the alarms. This works by sending a suppress packet to
+the respective alarm.
+Laser Packet Structure
+
+MA AGA
+| | | | | |
+
+SV AAT IA
+||| Wn UL HA Hn HHT HNN A HTL TT) TA
+VAAN IN TT AAV TVA AEE
+| | || V1] \ || | i |
+
+| Hil ml AIT HI WFYI HW | WTA | 11 III ||
+TT MANATATIAVAITTAGAITTROATQORINAORIT SATAMRITROR IAG
+HAT RIBOAI NAO RIORIIRCR SPR WA AL
+Na MWAH A VA Nea MVNO
+EVA AREA EY
+EE AAA A
+De eee ee eee eee
+Packet Type Packet Identifier
+
+Move left 0x91
+
+Move right 0x53
+
+Turn off OXxFF
+
+Turn on OxEE
+To avoid packet replay and injection attacks we've implemented cyclic redundancy check
+validation, referring to microchip solutions port for STM32 with initCRC( 0x1d0f). Invalid packets
+get discarded at the transceiver end.

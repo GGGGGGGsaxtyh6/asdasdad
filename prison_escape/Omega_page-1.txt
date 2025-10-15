@@ -1,0 +1,23 @@
+Omega v1.0
+(Confidential Document)
+Omega is a proprietary protocol that is used to strengthen prison security and maintain them as
+a Smart Penitentiary Facility.
+To avoid problems such as possible prison breaks and rival gang member fights, we have fixed
+different sensors including positioning devices, video cameras and perimeter monitors. If
+something is detected by the sensor then the video cameras will turn to a given direction, and the
+main gate will be closed.
+All these devices work with Omega protocol, which is efficient and can be used flexibly across
+devices. Each prisoner is closely monitored with video cameras, apart from a 10 minute
+maintenance period during the day time. As this is critical period, we request the guards to move
+out of the base and activate the laser systems (E1,E2 & E3). Any failure in laser systems will
+trigger the alarms (A1, A2, A3 & A4) thereby alerting the guards, who will move to protect all
+prison entrances.
+.
+Architecture
+Door Sensors
+Omega Protocol
+Laser Sensor Alarm
+Omega is a RF protocol. This protocol can be used in devices that operate at 1.8-5.5V, with a
+frequency band in the range of 433.92 MHz. We have used an in-house Omega prototype to
+convert RF signals to message format and vice versa.
+Alarm Packet Structure
