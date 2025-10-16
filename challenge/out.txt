@@ -1,0 +1,3 @@
+Enter the secret password!
+Welcome back admin!
+Come back soon!
